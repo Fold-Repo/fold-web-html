@@ -11,6 +11,7 @@ module.exports = {
         // info: "#2196F3",
         // warning: "#FF9800",
         gray: "#4B5563",
+        gray2: "#D0D5DD",
         dark: "#111827",
         dark2: "#101928",
       },
