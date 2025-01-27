@@ -11,3 +11,15 @@ document.getElementById('menuButton').addEventListener('click', () => {
     }
   });
   
+
+   // Subscribe Form
+   document.getElementById("subscribeForm").addEventListener("submit", (e) => {
+     e.preventDefault();
+     const email = document.getElementById("emailInput").value.trim();
+     if (email) {
+       alert(`Thank you for subscribing with email: ${email}`);
+       document.getElementById("emailInput").value = ""; // Clear the input
+     } else {
+       alert("Please enter a valid email address.");
+     }
+   });
