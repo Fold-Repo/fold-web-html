@@ -99,10 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     productData.forEach((product) => {
       const productElement = document.createElement("div");
-      productElement.classList.add("group", "relative");
+      productElement.classList.add("group", "relative", "overflow-hidden");
 
       productElement.innerHTML = `
-  <a href="#" class="group block">
+  <a href="#" class="group block overflow-hidden">
     <img
       src="${product.image}"
       alt="${product.name}"
