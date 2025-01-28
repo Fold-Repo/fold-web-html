@@ -4,28 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
   </head>
   <body>
     <div class="min-h-screen bg-white p-4 md:p-8">
-      <div class="max-w-xl shadow-md py-6 mx-auto gap-8">
-        <div class="w-full   flex flex-col items-center">
-          <div class="w-full  max-w-lg">
-            <div class="mb-8 flex gap-3 justify-center items-center">
-              <div class="w-12 h-12 rounded-md">
-                <img src="./assets/icons/logo.svg" alt="Logo" class="w-full" />
+      <div class="max-w-6xl  mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="w-full flex flex-col items-center">
+          <div class="w-full max-w-lg">
+            <div class="mb-8 flex items-center">
+              <div class="w-12 h-12 rounded-lg flex items-center justify-center">
+                <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
               </div>
-              <h4 class="text-dark font-medium text-[24px] leading-[29.16px] " style="font-style: italic;">Full Logo Goes Here</h4>
             </div>
-            <div class="text-center">
-
-              <h2 class="text-xl font-semibold text-dark mb-2">Get Started Here!</h2>
-              <p class="text-[#4B5563] text-[20px] mb-6">
-                Be a part of the community of shoppers starting now.
-              </p>
-            </div>
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Get Started Here!</h2>
+            <p class="text-gray-600 mb-6">
+              Be a part of the community of shoppers starting now.
+            </p>
             <form class="space-y-4">
               <div class="grid grid-cols-2 gap-4">
                 <div class="">
@@ -97,18 +93,24 @@
                 </label>
               </div>
               <button
-                class="w-full bg-primary text-white py-3 rounded hover:bg-blue-500 transition"
+                class="w-full bg-primary text-white py-3 rounded bg-blue-500 transition"
               >
                 Register
               </button>
               <p class="text-center text-primary">
                 Already have an account?
-                <a href="login.html" class="text-primary hover:underline">Sign In</a>
+                <a href="/onboarding/login/login.html" class="text-primary hover:underline">Sign In</a>
               </p>
             </form>
           </div>
         </div>
-       
+        <div class="w-full hidden lg:flex justify-center items-center">
+          <img
+            src="../../assets/images//onboarding/signup/signup3.svg"
+            alt="Clothes rack"
+            class="w-full max-w-lg object-cover rounded-lg "
+          />
+        </div>
       </div>
     </div>
   </body>
