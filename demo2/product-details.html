@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .product-image {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .product-image.active {
+            opacity: 1;
+        }
+        .thumbnail {
+            transition: all 0.3s ease;
+        }
+        .thumbnail.active {
+            border: 1px solid #0EA5E9;
+        }
+        .size-btn.active {
+            background-color: #ef4444;
+            color: white;
+        }
+        .color-btn.active {
+            border: 1px solid #3B82F6;
+        }
+
+                /* Custom Styles */
+                .color-btn {
+            transition: all 0.3s ease;
+            border-width: 2px;
+        }
+        .color-btn.selected {
+            background-color: rgba(255, 165, 0, 0.2); /* Light transparent color */
+            font-weight: bold;
+            border-width: 1px; /* Thicker border when selected */
+        }
+        .size-btn {
+            transition: all 0.3s ease;
+            border-width: 1px;
+        }
+        .size-btn.selected {
+            background-color: #FFECE5;
+            border: #F56630;
+            font-weight: bold;
+            border-width: 1px;
+        }
+
+
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="mb-4">
+        <!-- Top Banner -->
+        <div class="bg-sky-500 text-white py-3 px-4 text-center">
+          <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+        </div>
+    
+        <!-- Navigation -->
+        <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
+          <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
+              <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
+            </div>
+    
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+              <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+            </div>
+    
+            <!-- Desktop Search & Icons -->
+            <div class="hidden lg:flex items-center space-x-6">
+              <div class="relative flex items-center">
+                <input type="text" placeholder="Search" class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
+                <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+              </div>
+              <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
+                <img src="../../assets/icons/user.svg" alt="User" />
+                <span class="ml-2">Login</span>
+              </a>
+              <button class="flex items-center text-gray-600 hover:text-sky-500">
+                <img src="../../assets/icons/cart.svg" alt="Cart" />
+                <span class="ml-1">0</span>
+              </button>
+            </div>
+    
+            <!-- Mobile Menu Button -->
+            <button id="menuButton" class="lg:hidden text-gray-600">
+              <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+    
+          <!-- Mobile Menu -->
+          <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+            <div class="flex flex-col space-y-4">
+              <!-- Mobile Search -->
+              <div class="relative">
+                <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+              </div>
+              <a href="index.html" class="text-sky-500">Home</a>
+              <a href="#" class="text-gray-600">About us</a>
+              <a href="#" class="text-gray-600">Contact us</a>
+              <a href="#" class="text-gray-600">Wishlist</a>
+              <a href="#" class="text-gray-600">Chat</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto p-4">
+        <nav class="text-sm mb-8">
+            <ol class="flex items-center space-x-2">
+                <li><a href="#" class="text-blue-500">Men</a></li>
+                <li class="text-gray-500">/</li>
+                <li><a href="#" class="text-blue-500">Lifestyle</a></li>
+                <li class="text-gray-500">/</li>
+                <li><a href="#" class="text-blue-500">Shoes</a></li>
+                <li class="text-gray-500">/</li>
+                <li class="text-gray-500">Nike Blazer Low '77 Vintage</li>
+            </ol>
+        </nav>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Product Images Section -->
+            <div class="relative">
+                <div class="aspect-w-1 aspect-h-1 border relative h-[500px]" id="mainImageContainer">
+                    <!-- Main product images will be inserted here by JavaScript -->
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button onclick="previousImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 shadow-lg">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.1002 13.9993L17.2002 18.0993L15.3335 19.9993L9.3335 13.9993L15.3335 7.99935L17.2002 9.89935L13.1002 13.9993ZM14.0002 27.3327C15.8446 27.3327 17.5779 26.9827 19.2002 26.2827C20.8224 25.5827 22.2335 24.6327 23.4335 23.4327C24.6335 22.2327 25.5835 20.8216 26.2835 19.1993C26.9835 17.5771 27.3335 15.8438 27.3335 13.9993C27.3335 12.1549 26.9835 10.4216 26.2835 8.79935C25.5835 7.17713 24.6335 5.76602 23.4335 4.56602C22.2335 3.36602 20.8224 2.41602 19.2002 1.71602C17.5779 1.01602 15.8446 0.666016 14.0002 0.666016C12.1557 0.666016 10.4224 1.01602 8.80016 1.71602C7.17794 2.41602 5.76683 3.36602 4.56683 4.56602C3.36683 5.76602 2.41683 7.17713 1.71683 8.79935C1.01683 10.4216 0.666832 12.1549 0.666832 13.9993C0.666832 15.8438 1.01683 17.5771 1.71683 19.1993C2.41683 20.8216 3.36683 22.2327 4.56683 23.4327C5.76683 24.6327 7.17794 25.5827 8.80016 26.2827C10.4224 26.9827 12.1557 27.3327 14.0002 27.3327Z" fill="#1C1B1F"/>
+                        </svg>
+                        
+                </button>
+                <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 rounded-full shadow-lg">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.8998 13.9993L10.7998 18.0993L12.6665 19.9993L18.6665 13.9993L12.6665 7.99935L10.7998 9.89935L14.8998 13.9993ZM13.9998 27.3327C12.1554 27.3327 10.4221 26.9827 8.79984 26.2827C7.17761 25.5827 5.7665 24.6327 4.5665 23.4327C3.3665 22.2327 2.4165 20.8216 1.7165 19.1993C1.0165 17.5771 0.666504 15.8438 0.666504 13.9993C0.666504 12.1549 1.0165 10.4216 1.7165 8.79935C2.4165 7.17713 3.3665 5.76602 4.5665 4.56602C5.7665 3.36602 7.17761 2.41602 8.79984 1.71602C10.4221 1.01602 12.1554 0.666016 13.9998 0.666016C15.8443 0.666016 17.5776 1.01602 19.1998 1.71602C20.8221 2.41602 22.2332 3.36602 23.4332 4.56602C24.6332 5.76602 25.5832 7.17713 26.2832 8.79935C26.9832 10.4216 27.3332 12.1549 27.3332 13.9993C27.3332 15.8438 26.9832 17.5771 26.2832 19.1993C25.5832 20.8216 24.6332 22.2327 23.4332 23.4327C22.2332 24.6327 20.8221 25.5827 19.1998 26.2827C17.5776 26.9827 15.8443 27.3327 13.9998 27.3327Z" fill="#1C1B1F"/>
+                        </svg>
+                        
+                </button>
+
+                <!-- Thumbnails -->
+                <div class="flex space-x-4 mt-4" id="thumbnailContainer">
+                    <!-- Thumbnails will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div>
+                <h1 class="text-5xl font-medium tetx-[#111827] mb-4">New Release, Name of Product Goes Here. III</h1>
+                
+                <!-- Wishlist -->
+                <button class="flex items-center text-[#0EA5E9] mb-4">
+                    <span>Add to wishlist</span>
+                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.00016 13.0009L6.0335 12.1342C4.91127 11.1231 3.9835 10.2509 3.25016 9.51758C2.51683 8.78425 1.9335 8.12591 1.50016 7.54258C1.06683 6.95925 0.764052 6.42313 0.591829 5.93425C0.419607 5.44536 0.333496 4.94536 0.333496 4.43424C0.333496 3.3898 0.683496 2.51758 1.3835 1.81758C2.0835 1.11758 2.95572 0.767578 4.00016 0.767578C4.57794 0.767578 5.12794 0.8898 5.65016 1.13424C6.17238 1.37869 6.62238 1.72313 7.00016 2.16758C7.37794 1.72313 7.82794 1.37869 8.35016 1.13424C8.87239 0.8898 9.42238 0.767578 10.0002 0.767578C11.0446 0.767578 11.9168 1.11758 12.6168 1.81758C13.3168 2.51758 13.6668 3.3898 13.6668 4.43424C13.6668 4.94536 13.5807 5.44536 13.4085 5.93425C13.2363 6.42313 12.9335 6.95925 12.5002 7.54258C12.0668 8.12591 11.4835 8.78425 10.7502 9.51758C10.0168 10.2509 9.08905 11.1231 7.96683 12.1342L7.00016 13.0009ZM7.00016 11.2009C8.06683 10.2454 8.94461 9.42591 9.6335 8.74258C10.3224 8.05925 10.8668 7.4648 11.2668 6.95925C11.6668 6.45369 11.9446 6.00369 12.1002 5.60925C12.2557 5.2148 12.3335 4.82313 12.3335 4.43424C12.3335 3.76758 12.1113 3.21202 11.6668 2.76758C11.2224 2.32313 10.6668 2.10091 10.0002 2.10091C9.47794 2.10091 8.99461 2.24813 8.55016 2.54258C8.10572 2.83702 7.80016 3.21202 7.6335 3.66758H6.36683C6.20016 3.21202 5.89461 2.83702 5.45016 2.54258C5.00572 2.24813 4.52238 2.10091 4.00016 2.10091C3.3335 2.10091 2.77794 2.32313 2.3335 2.76758C1.88905 3.21202 1.66683 3.76758 1.66683 4.43424C1.66683 4.82313 1.74461 5.2148 1.90016 5.60925C2.05572 6.00369 2.3335 6.45369 2.7335 6.95925C3.1335 7.4648 3.67794 8.05925 4.36683 8.74258C5.05572 9.42591 5.9335 10.2454 7.00016 11.2009Z" fill="#0EA5E9"/>
+                        </svg>
+                        
+                </button>
+
+                <!-- Rating -->
+                <div class="flex items-center mb-4">
+                    <div class="flex text-[#F56630]">
+                        ★★★★★
+                    </div>
+                    <span class="ml-2 text-gray-600">(121)</span>
+                </div>
+
+                <!-- Price -->
+                <div class="text-2xl font-medium text-[#101928] mb-6">
+                    $190.20 or $129.99/month
+                </div>
+
+
+                    <!-- Color Selection -->
+    <div class="mb-6">
+        <h3 class="font-medium mb-2 text-gray-900">Select Colour</h3>
+        <div class="flex space-x-4" id="colorContainer">
+            <button onclick="selectColor('Orange')" class="color-btn text-smn px-6 py-3.5 font-light rounded-full border border-[#F56630] text-[#F56630]">
+                <span class="bg-[#F6F6F6] rounded-full w-16 p-3">Orange</span></button>
+            <button onclick="selectColor('Black')" class="color-btn text-sm px-6 py-3.5 font-light rounded-full border border-gray-800">
+               <span class="bg-[#F6F6F6] rounded-full w-16 p-3">Black</span>
+            </button>
+            <button onclick="selectColor('Red')" class="color-btn text-sm px-6 py-3.5 font-light rounded-full border border-red-500">
+                <span class="bg-[#F6F6F6] rounded-full w-16 p-3">Red</span></button>
+            <button onclick="selectColor('Yellow')" class="color-btn text-sm px-6 py-3.5 font-light rounded-full border border-yellow-500">
+                <span class="bg-[#F6F6F6] rounded-full w-16 p-3">Yellow</span></button>
+        </div>
+    </div>
+
+    <!-- Size Selection -->
+    <div class="mb-6">
+        <h3 class="font-medium mb-2 text-gray-900">Select Size</h3>
+        <div class="flex flex-wrap gap-4" id="sizeContainer">
+            <button onclick="selectSize(37)" class="size-btn bg-[#F0F2F5] flex justify-center items-center bg-white w-12 h-12 rounded-full text-gray-900">
+                <span class="m-1 rounded-full h-10 flex justify-center items-center bg-[#FFECE5] w-10 block">37</span>
+            </button>
+            <button onclick="selectSize(38)" class="size-btn bg-[#F0F2F5] flex justify-center items-center bg-white w-12 h-12 rounded-full text-gray-900">
+                <span class="m-1 rounded-full h-10 flex justify-center items-center bg-[#FFECE5] w-10 block">38</span>
+            </button>
+            <button onclick="selectSize(39)" class="size-btn bg-[#F0F2F5] flex justify-center items-center bg-white w-12 h-12 rounded-full text-gray-900">
+                <span class="m-1 rounded-full h-10 flex justify-center items-center bg-[#FFECE5] w-10 block">39</span>
+            </button>
+            <button onclick="selectSize(41)" class="size-btn bg-[#F0F2F5] flex justify-center items-center bg-white w-12 h-12 rounded-full text-gray-900">
+                <span class="m-1 rounded-full h-10 flex justify-center items-center bg-[#FFECE5] w-10 block">41</span>
+            </button>
+            <button onclick="selectSize(42)" class="size-btn bg-[#F0F2F5] flex justify-center items-center bg-white w-12 h-12 rounded-full text-gray-900">
+                <span class="m-1 rounded-full h-10 flex justify-center items-center bg-[#FFECE5] w-10 block">42</span>
+            </button>
+            <button onclick="selectSize(43)" class="size-btn bg-[#F0F2F5] flex justify-center items-center bg-white w-12 h-12 rounded-full text-gray-900">
+                <span class="m-1 rounded-full h-10 flex justify-center items-center bg-[#FFECE5] w-10 block">43</span>
+            </button>
+            <button onclick="selectSize(44)" class="size-btn bg-[#F0F2F5] flex justify-center items-center bg-white w-12 h-12 rounded-full text-gray-900">
+                <span class="m-1 rounded-full h-10 flex justify-center items-center bg-[#FFECE5] w-10 block">44</span>
+            </button>
+        </div>
+    </div>
+
+
+                <!-- Color Selection -->
+                <!-- <div class="mb-6">
+                    <h3 class="font-medium mb-2">Select Colour</h3>
+                    <div class="flex space-x-4" id="colorContainer">
+                        <button onclick="selectColor('Orange')" class="color-btn px-4 py-2 rounded-full border" style="border-color: #FFA500">Orange</button>
+                        <button onclick="selectColor('Black')" class="color-btn px-4 py-2 rounded-full border">Black</button>
+                        <button onclick="selectColor('Red')" class="color-btn px-4 py-2 rounded-full border" style="border-color: #FF0000">Red</button>
+                        <button onclick="selectColor('Yellow')" class="color-btn px-4 py-2 rounded-full border" style="border-color: #FFD700">Yellow</button>
+                    </div>
+                </div> -->
+
+                <!-- Size Selection -->
+                <!-- <div class="mb-6">
+                    <h3 class="font-medium mb-2">Select Size</h3>
+                    <div class="flex flex-wrap gap-4" id="sizeContainer">
+                        <button onclick="selectSize(37)" class="size-btn w-12 h-12 rounded-full border">37</button>
+                        <button onclick="selectSize(38)" class="size-btn w-12 h-12 rounded-full border">38</button>
+                        <button onclick="selectSize(39)" class="size-btn w-12 h-12 rounded-full border">39</button>
+                        <button onclick="selectSize(41)" class="size-btn w-12 h-12 rounded-full border">41</button>
+                        <button onclick="selectSize(42)" class="size-btn w-12 h-12 rounded-full border">42</button>
+                        <button onclick="selectSize(43)" class="size-btn w-12 h-12 rounded-full border">43</button>
+                        <button onclick="selectSize(44)" class="size-btn w-12 h-12 rounded-full border">44</button>
+                    </div>
+                </div> -->
+
+                <!-- Description -->
+                <div class="mb-6">
+                    <h3 class="font-medium mb-2">Description</h3>
+                    <p class="text-[#000000] leading-snug">
+                        Lorem ipsum dolor sit amet consectetur. Blandit sit non egestas velit potenti posuere tortor. Nulla imperdiet suscipit ac eu sapien tempor sit. Eu sem tristique tortor lorem aliquam. Mi massa id amet nulla orci turpis augue.
+                    </p>
+                </div>
+
+                <!-- Quantity -->
+                <div class="mb-6">
+                    <h3 class="font-medium mb-2">Quantity</h3>
+                    <div class="flex items-center space-x-4">
+                        <div class="border-[0.5px] rounded-full bg-[#F0F2F5] flex items-center space-x-4 px-6 py-3">
+                            <button onclick="decrementQuantity()" class="w-8 h-8 flex items-center justify-center">
+                                <svg width="20" height="20" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 11.5C3.44772 11.5 3 11.9477 3 12.5C3 13.0523 3.44772 13.5 4 13.5H20C20.5523 13.5 21 13.0523 21 12.5C21 11.9477 20.5523 11.5 20 11.5H4Z" fill="#667185"/>
+                                    </svg>
+                                    
+                            </button>
+                            <span class="text-[#0EA5E9] text-xl" id="quantity">1</span>
+                            <button onclick="incrementQuantity()" class="w-8 h-8 flex text-[#0EA5E9] items-center justify-center">
+                                <svg width="20" height="20" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 4.5C13 3.94772 12.5523 3.5 12 3.5C11.4477 3.5 11 3.94772 11 4.5V11.5H4C3.44772 11.5 3 11.9477 3 12.5C3 13.0523 3.44772 13.5 4 13.5H11V20.5C11 21.0523 11.4477 21.5 12 21.5C12.5523 21.5 13 21.0523 13 20.5V13.5H20C20.5523 13.5 21 13.0523 21 12.5C21 11.9477 20.5523 11.5 20 11.5H13V4.5Z" fill="#0EA5E9"/>
+                                    </svg>
+                                    
+                            </button>
+                        </div>
+                       <p  class="text-sm">
+                        <span class="text-[#667185] ml-4">Only <span class="text-[#0EA5E9]">12 Items</span> Left!</span><br />
+                        <span class="text-[#667185] ml-4">Dont miss it</span>
+                       </p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex space-x-4">
+                    <button class="flex-1 bg-[#0EA5E9] text-white py-3.5 rounded-full">Buy Now</button>
+                    <button class="flex-1 border border-[#0EA5E9] text-[#0EA5E9] py-3.5 rounded-full">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product images data
+        const productImages = [
+            '../../assets/images/belt-sub-product1.svg',
+            '../../assets/images/belt-sub-product2.svg',
+            '../../assets/images/belt-sub-product3.svg',
+        ];
+
+        let currentImageIndex = 0;
+        let quantity = 1;
+
+        // Initialize the page
+        function initializePage() {
+            // Set up main images
+            const mainContainer = document.getElementById('mainImageContainer');
+            productImages.forEach((src, index) => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `Product image ${index + 1}`;
+                img.className = `product-image w-full h-full object-cover ${index === 0 ? 'active' : ''}`;
+                mainContainer.appendChild(img);
+            });
+
+            // Set up thumbnails
+            const thumbnailContainer = document.getElementById('thumbnailContainer');
+            productImages.forEach((src, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = src;
+                thumbnail.alt = `Thumbnail ${index + 1}`;
+                thumbnail.className = `thumbnail w-24  object-cover border-[0.2px] rounded-lg cursor-pointer ${index === 0 ? 'active' : ''}`;
+                thumbnail.onclick = () => showImage(index);
+                thumbnailContainer.appendChild(thumbnail);
+            });
+        }
+
+        // Show specific image
+        function showImage(index) {
+            const images = document.querySelectorAll('.product-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            images.forEach(img => img.classList.remove('active'));
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            
+            images[index].classList.add('active');
+            thumbnails[index].classList.add('active');
+            currentImageIndex = index;
+        }
+
+        // Navigation functions
+        function nextImage() {
+            const newIndex = (currentImageIndex + 1) % productImages.length;
+            showImage(newIndex);
+        }
+
+        function previousImage() {
+            const newIndex = (currentImageIndex - 1 + productImages.length) % productImages.length;
+            showImage(newIndex);
+        }
+
+        // Color selection
+        // function selectColor(color) {
+        //     const colorButtons = document.querySelectorAll('.color-btn');
+        //     colorButtons.forEach(btn => {
+        //         btn.classList.remove('active');
+        //         if(btn.textContent === color) {
+        //             btn.classList.add('active');
+        //         }
+        //     });
+        // }
+
+        // // Size selection
+        // function selectSize(size) {
+        //     const sizeButtons = document.querySelectorAll('.size-btn');
+        //     sizeButtons.forEach(btn => {
+        //         btn.classList.remove('active');
+        //         if(parseInt(btn.textContent) === size) {
+        //             btn.classList.add('active');
+        //         }
+        //     });
+        // }
+
+
+        function selectColor(color) {
+            // Remove selection from all buttons
+            document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('selected'));
+            
+            // Add selection to the clicked button
+            const selectedBtn = Array.from(document.querySelectorAll('.color-btn')).find(btn => btn.textContent.trim() === color);
+            if (selectedBtn) {
+                selectedBtn.classList.add('selected');
+            }
+        }
+
+        function selectSize(size) {
+            // Remove selection from all buttons
+            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+
+            // Add selection to the clicked button
+            const selectedBtn = Array.from(document.querySelectorAll('.size-btn')).find(btn => btn.textContent.trim() === size.toString());
+            if (selectedBtn) {
+                selectedBtn.classList.add('selected');
+            }
+        }
+
+        // Quantity functions
+        function incrementQuantity() {
+            if(quantity < 12) {
+                quantity++;
+                updateQuantityDisplay();
+            }
+        }
+
+        function decrementQuantity() {
+            if(quantity > 1) {
+                quantity--;
+                updateQuantityDisplay();
+            }
+        }
+
+        function updateQuantityDisplay() {
+            document.getElementById('quantity').textContent = quantity;
+        }
+
+        // Initialize the page when loaded
+        document.addEventListener('DOMContentLoaded', initializePage);
+    </script>
+</body>
+</html>
