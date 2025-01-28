@@ -7,10 +7,79 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <header class="mb-4">
+      <!-- Top Banner -->
+      <div class="bg-sky-500 text-white py-3 px-4 text-center">
+        <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+      </div>
+  
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
+            <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
+          </div>
+  
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+          </div>
+  
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input type="text" placeholder="Search" class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
+              <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="login.html" class="flex items-center text-gray-600 hover:text-sky-500">
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button class="flex items-center text-gray-600 hover:text-sky-500">
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+  
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-sky-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
+          </div>
+        </div>
+      </nav>
+    </header>
     <div class="relative h-[758px] container mx-auto lg:rounded-xl">
       <div class="absolute inset-0 lg:rounded-xl">
         <img
-          src="./assets/images/hero-image.svg"
+          src="../../assets/images/hero-image.svg"
           alt="Hero Background"
           class="h-full w-full object-cover lg:rounded-xl"
         />
@@ -22,7 +91,7 @@
       >
         <div class="">
           <h1
-            class="text-white text-3xl md:text-5xl max-w-4xl font-medium lg:leading-loose mb-4"
+            class="text-white text-3xl md:text-5xl max-w-4xl font-medium mb-4"
           >
             Best Products, Best Deals you will find anywhere Globally.
           </h1>
@@ -92,13 +161,23 @@
             product in question goes here. You have the option to now select and
             buy.
           </p>
-          <button class="">
-            <img src="./assets//images/start-shopping-btn.svg" />
-          </button>
+          <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1.5 rounded-full transition-colors duration-200">Start Shopping Now
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+            <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+            <path d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z" fill="white"/>
+            </g>
+            </svg>
+            </button>
+          <!-- <button class="">
+            <img src="../../assets/images/start-shopping-btn.svg" />
+          </button> -->
         </div>
         <div class="relative flex-1">
           <img
-            src="./assets//images//advert.svg"
+            src="../../assets/images//advert.svg"
             alt="Holiday Sale"
             class="w-full h-full object-cover"
           />
@@ -120,9 +199,19 @@
           <h1 class="text-2xl font-semibold text-[#111827]">
             Latest News - Blog Update
           </h1>
-          <button class="">
-            <img src="./assets/images/view-blogs.svg" />
-          </button>
+          <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1 rounded-lg transition-colors duration-200">View Blog
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+            <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+            <path d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z" fill="white"/>
+            </g>
+            </svg>
+            </button>
+          <!-- <button class="">
+            <img src="../../assets/images/view-blogs.svg" />
+          </button> -->
         </div>
         <p class="text-[#4B5563] mt-2 max-w-2xl">
           Details about the product in question goes here. You have the option
@@ -146,28 +235,28 @@
           name: "Deal 1",
           description:
             "Details about Deal 1 go here. You have the option to now select and buy.",
-          imageUrl: "./assets/images/product-image.svg",
+          imageUrl: "../../assets/images/product-image.svg",
           link: "#",
         },
         {
           name: "Deal 2",
           description:
             "Details about Deal 2 go here. You have the option to now select and buy.",
-          imageUrl: "./assets/images/product-image21.svg",
+          imageUrl: "../../assets/images/product-image21.svg",
           link: "#",
         },
         {
           name: "Deal 3",
           description:
             "Details about Deal 3 go here. You have the option to now select and buy.",
-          imageUrl: "./assets/images/product-image23.svg",
+          imageUrl: "../../assets/images/product-image23.svg",
           link: "#",
         },
         {
           name: "Deal 4",
           description:
             "Details about Deal 4 go here. You have the option to now select and buy.",
-          imageUrl: "./assets/images/product-image23.svg",
+          imageUrl: "../../assets/images/product-image23.svg",
           link: "#",
         },
       ];
@@ -221,42 +310,42 @@
         {
           name: "Name Of Product Goes Here.",
           description: "Premium leather shoes perfect for formal occasions.",
-          imageUrl: "./assets/images/product-listing1.svg",
+          imageUrl: "../../assets/images/product-listing1.svg",
           price: "N100,000.00",
           colors: ["#0EA5E9", "#6D7F44", "#862244", "#DCF05E"],
         },
         {
           name: "Name Of Product Goes Here.",
           description: "Elegant wallet made from high-quality leather.",
-          imageUrl: "./assets/images/product-listing2.svg",
+          imageUrl: "../../assets/images/product-listing2.svg",
           price: "N100,000.00",
           colors: ["#0EA5E9", "#6D7F44", "#862244", "#DCF05E"],
         },
         {
           name: "Name Of Product Goes Here.",
           description: "Classic wristwatch with leather straps.",
-          imageUrl: "./assets/images/product-listing4.svg",
+          imageUrl: "../../assets/images/product-listing4.svg",
           price: "N100,000.00",
           colors: ["#0EA5E9", "#6D7F44", "#862244", "#DCF05E"],
         },
         {
           name: "Name Of Product Goes Here.",
           description: "Classic wristwatch with leather straps.",
-          imageUrl: "./assets/images/product-listing5.svg",
+          imageUrl: "../../assets/images/product-listing5.svg",
           price: "N100,000.00",
           colors: ["#0EA5E9", "#6D7F44", "#862244", "#DCF05E"],
         },
         {
           name: "Name Of Product Goes Here.",
           description: "Classic wristwatch with leather straps.",
-          imageUrl: "./assets/images/product-listing6.svg",
+          imageUrl: "../../assets/images/product-listing6.svg",
           price: "N100,000.00",
           colors: ["#0EA5E9", "#6D7F44", "#862244", "#DCF05E"],
         },
         {
           name: "Name Of Product Goes Here.",
           description: "Classic wristwatch with leather straps.",
-          imageUrl: "./assets/images/product-listing7.svg",
+          imageUrl: "../../assets/images/product-listing7.svg",
           price: "N100,000.00",
           colors: ["#0EA5E9", "#6D7F44", "#862244", "#DCF05E"],
         },
@@ -283,7 +372,16 @@
             <h3 class="text-gray-900 text-lg font-semibold">
               ${product.name}
             </h3>
-            <img src="./assets/images/buy-now.svg" class="w-32" />
+          <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy Now
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+            <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+            <path d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z" fill="white"/>
+            </g>
+            </svg>
+            </button>
           </div>
           <p class="text-gray-900">${product.price}</p>
           <div class="mt-2 flex gap-1">
@@ -332,7 +430,7 @@
           title: "Latest Blog Post 1",
           description:
             "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here..",
-          imageUrl: "./assets/images/blog.svg",
+          imageUrl: "../../assets/images/blog.svg",
           readMoreContent:
             " Additional details about the product in question. You can explore further to learn more about the product and its features.",
         },
@@ -340,7 +438,7 @@
           title: "Latest Blog Post 2",
           description:
             "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.",
-          imageUrl: "./assets/images/blog.svg",
+          imageUrl: "../../assets/images/blog.svg",
           readMoreContent:
             " Additional details about the product in question. You can explore further to learn more about the product and its features.",
         },
@@ -348,7 +446,7 @@
           title: "Latest Blog Post 3",
           description:
             "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.",
-          imageUrl: "./assets/images/blog.svg",
+          imageUrl: "../../assets/images/blog.svg",
           readMoreContent:
             " Additional details about the product in question. You can explore further to learn more about the product and its features.",
         },
@@ -418,7 +516,7 @@
             title: "DName of Deal goes here.",
             description:
               "Details about the product in question goes here. You have the option to now select and buy.",
-            imageUrl: "./assets/images/best-products.svg",
+            imageUrl: "../../assets/images/best-products.svg",
             readMoreContent:
               " Additional details about the product in question. You can explore further to learn more about the product and its features.",
             // price: "$299",
@@ -427,7 +525,7 @@
             title: "Name of Deal goes here.",
             description:
               "Details about the product in question goes here. You have the option to now select and buy.",
-            imageUrl: "./assets/images/best-products.svg",
+            imageUrl: "../../assets/images/best-products.svg",
             readMoreContent:
               " Additional details about the product in question. You can explore further to learn more about the product and its features.",
             // price: "$199",
@@ -438,7 +536,7 @@
             title: "Name of Deal goes here.",
             description:
               "Details about the product in question goes here. You have the option to now select and buy.",
-            imageUrl: "./assets/images/best-products.svg",
+            imageUrl: "../../assets/images/best-products.svg",
             readMoreContent:
               " Additional details about the product in question. You can explore further to learn more about the product and its features.",
             // price: "$399",
@@ -447,7 +545,7 @@
             title: "Name of Deal goes here.",
             description:
               "Details about the product in question goes here. You have the option to now select and buy.",
-            imageUrl: "./assets/images/best-products.svg",
+            imageUrl: "../../assets/images/best-products.svg",
             readMoreContent:
               " Additional details about the product in question. You can explore further to learn more about the product and its features.",
             // price: "$99",
@@ -516,9 +614,16 @@
               <span id="read-more-${category}-${index}" class="hidden">${product.readMoreContent}</span>
             </p>
           </div>
-          <button class="ml-4">
-            <img src="./assets/images/buy-now.svg" alt="Buy Now" />
-          </button>
+    <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy Now
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+            <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+            <path d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z" fill="white"/>
+            </g>
+            </svg>
+            </button>
         </div>
       `;
 
