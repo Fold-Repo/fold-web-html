@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing page demo 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="mb-4">
+      <!-- Top Banner -->
+      <div class="bg-sky-500 text-white py-3 px-4 text-center">
+        <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+      </div>
+  
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
+            <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
+          </div>
+  
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+          </div>
+  
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input type="text" placeholder="Search" class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
+              <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button class="flex items-center text-gray-600 hover:text-sky-500">
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+  
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-sky-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="relative h-[758px] container mx-auto lg:rounded-xl">
+      <div class="absolute inset-0 lg:rounded-xl">
+        <img
+          src="../../assets/images/hero-image.svg"
+          alt="Hero Background"
+          class="h-full w-full object-cover lg:rounded-xl"
+        />
+        <div class="absolute rounded-lg inset-0 bg-black bg-opacity-50"></div>
+      </div>
+
+      <div
+        class="relative lg:-ml-20 flex h-full pl-8 w-full items-center justify-center"
+      >
+        <div class="">
+          <h1
+            class="text-white text-3xl md:text-5xl max-w-4xl font-medium mb-4"
+          >
+            Best Products, Best Deals you will find anywhere Globally.
+          </h1>
+          <p class="text-white max-w-xl text-lg md:text-xl">
+            Customize the layout, colors and styles within only a few minutes.
+            Start creating an amazing website right now!
+          </p>
+        </div>
+      </div>
+    </div>
+    <section id="done">
+      <div class="bg-white">
+        <div
+          class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+        >
+          <div class="">
+            <h2 class="text-lg font-semibold text-gray-900">
+              Trending Products.
+            </h2>
+            <p class="max-w-5xl text-sm">
+              Details about the product in question goes here. You have the
+              option to now select and buy. Details about the product in
+              question goes here. You have the option to now select and
+              buy.Details about the product in question goes here. You have the
+              option to now select and buy.
+            </p>
+          </div>
+          <div
+            class="mt-6 grid trending-products grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="done">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <h1 class="text-2xl font-semibold">Product Listing</h1>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search"
+            class="border rounded px-4 py-2"
+          />
+        </div>
+        <p class="text-sm text-gray-500 mt-2">
+          Details about the product in question goes here. You have the option
+          to now select and buy.
+        </p>
+        <div
+          id="product-list"
+          class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- Products will be rendered here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="done" class="container mx-auto my-32">
+      <div class="lg:flex">
+        <div class="bg-black text-white flex-1 px-12 py-16">
+          <h1 class="text-4xl font-bold mb-4">MASSIVE HOLIDAY SALE!</h1>
+          <p class="mb-8">
+            Details about the product in question goes here. You have the option
+            to now select and buy. Details about the product in question goes
+            here. You have the option to now select and buy. Details about the
+            product in question goes here. You have the option to now select and
+            buy.
+          </p>
+          <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1.5 rounded-full transition-colors duration-200">Start Shopping Now
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+            <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+            <path d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z" fill="white"/>
+            </g>
+            </svg>
+            </button>
+          <!-- <button class="">
+            <img src="../../assets/images/start-shopping-btn.svg" />
+          </button> -->
+        </div>
+        <div class="relative flex-1">
+          <img
+            src="../../assets/images//advert.svg"
+            alt="Holiday Sale"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-8">
+      <h1 class="text-2xl font-semibold mb-6">Product Categories</h1>
+      <div id="categories">
+        <!-- Categories and products will be dynamically rendered here -->
+      </div>
+    </section>
+
+    <section id="done">
+      <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center">
+          <h1 class="text-2xl font-semibold text-[#111827]">
+            Latest News - Blog Update
+          </h1>
+          <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1 rounded-lg transition-colors duration-200">View Blog
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+            <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+            <path d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z" fill="white"/>
+            </g>
+            </svg>
+            </button>
+          <!-- <button class="">
+            <img src="../../assets/images/view-blogs.svg" />
+          </button> -->
+        </div>
+        <p class="text-[#4B5563] mt-2 max-w-2xl">
+          Details about the product in question goes here. You have the option
+          to now select and buy. Details about the product in question goes
+          here. You have the option to now select and buy.
+        </p>
+        <div
+          id="blog-list"
+          class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- Blogs will be dynamically rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <script src="../assets/js/index.js"></script>
+  </body>
+</html>
