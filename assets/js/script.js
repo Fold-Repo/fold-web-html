@@ -12,7 +12,6 @@ document.getElementById("menuButton").addEventListener("click", () => {
 });
 
 //DEMO  1 SCRIPTS
-// Section 1
 const products = [
   {
     name: "Deal 1",
