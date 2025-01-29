@@ -238,7 +238,7 @@ const product = singleProductData;
              // Product Name
           document.getElementById('product-name').textContent = product.name;
           document.getElementById('product-description').textContent = product.description;
-          document.getElementById('product-price').innerHTML = `<sup class="text-base">$</sup>${product.price}<sup class="text-sm">.00</sup>`;
+          document.getElementById('product-price').innerHTML = `$${product.price}`;
           document.getElementById('product-offer-price').innerHTML = ` or <span class="font-bold text-black">$${product.discountPrice}</span> /month`;
 
           // Product Rating
@@ -253,7 +253,7 @@ const product = singleProductData;
           product.images.forEach(imageSrc => {
            const thumbnail = document.createElement('img');
            thumbnail.src = imageSrc;
-           thumbnail.classList.add('w-20', 'h-20', 'rounded', 'cursor-pointer', 'border', 'border-gray-200');
+           thumbnail.classList.add('w-28', 'h-28', 'rounded', 'cursor-pointer', 'border', 'border-gray-200');
            thumbnail.addEventListener('click', () => {
            mainImage.src = imageSrc
             })
@@ -264,7 +264,7 @@ const product = singleProductData;
             colorOptionsContainer.innerHTML = '';
             product.colors.forEach(color => {
              const colorButton = document.createElement('button');
-              colorButton.classList.add('w-6', 'h-6', 'rounded-full', 'cursor-pointer', 'border', 'border-gray-300');
+              colorButton.classList.add('w-10', 'h-10', 'rounded-full', 'cursor-pointer', 'border', 'border-gray-300');
              colorButton.style.backgroundColor = color;
              colorOptionsContainer.appendChild(colorButton);
             });
@@ -287,35 +287,50 @@ const product = singleProductData;
      const reviewElement = document.createElement("div");
           reviewElement.classList.add("review-card");
         
-        let ratingStars = "";
-        for (let i = 0; i < 5; i++) {
-            if (i < review.rating) {
-            ratingStars += '<i class="fa-solid fa-star text-yellow-500"></i>';
-          } else {
-            ratingStars += '<i class="fa-regular fa-star text-gray-400"></i>';
-        }
-      }
+        
 
           reviewElement.innerHTML = `
-             <div class="p-4 bg-white rounded-md border border-[#F0F2F5]">
+             <div class="p-4 bg-[#FCFCFC] rounded-md border border-[#F0F2F5]">
                     <div class="flex items-center space-x-2">
-                      ${ratingStars}
+                      ${getStarRating(review.rating)}
                     </div>
                     <p class="text-gray-600 mt-2 text-sm">${review.text}</p>
                     <div class="mt-2 flex items-center space-x-4">
-                       <p class="text-[#4B5563] font-semibold text-xs ">${review.author}</p>
-                      <span class="text-gray-500 text-xs">Online Shopper</span>
+                       <p class="text-[#4B5563] font-semibold text-base ">${
+                         review.author
+                       }</p>
+                      <p class="text-[#4B5563] text-xs">Online Shopper</p>
                   
                     </div>
                      <div class="mt-2 flex items-center space-x-4">
-                           <button class="text-sm text-[#0EA5E9]">Reply</button>
+                           <button class="text-base text-[#0EA5E9]">Reply</button>
                         <div class="flex items-center space-x-1">
-                             <img src="/assets/icons/love.svg" alt="thumbs" />
-                             <span class="text-gray-700 font-medium">${review.likes}</span>
+                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_111_2063" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+<rect y="0.5" width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_111_2063)">
+<path d="M18 21.5H7V8.5L14 1.5L15.25 2.75C15.3667 2.86667 15.4625 3.025 15.5375 3.225C15.6125 3.425 15.65 3.61667 15.65 3.8V4.15L14.55 8.5H21C21.5333 8.5 22 8.7 22.4 9.1C22.8 9.5 23 9.96667 23 10.5V12.5C23 12.6167 22.9833 12.7417 22.95 12.875C22.9167 13.0083 22.8833 13.1333 22.85 13.25L19.85 20.3C19.7 20.6333 19.45 20.9167 19.1 21.15C18.75 21.3833 18.3833 21.5 18 21.5ZM9 19.5H18L21 12.5V10.5H12L13.35 5L9 9.35V19.5ZM7 8.5V10.5H4V19.5H7V21.5H2V8.5H7Z" fill="#4B5563"/>
+</g>
+</svg>
+
+                             <span class="text-gray-700 font-medium">${
+                               review.likes
+                             }</span>
                          </div>
                           <div class="flex items-center space-x-1">
-                           <img src="/assets/icons/dislike.svg" alt="thumbs" />
-                            <span class="text-gray-700 font-medium">${review.dislikes}</span>
+                           <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_111_2103" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+<rect x="24" y="24.5" width="24" height="24" transform="rotate(180 24 24.5)" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_111_2103)">
+<path d="M6 3.5H17V16.5L10 23.5L8.75 22.25C8.63333 22.1333 8.5375 21.975 8.4625 21.775C8.3875 21.575 8.35 21.3833 8.35 21.2V20.85L9.45 16.5H3C2.46667 16.5 2 16.3 1.6 15.9C1.2 15.5 1 15.0333 1 14.5V12.5C1 12.3833 1.01667 12.2583 1.05 12.125C1.08333 11.9917 1.11667 11.8667 1.15 11.75L4.15 4.7C4.3 4.36666 4.55 4.08333 4.9 3.85C5.25 3.61667 5.61667 3.5 6 3.5ZM15 5.5H6L3 12.5V14.5H12L10.65 20L15 15.65V5.5ZM17 16.5V14.5H20V5.5H17V3.5H22V16.5H17Z" fill="#4B5563"/>
+</g>
+</svg>
+
+                            <span class="text-gray-700 font-medium">${
+                              review.dislikes
+                            }</span>
                           </div>
                       </div>
                 </div>
