@@ -102,16 +102,16 @@ document.addEventListener("DOMContentLoaded", function () {
       productElement.classList.add("group", "relative", "overflow-hidden");
 
       productElement.innerHTML = `
-  <a href="#" class="group block overflow-hidden">
+  <a href="#" class="group block py-3 overflow-hidden">
     <img
       src="${product.image}"
       alt="${product.name}"
        class="w-full h-48 object-cover"
     />
     <div class="mt-1.5">
-    <div class="flex space-x-28">
+    <div class="flex justify-between ">
           <h3 class="text-gray-800 font-semibold text-lg"> ${product.name}</h3>
-          <h3 class="text-gray-800 font-bold text-lg">
+          <h3 class="text-gray-800 mr-8 font-bold text-lg">
             <sup class="text-[12px]">$</sup>${
               product.price
             }<sup class="text-sm">.00</sup>
