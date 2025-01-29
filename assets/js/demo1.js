@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
       productElement.classList.add("group", "relative", "overflow-hidden");
 
       productElement.innerHTML = `
-  <a href="#" class="group block py-3 overflow-hidden">
+  <a href="/demo1/singleProduct.html" class="group block py-3 overflow-hidden">
     <img
       src="${product.image}"
       alt="${product.name}"
@@ -144,7 +144,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  renderProducts(productData);
+  renderProducts(productData.slice(0, 3));
+  //  renderProductDetails(singleProductData);
+
 });
 
 // Search functionality
@@ -158,3 +160,177 @@ function handleSearch(event) {
 
 // Event listener for search
 document.querySelector("#search-input").addEventListener("input", handleSearch);
+
+
+// single product
+const singleProductData = {
+  name: "Nike Blazer Low '77 Vintage",
+  description:
+    "Praised by the streets for its classic simplicity and comfort, the Nike Blazer Low '77 Vintage returns with its low-profile style and heritage b-ball looks.",
+  rating: 4,
+  ratingCount: 121,
+  price: 190.2,
+  discountPrice: 129.99,
+  image: "/assets//images/flow1/product1.svg",
+  images: [
+    "/assets//images/flow1/product1.svg",
+    "/assets//images/flow1/product2.svg",
+    "/assets//images/flow1/product3.svg",
+    "/assets//images/flow1/product4.svg",
+  ],
+  colors: ["white", "pink", "blue", "#FDE8D5", "#E9C890"],
+  sizes: ["37", "38", "39", "41", "42", "43", "44"],
+  reviews: [
+    {
+      author: "Eugene ADAVORE",
+      text: "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.",
+      rating: 4,
+      likes: 123,
+      dislikes: 0,
+    },
+    {
+      author: "Eugene ADAVORE",
+      text: "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.",
+      rating: 4,
+      likes: 123,
+      dislikes: 0,
+    },
+  ],
+  similarProducts: [
+    {
+      name: "Court Heels",
+      description: "Red Stilettos",
+      rating: 5, // You can represent rating as a number (e.g., 1-5)
+      price: 95.0,
+      image: "/assets//images/flow1/product1.svg",
+    },
+    {
+      name: "Court Heels",
+      description: "Red Stilettos",
+      rating: 5,
+      price: 95.0,
+      image: "/assets//images/flow1/product2.svg",
+    },
+    {
+      name: "Court Heels",
+      description: "Red Stilettos",
+      rating: 5,
+      price: 95.0,
+      image: "/assets//images/flow1/product3.svg",
+    },
+  ],
+};
+
+ document.addEventListener('DOMContentLoaded', () => {
+   
+     const product = singleProductData;
+
+    // Function to render product details
+       function renderProductDetails(product) {
+
+            // Main Image
+            const mainImage = document.getElementById('main-product-image');
+            mainImage.src = product.image;
+            mainImage.alt = product.name;
+
+             // Product Name
+          document.getElementById('product-name').textContent = product.name;
+          document.getElementById('product-description').textContent = product.description;
+          document.getElementById('product-price').innerHTML = `<sup class="text-base">$</sup>${product.price}<sup class="text-sm">.00</sup>`;
+          document.getElementById('product-offer-price').innerHTML = ` or <span class="font-bold text-black">$${product.discountPrice}</span> /month`;
+
+          // Product Rating
+             const ratingContainer = document.getElementById('product-rating');
+            let ratingStars = "";
+            for (let i = 0; i < 5; i++) {
+                if (i < product.rating) {
+                    ratingStars += '<i class="fa-solid fa-star text-yellow-500"></i>';
+                } else {
+                    ratingStars += '<i class="fa-regular fa-star text-gray-400"></i>';
+                }
+            }
+            ratingContainer.innerHTML = ratingStars;
+            document.getElementById('product-rating-count').textContent = `(${product.ratingCount})`;
+
+
+            // Thumbnails
+           const thumbnailsContainer = document.querySelector('.space-x-2');
+             thumbnailsContainer.innerHTML = "";
+          product.images.forEach(imageSrc => {
+           const thumbnail = document.createElement('img');
+           thumbnail.src = imageSrc;
+           thumbnail.classList.add('w-20', 'h-20', 'rounded', 'cursor-pointer', 'border', 'border-gray-200');
+           thumbnail.addEventListener('click', () => {
+           mainImage.src = imageSrc
+            })
+           thumbnailsContainer.appendChild(thumbnail);
+          });
+          // Color Options
+          const colorOptionsContainer = document.getElementById('color-options');
+            colorOptionsContainer.innerHTML = '';
+            product.colors.forEach(color => {
+             const colorButton = document.createElement('button');
+              colorButton.classList.add('w-6', 'h-6', 'rounded-full', 'cursor-pointer', 'border', 'border-gray-300');
+             colorButton.style.backgroundColor = color;
+             colorOptionsContainer.appendChild(colorButton);
+            });
+
+        // Size Options
+        const sizeOptionsContainer = document.getElementById('size-options');
+            sizeOptionsContainer.innerHTML = '';
+            product.sizes.forEach(size => {
+                const sizeButton = document.createElement('button');
+                sizeButton.classList.add('px-3', 'py-1', 'rounded-md', 'border', 'border-gray-400', 'hover:bg-gray-100');
+                sizeButton.textContent = size;
+                 sizeOptionsContainer.appendChild(sizeButton);
+           });
+
+
+             // Product Reviews
+    const reviewContainer = document.querySelector("#review");
+        reviewContainer.innerHTML = "";
+     product.reviews.forEach((review) => {
+     const reviewElement = document.createElement("div");
+          reviewElement.classList.add("review-card");
+        
+        let ratingStars = "";
+        for (let i = 0; i < 5; i++) {
+            if (i < review.rating) {
+            ratingStars += '<i class="fa-solid fa-star text-yellow-500"></i>';
+          } else {
+            ratingStars += '<i class="fa-regular fa-star text-gray-400"></i>';
+        }
+      }
+
+          reviewElement.innerHTML = `
+             <div class="p-4 bg-white rounded-md border border-[#F0F2F5]">
+                    <div class="flex items-center space-x-2">
+                      ${ratingStars}
+                    </div>
+                    <p class="text-gray-600 mt-2 text-sm">${review.text}</p>
+                    <div class="mt-2 flex items-center space-x-4">
+                       <p class="text-[#4B5563] font-semibold text-xs ">${review.author}</p>
+                      <span class="text-gray-500 text-xs">Online Shopper</span>
+                  
+                    </div>
+                     <div class="mt-2 flex items-center space-x-4">
+                           <button class="text-sm text-[#0EA5E9]">Reply</button>
+                        <div class="flex items-center space-x-1">
+                             <img src="/assets/icons/love.svg" alt="thumbs" />
+                             <span class="text-gray-700 font-medium">${review.likes}</span>
+                         </div>
+                          <div class="flex items-center space-x-1">
+                           <img src="/assets/icons/dislike.svg" alt="thumbs" />
+                            <span class="text-gray-700 font-medium">${review.dislikes}</span>
+                          </div>
+                      </div>
+                </div>
+         `;
+
+        reviewContainer.appendChild(reviewElement);
+    });
+       }
+
+
+     renderProductDetails(product);
+   });

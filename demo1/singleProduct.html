@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+   <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#F9FAFB]">
+  <header>
+    <div class="bg-sky-500 text-white py-3 px-4 text-center">
+      <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+    </div>
+  </header>
+    <main class="container mx-auto py-6 lg:py-12">
+
+           <nav class=" mb-6 mx-4 text-sm font-medium text-gray-500">
+            <ul class="flex items-center space-x-2">
+                <li><a href="#" class="text-blue-400 hover:underline">Men</a></li>
+                <li><span class="text-gray-500">/</span></li>
+                <li><a href="#" class="text-blue-400 hover:underline">Lifestyle</a></li>
+                <li><span class="text-gray-500">/</span></li>
+                   <li><a href="#" class="text-blue-400 hover:underline">Shoes</a></li>
+                   <li><span class="text-gray-500">/</span></li>
+                   <li><span class="text-gray-600">Nike Blazer Low '77 Vintage</span></li>
+            </ul>
+        </nav>
+       <!-- Product Container -->
+        <div class="flex flex-col lg:flex-row lg:gap-8">
+
+            <!-- Product Image Gallery -->
+            <div class="lg:w-2/5  mx-4">
+                <img id="main-product-image" src="" alt="Main product image" class="w-full rounded-xl"/>
+
+                <div class="flex mt-4  space-x-2">
+                    <!-- Product thumbnails will be rendered here -->
+                </div>
+            </div>
+
+           <!-- Product Details -->
+            <div class="lg:w-3/5 mt-4 lg:mt-0 mx-4">
+                <h1 id="product-name" class="text-2xl font-bold text-gray-900"></h1>
+                <p id="product-description" class="text-gray-600 mt-2"></p>
+               <div class="flex items-center mt-2 space-x-1">
+                   <div id="product-rating" class="flex text-gray-500">
+                        <!-- Product Rating Stars -->
+                    </div>
+                    <span id="product-rating-count" class="text-sm text-[#1D2739] ml-2"></span>
+               </div>
+           
+              <div class="text-gray-600 mt-2">
+                 <p id="product-price" class="text-xl font-bold mt-2">
+                   <!-- product price here -->
+                  </p>
+                <p id="product-offer-price" class="text-gray-600 text-sm">
+                  <!-- product discount price  -->
+                 </p>
+              </div>
+
+                 <div class="mt-4">
+                      <h3 class="font-medium text-sm mb-1">Choose a Color</h3>
+                    <div id="color-options" class="flex space-x-2">
+                     <!-- Color options will be rendered here -->
+                    </div>
+                </div>
+                 <div class="mt-4">
+                 
+                    <h3 class="font-medium text-sm mb-1">Select Size</h3>
+                    <div class="flex flex-wrap gap-1" id="size-options">
+                      <!-- product Size options here -->
+                     </div>
+                    <p class="text-[#0EA5E9] text-sm ml-auto mt-1"> Size Guide </p>
+                </div>
+
+                 <div class="mt-4  items-center ">
+                     <div class="flex justify-between items-center">
+                         <div class="space-x-3 items-center flex" >
+                              <h3 class="font-medium text-sm ">Quantity</h3>
+                          <div class=" flex items-center">
+                                <button id="decrease-qty" class="bg-gray-100 border-gray-300 border rounded-md px-2 py-1">-</button>
+                                 <span id="qty-value" class="mx-2">1</span>
+                                <button id="increase-qty" class="bg-gray-100 border-gray-300 border rounded-md px-2 py-1">+</button>
+                            </div>
+                         </div>
+                             <span class="text-gray-500 text-sm">Only <span>12</span> Items Left! Don't miss it</span>
+                     </div>
+                     <div class="flex mt-2 gap-2">
+                           <button  class="  flex-1 bg-[#0EA5E9] text-white  font-semibold px-4 py-3 rounded-md hover:bg-[#0873AA] transition"> Buy Now </button>
+                            <button class="flex-1 bg-white border border-gray-400 font-semibold px-4 py-3 rounded-md hover:bg-gray-100 transition">Add to Cart</button>
+                       </div>
+                 </div>
+                 <div class="mt-6  border border-gray-400 rounded-md p-3  flex  items-center space-x-2">
+                    <img src="/assets/icons/delivery.svg" alt="delivery" />
+                   <div class="flex-1">
+                     <span class="text-sm font-medium "> Free Delivery</span>
+                       <p class="text-xs">  Enter your Postal Code for Delivery Availability</p>
+                   </div>
+               
+                 </div>
+            </div>
+          
+        </div>
+                <div class="mt-12 mb-4 mx-4 flex items-center space-x-4">
+                        <button class="text-sm text-gray-700  border-b-2 border-[#0EA5E9] pb-1 ">Review</button>
+                        <button class="text-sm text-gray-500 hover:text-gray-700 border-b-2 border-transparent pb-1 ">Product Details</button>
+                      <button class="text-sm text-gray-500 hover:text-gray-700 border-b-2 border-transparent pb-1">Lifestyle</button>
+                </div>
+                 <div id="review" class=" mx-4 space-y-4">
+                    <!-- Product reviews will be rendered here -->
+                 </div>
+          <h2 class="text-2xl font-semibold mt-12 mb-4 mx-4">Similar Items You Might Like</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6" id="product-list">
+              <!-- product list -->
+            </div>
+     </main>
+
+
+    <footer class="bg-[#F9FAFB] ">
+    <div class="container p-6 lg:p-20 mx-auto">
+        <div class="lg:flex gap-x-12">
+            <div class="w-full -mx-6 lg:w-2/5">
+                <div class="px-6">
+                  <div>
+                    <div class="mb-8 flex gap-3 justify-start items-center">
+              <div class="w-12 h-12 rounded-md">
+                <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
+              </div>
+              <h4
+                class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]"
+                style="font-style: italic"
+              >
+                Full Logo Goes Here
+              </h4>
+            </div>
+                    <p class="text-[#344054] mb-4">Be the first to  receive all the recent updates, articles, and valuable materials.</p>
+                    <form id="subscribeForm" class="flex space-x-2">
+                      <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="Enter your email"
+                        class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                      />
+                      <button
+                        type="submit"
+                        class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
+                      >
+                        Subscribe
+                      </button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+            <div class="mt-6 lg:mt-0 lg:flex-1">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div>
+                        <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
+                        <div class="space-y-6">
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service Status</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission roadmap</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
+                      <div class="space-y-6">
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass Payments</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Startups</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Developers</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for No-code</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
+                      </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-gray-700 uppercase dark:text-white">Various Templates</h3>
+                      <div class="space-y-6">
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing Templatess</a>
+                      </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
+
+        <div>
+            <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+        </div>
+    </div>
+</footer>
+   <!-- <script src="/assets/product_data.js"></script> -->
+    <script src="/assets/js/demo1.js"></script>
+</body>
+</html>
