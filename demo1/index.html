@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page demo 1</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
             <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
-       
+       <script src="/assets/script.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -613,20 +613,30 @@ Hefty MasaDetails about the product in question goes here. You have the option t
     </main>
     
 
-     <footer class="bg-white dark:bg-gray-900">
-    <div class="container p-6 mx-auto">
-        <div class="lg:flex">
+      <footer class="bg-[#F9FAFB] ">
+    <div class="container p-6 lg:p-20 mx-auto">
+        <div class="lg:flex gap-x-12">
             <div class="w-full -mx-6 lg:w-2/5">
                 <div class="px-6">
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Subscribe</h3>
-                    <p class="text-gray-600 mb-4">Get the latest updates and offers.</p>
+                    <div class="mb-8 flex gap-3 justify-start items-center">
+              <div class="w-12 h-12 rounded-md">
+                <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
+              </div>
+              <h4
+                class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]"
+                style="font-style: italic"
+              >
+                Full Logo Goes Here
+              </h4>
+            </div>
+                    <p class="text-[#344054] mb-4">Be the first to  receive all the recent updates, articles, and valuable materials.</p>
                     <form id="subscribeForm" class="flex space-x-2">
                       <input
                         type="email"
                         id="emailInput"
                         placeholder="Enter your email"
-                        class="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                        class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
                       />
                       <button
                         type="submit"
@@ -677,11 +687,7 @@ Hefty MasaDetails about the product in question goes here. You have the option t
                       </div>
                     </div>
 
-                    <!-- <div>
-                        <h3 class="text-gray-700 uppercase dark:text-white">Contact</h3>
-                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654 8965</span>
-                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
-                    </div> -->
+                   
                 </div>
             </div>
         </div>
@@ -695,86 +701,6 @@ Hefty MasaDetails about the product in question goes here. You have the option t
 </footer>
 
 
-<footer class="bg-white dark:bg-gray-900">
-    <div class="container p-6 mx-auto">
-        <div class="lg:flex">
-            <div class="w-full -mx-6 lg:w-2/5">
-                <div class="px-6">
-                  <div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Subscribe</h3>
-                    <p class="text-gray-600 mb-4">Get the latest updates and offers.</p>
-                    <form id="subscribeForm" class="flex space-x-2">
-                      <input
-                        type="email"
-                        id="emailInput"
-                        placeholder="Enter your email"
-                        class="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
-                      />
-                      <button
-                        type="submit"
-                        class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
-                      >
-                        Subscribe
-                      </button>
-                    </form>
-                  </div>
-                </div>
-            </div>
-
-            <div class="mt-6 lg:mt-0 lg:flex-1">
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    <div>
-                        <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
-                        <div class="space-y-6">
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service Status</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission roadmap</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
-                      <div class="space-y-6">
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass Payments</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Startups</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Developers</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for No-code</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
-                      </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-gray-700 uppercase dark:text-white">Various Templates</h3>
-                      <div class="space-y-6">
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial Templates</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty Templates</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture Templates</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing Templatess</a>
-                      </div>
-                    </div>
-
-                    <!-- <div>
-                        <h3 class="text-gray-700 uppercase dark:text-white">Contact</h3>
-                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654 8965</span>
-                        <span class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-
-        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
-
-        <div>
-            <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
-        </div>
-    </div>
-</footer>
 
 <script src="../assets/js/script.js"></script>
 </body>

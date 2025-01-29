@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 
-@tailwind base;
-@tailwind components;
+/* @import "tailwindcss/preflight";
 @tailwind utilities;
+@tailwind utilities; */
+ @import "tailwindcss/preflight";
+   @import "tailwindcss/components";
+   @import "tailwindcss/utilities";
 
 *{
     font-family: 'Cabin', sans-serif;
@@ -10,3 +13,4 @@
     padding: 0;
     box-sizing: border-box;
 }
+
