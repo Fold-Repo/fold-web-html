@@ -571,3 +571,39 @@ const product = singleProductData;
 
          updateCartDisplay();
        });
+
+      //  delivery section
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const paymentMethods = document.querySelectorAll(".payment-method");
+        const cardSection = document.getElementById("card-payment-section");
+
+        // Toggle Payment Method Visibility
+        paymentMethods.forEach((input) => {
+          input.addEventListener("change", function () {
+            cardSection.style.display =
+              this.value === "card" ? "block" : "none";
+          });
+        });
+
+        // Update total dynamically based on tax and subtotal
+        const subtotal = parseFloat(
+          document.getElementById("subtotal").textContent.replace("$", "")
+        );
+        const tax = parseFloat(
+          document.getElementById("tax").textContent.replace("$", "")
+        );
+        const shipping = parseFloat(
+          document.getElementById("shipping").textContent.replace("$", "")
+        );
+
+        const totalAmount = subtotal + tax + shipping;
+        document.getElementById(
+          "total-amount"
+        ).textContent = `$${totalAmount.toFixed(2)}`;
+
+        // Update button text dynamically
+        document.getElementById(
+          "pay-button"
+        ).textContent = `Pay $${totalAmount.toFixed(2)}`;
+      });
