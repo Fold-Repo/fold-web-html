@@ -578,6 +578,37 @@ const product = singleProductData;
         const paymentMethods = document.querySelectorAll(".payment-method");
         const cardSection = document.getElementById("card-payment-section");
 
+        // radio button
+         const radioButtons = document.querySelectorAll(
+           'input[name="payment-method"]'
+         );
+         const indicators = document.querySelectorAll(".radio-indicator");
+
+         function updateIndicator(selectedRadioButton) {
+           indicators.forEach((indicator) => {
+             indicator.classList.add("hidden");
+           });
+
+           const correspondingIndicator =
+             selectedRadioButton.nextElementSibling.querySelector(
+               ".radio-indicator"
+             );
+           correspondingIndicator.classList.remove("hidden");
+         }
+
+         radioButtons.forEach((radio) => {
+           radio.addEventListener("change", function () {
+             updateIndicator(this);
+           });
+         });
+         // Initialize the correct indicator on page load
+         const checkedRadio = document.querySelector(
+           'input[name="payment-method"]:checked'
+         );
+         if (checkedRadio) {
+           updateIndicator(checkedRadio);
+         }
+
         // Toggle Payment Method Visibility
         paymentMethods.forEach((input) => {
           input.addEventListener("change", function () {
