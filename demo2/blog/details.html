@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="">
+    <div class="p-6 text-center flex justify-center items-center flex-col">
+        <h1 class="text-4xl font-medium max-w-2xl text-center">Best Products, Best Deals you will find anywhere Globally.</h1>
+        <p class="mt-2 max-w-2xl text-center">Customize the layout, colors, and styles within only a few minutes. Start creating an amazing website right now!</p>
+    </div>
+
+    <div class="container mx-auto mt-8 p-4">
+        <img id="blog-image" class="w-full rounded mt-4" alt="blog image">
+        <div class="flex justify-between items-center pt-14">
+            <h2 id="blog-title" class="text-lg font-semibold"></h2>
+            <p class="text-gray-500" id="blog-date">Tue, 18th June, 2024.</p>
+        </div>
+        <div id="blog-core-content" class="mt-4 leading-loose text-gray-700 space-y-4"></div>
+    </div>
+    
+    <div class="container mx-auto mt-8 p-4">
+        <div class="bg-white p-6 rounded-lg border-[0.5px] border-gray-100 flex flex-col md:flex-row">
+            <img id="blog-image2" class="w-full md:w-1/2 rounded-lg" alt="additional blog image" style="display: none;">
+            <div class="md:ml-6 md:w-1/2">
+                <div id="blog-mini-content" class="text-gray-700 leading-loose space-y-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-10">
+        <h2 class="text-2xl font-semibold text-gray-900">Other Stories</h2>
+        <p class="text-gray-600 mt-2 max-w-2xl text-sm text-[#4B5563]">
+            Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.
+        </p>
+
+        <div id="storiesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+            <!-- Stories will be dynamically inserted here -->
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const selectedBlog = JSON.parse(localStorage.getItem("selectedBlog"));
+            if (selectedBlog) {
+                document.getElementById("blog-title").textContent = selectedBlog.title;
+                document.getElementById("blog-image").src = selectedBlog.image;
+                
+                if (selectedBlog.paragraph1) {
+                    document.getElementById("blog-core-content").innerHTML = selectedBlog.paragraph1.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+                }
+                
+                if (selectedBlog.paragraph2) {
+                    document.getElementById("blog-mini-content").innerHTML = selectedBlog.paragraph2.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+                }
+                
+                if (selectedBlog.image2) {
+                    const blogImage2 = document.getElementById("blog-image2");
+                    blogImage2.src = selectedBlog.image2;
+                    blogImage2.style.display = "block";
+                }
+            } else {
+                window.location.href = 'blog/home.html';
+            }
+        });
+
+
+
+           // Data for stories
+   const stories = [
+    {
+        image: "../../assets/images/more-stories1.svg",
+        title: "Name of Deal goes here.",
+        description: "Details about the product in question goes here. You have the option to now select and buy."
+    },
+    {
+        image: "../../assets/images/more-stories2.svg",
+        title: "Name of Deal goes here.",
+        description: "Details about the product in question goes here. You have the option to now select and buy."
+    },
+    {
+        image: "../../assets/images/more-stories3.svg",
+        title: "Name of Deal goes here.",
+        description: "Details about the product in question goes here. You have the option to now select and buy."
+    },
+    {
+        image: "../../assets/images/more-stories4.svg",
+        title: "Name of Deal goes here.",
+        description: "Details about the product in question goes here. You have the option to now select and buy."
+    }
+];
+
+// Function to load stories dynamically
+function loadStories() {
+    const container = document.getElementById("storiesContainer");
+    stories.forEach(story => {
+        const storyElement = document.createElement("div");
+        storyElement.classList.add("bg-white");
+
+        storyElement.innerHTML = `
+            <img src="${story.image}" alt="Story Image" class="w-full h-40 object-cover rounded-lg">
+            <h3 class="mt-3 text-[#111827] font-semibold text-gray-900">${story.title}</h3>
+            <p class="text-[#4B5563] text-sm mt-1">${story.description}</p>
+        `;
+        container.appendChild(storyElement);
+    });
+}
+
+// Load stories on page load
+window.onload = loadStories;
+    </script>
+</body>
+</html>

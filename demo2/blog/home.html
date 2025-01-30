@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Listing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <!-- <div class="bg-[#030125] text-white p-6 py-32 text-center">
+        <div class="border-4">
+            <h1 class="text-3xl font-bold">Best Products, Best Deals you will find anywhere Globally.</h1>
+            <p class="mt-2">Customize the layout, colors, and styles within only a few minutes. Start creating an amazing website right now!</p>
+        </div>
+        <div class="mt-4border-4">
+            <input type="text" placeholder="Find Latest Updates..." class="p-2 rounded text-black w-1/3">
+            <button class="bg-black text-white px-4 py-2 rounded">Search</button>
+        </div>
+    </div> -->
+    
+    <section class="bg-[#030125] py-32 flex items-center justify-center">
+        <div class="text-white w-[90%] md:w-[80%] lg:w-[70%] flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl font-medium leading-tight">
+                    Best Products, Best Deals you will find <br>
+                    anywhere <span class="text-gray-300">Globally.</span>
+                </h1>
+                <p class="text-gray-100 mt-3">
+                    Customize the layout, colors and styles within only a few minutes. Start creating an amazing website right now!
+                </p>
+            </div>
+            <div class="relative w-full md:w-[50%]">
+                <input 
+                    type="text" 
+                    placeholder="Find Latest Updates..." 
+                    class="w-full p-4 pl-4 pr-20 text-sm rounded-lg text-black focus:outline-none">
+                <button 
+                    class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#111827] text-sm text-white px-5 py-2.5 rounded-md">
+                    Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <div class="container mx-auto mt-8 p-4 space-y-8">
+        <div class="space-y-2">
+            <h2 class="text-xl font-semibold text-[#111827]">Latest News - Blog Update</h2>
+            <p class="text-[#4B5563] max-w-3xl text-sm ">Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.</p>
+        </div>
+<!--         
+        <div id="blog-container" class="grid md:grid-cols-2 gap-6 mt-6"></div> -->
+        <div id="blog-container" class="grid md:grid-cols-3 gap-6"></div>
+    </div>
+
+    <!-- <div class="container mx-auto">
+        <div class="space-y-2 mb-6">
+            <h2 class="text-xl font-semibold text-gray-900">Latest News - Blog Update</h2>
+            <p class="text-gray-600 max-w-3xl">Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.</p>
+        </div>
+        
+        <div id="blog-container" class="grid md:grid-cols-3 gap-6">
+            <div class="md:col-span-2 cursor-pointer">
+                <img src="../../assets/images/blog1.svg" alt="Food Photography" class="w-full rounded-lg">
+                <h3 class="text-lg font-bold mt-2">Amazing Food Photography</h3>
+                <p class="text-gray-600">Details about the product in question goes here. You have the option to now select and buy. <span class="text-blue-600 cursor-pointer">Read more</span></p>
+            </div>
+            <div class="space-y-6">
+                <div class="cursor-pointer">
+                    <img src="../../assets/images/blog2.svg" alt="Vlogging Secrets" class="w-full rounded-lg">
+                    <h3 class="text-lg font-bold mt-2">Vlogging Secrets Revealed</h3>
+                    <p class="text-gray-600">Details about the product in question goes here. You have the option to now select and buy. <span class="text-blue-600 cursor-pointer">Read more</span></p>
+                </div>
+                <div class="cursor-pointer">
+                    <img src="../../assets/images/blog3.svg" alt="Photography Tips" class="w-full rounded-lg">
+                    <h3 class="text-lg font-bold mt-2">Photography Tips for Beginners</h3>
+                    <p class="text-gray-600">Details about the product in question goes here. You have the option to now select and buy. <span class="text-blue-600 cursor-pointer">Read more</span></p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="./index.js"></script>
+</body>
+</html>
