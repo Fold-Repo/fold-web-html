@@ -19,6 +19,7 @@
     />
 </head>
 <body class="">
+
    <!-- header -->
       <header>
     <!-- Top Banner -->
@@ -89,27 +90,27 @@
       </div>
     </nav>
   </header>
-    <main class="container mx-auto py-6 lg:py-12 px-8">
+  <main class="container mx-auto py-6 lg:py-12 px-4 lg:px-8 overflow-hidden">
 
            <nav class=" mb-6 mx-4 text-sm font-medium text-gray-500">
-         <ul class="flex items-center space-x-2">
-             <li><a href="#" class="text-blue-400 hover:underline">Men</a></li>
+         <ul class="flex flex-wrap items-center space-x-2">
+             <li><a href="#" class="text-[#0EA5E9] hover:underline">Men</a></li>
              <li><span class="text-gray-500">/</span></li>
-             <li><a href="#" class="text-blue-400 hover:underline">Lifestyle</a></li>
+             <li><a href="#" class="text-[#0EA5E9] hover:underline">Lifestyle</a></li>
              <li><span class="text-gray-500">/</span></li>
-                <li><a href="#" class="text-blue-400 hover:underline">Shoes</a></li>
+                <li><a href="#" class="text-[#0EA5E9] hover:underline">Shoes</a></li>
                 <li><span class="text-gray-500">/</span></li>
-                <li><span class="text-gray-600">Nike Blazer Low '77 Vintage</span></li>
+                <li><span class="text-[#101928]">Nike Blazer Low '77 Vintage</span></li>
          </ul>
      </nav>
     <!-- Product Container -->
      <div class="flex flex-col lg:flex-row lg:gap-8">
 
          <!-- Product Image Gallery -->
-         <div class="lg:w-2/5  mx-4">
-             <img id="main-product-image" src="" alt="Main product image" class="w-full rounded-xl"/>
+         <div class="lg:w-2/5   mx-4">
+             <img id="main-product-image" src="" alt="Main product image" class="wfull w-full  rounded-xl"/>
 
-             <div class="flex mt-4 flex-wrap space-x-2" id="thumbnails-container">
+             <div class="flex mt-4 flex-wrap justify-between space-x-2" id="thumbnails-container">
                  <!-- Product thumbnails will be rendered here -->
              </div>
          </div>
@@ -142,7 +143,7 @@
                  </div>
              </div>
               <div class="mt-4">
-              <div class="flex justify-between mt-2">
+              <div class="flex justify-between  w-full lg:w-2/3 mt-2">
                   <h3 class="font-medium text-sm mb-1">Select Size</h3>
                   <p class="text-[#98A2B3] text-sm ml-auto "> Size Guide </p>
 
@@ -166,10 +167,10 @@
 </svg>
 </button>
                          </div>
-                         <span class="text-[#667185] w-36 text-sm">Only <span id="qty-left" class="text-[#0EA5E9]"></span>  <span class="text-[#0EA5E9]">Items</span> Left! Don't miss it</span>
+                         <span class="text-[#667185] w-36 text-sm">Only <span id="qty-left" class="text-[#0EA5E9]">12</span>  <span class="text-[#0EA5E9]">Items</span> Left! Don't miss it</span>
                   </div>
                   <div class="flex mt-2 gap-2">
-                        <button  class="   bg-[#0EA5E9] rounded-full text-white  font-semibold px-4 py-3  w-40 hover:bg-[#0873AA] transition"> Buy Now </button>
+                        <button  class="   bg-[#0EA5E9] rounded-full text-white  font-semibold px-4 py-3  w-40 hover:bg-[#0873AA] transition"> <a href="./cart.html">Buy Now </a> </button>
                          <button class=" bg-white border border-[#0EA5E9] text-[#0EA5E9] font-semibold px-4 py-3 rounded-full w-40 hover:bg-gray-100 transition">Add to Cart</button>
                     </div>
               </div>
@@ -201,7 +202,6 @@
          </div>
   </main>
   
- 
   <footer class="bg-[#F9FAFB] ">
     <div class="container p-6 lg:p-20 mx-auto">
         <div class="lg:flex lg:gap-x-12">
@@ -288,5 +288,6 @@
         </div>
     </div>
 </footer>
+ 
 </body>
 </html>

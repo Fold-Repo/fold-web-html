@@ -144,6 +144,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // accordion
+  const accordionItems = document.querySelectorAll(".accordion-item");
+
+  function openAccordion(item) {
+    const content = item.querySelector(".accordion-content");
+    const closeIcon = item.querySelector(".accordion-button .close");
+    const openIcon = item.querySelector(".accordion-button .open");
+
+    content.classList.remove("hidden");
+    closeIcon.classList.remove("hidden");
+    openIcon.classList.add("hidden");
+  }
+
+  function closeAccordion(item) {
+    const content = item.querySelector(".accordion-content");
+    const closeIcon = item.querySelector(".accordion-button .close");
+    const openIcon = item.querySelector(".accordion-button .open");
+
+    content.classList.add("hidden");
+    closeIcon.classList.add("hidden");
+    openIcon.classList.remove("hidden");
+  }
+
+  function toggleAccordion(item) {
+    if (item.querySelector(".accordion-content").classList.contains("hidden")) {
+      accordionItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          closeAccordion(otherItem);
+        }
+      });
+      openAccordion(item);
+    } else {
+      closeAccordion(item);
+    }
+  }
+  accordionItems.forEach((item, index) => {
+    const header = item.querySelector(".accordion-header");
+    header.addEventListener("click", () => toggleAccordion(item));
+    if (index === 0) {
+      openAccordion(item); // Open the first item on page load
+    }
+  });
+
   renderProducts(productData);
 
 });
@@ -279,7 +322,7 @@ const product = singleProductData;
                  sizeOptionsContainer.appendChild(sizeButton);
            });
 
-              document.getElementById('qty-left').textContent = product.qtyLeft;
+              // document.getElementById('qty-left').textContent = product.qtyLeft;
              // Product Reviews
     const reviewContainer = document.querySelector("#review");
         reviewContainer.innerHTML = "";
