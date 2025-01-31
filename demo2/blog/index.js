@@ -317,7 +317,6 @@ if (selectedBlog) {
 }
 
 
-
 //BLOG DETAILS PAGE
 // document.addEventListener("DOMContentLoaded", () => {
 //   const selectedBlog = JSON.parse(localStorage.getItem("selectedBlog"));
@@ -419,4 +418,3 @@ container.appendChild(storyElement);
 
 // Load stories on page load
 // window.onload = loadStories;
-document.addEventListener("DOMContentLoaded", loadStories);
