@@ -88,3 +88,4 @@ document.getElementById('pay-btn').addEventListener('click', function() {
 
     alert('Payment Successful!');
 });
+
