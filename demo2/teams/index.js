@@ -37,7 +37,7 @@ teamMembers.forEach((member) => {
   memberDiv.classList.add("text-center");
   memberDiv.innerHTML = `
                 <img src="${member.image}" alt="${member.name}" class="mx-auto object-cover rounded-lg">
-              <div class="space-y-2">
+              <div class="space-y-2 pl-12 lg:pl-0">
                    <h3 class="mt-4 text-start text-[#111827] font-semibold">${member.name}</h3>
                    <p class="text-[#111827]  text-start">${member.role}</p>
               </div>

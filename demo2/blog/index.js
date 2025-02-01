@@ -317,4 +317,106 @@ if (selectedBlog) {
 }
 
 
-//MORE STORIES
+
+//BLOG DETAILS PAGE
+// document.addEventListener("DOMContentLoaded", () => {
+//   const selectedBlog = JSON.parse(localStorage.getItem("selectedBlog"));
+//   if (selectedBlog) {
+//       document.getElementById("blog-title").textContent = selectedBlog.title;
+//       document.getElementById("blog-image").src = selectedBlog.image;
+      
+//       if (selectedBlog.paragraph1) {
+//           document.getElementById("blog-core-content").innerHTML = selectedBlog.paragraph1.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+//       }
+      
+//       if (selectedBlog.paragraph2) {
+//           document.getElementById("blog-mini-content").innerHTML = selectedBlog.paragraph2.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+//       }
+      
+//       if (selectedBlog.image2) {
+//           const blogImage2 = document.getElementById("blog-image2");
+//           blogImage2.src = selectedBlog.image2;
+//           blogImage2.style.display = "block";
+//       }
+//   } else {
+//       window.location.href = 'blog/home.html';
+//   }
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedBlog = JSON.parse(localStorage.getItem("selectedBlog"));
+
+  if (!selectedBlog) {
+      window.location.href = "blog/home.html";
+      return;
+  }
+
+  const titleElement = document.getElementById("blog-title");
+  const imageElement = document.getElementById("blog-image");
+  const coreContentElement = document.getElementById("blog-core-content");
+  const miniContentElement = document.getElementById("blog-mini-content");
+  const image2Element = document.getElementById("blog-image2");
+
+  if (titleElement) titleElement.textContent = selectedBlog.title;
+  if (imageElement) imageElement.src = selectedBlog.image;
+
+  if (coreContentElement && selectedBlog.paragraph1) {
+      coreContentElement.innerHTML = selectedBlog.paragraph1.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+  }
+
+  if (miniContentElement && selectedBlog.paragraph2) {
+      miniContentElement.innerHTML = selectedBlog.paragraph2.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+  }
+
+  if (image2Element && selectedBlog.image2) {
+      image2Element.src = selectedBlog.image2;
+      image2Element.style.display = "block";
+  }
+});
+
+
+ // Data for stories
+const stories = [
+{
+image: "../../assets/images/more-stories1.svg",
+title: "Name of Deal goes here.",
+description: "Details about the product in question goes here. You have the option to now select and buy."
+},
+{
+image: "../../assets/images/more-stories2.svg",
+title: "Name of Deal goes here.",
+description: "Details about the product in question goes here. You have the option to now select and buy."
+},
+{
+image: "../../assets/images/more-stories3.svg",
+title: "Name of Deal goes here.",
+description: "Details about the product in question goes here. You have the option to now select and buy."
+},
+{
+image: "../../assets/images/more-stories4.svg",
+title: "Name of Deal goes here.",
+description: "Details about the product in question goes here. You have the option to now select and buy."
+}
+];
+
+// Function to load stories dynamically
+function loadStories() {
+  console.log("Loading stories...");
+const container = document.getElementById("storiesContainer");
+stories.forEach(story => {
+const storyElement = document.createElement("div");
+storyElement.classList.add("bg-white");
+
+storyElement.innerHTML = `
+  <img src="${story.image}" alt="Story Image" class="w-full h-40 object-cover rounded-lg">
+  <h3 class="mt-3 text-[#111827] font-semibold text-gray-900">${story.title}</h3>
+  <p class="text-[#4B5563] text-sm mt-1">${story.description}</p>
+`;
+container.appendChild(storyElement);
+});
+}
+
+
+// Load stories on page load
+// window.onload = loadStories;
+document.addEventListener("DOMContentLoaded", loadStories);
