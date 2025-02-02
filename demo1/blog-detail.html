@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail</title>
+ <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+       <script src="/assets/script.js"></script>
+       <script src="/assets/js/demo1.js"></script>
+      <!-- Google Fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body class="">
+
+    <!-- header -->
+      <header>
+    <!-- Top Banner -->
+    <div class="bg-sky-500 text-white py-3 px-4 text-center">
+      <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
+          <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+          <a href="/demo1/about.html" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
+          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+        </div>
+
+        <!-- Desktop Search & Icons -->
+        <div class="hidden lg:flex items-center space-x-6">
+          <div class="relative flex items-center">
+            <input type="text" placeholder="Search" class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
+            <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </div>
+          <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
+            <img src="../../assets/icons/user.svg" alt="User" />
+            <span class="ml-2">Login</span>
+          </a>
+          <button class="flex items-center text-gray-600 hover:text-sky-500">
+            <img src="../../assets/icons/cart.svg" alt="Cart" />
+            <span class="ml-1">0</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuButton" class="lg:hidden text-gray-600">
+          <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+        <div class="flex flex-col space-y-4">
+          <!-- Mobile Search -->
+          <div class="relative">
+            <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </div>
+          <a href="index.html" class="text-sky-500">Home</a>
+          <a href="/demo1/about.html" class="text-gray-600">About us</a>
+          <a href="#" class="text-gray-600">Contact us</a>
+          <a href="#" class="text-gray-600">Wishlist</a>
+          <a href="/demo1/blog.html" class="text-gray-600">Blog</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main class="container mx-auto p-4">
+        <article class="mb-8">
+             <img class="w-full h-auto mb-4 object-cover" src="/assets/images/flow1/blogDetails1.svg" alt="Blog Detail Image" >
+            <div class="relative">
+              <div class="text-gray-700 pt-4">
+                <div class="flex justify-between flex-wrap mb-4">
+                    <h2 class="text-2xl font-bold ">Lorem ipsum dolor sit amet consectetur adipisicing</h2>
+                    <p class="text-base text-[#333333] ">Tue, 29th June, 2024</p>
+
+                </div>
+                 <p class="mb-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quasi commodi hic eligendi assumenda.
+                    Repellendus cumque laudantium, tempore molestias temporibus impedit et eum unde. Quae, vel. Voluptatibus cumque
+                    laudantium, nemo impedit. Animi, porro laboriosam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Accusantium alias assumenda consequatur.
+                </p>
+                <p class="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor nisl ut nunc dictum, eget feugiat
+                    velit volutpat. Donec tristique quam quis ligula placerat, at condimentum justo mollis. Morbi vel lacinia
+                    felis. In hac habitasse platea dictumst. Duis et quam vitae eros pharetra tincidunt. Aliquam erat volutpat.
+                    Aenean commodo ex vel placerat.
+                </p>
+                <p class="mb-4">
+                    Donec vel libero mauris. In vitae lorem lorem. Integer in velit quam. Praesent tempor nisl lectus, a imperdiet
+                    arcu molestie in. Integer et neque id mauris sollicitudin scelerisque nec nec libero. Morbi efficitur orci
+                    quis magna imperdiet, at varius justo tempus pretium. Vivamus viverra, turpis euismod interdum leo, sed
+                    facilisis lacus odio eu nibh. Suspendisse potenti. Praesent convallis erat at leo suscipit finibus.
+                    Suspendisse sit amet ex auctor, convallis urna quis, luctus lorem.
+                </p>
+                <p class="mb-4">
+                    Suspendisse diam nunc, egestas porta dignissim at. Donec maximus nunc quis eros elementum egestas. Vestibulum
+                    volutpat blandit metus in dictum. Suspendisse vel velit nec mi maximus congue. Praesent pulvinar nulla ac
+                    felis iaculis, sit amet elementum justo viverra. Nunc viverra ipsum in erat porttitor. Curabitur vitae
+                    magna eu libero pulvinar luctus. Mauris interdum arcu a dolor placerat, eu tristique est finibus. Maecenas
+                    viverra lorem at quam egestas, non aliquam erat volutpat.
+                </p>
+                 <p class="mb-4">
+                    Nunc vel libero mauris. In vitae lorem lorem. Integer in velit quam. Praesent tempor nisl lectus, a imperdiet
+                    arcu molestie in. Integer et neque id mauris sollicitudin scelerisque nec nec libero. Morbi efficitur orci
+                    quis magna imperdiet, at varius justo tempus pretium. Vivamus viverra, turpis euismod interdum leo, sed
+                    facilisis lacus odio eu nibh. Suspendisse potenti. Praesent convallis erat at leo suscipit finibus.
+                    Suspendisse sit amet ex auctor, convallis urna quis, luctus lorem.
+                </p>
+                <p class="mb-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quasi commodi hic eligendi assumenda.
+                    Repellendus cumque laudantium, tempore molestias temporibus impedit et eum unde. Quae, vel. Voluptatibus cumque
+                    laudantium, nemo impedit. Animi, porro laboriosam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Accusantium alias assumenda consequatur.
+                </p>
+                 <p class="mb-4">
+                    Suspendisse diam nunc, egestas porta dignissim at. Donec maximus nunc quis eros elementum egestas. Vestibulum
+                    volutpat blandit metus in dictum. Suspendisse vel velit nec mi maximus congue. Praesent pulvinar nulla ac
+                    felis iaculis, sit amet elementum justo viverra. Nunc viverra ipsum in erat porttitor. Curabitur vitae
+                    magna eu libero pulvinar luctus. Mauris interdum arcu a dolor placerat, eu tristique est finibus. Maecenas
+                    viverra lorem at quam egestas, non aliquam erat volutpat.
+                </p>
+              </div>
+             </div>
+          </article>
+
+           <article class="mb-8 mt-24 flex flex-col justify-center lg:flex-row">
+               <img class="wauto w-full lg:w-[40%] h-full object-cover mr-4" src="/assets/images/flow1/blogDetails2.svg" alt="Blog Detail Image">
+               <div class="lg:w-[50%]" >
+                    <p class="mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quasi commodi hic eligendi assumenda.
+                        Repellendus cumque laudantium, tempore molestias temporibus impedit et eum unde. Quae, vel. Voluptatibus cumque
+                        laudantium, nemo impedit. Animi, porro laboriosam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Accusantium alias assumenda consequatur.
+                    </p>
+                     <p class="mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quasi commodi hic eligendi assumenda.
+                        Repellendus cumque laudantium, tempore molestias temporibus impedit et eum unde. Quae, vel. Voluptatibus cumque
+                        laudantium, nemo impedit. Animi, porro laboriosam, quas. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Accusantium alias assumenda consequatur.
+                    </p>
+                 </div>
+            </article>
+
+             <article class="mb-8 ">
+                
+                 <img class="w-full h-full object-cover"  src="/assets/images/flow1/blogDetails3.svg" alt="Blog Detail Image">
+            </article>
+
+
+            <section class="mb-12 bg-[#F9FAFB] pb-4" id="blog-details-container">
+                 <!-- other sroties -->
+               
+            </section>
+    </main>
+
+
+    <footer class="bg-[#F9FAFB] ">
+    <div class="container p-6 lg:p-20 mx-auto">
+        <div class="lg:flex lg:gap-x-12">
+            <div class="w-full -mx-6 lg:w-2/5">
+                <div class="px-6">
+                  <div>
+                    <div class="mb-8 flex gap-3 justify-start items-center">
+              <div class="w-12 h-12 rounded-md">
+                <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
+              </div>
+              <h4
+                class="text-[#0EA5E9] font-medium text-md lg:text-[24px] leading-[29.16px]"
+                style="font-style: italic"
+              >
+                Full Logo Goes Here
+              </h4>
+            </div>
+                    <p class="text-[#344054] mb-4">Be the first to  receive all the recent updates, articles, and valuable materials.</p>
+                    <form id="subscribeForm" class="flex flex-wrap space-y-1 space-x-2">
+                      <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="Enter your email"
+                        class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                      />
+                      <button
+                        type="submit"
+                        class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
+                      >
+                        Subscribe
+                      </button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+            <div class="mt-6 lg:mt-0 lg:flex-1">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <div>
+                        <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
+                        <div class="space-y-6">
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service Status</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission roadmap</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
+                      <div class="space-y-6">
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass Payments</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Startups</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Developers</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for No-code</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
+                      </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-gray-700 uppercase dark:text-white">Various Templates</h3>
+                      <div class="space-y-6">
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing Templatess</a>
+                      </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
+
+        <div>
+            <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
