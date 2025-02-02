@@ -1008,22 +1008,22 @@ document.addEventListener("DOMContentLoaded", function () {
             const teamContainer = document.getElementById("team-container");
 
             const teamMembers = [
-                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "https://source.unsplash.com/200x200/?person1" },
-                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "https://source.unsplash.com/200x200/?person2" },
-                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "https://source.unsplash.com/200x200/?person3" },
-                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "https://source.unsplash.com/200x200/?person4" },
-                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "https://source.unsplash.com/200x200/?person5" },
-                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "https://source.unsplash.com/200x200/?person6" }
+                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "/assets/images/team-member1.svg" },
+                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "/assets/images/team-member2.svg" },
+                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "/assets/images/team-member3.svg" },
+                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "/assets/images/team-member4.svg" },
+                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "/assets/images/team-member2.svg" },
+                { name: "Patrick Omokhigo", role: "Head of Marketing and Sales", img: "/assets/images/team-member1.svg" }
             ];
 
             teamMembers.forEach(member => {
                 const teamCard = document.createElement("div");
-                teamCard.classList.add("bg-white", "rounded-lg", "shadow-md", "overflow-hidden", "text-center", "p-4");
+                teamCard.classList.add( "rounded-lg",  "overflow-hidden", "text-start", "py-4");
 
                 const img = document.createElement("img");
                 img.src = member.img;
                 img.alt = member.name;
-                img.classList.add("w-32", "h-32", "rounded-full", "mx-auto");
+                img.classList.add('w-full',  "rounded-lg",);
 
                 const name = document.createElement("h3");
                 name.classList.add("font-bold", "mt-2");
