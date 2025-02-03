@@ -7,63 +7,63 @@ const productData = [
     description: "Red Stilettos",
     rating: 5, // You can represent rating as a number (e.g., 1-5)
     price: 95.0,
-    image: "/assets//images/flow1/product1.svg",
+    image: "/assets//images/demo1/product1.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product2.svg",
+    image: "/assets//images/demo1/product2.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product3.svg",
+    image: "/assets//images/demo1/product3.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product4.svg",
+    image: "/assets//images/demo1/product4.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product5.svg",
+    image: "/assets//images/demo1/product5.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product6.svg",
+    image: "/assets//images/demo1/product6.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product7.svg",
+    image: "/assets//images/demo1/product7.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product8.svg",
+    image: "/assets//images/demo1/product8.svg",
   },
   {
     name: "Court Heels",
     description: "Red Stilettos",
     rating: 5,
     price: 95.0,
-    image: "/assets//images/flow1/product9.svg",
+    image: "/assets//images/demo1/product9.svg",
   },
 ];
 
@@ -211,12 +211,12 @@ const singleProductData = {
   price: 190.2,
   qtyLeft: 12,
   discountPrice: 129.99,
-  image: "/assets/images/flow1/productdetails.svg",
+  image: "/assets/images/demo1/productdetails.svg",
   images: [
-    "/assets/images/flow1/productDeS1.svg",
-    "/assets/images/flow1/productDeS2.svg",
-    "/assets/images/flow1/productDeS3.svg",
-    "/assets/images/flow1/productDeS4.svg",
+    "/assets/images/demo1/productDeS1.svg",
+    "/assets/images/demo1/productDeS2.svg",
+    "/assets/images/demo1/productDeS3.svg",
+    "/assets/images/demo1/productDeS4.svg",
   ],
   colors: ["#FFFFFF", "#B00074", "#475367", "#FBE2B7", "#FBE2B7"],
   sizes: ["37", "38", "39", "41", "42", "43", "44"],
@@ -242,21 +242,21 @@ const singleProductData = {
       description: "Red Stilettos",
       rating: 5, // You can represent rating as a number (e.g., 1-5)
       price: 95.0,
-      image: "/assets//images/flow1/product1.svg",
+      image: "/assets//images/demo1/product1.svg",
     },
     {
       name: "Court Heels",
       description: "Red Stilettos",
       rating: 5,
       price: 95.0,
-      image: "/assets//images/flow1/product2.svg",
+      image: "/assets//images/demo1/product2.svg",
     },
     {
       name: "Court Heels",
       description: "Red Stilettos",
       rating: 5,
       price: 95.0,
-      image: "/assets//images/flow1/product3.svg",
+      image: "/assets//images/demo1/product3.svg",
     },
   ],
 };
@@ -486,130 +486,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Cart section
 
-const cartData = {
-  items: [
-    {
-      name: "Luka 2 Basketball Shoes",
-      description: "Details about the product in question goes here.",
-      color: "Black",
-      size: "41",
-      price: 15.0,
-      quantity: 1,
-      image: "/assets//images/flow1/product1.svg",
-    },
-    {
-      name: "Nike Air Max 97 SE",
-      description: "Details about the product in question goes here.",
-      color: "White & Pink",
-      size: "39",
-      price: 15.0,
-      quantity: 1,
-      image: "/assets//images/flow1/product2.svg",
-    },
-    {
-      name: "Luka 2 Basketball Shoes",
-      description: "Details about the product in question goes here.",
-      color: "Black",
-      size: "41",
-      price: 15.0,
-      quantity: 1,
-      image: "/assets//images/flow1/product3.svg",
-    },
-    {
-      name: "Nike Air Max 97 SE",
-      description: "Details about the product in question goes here.",
-      color: "White & Pink",
-      size: "39",
-      price: 15.0,
-      quantity: 1,
-      image: "/assets//images/flow1/product4.svg",
-    },
-  ],
-};
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cartItems = cartData.items;
-
   function calculateSubtotal() {
     let subtotal = 0;
-    cartItems.forEach((item) => {
-      subtotal += item.price * item.quantity;
+    document.querySelectorAll(".cart-item").forEach((item) => {
+      const price = parseFloat(
+        item.querySelector(".item-price").textContent.replace("$", "")
+      );
+      const quantity = parseInt(
+        item.querySelector(".item-quantity").textContent
+      );
+      subtotal += price * quantity;
     });
     return subtotal.toFixed(2);
   }
 
   function updateCartDisplay() {
-    const cartItemsContainer = document.getElementById("cart-items-container");
     const subtotalElement = document.getElementById("cart-subtotal");
-    cartItemsContainer.innerHTML = "";
+    if (subtotalElement) {
+      subtotalElement.textContent = `$${calculateSubtotal()}`;
+    }
 
-    cartItems.forEach((item, index) => {
-      const itemElement = document.createElement("div");
-      itemElement.classList.add("rounded-lg", "bg-[#FCFCFC]");
-
-      itemElement.innerHTML = `
-                    <div class="flex flex-col md:flex-row md:items-center w-full p-4 md:space-x-2">
-                        <img src="${item.image}" alt="${
-        item.name
-      }" class="md:w-32 md:h-32 rounded-md object-cover" />
-             <div class='w-full  space-y-2'>
-             <div class='flex flex-wrap justify-between'>
-             <h3 class="text-gray-700 font-medium">${item.name}</h3>
-             <h4 class="font-bold text-gray-900">$${item.price.toFixed(2)}</h4>
-             </div>
-             <p class="text-[#475367] text-sm">Color: ${item.color} </p>
-                             <p class="text-[#475367] text-sm">Size: ${
-                               item.size
-                             }</p>
-                             
-                             <div class="flex items-center justify-between w-full  space-x-4">
-                             
-                                  <div class="flex items-center bg-[#F9FAFB] rounded-full py-3 px-4">
-                                     <button data-index="${index}" class="decrease-qty bg-transparent  rounded-md px-2 py-1"><svg width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.25 0.875C0.904822 0.875 0.625 1.15482 0.625 1.5C0.625 1.84518 0.904822 2.125 1.25 2.125H11.25C11.5952 2.125 11.875 1.84518 11.875 1.5C11.875 1.15482 11.5952 0.875 11.25 0.875H1.25Z" fill="#667185"/>
-</svg>
-</button>
-                                    <span class="mx-2 text-[#F56630]">${
-                                      item.quantity
-                                    }</span>
-                                    <button data-index="${index}" class="increase-qty bg-transparent  rounded-md px-2 py-1"><svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.875 1.5C6.875 1.15482 6.59518 0.875 6.25 0.875C5.90482 0.875 5.625 1.15482 5.625 1.5V5.875H1.25C0.904822 5.875 0.625 6.15482 0.625 6.5C0.625 6.84518 0.904822 7.125 1.25 7.125H5.625V11.5C5.625 11.8452 5.90482 12.125 6.25 12.125C6.59518 12.125 6.875 11.8452 6.875 11.5V7.125H11.25C11.5952 7.125 11.875 6.84518 11.875 6.5C11.875 6.15482 11.5952 5.875 11.25 5.875H6.875V1.5Z" fill="#F56630"/>
-</svg>
-</button>
-                                 </div>
-                                  <button class="text-gray-400  hover:text-red-500">
-                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32-.02c-1.172.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                                </svg>
-    
-                              </button>
-                             </div>
-                               </div>
-                               
-                         </div>
-                           
-                        `;
-      cartItemsContainer.appendChild(itemElement);
-    });
-
-    // Update subtotal
-    subtotalElement.textContent = `$${calculateSubtotal()}`;
-
-    const increaseQtyButtons = document.querySelectorAll(".increase-qty");
-    increaseQtyButtons.forEach((button) => {
+    document.querySelectorAll(".increase-qty").forEach((button) => {
       button.addEventListener("click", () => {
-        const index = parseInt(button.getAttribute("data-index"));
-        cartItems[index].quantity++;
+        const itemContainer = button.closest(".cart-item");
+        const quantityElement = itemContainer.querySelector(".item-quantity");
+        let quantity = parseInt(quantityElement.textContent);
+        quantity++;
+        quantityElement.textContent = quantity;
         updateCartDisplay();
       });
     });
 
-    const decreaseQtyButtons = document.querySelectorAll(".decrease-qty");
-    decreaseQtyButtons.forEach((button) => {
+    document.querySelectorAll(".decrease-qty").forEach((button) => {
       button.addEventListener("click", () => {
-        const index = parseInt(button.getAttribute("data-index"));
-        if (cartItems[index].quantity > 1) {
-          cartItems[index].quantity--;
+        const itemContainer = button.closest(".cart-item");
+        const quantityElement = itemContainer.querySelector(".item-quantity");
+        let quantity = parseInt(quantityElement.textContent);
+        if (quantity > 1) {
+          quantity--;
+          quantityElement.textContent = quantity;
           updateCartDisplay();
         }
       });
@@ -618,6 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCartDisplay();
 });
+
 
 //  delivery section
 
@@ -688,19 +607,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Image data arrays for carousel and blog previews
   const carouselImages = [
     {
-      url: "/assets/images/flow1/carouselImage1.svg",
+      url: "/assets/images/demo1/carouselImage1.svg",
       title: "A Latest Article that was Publish on the Blog",
       description:
         "A short description about image and article, details or synopsis stories, short learning or something.",
     },
     {
-      url: "/assets/images/flow1/blogImage1.svg",
+      url: "/assets/images/demo1/blogImage1.svg",
       title: "A Latest Article that was Publish on the Blog",
       description:
         "A short description about image and article, details or synopsis stories, short learning or something.",
     },
     {
-      url: "/assets/images/flow1/blogImage2.svg",
+      url: "/assets/images/demo1/blogImage2.svg",
       title: "A Latest Article that was Publish on the Blog",
       description:
         "A short description about image and article, details or synopsis stories, short learning or something.",
@@ -709,37 +628,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const blogPreviews = [
     {
-      url: "/assets/images/flow1/blogImage1.svg",
+      url: "/assets/images/demo1/blogImage1.svg",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      url: "/assets/images/flow1/blogImage2.svg",
+      url: "/assets/images/demo1/blogImage2.svg",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      url: "/assets/images/flow1/blogImage3.svg",
+      url: "/assets/images/demo1/blogImage3.svg",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      url: "/assets/images/flow1/blogImage4.svg",
+      url: "/assets/images/demo1/blogImage4.svg",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      url: "/assets/images/flow1/blogImage5.svg",
+      url: "/assets/images/demo1/blogImage5.svg",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      url: "/assets/images/flow1/blogImage6.svg",
+      url: "/assets/images/demo1/blogImage6.svg",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
@@ -901,28 +820,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // Data for Other Stories
   const otherStories = [
     {
-      imgSrc: "/assets/images/flow1/otherImg1.svg",
+      imgSrc: "/assets/images/demo1/otherImg1.svg",
       alt: "Other Story 1",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      imgSrc: "/assets/images/flow1/otherImg2.svg",
+      imgSrc: "/assets/images/demo1/otherImg2.svg",
       alt: "Other Story 2",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      imgSrc: "/assets/images/flow1/otherImg3.svg",
+      imgSrc: "/assets/images/demo1/otherImg3.svg",
       alt: "Other Story 3",
       title: "Name of Deal goes here",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
     },
     {
-      imgSrc: "/assets/images/flow1/otherImg4.svg",
+      imgSrc: "/assets/images/demo1/otherImg4.svg",
       alt: "Other Story 4",
       title: "Name of Deal goes here",
       description:
