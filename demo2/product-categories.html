@@ -1,106 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-commerce Products</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
-      .dropdown-content.show {
-        display: block;
-      }
 
-      .dropdown-content {
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Products</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content.show {
+      display: block;
+    }
+
+    .dropdown-content {
       display: none;
       position: absolute;
       z-index: 50;
     }
-    
+
     .dropdown-content.show {
       display: block;
     }
-    
-    </style>
-  </head>
-  <body class="bg-gray-50">
-    <header class="mb-4">
-        <!-- Top Banner -->
-        <div class="bg-sky-500 text-white py-3 px-4 text-center">
-          <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <header class="mb-4">
+    <!-- Top Banner -->
+    <div class="bg-sky-500 text-white py-3 px-4 text-center">
+      <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
+          <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
         </div>
-    
-        <!-- Navigation -->
-        <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
-          <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center">
-              <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
-              <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
-            </div>
-    
-            <!-- Desktop Navigation Links -->
-            <div class="hidden lg:flex items-center space-x-8">
-              <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
-              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
-              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
-              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
-              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
-            </div>
-    
-            <!-- Desktop Search & Icons -->
-            <div class="hidden lg:flex items-center space-x-6">
-              <div class="relative flex items-center">
-                <input type="text" placeholder="Search" class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
-                <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21 21l-4.35-4.35"></path>
-                </svg>
-              </div>
-              <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
-                <img src="../../assets/icons/user.svg" alt="User" />
-                <span class="ml-2">Login</span>
-              </a>
-              <button class="flex items-center text-gray-600 hover:text-sky-500">
-                <img src="../../assets/icons/cart.svg" alt="Cart" />
-                <span class="ml-1">0</span>
-              </button>
-            </div>
-    
-            <!-- Mobile Menu Button -->
-            <button id="menuButton" class="lg:hidden text-gray-600">
-              <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
+          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+        </div>
+
+        <!-- Desktop Search & Icons -->
+        <div class="hidden lg:flex items-center space-x-6">
+          <div class="relative flex items-center">
+            <input type="text" placeholder="Search"
+              class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
+            <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </div>
+          <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
+            <img src="../../assets/icons/user.svg" alt="User" />
+            <span class="ml-2">Login</span>
+          </a>
+          <button class="flex items-center text-gray-600 hover:text-sky-500">
+            <img src="../../assets/icons/cart.svg" alt="Cart" />
+            <span class="ml-1">0</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuButton" class="lg:hidden text-gray-600">
+          <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+        <div class="flex flex-col space-y-4">
+          <!-- Mobile Search -->
+          <div class="relative">
+            <input type="text" placeholder="Search"
+              class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor"
+              viewBox="0 0 24 24">
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </div>
+          <a href="index.html" class="text-sky-500">Home</a>
+          <a href="#" class="text-gray-600">About us</a>
+          <a href="#" class="text-gray-600">Contact us</a>
+          <a href="#" class="text-gray-600">Wishlist</a>
+          <a href="#" class="text-gray-600">Chat</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="flex  overflow-hidden flex-col md:flex-row md:gap-x-12 p-2 md:p-6">
+    <div class="p-4 lg:w-2/7 pl-0">
+      <!-- Start of bread crumb  -->
+      <div class="breadcrumb">
+        <div class="py-2">
+          <nav class="container mx-auto">
+            <ul class="flex items-center font-medium text-sm space-x-2">
+              <li><a href="#" class="text-[#0EA5E9] hover:underline">Home</a></li>
+              <li><span class="text-gray-500">/</span></li>
+              <li><a href="#" class="text-[#0EA5E9] hover:underline">Women</a></li>
+              <li><span class="text-gray-500">/</span></li>
+              <li><span class="text-[#667185] ">Lifestyle</span></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- End of breadcrumb -->
+
+      <!-- start nav -->
+      <h2 class="text-2xl font-semibold mb-4">Lifestyle</h2>
+      <div class="relative mb-4  rounded-md">
+        <input type="text" placeholder="Search items.." id="search-input"
+          class="  px-8 py-2 border border-[#D0D5DD] rounded-md w-full space-x-3 focus:outline-none focus:ring focus:border-blue-300">
+
+        <img src="/assets/icons/search.svg" class="w-4 h-4 absolut inset-1  left-3 ml-1 transform -translate-y-7" />
+      </div>
+
+      <div class="hidden md:block">
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-2">
+            <h3 class="text-sm text-[#101928]">Clothing</h3>
+            <button class="focus:outline-none">
+
+              <!-- <img src="/assets/icons/close.svg" alt="close" /> -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
+
+
             </button>
           </div>
-    
-          <!-- Mobile Menu -->
-          <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
-            <div class="flex flex-col space-y-4">
-              <!-- Mobile Search -->
-              <div class="relative">
-                <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
-                <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21 21l-4.35-4.35"></path>
-                </svg>
-              </div>
-              <a href="index.html" class="text-sky-500">Home</a>
-              <a href="#" class="text-gray-600">About us</a>
-              <a href="#" class="text-gray-600">Contact us</a>
-              <a href="#" class="text-gray-600">Wishlist</a>
-              <a href="#" class="text-gray-600">Chat</a>
-            </div>
+          <div class="flex flex-wrap gap-2 text-[#4B5563] text-sm">
+            <a href="#" class="hover:underline">Nike</a>
+            <a href="#" class="hover:underline">Prada</a>
+            <a href="#" class="hover:underline">Valentino</a>
+            <a href="#" class="hover:underline">Eugio</a>
+            <a href="#" class="hover:underline">Celine</a>
+            <a href="#" class="hover:underline">Vogue Vista Couture</a>
+            <a href="#" class="hover:underline">Vintage Vogue</a>
           </div>
-        </nav>
-      </header>
-    <div class="max-w-7xl mx-auto p-4">
+        </div>
+
+        <div class="mb-2">
+          <div class="flex justify-between items-center py-2 border-t border-[#F0F2F5]">
+            <h3 class="text-sm font-medium">Bags</h3>
+            <button class="focus:outline-none">
+              <img src="/assets/icons/pluse.svg" alt="pluse" />
+            </button>
+          </div>
+        </div>
+        <div class="mb-2">
+          <div class="flex justify-between items-center py-2 border-t border-[#F0F2F5]">
+            <h3 class="text-sm font-medium">Accessories</h3>
+            <button class="focus:outline-none">
+              <img src="/assets/icons/pluse.svg" alt="pluse" />
+            </button>
+          </div>
+        </div>
+        <div class="mb-2">
+          <div class="flex justify-between items-center py-2 border-t border-[#F0F2F5]">
+            <h3 class="text-sm font-medium">Headwears</h3>
+            <button class="focus:outline-none">
+              <img src="/assets/icons/pluse.svg" alt="pluse" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End nav  -->
+
+
+
+    </div>
+    <div class="container mx-auto px-4 py-8 ">
       <h1 class="text-2xl font-medium text-[#111827] mb-4">Get the best available always.</h1>
       <p class="text-[#111827] mb-6 leading-relaxed max-w-2xl">
         Details about the product in question goes here. You have the option to
@@ -112,401 +202,624 @@
       <div class="flex flex-wrap gap-4 mb-8">
         <!-- Category Filter -->
         <div class="relative">
-          <button
-            onclick="toggleDropdown('categoryDropdown')"
-            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white"
-          >
+          <button onclick="toggleDropdown('categoryDropdown')"
+            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white">
             <span id="categoryBtn">All Category</span>
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div
-            id="categoryDropdown"
-            class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white"
-          >
-            <a
-              href="#"
-              class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('category', 'All Category')"
-              >All Category</a
-            >
-            <a
-              href="#"
-               class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('category', 'Male Clothing')"
-              >Male Clothing</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('category', 'Female Clothing')"
-              >Female Clothing</a
-            >
+          <div id="categoryDropdown" class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('category', 'All Category')">All Category</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('category', 'Male Clothing')">Male Clothing</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('category', 'Female Clothing')">Female Clothing</a>
           </div>
         </div>
 
         <!-- Colors Filter -->
         <div class="relative">
-          <button
-            onclick="toggleDropdown('colorsDropdown')"
-            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white"
-          >
+          <button onclick="toggleDropdown('colorsDropdown')"
+            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white">
             <span id="colorsBtn">All Colours</span>
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div
-            id="colorsDropdown"
-            class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white"
-          >
-            <a
-              href="#"
-               class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('colors', 'All Colours')"
-              >All Colours</a
-            >
-            <a
-              href="#"
-               class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('colors', 'Brown')"
-              >Brown</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('colors', 'Black')"
-              >Black</a
-            >
+          <div id="colorsDropdown" class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('colors', 'All Colours')">All Colours</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('colors', 'Brown')">Brown</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('colors', 'Black')">Black</a>
           </div>
         </div>
 
         <!-- Features Filter -->
         <div class="relative">
-          <button
-            onclick="toggleDropdown('featuresDropdown')"
-            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white"
-          >
+          <button onclick="toggleDropdown('featuresDropdown')"
+            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white">
             <span id="featuresBtn">All Features</span>
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div
-            id="featuresDropdown"
-            class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white"
-          >
-            <a
-              href="#"
-               class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('features', 'All Features')"
-              >All Features</a
-            >
-            <a
-              href="#"
-               class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('features', 'Leather')"
-              >Leather</a
-            >
-            <a
-              href="#"
-               class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('features', 'Premium')"
-              >Premium</a
-            >
+          <div id="featuresDropdown" class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('features', 'All Features')">All Features</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('features', 'Leather')">Leather</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('features', 'Premium')">Premium</a>
           </div>
         </div>
 
         <!-- Price Filter -->
         <div class="relative">
-          <button
-            onclick="toggleDropdown('priceDropdown')"
-            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white"
-          >
+          <button onclick="toggleDropdown('priceDropdown')"
+            class="flex items-center justify-between rounded-full border-[#0EA5E9] w-48 px-4 py-3 text-left border bg-white">
             <span id="priceBtn">N10k - 100k</span>
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          <div
-            id="priceDropdown"
-            class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white"
-          >
-            <a
-              href="#"
-              class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('price', 'N10k - 100k')"
-              >N10k - 100k</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('price', 'N100k - 200k')"
-              >N100k - 200k</a
-            >
-            <a
-              href="#"
-              class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
-              onclick="updateFilter('price', 'N200k+')"
-              >N200k+</a
-            >
+          <div id="priceDropdown" class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-48 mt-1 border bg-white">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('price', 'N10k - 100k')">N10k - 100k</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('price', 'N100k - 200k')">N100k - 200k</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+              onclick="updateFilter('price', 'N200k+')">N200k+</a>
           </div>
         </div>
       </div>
 
       <!-- Products Grid -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        id="productsGrid"
-      >
-        <!-- Product cards will be inserted here by JavaScript -->
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 pr-0">
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product-listing1.svg" alt="Premium Leather"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Premium Leather</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: green"></div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product-listing2.svg" alt="Luxury Travel Set"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Luxury Travel Set</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: black"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product-listing4.svg" alt="Classic Watch Collection"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Classic Watch Collection</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product-listing5.svg" alt="Classic Watch Collection"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Classic Watch Collection</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product-listing6.svg" alt="Classic Watch Collection"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Classic Watch Collection</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product-listing7.svg" alt="Classic Watch Collection"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Classic Watch Collection</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product4.svg" alt="Classic Watch Collection"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Classic Watch Collection</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product5.svg" alt="Classic Watch Collection"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Classic Watch Collection</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden">
+          <img src="../assets/images/demo2/products/product-listing7.svg" alt="Classic Watch Collection"
+            class="w-full rounded-lg object-cover">
+          <div class="py-4">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold mb-2">Classic Watch Collection</h3>
+              <button
+                class="flex cursor-pointer items-center justify-center font-semibold text-base text-white bg-[#0EA5E9] px-3 py-1 rounded-full transition-colors duration-200">Buy
+                Now
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+                    height="34">
+                    <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9"></rect>
+                  </mask>
+                  <g mask="url(#mask0_67_10470)">
+                    <path
+                      d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                      fill="white"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <p class="text-gray-800 mb-4">N100,000.00</p>
+            <div class="flex gap-2 mb-4">
+
+              <div class="w-4 h-4 rounded-full" style="background-color: blue"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: brown"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: purple"></div>
+
+              <div class="w-4 h-4 rounded-full" style="background-color: yellow"></div>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <footer class="bg-[#F9FAFB] ">
-      <div class="container p-6 lg:p-20 mx-auto">
-          <div class="lg:flex gap-x-12">
-              <div class="w-full -mx-6 lg:w-2/5">
-                  <div class="px-6">
-                    <div>
-                      <div class="mb-8 flex gap-3 justify-start items-center">
+
+  <footer class="bg-[#F9FAFB] ">
+    <div class="container p-6 lg:p-20 mx-auto">
+      <div class="lg:flex gap-x-12">
+        <div class="w-full -mx-6 lg:w-2/5">
+          <div class="px-6">
+            <div>
+              <div class="mb-8 flex gap-3 justify-start items-center">
                 <div class="w-12 h-12 rounded-md">
                   <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
                 </div>
-                <h4
-                  class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]"
-                  style="font-style: italic"
-                >
+                <h4 class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]" style="font-style: italic">
                   Full Logo Goes Here
                 </h4>
               </div>
-                      <p class="text-[#344054] mb-4">Be the first to  receive all the recent updates, articles, and valuable materials.</p>
-                      <form id="subscribeForm" class="flex space-x-2">
-                        <input
-                          type="email"
-                          id="emailInput"
-                          placeholder="Enter your email"
-                          class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
-                        />
-                        <button
-                          type="submit"
-                          class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
-                        >
-                          Subscribe
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-              </div>
-  
-              <div class="mt-6 lg:mt-0 lg:flex-1">
-                  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                      <div>
-                          <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
-                          <div class="space-y-6">
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service Status</a>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission roadmap</a>
-                            <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
-                          </div>
-                      </div>
-  
-                      <div>
-                          <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
-                        <div class="space-y-6">
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass Payments</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Startups</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Developers</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for No-code</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
-                        </div>
-                      </div>
-  
-                      <div>
-                          <h3 class="text-gray-700 uppercase dark:text-white">Various Templates</h3>
-                        <div class="space-y-6">
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial Templates</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty Templates</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture Templates</a>
-                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing Templatess</a>
-                        </div>
-                      </div>
-  
-                     
-                  </div>
-              </div>
+              <p class="text-[#344054] mb-4">Be the first to receive all the recent updates, articles, and valuable
+                materials.</p>
+              <form id="subscribeForm" class="flex space-x-2">
+                <input type="email" id="emailInput" placeholder="Enter your email"
+                  class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+                <button type="submit" class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600">
+                  Subscribe
+                </button>
+              </form>
+            </div>
           </div>
-  
-          <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
-  
-          <div>
-              <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+        </div>
+
+        <div class="mt-6 lg:mt-0 lg:flex-1">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div>
+              <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
+              <div class="space-y-6">
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service
+                  Status</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission
+                  roadmap</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
+              <div class="space-y-6">
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass
+                  Payments</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
+                  Startups</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
+                  Developers</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
+                  No-code</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-gray-700 uppercase dark:text-white">Various Templates</h3>
+              <div class="space-y-6">
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial
+                  Templates</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty
+                  Templates</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture
+                  Templates</a>
+                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing
+                  Templatess</a>
+              </div>
+            </div>
+
+
           </div>
+        </div>
       </div>
-        </footer>
 
-    <script>
-      // Product data
-      const products = [
-        {
-          id: 1,
-          name: "Premium Leather",
-          price: 100000,
-          image: "../../assets/images/product-listing1.svg",
-          category: "Male Clothing",
-          colors: ["blue", "brown", "purple", "green"],
-          features: ["Leather", "Premium"],
-        },
-        {
-          id: 2,
-          name: "Luxury Travel Set",
-          price: 100000,
-          image: "../../assets/images/product-listing2.svg",
-          category: "Female Clothing",
-          colors: ["blue", "brown", "black", "yellow"],
-          features: ["Premium", "Travel"],
-        },
-        {
-          id: 3,
-          name: "Classic Watch Collection",
-          price: 100000,
-          image: "../../assets/images/product-listing4.svg",
-          category: "Male Clothing",
-          colors: ["blue", "brown", "purple", "yellow"],
-          features: ["Premium", "Leather"],
-        },
-        {
-          id: 4,
-          name: "Classic Watch Collection",
-          price: 100000,
-          image: "../../assets/images/product-listing5.svg",
-          category: "Male Clothing",
-          colors: ["blue", "brown", "purple", "yellow"],
-          features: ["Premium", "Leather"],
-        },
-        {
-          id: 5,
-          name: "Classic Watch Collection",
-          price: 100000,
-          image: "../../assets/images/product-listing6.svg",
-          category: "Male Clothing",
-          colors: ["blue", "brown", "purple", "yellow"],
-          features: ["Premium", "Leather"],
-        },
-        {
-          id: 6,
-          name: "Classic Watch Collection",
-          price: 100000,
-          image: "../../assets/images/product-listing7.svg",
-          category: "Male Clothing",
-          colors: ["blue", "brown", "purple", "yellow"],
-          features: ["Premium", "Leather"],
-        },
-      ];
+      <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
 
-      // Current filter values
-      let currentFilters = {
-        category: "All Category",
-        colors: "All Colours",
-        features: "All Features",
-        price: "N10k - 100k",
-      };
+      <div>
+        <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+      </div>
+    </div>
+  </footer>
 
-      // Toggle dropdown visibility
-      function toggleDropdown(dropdownId) {
-        const dropdown = document.getElementById(dropdownId);
-        // Close all other dropdowns
-        document.querySelectorAll(".dropdown-content").forEach((d) => {
-          if (d.id !== dropdownId) {
-            d.classList.remove("show");
-          }
-        });
-        dropdown.classList.toggle("show");
-      }
+  <!-- <script>
+    // Product data
+    const products = [
+      {
+        id: 1,
+        name: "Premium Leather",
+        price: 100000,
+        image: "../../assets/images/product-listing1.svg",
+        category: "Male Clothing",
+        colors: ["blue", "brown", "purple", "green"],
+        features: ["Leather", "Premium"],
+      },
+      {
+        id: 2,
+        name: "Luxury Travel Set",
+        price: 100000,
+        image: "../../assets/images/product-listing2.svg",
+        category: "Female Clothing",
+        colors: ["blue", "brown", "black", "yellow"],
+        features: ["Premium", "Travel"],
+      },
+      {
+        id: 3,
+        name: "Classic Watch Collection",
+        price: 100000,
+        image: "../../assets/images/product-listing4.svg",
+        category: "Male Clothing",
+        colors: ["blue", "brown", "purple", "yellow"],
+        features: ["Premium", "Leather"],
+      },
+      {
+        id: 4,
+        name: "Classic Watch Collection",
+        price: 100000,
+        image: "../../assets/images/product-listing5.svg",
+        category: "Male Clothing",
+        colors: ["blue", "brown", "purple", "yellow"],
+        features: ["Premium", "Leather"],
+      },
+      {
+        id: 5,
+        name: "Classic Watch Collection",
+        price: 100000,
+        image: "../../assets/images/product-listing6.svg",
+        category: "Male Clothing",
+        colors: ["blue", "brown", "purple", "yellow"],
+        features: ["Premium", "Leather"],
+      },
+      {
+        id: 6,
+        name: "Classic Watch Collection",
+        price: 100000,
+        image: "../../assets/images/product-listing7.svg",
+        category: "Male Clothing",
+        colors: ["blue", "brown", "purple", "yellow"],
+        features: ["Premium", "Leather"],
+      },
+    ];
 
-      // Update filter and refresh products
-      function updateFilter(filterType, value) {
-        currentFilters[filterType] = value;
-        document.getElementById(`${filterType}Btn`).textContent = value;
-        document
-          .getElementById(`${filterType}Dropdown`)
-          .classList.remove("show");
-        renderProducts();
-      }
+    // Current filter values
+    let currentFilters = {
+      category: "All Category",
+      colors: "All Colours",
+      features: "All Features",
+      price: "N10k - 100k",
+    };
 
-      // Filter products based on current filters
-      function filterProducts() {
-        return products.filter((product) => {
-          const categoryMatch =
-            currentFilters.category === "All Category" ||
-            product.category === currentFilters.category;
-          const colorMatch =
-            currentFilters.colors === "All Colours" ||
-            product.colors.includes(currentFilters.colors.toLowerCase());
-          const featureMatch =
-            currentFilters.features === "All Features" ||
-            product.features.includes(currentFilters.features);
-          // Add price filtering logic here if needed
-          return categoryMatch && colorMatch && featureMatch;
-        });
-      }
+    // Toggle dropdown visibility
+    function toggleDropdown(dropdownId) {
+      const dropdown = document.getElementById(dropdownId);
+      // Close all other dropdowns
+      document.querySelectorAll(".dropdown-content").forEach((d) => {
+        if (d.id !== dropdownId) {
+          d.classList.remove("show");
+        }
+      });
+      dropdown.classList.toggle("show");
+    }
 
-      // Render products to the grid
-      function renderProducts() {
-        const filteredProducts = filterProducts();
-        const productsGrid = document.getElementById("productsGrid");
-        productsGrid.innerHTML = filteredProducts
-          .map(
-            (product) => `
+    // Update filter and refresh products
+    function updateFilter(filterType, value) {
+      currentFilters[filterType] = value;
+      document.getElementById(`${filterType}Btn`).textContent = value;
+      document
+        .getElementById(`${filterType}Dropdown`)
+        .classList.remove("show");
+      renderProducts();
+    }
+
+    // Filter products based on current filters
+    function filterProducts() {
+      return products.filter((product) => {
+        const categoryMatch =
+          currentFilters.category === "All Category" ||
+          product.category === currentFilters.category;
+        const colorMatch =
+          currentFilters.colors === "All Colours" ||
+          product.colors.includes(currentFilters.colors.toLowerCase());
+        const featureMatch =
+          currentFilters.features === "All Features" ||
+          product.features.includes(currentFilters.features);
+        // Add price filtering logic here if needed
+        return categoryMatch && colorMatch && featureMatch;
+      });
+    }
+
+    // Render products to the grid
+    function renderProducts() {
+      const filteredProducts = filterProducts();
+      const productsGrid = document.getElementById("productsGrid");
+      productsGrid.innerHTML = filteredProducts
+        .map(
+          (product) => `
                 <div class="overflow-hidden">
-                    <img src="${product.image}" alt="${
-              product.name
+                    <img src="${product.image}" alt="${product.name
             }" class="w-full rounded-lg object-cover">
                     <div class="py-4">
                             <div class="flex justify-between items-center">
@@ -525,33 +838,34 @@
                         <p class="text-gray-800 mb-4">N${product.price.toLocaleString()}.00</p>
                         <div class="flex gap-2 mb-4">
                             ${product.colors
-                              .map(
-                                (color) => `
+              .map(
+                (color) => `
                                 <div class="w-4 h-4 rounded-full" style="background-color: ${color}"></div>
                             `
-                              )
-                              .join("")}
+              )
+              .join("")}
                         </div>
                     </div>
                 </div>
             `
-          )
-          .join("");
+        )
+        .join("");
+    }
+
+    // Close dropdowns when clicking outside
+    window.onclick = function (event) {
+      if (!event.target.matches("button")) {
+        document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+          if (dropdown.classList.contains("show")) {
+            dropdown.classList.remove("show");
+          }
+        });
       }
+    };
 
-      // Close dropdowns when clicking outside
-      window.onclick = function (event) {
-        if (!event.target.matches("button")) {
-          document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
-            if (dropdown.classList.contains("show")) {
-              dropdown.classList.remove("show");
-            }
-          });
-        }
-      };
+    // Initial render
+    renderProducts();
+  </script> -->
+</body>
 
-      // Initial render
-      renderProducts();
-    </script>
-  </body>
 </html>
