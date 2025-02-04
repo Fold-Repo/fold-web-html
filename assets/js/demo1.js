@@ -1,72 +1,5 @@
 // //DEMO  1 SCRIPTS
 
-// example data
-const productData = [
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5, // You can represent rating as a number (e.g., 1-5)
-    price: 95.0,
-    image: "/assets//images/flow1/product1.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product2.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product3.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product4.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product5.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product6.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product7.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product8.svg",
-  },
-  {
-    name: "Court Heels",
-    description: "Red Stilettos",
-    rating: 5,
-    price: 95.0,
-    image: "/assets//images/flow1/product9.svg",
-  },
-];
-
 // Initial render
 
 function getStarRating(rating) {
@@ -85,252 +18,263 @@ function getStarRating(rating) {
   return stars;
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  function renderProducts(productData) {
-    const productGrid = document.querySelector("#product-list");
+ 
+  // accordion
+  const accordionItems = document.querySelectorAll(".accordion-item");
 
-    if (!productGrid) {
-      console.error("Product list container not found!");
-      return;
+  function openAccordion(item) {
+    const content = item.querySelector(".accordion-content");
+    const closeIcon = item.querySelector(".accordion-button .close");
+    const openIcon = item.querySelector(".accordion-button .open");
+
+    content.classList.remove("hidden");
+    closeIcon.classList.remove("hidden");
+    openIcon.classList.add("hidden");
+  }
+
+  function closeAccordion(item) {
+    const content = item.querySelector(".accordion-content");
+    const closeIcon = item.querySelector(".accordion-button .close");
+    const openIcon = item.querySelector(".accordion-button .open");
+
+    content.classList.add("hidden");
+    closeIcon.classList.add("hidden");
+    openIcon.classList.remove("hidden");
+  }
+
+  function toggleAccordion(item) {
+    if (item.querySelector(".accordion-content").classList.contains("hidden")) {
+      accordionItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          closeAccordion(otherItem);
+        }
+      });
+      openAccordion(item);
+    } else {
+      closeAccordion(item);
+    }
+  }
+  accordionItems.forEach((item, index) => {
+    const header = item.querySelector(".accordion-header");
+    header.addEventListener("click", () => toggleAccordion(item));
+    if (index === 0) {
+      openAccordion(item); // Open the first item on page load
+    }
+  });
+
+  renderProducts(productData);
+});
+
+
+
+// Event listener for search not working properly
+// document.querySelector("#search-input").addEventListener("input", handleSearch);
+    
+
+ document.addEventListener("DOMContentLoaded", function () {
+   const tabButtons = document.querySelectorAll(".tab-button");
+   const tabContents = document.querySelectorAll(".tab-content");
+
+   tabButtons.forEach((button) => {
+     button.addEventListener("click", () => {
+       const targetTab = button.getAttribute("data-tab");
+
+       // Remove active styles from all buttons
+       tabButtons.forEach((btn) => {
+         btn.classList.remove("text-gray-700", "border-[#0EA5E9]");
+         btn.classList.add("text-gray-500", "border-transparent");
+       });
+
+       // Hide all tab content
+       tabContents.forEach((content) => content.classList.add("hidden"));
+
+       // Activate clicked tab
+       button.classList.add("text-gray-700", "border-[#0EA5E9]");
+       button.classList.remove("text-gray-500", "border-transparent");
+
+       // Show the corresponding tab content
+       document.getElementById(targetTab).classList.remove("hidden");
+     });
+   });
+ });
+// Cart section
+
+document.addEventListener("DOMContentLoaded", () => {
+  function calculateSubtotal() {
+    let subtotal = 0;
+    document.querySelectorAll(".cart-item").forEach((item) => {
+      const price = parseFloat(
+        item.querySelector(".item-price").textContent.replace("$", "")
+      );
+      const quantity = parseInt(
+        item.querySelector(".item-quantity").textContent
+      );
+      subtotal += price * quantity;
+    });
+    return subtotal.toFixed(2);
+  }
+
+  function updateCartDisplay() {
+    const subtotalElement = document.getElementById("cart-subtotal");
+    if (subtotalElement) {
+      subtotalElement.textContent = `$${calculateSubtotal()}`;
     }
 
-    productGrid.innerHTML = ""; // Clear existing content
+    document.querySelectorAll(".increase-qty").forEach((button) => {
+      button.addEventListener("click", () => {
+        const itemContainer = button.closest(".cart-item");
+        const quantityElement = itemContainer.querySelector(".item-quantity");
+        let quantity = parseInt(quantityElement.textContent);
+        quantity++;
+        quantityElement.textContent = quantity;
+        updateCartDisplay();
+      });
+    });
 
-    productData.forEach((product) => {
-      const productElement = document.createElement("div");
-      productElement.classList.add("group", "relative", "overflow-hidden");
-
-      productElement.innerHTML = `
-  <a href="/demo1/singleProduct.html" class="group block py-3 overflow-hidden">
-    <img
-      src="${product.image}"
-      alt="${product.name}"
-       class="w-full h-48 object-cover"
-    />
-    <div class="mt-1.5">
-    <div class="flex justify-between ">
-          <h3 class="text-gray-800 font-semibold text-lg"> ${product.name}</h3>
-          <h3 class="text-gray-800 mr-8 font-bold text-lg">
-            <sup class="text-[12px]">$</sup>${
-              product.price
-            }<sup class="text-sm">.00</sup>
-          </h3>
-        </div>
-         <p class="text-[#1D2739] text-sm">${product.description}</p>
-         <div class="flex flex-col space-y-2 ">
-          <div>
-            <div class="flex items-center mt-1">
-              
- ${getStarRating(product.rating)}
-              <span class="text-sm text-[#1D2739] ml-2">(91)</span>
-            </div>
-          </div>
-          <button class="inline-flex space-x-1 items-center w-40  border-2 border-[#D0D5DD] text-[#475367] font-semibold px-4 py-2 rounded-full hover:bg-gray-200 transition">
-           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M2.08333 0.833008C1.6231 0.833008 1.25 1.2061 1.25 1.66634C1.25 2.12658 1.6231 2.49967 2.08333 2.49967C2.69035 2.49967 3.22066 2.94074 3.32984 3.56135L3.90141 6.81025L3.90192 6.81312L4.26813 8.85974C4.49716 10.1398 4.68006 11.162 4.9113 11.974C5.14977 12.8114 5.45884 13.5004 5.98376 14.0827C6.3443 14.4827 6.76614 14.825 7.23364 15.0982C7.91088 15.494 8.65747 15.6683 9.54511 15.7517C10.4099 15.833 11.4817 15.833 12.8319 15.833H13.2424C13.8429 15.833 14.338 15.833 14.7459 15.8033C15.1708 15.7724 15.5575 15.7065 15.9327 15.5466C16.4799 15.3133 16.9591 14.9466 17.3221 14.4787C17.5727 14.1556 17.7291 13.7994 17.8574 13.4015C17.9798 13.0218 18.0915 12.5538 18.2256 11.9915L18.2425 11.9206C18.4465 11.0659 18.6131 10.3676 18.6937 9.79739C18.7767 9.21068 18.7858 8.65884 18.5969 8.12693C18.3313 7.37918 17.8086 6.74966 17.1246 6.33955C16.6428 6.05065 16.098 5.93761 15.4935 5.88468C14.9033 5.83299 14.1638 5.833 13.2512 5.83301H5.42175L4.9713 3.27257C4.72412 1.86754 3.51195 0.833008 2.08333 0.833008ZM13.2122 7.49967C14.173 7.49967 14.8393 7.50043 15.3481 7.54499C15.851 7.58903 16.1024 7.66994 16.2676 7.76897C16.628 7.98507 16.8934 8.31044 17.0264 8.68476C17.0843 8.84795 17.1108 9.08806 17.0435 9.56392C16.9751 10.0474 16.8276 10.6693 16.6118 11.574C16.4684 12.1749 16.3713 12.5795 16.2711 12.8901C16.1746 13.1895 16.0921 13.3451 16.0052 13.4571C15.8193 13.6968 15.57 13.8894 15.2791 14.0134C15.139 14.0731 14.955 14.1171 14.6249 14.1411C14.2847 14.1658 13.8504 14.1663 13.2122 14.1663H12.874C11.4724 14.1663 10.4788 14.1655 9.70108 14.0924C8.93732 14.0206 8.45978 13.8844 8.0746 13.6593C7.75362 13.4717 7.46605 13.2378 7.22168 12.9668C6.93152 12.6449 6.71522 12.2233 6.51424 11.5175C6.30866 10.7956 6.13956 9.85618 5.90092 8.52249L5.7179 7.49967H13.2122Z" fill="#475367"/>
-<path d="M8.75 17.2913C8.75 17.8666 8.28363 18.333 7.70833 18.333C7.13304 18.333 6.66667 17.8666 6.66667 17.2913C6.66667 16.716 7.13304 16.2497 7.70833 16.2497C8.28363 16.2497 8.75 16.716 8.75 17.2913Z" fill="#475367"/>
-<path d="M15.2083 18.333C15.7836 18.333 16.25 17.8666 16.25 17.2913C16.25 16.716 15.7836 16.2497 15.2083 16.2497C14.633 16.2497 14.1667 16.716 14.1667 17.2913C14.1667 17.8666 14.633 18.333 15.2083 18.333Z" fill="#475367"/>
-</svg>
-
-
-            <span>Add to Cart</span>
-          </button>
-    </div>
-  </a>
-`;
-
-      productGrid.appendChild(productElement);
+    document.querySelectorAll(".decrease-qty").forEach((button) => {
+      button.addEventListener("click", () => {
+        const itemContainer = button.closest(".cart-item");
+        const quantityElement = itemContainer.querySelector(".item-quantity");
+        let quantity = parseInt(quantityElement.textContent);
+        if (quantity > 1) {
+          quantity--;
+          quantityElement.textContent = quantity;
+          updateCartDisplay();
+        }
+      });
     });
   }
 
-  renderProducts(productData.slice(0, 3));
-  //  renderProductDetails(singleProductData);
-
+  updateCartDisplay();
 });
 
-// Search functionality
-function handleSearch(event) {
-  const searchTerm = event.target.value.toLowerCase();
-  const filteredProducts = productsList.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm)
+
+//  delivery section
+
+document.addEventListener("DOMContentLoaded", function () {
+  const paymentMethods = document.querySelectorAll(".payment-method");
+  const cardSection = document.getElementById("card-payment-section");
+
+  // radio button
+  const radioButtons = document.querySelectorAll(
+    'input[name="payment-method"]'
   );
-  renderProducts(filteredProducts);
-}
+  const indicators = document.querySelectorAll(".radio-indicator");
 
-// Event listener for search
-document.querySelector("#search-input").addEventListener("input", handleSearch);
-
-
-// single product
-const singleProductData = {
-  name: "Nike Blazer Low '77 Vintage",
-  description:
-    "Praised by the streets for its classic simplicity and comfort, the Nike Blazer Low '77 Vintage returns with its low-profile style and heritage b-ball looks.",
-  rating: 4,
-  ratingCount: 121,
-  price: 190.2,
-  discountPrice: 129.99,
-  image: "/assets//images/flow1/product1.svg",
-  images: [
-    "/assets//images/flow1/product1.svg",
-    "/assets//images/flow1/product2.svg",
-    "/assets//images/flow1/product3.svg",
-    "/assets//images/flow1/product4.svg",
-  ],
-  colors: ["white", "pink", "blue", "#FDE8D5", "#E9C890"],
-  sizes: ["37", "38", "39", "41", "42", "43", "44"],
-  reviews: [
-    {
-      author: "Eugene ADAVORE",
-      text: "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.",
-      rating: 4,
-      likes: 123,
-      dislikes: 0,
-    },
-    {
-      author: "Eugene ADAVORE",
-      text: "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.",
-      rating: 4,
-      likes: 123,
-      dislikes: 0,
-    },
-  ],
-  similarProducts: [
-    {
-      name: "Court Heels",
-      description: "Red Stilettos",
-      rating: 5, // You can represent rating as a number (e.g., 1-5)
-      price: 95.0,
-      image: "/assets//images/flow1/product1.svg",
-    },
-    {
-      name: "Court Heels",
-      description: "Red Stilettos",
-      rating: 5,
-      price: 95.0,
-      image: "/assets//images/flow1/product2.svg",
-    },
-    {
-      name: "Court Heels",
-      description: "Red Stilettos",
-      rating: 5,
-      price: 95.0,
-      image: "/assets//images/flow1/product3.svg",
-    },
-  ],
-};
-
- document.addEventListener('DOMContentLoaded', () => {
-   
-     const product = singleProductData;
-
-    // Function to render product details
-       function renderProductDetails(product) {
-
-            // Main Image
-            const mainImage = document.getElementById('main-product-image');
-            mainImage.src = product.image;
-            mainImage.alt = product.name;
-
-             // Product Name
-          document.getElementById('product-name').textContent = product.name;
-          document.getElementById('product-description').textContent = product.description;
-          document.getElementById('product-price').innerHTML = `<sup class="text-base">$</sup>${product.price}<sup class="text-sm">.00</sup>`;
-          document.getElementById('product-offer-price').innerHTML = ` or <span class="font-bold text-black">$${product.discountPrice}</span> /month`;
-
-          // Product Rating
-             const ratingContainer = document.getElementById('product-rating');
-            let ratingStars = "";
-            for (let i = 0; i < 5; i++) {
-                if (i < product.rating) {
-                    ratingStars += '<i class="fa-solid fa-star text-yellow-500"></i>';
-                } else {
-                    ratingStars += '<i class="fa-regular fa-star text-gray-400"></i>';
-                }
-            }
-            ratingContainer.innerHTML = ratingStars;
-            document.getElementById('product-rating-count').textContent = `(${product.ratingCount})`;
-
-
-            // Thumbnails
-           const thumbnailsContainer = document.querySelector('.space-x-2');
-             thumbnailsContainer.innerHTML = "";
-          product.images.forEach(imageSrc => {
-           const thumbnail = document.createElement('img');
-           thumbnail.src = imageSrc;
-           thumbnail.classList.add('w-20', 'h-20', 'rounded', 'cursor-pointer', 'border', 'border-gray-200');
-           thumbnail.addEventListener('click', () => {
-           mainImage.src = imageSrc
-            })
-           thumbnailsContainer.appendChild(thumbnail);
-          });
-          // Color Options
-          const colorOptionsContainer = document.getElementById('color-options');
-            colorOptionsContainer.innerHTML = '';
-            product.colors.forEach(color => {
-             const colorButton = document.createElement('button');
-              colorButton.classList.add('w-6', 'h-6', 'rounded-full', 'cursor-pointer', 'border', 'border-gray-300');
-             colorButton.style.backgroundColor = color;
-             colorOptionsContainer.appendChild(colorButton);
-            });
-
-        // Size Options
-        const sizeOptionsContainer = document.getElementById('size-options');
-            sizeOptionsContainer.innerHTML = '';
-            product.sizes.forEach(size => {
-                const sizeButton = document.createElement('button');
-                sizeButton.classList.add('px-3', 'py-1', 'rounded-md', 'border', 'border-gray-400', 'hover:bg-gray-100');
-                sizeButton.textContent = size;
-                 sizeOptionsContainer.appendChild(sizeButton);
-           });
-
-
-             // Product Reviews
-    const reviewContainer = document.querySelector("#review");
-        reviewContainer.innerHTML = "";
-     product.reviews.forEach((review) => {
-     const reviewElement = document.createElement("div");
-          reviewElement.classList.add("review-card");
-        
-        let ratingStars = "";
-        for (let i = 0; i < 5; i++) {
-            if (i < review.rating) {
-            ratingStars += '<i class="fa-solid fa-star text-yellow-500"></i>';
-          } else {
-            ratingStars += '<i class="fa-regular fa-star text-gray-400"></i>';
-        }
-      }
-
-          reviewElement.innerHTML = `
-             <div class="p-4 bg-white rounded-md border border-[#F0F2F5]">
-                    <div class="flex items-center space-x-2">
-                      ${ratingStars}
-                    </div>
-                    <p class="text-gray-600 mt-2 text-sm">${review.text}</p>
-                    <div class="mt-2 flex items-center space-x-4">
-                       <p class="text-[#4B5563] font-semibold text-xs ">${review.author}</p>
-                      <span class="text-gray-500 text-xs">Online Shopper</span>
-                  
-                    </div>
-                     <div class="mt-2 flex items-center space-x-4">
-                           <button class="text-sm text-[#0EA5E9]">Reply</button>
-                        <div class="flex items-center space-x-1">
-                             <img src="/assets/icons/love.svg" alt="thumbs" />
-                             <span class="text-gray-700 font-medium">${review.likes}</span>
-                         </div>
-                          <div class="flex items-center space-x-1">
-                           <img src="/assets/icons/dislike.svg" alt="thumbs" />
-                            <span class="text-gray-700 font-medium">${review.dislikes}</span>
-                          </div>
-                      </div>
-                </div>
-         `;
-
-        reviewContainer.appendChild(reviewElement);
+  function updateIndicator(selectedRadioButton) {
+    indicators.forEach((indicator) => {
+      indicator.classList.add("hidden");
     });
-       }
+
+    const correspondingIndicator =
+      selectedRadioButton.nextElementSibling.querySelector(".radio-indicator");
+    correspondingIndicator.classList.remove("hidden");
+  }
+
+  radioButtons.forEach((radio) => {
+    radio.addEventListener("change", function () {
+      updateIndicator(this);
+    });
+  });
+  // Initialize the correct indicator on page load
+  const checkedRadio = document.querySelector(
+    'input[name="payment-method"]:checked'
+  );
+  if (checkedRadio) {
+    updateIndicator(checkedRadio);
+  }
+
+  // Toggle Payment Method Visibility
+  paymentMethods.forEach((input) => {
+    input.addEventListener("change", function () {
+      cardSection.style.display = this.value === "card" ? "block" : "none";
+    });
+  });
+
+  // Update total dynamically based on tax and subtotal
+  const subtotal = parseFloat(
+    document.getElementById("subtotal").textContent.replace("$", "")
+  );
+  const tax = parseFloat(
+    document.getElementById("tax").textContent.replace("$", "")
+  );
+  const shipping = parseFloat(
+    document.getElementById("shipping").textContent.replace("$", "")
+  );
+
+  const totalAmount = subtotal + tax + shipping;
+  document.getElementById("total-amount").textContent = `$${totalAmount.toFixed(
+    2
+  )}`;
+
+  // Update button text dynamically
+  document.getElementById(
+    "pay-button"
+  ).textContent = `Pay $${totalAmount.toFixed(2)}`;
+});
 
 
-     renderProductDetails(product);
-   });
+  // Inject carousel images
+document.addEventListener("DOMContentLoaded", () => {
+  const carouselWrapper = document.querySelector(".carousel-wrapper");
+  const carouselIndicatorsContainer = document.getElementById("carousel-indicators");
+  const slides = document.querySelectorAll(".carousel-slide");
+
+  let currentIndex = 0;
+  let autoSlideInterval;
+
+  function updateCarousel() {
+    if (!slides.length) return;
+
+    carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateIndicators();
+  }
+
+  function updateIndicators() {
+    const indicators = document.querySelectorAll(".indicator");
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.add("bg-gray-800");
+        indicator.classList.remove("bg-gray-300");
+      } else {
+        indicator.classList.add("bg-gray-300");
+        indicator.classList.remove("bg-gray-800");
+      }
+    });
+  }
+
+  function createIndicators() {
+    slides.forEach((_, index) => {
+      const indicator = document.createElement("button");
+      indicator.classList.add("w-3", "h-3", "rounded-full", "bg-gray-300", "cursor-pointer", "indicator");
+      indicator.setAttribute("data-index", index);
+
+      indicator.addEventListener("click", function () {
+        currentIndex = parseInt(this.getAttribute("data-index"));
+        updateCarousel();
+        resetAutoSlide();
+      });
+
+      carouselIndicatorsContainer.appendChild(indicator);
+    });
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }, 5000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  // Ensure all functions execute correctly
+  createIndicators();
+  updateCarousel();
+  startAutoSlide();
+});
+
