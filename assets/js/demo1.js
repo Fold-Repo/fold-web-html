@@ -214,387 +214,67 @@ document.addEventListener("DOMContentLoaded", function () {
   ).textContent = `Pay $${totalAmount.toFixed(2)}`;
 });
 
-// blog section
-document.addEventListener("DOMContentLoaded", function () {
-  // Image data arrays for carousel and blog previews
-  const carouselImages = [
-    {
-      url: "/assets/images/demo1/carouselImage1.svg",
-      title: "A Latest Article that was Publish on the Blog",
-      description:
-        "A short description about image and article, details or synopsis stories, short learning or something.",
-    },
-    {
-      url: "/assets/images/demo1/blogImage1.svg",
-      title: "A Latest Article that was Publish on the Blog",
-      description:
-        "A short description about image and article, details or synopsis stories, short learning or something.",
-    },
-    {
-      url: "/assets/images/demo1/blogImage2.svg",
-      title: "A Latest Article that was Publish on the Blog",
-      description:
-        "A short description about image and article, details or synopsis stories, short learning or something.",
-    },
-  ];
-
-  const blogPreviews = [
-    {
-      url: "/assets/images/demo1/blogImage1.svg",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      url: "/assets/images/demo1/blogImage2.svg",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      url: "/assets/images/demo1/blogImage3.svg",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      url: "/assets/images/demo1/blogImage4.svg",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      url: "/assets/images/demo1/blogImage5.svg",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      url: "/assets/images/demo1/blogImage6.svg",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-  ];
 
   // Inject carousel images
+document.addEventListener("DOMContentLoaded", () => {
   const carouselWrapper = document.querySelector(".carousel-wrapper");
-  carouselImages.forEach((image) => {
-    const slide = document.createElement("div");
-    slide.classList.add("carousel-slide", "min-w-full", "relative");
-
-    const img = document.createElement("img");
-    img.src = image.url;
-    img.alt = "Carousel Image";
-    img.classList.add("w-full", "h-full");
-    img.style.objectFit = "cover";
-    img.style.height = "805px";
-
-    const textWrapper = document.createElement("div");
-    textWrapper.classList.add(
-      "absolute",
-      "bottom-4",
-      "left-4",
-      "p-4",
-      "text-white"
-    );
-
-    const title = document.createElement("h2");
-    title.classList.add("text-xl", "font-bold");
-    title.textContent = image.title;
-
-    const description = document.createElement("p");
-    description.classList.add("text-sm");
-    description.textContent = image.description;
-
-    textWrapper.appendChild(title);
-    textWrapper.appendChild(description);
-    slide.appendChild(img);
-    slide.appendChild(textWrapper);
-
-    carouselWrapper.appendChild(slide);
-  });
-
-  // Inject blog preview images and descriptions
-  const blogPreviewContainer = document.getElementById(
-    "blog-preview-container"
-  );
-  blogPreviews.forEach((preview) => {
-    const previewDiv = document.createElement("div");
-    previewDiv.classList.add("rounded-lg", "overflow-hidden");
-
-    const img = document.createElement("img");
-    img.src = preview.url;
-    img.alt = "Blog Preview";
-    img.classList.add("w-full", "h-[400px]", "object-cover", "rounded-lg");
-
-    const contentDiv = document.createElement("div");
-    contentDiv.classList.add("py-4");
-
-    const title = document.createElement("h3");
-    title.classList.add("font-medium", "mb-2", "text-[20px]");
-    title.textContent = preview.title;
-
-    const description = document.createElement("p");
-    description.classList.add("text-[#4B5563]", "text-base", "truncate");
-    description.textContent = preview.description;
-
-    const readMoreLink = document.createElement("a");
-    readMoreLink.classList.add("text-[#0EA5E9]", "underline", "block", "mt-2");
-    readMoreLink.href = "./blog-detail.html";
-    readMoreLink.textContent = "Read more";
-
-    contentDiv.appendChild(title);
-    contentDiv.appendChild(description);
-    contentDiv.appendChild(readMoreLink);
-    previewDiv.appendChild(img);
-    previewDiv.appendChild(contentDiv);
-    blogPreviewContainer.appendChild(previewDiv);
-  });
-
-  // Carousel functionality with indicators
-  const carouselWrapperElement = document.querySelector(".carousel-wrapper");
-  const carouselIndicatorsContainer = document.getElementById(
-    "carousel-indicators"
-  );
+  const carouselIndicatorsContainer = document.getElementById("carousel-indicators");
   const slides = document.querySelectorAll(".carousel-slide");
 
   let currentIndex = 0;
   let autoSlideInterval;
 
-  function createIndicators() {
-    slides.forEach((_, index) => {
-      const indicator = document.createElement("button");
-      indicator.classList.add(
-        "w-3",
-        "h-3",
-        "rounded-full",
-        "bg-gray-300",
-        "cursor-pointer",
-        "indicator"
-      );
-      indicator.setAttribute("data-index", index);
-
-      // Add click event listener to the indicator
-      indicator.addEventListener("click", function () {
-        currentIndex = parseInt(this.getAttribute("data-index"));
-        updateCarousel();
-        resetAutoSlide();
-      });
-      carouselIndicatorsContainer.appendChild(indicator);
-    });
-  }
-  createIndicators();
   function updateCarousel() {
-    carouselWrapperElement.style.transform = `translateX(-${
-      currentIndex * 100
-    }%)`;
+    if (!slides.length) return;
+
+    carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
     updateIndicators();
   }
+
   function updateIndicators() {
     const indicators = document.querySelectorAll(".indicator");
     indicators.forEach((indicator, index) => {
       if (index === currentIndex) {
-        indicator.classList.remove("bg-gray-300");
         indicator.classList.add("bg-gray-800");
+        indicator.classList.remove("bg-gray-300");
       } else {
         indicator.classList.add("bg-gray-300");
         indicator.classList.remove("bg-gray-800");
       }
     });
   }
+
+  function createIndicators() {
+    slides.forEach((_, index) => {
+      const indicator = document.createElement("button");
+      indicator.classList.add("w-3", "h-3", "rounded-full", "bg-gray-300", "cursor-pointer", "indicator");
+      indicator.setAttribute("data-index", index);
+
+      indicator.addEventListener("click", function () {
+        currentIndex = parseInt(this.getAttribute("data-index"));
+        updateCarousel();
+        resetAutoSlide();
+      });
+
+      carouselIndicatorsContainer.appendChild(indicator);
+    });
+  }
+
   function startAutoSlide() {
     autoSlideInterval = setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       updateCarousel();
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
   }
+
   function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     startAutoSlide();
   }
+
+  // Ensure all functions execute correctly
+  createIndicators();
+  updateCarousel();
   startAutoSlide();
-  updateIndicators();
 });
 
-// Data for Other Stories
-document.addEventListener("DOMContentLoaded", function () {
-  // Ensure the target container exists
-  const blogDetailsContainer = document.querySelector(
-    "#blog-details-container"
-  );
-
-  if (!blogDetailsContainer) {
-    console.error("Error: #blog-details-container not found in the DOM.");
-    return;
-  }
-
-  // Data for Other Stories
-  const otherStories = [
-    {
-      imgSrc: "/assets/images/demo1/otherImg1.svg",
-      alt: "Other Story 1",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      imgSrc: "/assets/images/demo1/otherImg2.svg",
-      alt: "Other Story 2",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      imgSrc: "/assets/images/demo1/otherImg3.svg",
-      alt: "Other Story 3",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-    {
-      imgSrc: "/assets/images/demo1/otherImg4.svg",
-      alt: "Other Story 4",
-      title: "Name of Deal goes here",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque incidunt quibusdam, earum est.",
-    },
-  ];
-
-  // Create the "Other Stories" section
-  const otherStoriesSection = document.createElement("section");
-  otherStoriesSection.classList.add("mb-8");
-
-  // Add heading
-  const heading = document.createElement("h2");
-  heading.classList.add("text-xl", "font-bold", "mb-4", "pt-4");
-  heading.textContent = "Other Stories";
-
-  // Add description
-  const descriptionWrapper = document.createElement("div");
-  descriptionWrapper.classList.add("lg:w-4/5", "mb-10");
-
-  const descriptionText = document.createElement("p");
-  descriptionText.classList.add("text-[#4B5563]", "text-base");
-  descriptionText.textContent =
-    "Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.";
-
-  descriptionWrapper.appendChild(descriptionText);
-
-  // Create grid container
-  const gridContainer = document.createElement("div");
-  gridContainer.classList.add(
-    "grid",
-    "md:grid-cols-2",
-    "lg:grid-cols-4",
-    "gap-12"
-  );
-
-  // Loop through each story and create items
-  otherStories.forEach((story) => {
-    const storyCard = document.createElement("div");
-    storyCard.classList.add(
-      "rounded-lg",
-
-      "overflow-hidden"
-    );
-
-    const storyImage = document.createElement("img");
-    storyImage.src = story.imgSrc;
-    storyImage.alt = story.alt;
-    storyImage.classList.add("w-full", "h-32", "object-cover");
-
-    const storyContent = document.createElement("div");
-    storyContent.classList.add("py-4");
-
-    const storyTitle = document.createElement("h3");
-    storyTitle.classList.add("font-bold", "mb-2");
-    storyTitle.textContent = story.title;
-
-    const storyDescription = document.createElement("p");
-    storyDescription.classList.add("text-[#4B5563]", "text-base");
-    storyDescription.textContent = story.description;
-
-    // Append elements together
-    storyContent.appendChild(storyTitle);
-    storyContent.appendChild(storyDescription);
-    storyCard.appendChild(storyImage);
-    storyCard.appendChild(storyContent);
-    gridContainer.appendChild(storyCard);
-  });
-
-  // Append everything to the section
-  otherStoriesSection.appendChild(heading);
-  otherStoriesSection.appendChild(descriptionWrapper);
-  otherStoriesSection.appendChild(gridContainer);
-
-  // Append the section to the blog details container
-  blogDetailsContainer.appendChild(otherStoriesSection);
-});
-
-// about section
-document.addEventListener("DOMContentLoaded", function () {
-  const teamContainer = document.getElementById("team-container");
-
-  const teamMembers = [
-    {
-      name: "Patrick Omokhigo",
-      role: "Head of Marketing and Sales",
-      img: "/assets/images/team-member1.svg",
-    },
-    {
-      name: "Patrick Omokhigo",
-      role: "Head of Marketing and Sales",
-      img: "/assets/images/team-member2.svg",
-    },
-    {
-      name: "Patrick Omokhigo",
-      role: "Head of Marketing and Sales",
-      img: "/assets/images/team-member3.svg",
-    },
-    {
-      name: "Patrick Omokhigo",
-      role: "Head of Marketing and Sales",
-      img: "/assets/images/team-member4.svg",
-    },
-    {
-      name: "Patrick Omokhigo",
-      role: "Head of Marketing and Sales",
-      img: "/assets/images/team-member2.svg",
-    },
-    {
-      name: "Patrick Omokhigo",
-      role: "Head of Marketing and Sales",
-      img: "/assets/images/team-member1.svg",
-    },
-  ];
-
-  teamMembers.forEach((member) => {
-    const teamCard = document.createElement("div");
-    teamCard.classList.add(
-      "rounded-lg",
-      "overflow-hidden",
-      "text-start",
-      "py-4"
-    );
-
-    const img = document.createElement("img");
-    img.src = member.img;
-    img.alt = member.name;
-    img.classList.add("w-full", "rounded-lg");
-
-    const name = document.createElement("h3");
-    name.classList.add("font-bold", "mt-2");
-    name.textContent = member.name;
-
-    const role = document.createElement("p");
-    role.classList.add("text-gray-600", "text-sm");
-    role.textContent = member.role;
-
-    teamCard.appendChild(img);
-    teamCard.appendChild(name);
-    teamCard.appendChild(role);
-
-    teamContainer.appendChild(teamCard);
-  });
-});
