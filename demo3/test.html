@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <style>
+        /* Custom hover animation */
+        .img-container {
+          position: relative;
+          overflow: hidden;
+          border-radius: 0.5rem;
+        }
+        .img-container img {
+          transition: transform 0.3s ease;
+        }
+        .img-container:hover img {
+          transform: scale(1.05);
+        }
+
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+                /* Custom hover effect */
+                .image-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .hover-effect {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .hover-effect:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+      </style>
+    </head>
+
+<main class="bg-gray-100">
+    <section class="flex items-center justify-center bg-white py-16 px-6 sm:px-12">
+        <div class="max-w-screen-lg w-full flex items-center gap-12 sm:flex-row flex-col-reverse">
+            <!-- Text Section -->
+            <div class="flex-1 space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-semibold text-gray-800 tracking-tight">
+                    Best Products, Best Deals you will find anywhere Globally.
+                </h1>
+                <p class="text-lg text-gray-600">
+                    Customize the layout, colors and styles within only a few minutes. Start creating an amazing website right now!
+                </p>
+                <button class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                    Shop Now
+                </button>
+            </div>
+            <!-- Image Section -->
+            <div class="relative flex-1 overflow-hidden rounded-xl shadow-lg group">
+                <img src="./assets/hero.svg" alt="Interior design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl">
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<section class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Best Categories for you</h2>
+    <p class="text-gray-600 mb-8">Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.</p>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Image 1 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category1.svg" alt="Living Room" />
+      </div>
+      <!-- Image 2 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category2.svg" alt="Blue Room" />
+      </div>
+      <!-- Image 3 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category3.svg" alt="Outdoor Seating" />
+      </div>
+      <!-- Image 4 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category4.svg" alt="Wooden Floor" />
+      </div>
+      <!-- Image 5 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category5.svg" alt="Office Setup" />
+      </div>
+      <!-- Image 6 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category6.svg" alt="Modern Sofa" />
+      </div>
+      <!-- Image 7 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category7.svg" alt="Green Plant" />
+      </div>
+      <!-- Image 8 -->
+      <div class="img-container">
+        <img class="w-full h-auto rounded-lg" src="./assets/category8.svg" alt="Bedroom Design" />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-900 text-white">
+
+    <!-- Container for the main content -->
+    <div class="container mx-auto p-6">
+      <div class="flex flex-col md:flex-row items-center justify-between space-x-4">
+        
+        <!-- Left Side Content (Text and Button) -->
+        <div class="flex-1 p-4 space-y-4">
+          <h1 class="text-4xl font-bold">MASSIVE HOLIDAY SALE!</h1>
+          <p class="text-lg">
+            Details about the product in question goes here. You have the option to now select and buy. 
+            Details about the product in question goes here. You have the option to now select and buy. 
+            Details about the product in question goes here. You have the option to now select and buy.
+          </p>
+          <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-400 transition duration-300">
+            Start Shopping Now
+          </button>
+        </div>
+  
+        <!-- Right Side Content (Image and Hover Effect) -->
+        <div class="flex-1 relative">
+          <img src="./assets/holiday-sales.svg" alt="Holiday Sale Image" class="w-full rounded-lg hover-effect"/>
+        </div>
+  
+      </div>
+    </div>
+  
+  </section>
+
+
+<section class="bg-gray-100 font-sans">
+
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-semibold mb-6">Trending Products</h2>
+        <p class="text-gray-600 text-sm mb-8">Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+            <!-- Product Card 1 -->
+            <div class="card bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <img class="w-full h-64 object-cover rounded-lg mb-4" src="./assets/trending1.svg" alt="Product 1">
+                <h3 class="text-lg font-semibold text-gray-800">Name of Deal goes here.</h3>
+                <p class="text-xl font-bold text-gray-800 mt-2">N100,000.00</p>
+                <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Buy Now</button>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="card bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <img class="w-full h-64 object-cover rounded-lg mb-4" src="./assets/trending2.svg" alt="Product 2">
+                <h3 class="text-lg font-semibold text-gray-800">Name of Deal goes here.</h3>
+                <p class="text-xl font-bold text-gray-800 mt-2">N100,000.00</p>
+                <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Buy Now</button>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="card bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <img class="w-full h-64 object-cover rounded-lg mb-4" src="./assets/trending3.svg" alt="Product 3">
+                <h3 class="text-lg font-semibold text-gray-800">Name of Deal goes here.</h3>
+                <p class="text-xl font-bold text-gray-800 mt-2">N100,000.00</p>
+                <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Buy Now</button>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="card bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <img class="w-full h-64 object-cover rounded-lg mb-4" src="./assets/trending4.svg" alt="Product 4">
+                <h3 class="text-lg font-semibold text-gray-800">Name of Deal goes here.</h3>
+                <p class="text-xl font-bold text-gray-800 mt-2">N100,000.00</p>
+                <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Buy Now</button>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="card bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <img class="w-full h-64 object-cover rounded-lg mb-4" src="./assets/trending5.svg" alt="Product 5">
+                <h3 class="text-lg font-semibold text-gray-800">Name of Deal goes here.</h3>
+                <p class="text-xl font-bold text-gray-800 mt-2">N100,000.00</p>
+                <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Buy Now</button>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="card bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                <img class="w-full h-64 object-cover rounded-lg mb-4" src="./assets/trending6.svg" alt="Product 6">
+                <h3 class="text-lg font-semibold text-gray-800">Name of Deal goes here.</h3>
+                <p class="text-xl font-bold text-gray-800 mt-2">N100,000.00</p>
+                <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="bg-gray-900 text-white">
+    <div class="max-w-screen-lg mx-auto p-6">
+        <!-- Latest News Section -->
+        <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-6">
+            
+            <!-- Left Section -->
+            <div class="w-full md:w-2/3 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Latest News - Blog Update</h2>
+                    <a href="#" class="text-blue-400 hover:text-blue-600">View Blog</a>
+                </div>
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <div class="w-full md:w-1/2">
+                        <img src="./assets/blog.svg" alt="Deal Image" class="w-full h-full object-cover rounded-lg image-hover">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-lg font-semibold">Name of Deal goes here.</h3>
+                        <p class="text-sm text-gray-400">Details about the product in question goes here. You have the option to now select and buy.</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-600 mt-4 inline-block">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="w-full md:w-1/3 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="w-full">
+                        <img src="./assets/blog.svg" alt="Deal Image" class="w-full h-full object-cover rounded-lg image-hover">
+                    </div>
+                    <div class="w-full mt-4">
+                        <h3 class="text-lg font-semibold">Name of Deal goes here.</h3>
+                        <p class="text-sm text-gray-400">Details about the product in question goes here. You have the option to now select and buy.</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-600 mt-4 inline-block">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

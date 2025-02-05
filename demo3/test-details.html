@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .img-hover:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+    <section class="bg-gray-100 font-sans">
+
+        <div class="max-w-6xl mx-auto py-10 px-4 md:px-8">
+          <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+      
+            <!-- Product Image Section -->
+            <div class="flex space-x-4">
+              <div class="flex flex-col space-y-4">
+                <!-- Thumbnail Images -->
+                <img class="w-20 h-20 object-cover rounded-lg cursor-pointer hover:border-2 hover:border-blue-500 transition duration-200" src="./assets/detail.svg" alt="thumbnail">
+                <img class="w-20 h-20 object-cover rounded-lg cursor-pointer hover:border-2 hover:border-blue-500 transition duration-200" src="./assets/detail.svg" alt="thumbnail">
+                <img class="w-20 h-20 object-cover rounded-lg cursor-pointer hover:border-2 hover:border-blue-500 transition duration-200" src="./assets/detail.svg" alt="thumbnail">
+              </div>
+              
+              <!-- Main Image -->
+              <div class="w-80 h-80 bg-white p-4 rounded-lg shadow-lg flex justify-center items-center">
+                <img class="w-full h-full object-cover rounded-lg img-hover" src="./assets/detail.svg" alt="main product image">
+              </div>
+            </div>
+      
+            <!-- Product Details Section -->
+            <div class="flex-1 space-y-4">
+              <h2 class="text-3xl font-bold text-gray-800">Construction Boots Emil 4</h2>
+              <p class="text-2xl text-gray-800">₦114,000.00</p>
+      
+              <div class="flex items-center space-x-2">
+                <span class="text-yellow-400">★★★★☆</span>
+                <span class="text-gray-600">(43 Reviews)</span>
+              </div>
+      
+              <p class="text-gray-600 text-sm">
+                Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.
+              </p>
+      
+              <div class="space-y-4">
+                <!-- Available Colors -->
+                <div>
+                  <p class="font-semibold">Available Colours</p>
+                  <div class="flex space-x-2">
+                    <span class="w-8 h-8 rounded-full bg-black cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
+                    <span class="w-8 h-8 rounded-full bg-red-600 cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
+                    <span class="w-8 h-8 rounded-full bg-blue-500 cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
+                    <span class="w-8 h-8 rounded-full bg-green-500 cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
+                  </div>
+                </div>
+      
+                <!-- Available Sizes -->
+                <div>
+                  <p class="font-semibold">Available Sizes</p>
+                  <div class="flex space-x-4">
+                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">S</button>
+                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">M</button>
+                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">L</button>
+                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">XL</button>
+                  </div>
+                </div>
+              </div>
+      
+              <button class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition">
+                Proceed to Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      
+      </section>
+      
+      <section class="bg-gray-100 py-10">
+      
+          <!-- Container -->
+          <div class="max-w-7xl mx-auto px-4">
+              <!-- Filters Section -->
+              <div class="flex justify-between items-center mb-8">
+                  <div class="flex space-x-4">
+                      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Filters</button>
+                      <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Description</button>
+                  </div>
+                  <div class="text-lg font-semibold">Reviews</div>
+              </div>
+      
+              <!-- Reviews Section -->
+              <div class="space-y-6">
+                  <!-- Review 1 -->
+                  <div class="flex space-x-4 hover-effect bg-white shadow-md rounded-lg p-6">
+                      <img src="https://i.pravatar.cc/150?img=3" alt="Reviewer" class="h-12 w-12 rounded-full">
+                      <div class="flex flex-col space-y-2">
+                          <div class="flex items-center space-x-2">
+                              <span class="text-lg font-semibold">The Xtras</span>
+                              <span class="text-gray-500">Yesterday</span>
+                          </div>
+                          <div class="flex space-x-1 text-yellow-500">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                          </div>
+                          <p class="text-gray-700 text-sm">
+                              Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.
+                          </p>
+                          <div class="flex space-x-2 text-sm text-gray-500">
+                              <button class="flex items-center space-x-1">
+                                  <span>Reply</span>
+                              </button>
+                              <div class="flex items-center space-x-1">
+                                  <span>123</span>
+                                  <span>👍</span>
+                              </div>
+                              <div class="flex items-center space-x-1">
+                                  <span>0</span>
+                                  <span>👎</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <!-- Repeat Review (add more reviews here as needed) -->
+                  <div class="flex space-x-4 hover-effect bg-white shadow-md rounded-lg p-6">
+                      <img src="https://i.pravatar.cc/150?img=3" alt="Reviewer" class="h-12 w-12 rounded-full">
+                      <div class="flex flex-col space-y-2">
+                          <div class="flex items-center space-x-2">
+                              <span class="text-lg font-semibold">The Xtras</span>
+                              <span class="text-gray-500">Yesterday</span>
+                          </div>
+                          <div class="flex space-x-1 text-yellow-500">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
+                          </div>
+                          <p class="text-gray-700 text-sm">
+                              Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.
+                          </p>
+                          <div class="flex space-x-2 text-sm text-gray-500">
+                              <button class="flex items-center space-x-1">
+                                  <span>Reply</span>
+                              </button>
+                              <div class="flex items-center space-x-1">
+                                  <span>123</span>
+                                  <span>👍</span>
+                              </div>
+                              <div class="flex items-center space-x-1">
+                                  <span>0</span>
+                                  <span>👎</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+      </section>
+</body>
+</html>
