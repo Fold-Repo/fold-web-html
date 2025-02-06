@@ -65,3 +65,31 @@ document.getElementById('pay-btn').addEventListener('click', function() {
      updateSlider();
    });
  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetTab = button.getAttribute("data-tab");
+
+        // Remove active styles from all buttons
+        tabButtons.forEach((btn) => {
+          btn.classList.remove("text-white", "bg-[#0EA5E9]");
+          btn.classList.add("text-gray-500", );
+        });
+
+        // Hide all tab content
+        tabContents.forEach((content) => content.classList.add("hidden"));
+
+        // Activate clicked tab
+        button.classList.add("text-white", "bg-[#0EA5E9]");
+        button.classList.remove("text-gray-500", "border-transparent");
+
+        // Show the corresponding tab content
+        document.getElementById(targetTab).classList.remove("hidden");
+      });
+    });
+  });
