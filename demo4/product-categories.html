@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Products Categories</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/assets/js/demo4.js"></script>
+    <script src="/assets/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 50;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <header class="mb-4 container-fluid">
+      <!-- Top Banner -->
+      <div class="bg-sky-500 text-white py-3 px-4 text-center">
+        <p class="text-base">
+          Get the best deals we have to offer, click here to get a coupon code.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] container-fluid shadow-sm py-4 px-6">
+        <div class="mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="../../assets/icons/logo.svg"
+              class="w-10 h-10 bg-sky-500 rounded-lg"
+              alt="Logo"
+            />
+            <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
+          </div>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]"
+              >Contact us</a
+            >
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+          </div>
+
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input
+                type="text"
+                placeholder="Search"
+                class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none"
+              />
+              <svg
+                class="absolute left-3 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a
+              href="/onboarding/login/login.html"
+              class="flex items-center text-gray-600 hover:text-sky-500"
+            >
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button
+              id="cart-btn"
+              class="flex items-center text-gray-600 hover:text-sky-500"
+            >
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg
+              id="menuIcon"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+              />
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-sky-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="@container/main mx-auto overflow-hidden">
+      <div
+        class="flex bg-[#F6F6F6] @container mx-auto flex-col justify-center overflow-hidden p-2 md:p-6"
+      >
+        <div class="mx-auto px-4 py-8 overflow-hidden">
+          <h1 class="text-3xl font-medium text-[#111827] mb-4">
+            Product Category
+          </h1>
+          <p class="text-[#111827] mb-6 leading-relaxed">
+            Details about the product in question goes here. You have the option
+            to now select and buy. Details about the product in question goes
+            here. You have the option to now select and buy.Details about the
+            product in question goes here. You have the option to now select and
+            buy.
+          </p>
+
+          <!-- Filters Section -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <!-- Category Filter -->
+            <div class="relative w-full">
+              <button
+                onclick="toggleDropdown('categoryDropdown')"
+                class="flex items-center justify-between rounded-full w-full border-[#0EA5E9] px-4 py-3 text-left border bg-white"
+              >
+                <span id="categoryBtn">All Category</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="categoryDropdown"
+                class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-full mt-1 border bg-white"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('category', 'All Category')"
+                  >All Category</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('category', 'Male Clothing')"
+                  >Male Clothing</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('category', 'Female Clothing')"
+                  >Female Clothing</a
+                >
+              </div>
+            </div>
+
+            <!-- Colors Filter -->
+            <div class="relative w-full">
+              <button
+                onclick="toggleDropdown('colorsDropdown')"
+                class="flex items-center justify-between rounded-full w-full border-[#0EA5E9] px-4 py-3 text-left border bg-white"
+              >
+                <span id="colorsBtn">All Colours</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="colorsDropdown"
+                class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-full mt-1 border bg-white"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('colors', 'All Colours')"
+                  >All Colours</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('colors', 'Brown')"
+                  >Brown</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('colors', 'Black')"
+                  >Black</a
+                >
+              </div>
+            </div>
+
+            <!-- Features Filter -->
+            <div class="relative w-full">
+              <button
+                onclick="toggleDropdown('featuresDropdown')"
+                class="flex items-center justify-between rounded-full border-[#0EA5E9] w-full px-4 py-3 text-left border bg-white"
+              >
+                <span id="featuresBtn">All Features</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="featuresDropdown"
+                class="dropdown-content rounded-b-3xl border-[#0EA5E9] mt-1 border bg-white"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('features', 'All Features')"
+                  >All Features</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('features', 'Leather')"
+                  >Leather</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('features', 'Premium')"
+                  >Premium</a
+                >
+              </div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="relative w-full">
+              <button
+                onclick="toggleDropdown('priceDropdown')"
+                class="flex items-center justify-between rounded-full border-[#0EA5E9] w-full px-4 py-3 text-left border bg-white"
+              >
+                <span id="priceBtn">N10k - 100k</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="priceDropdown"
+                class="dropdown-content rounded-b-3xl border-[#0EA5E9] w-full mt-1 border bg-white"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('price', 'N10k - 100k')"
+                  >N10k - 100k</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('price', 'N100k - 200k')"
+                  >N100k - 200k</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-[#475367] text-base"
+                  onclick="updateFilter('price', 'N200k+')"
+                  >N200k+</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Product Card 1 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo4/service3.svg"
+                  alt="Product 1"
+                  class="w-full h-full max-h-[432px] object-cover"
+                />
+                <div class="absolute left-4 bottom-20">
+                  <svg
+                    width="46"
+                    height="46"
+                    viewBox="0 0 46 46"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M31.325 24.6875V21.3125L21.0875 21.3125L25.25 17.15L22.8875 14.7875L14.675 23L22.8875 31.2125L25.25 28.85L21.0875 24.6875L31.325 24.6875ZM45.5 23C45.5 26.075 44.9094 28.9813 43.7281 31.7188C42.5469 34.4563 40.9344 36.8469 38.8906 38.8906C36.8469 40.9344 34.4562 42.5469 31.7188 43.7281C28.9813 44.9094 26.075 45.5 23 45.5C19.8875 45.5 16.9625 44.9094 14.225 43.7281C11.4875 42.5469 9.10625 40.9344 7.08125 38.8906C5.05625 36.8469 3.45313 34.4563 2.27188 31.7188C1.09062 28.9813 0.5 26.075 0.5 23C0.5 19.8875 1.09062 16.9625 2.27188 14.225C3.45313 11.4875 5.05625 9.10625 7.08125 7.08125C9.10625 5.05625 11.4875 3.45312 14.225 2.27188C16.9625 1.09063 19.8875 0.5 23 0.5C26.075 0.5 28.9813 1.09063 31.7188 2.27188C34.4562 3.45312 36.8469 5.05625 38.8906 7.08125C40.9344 9.10625 42.5469 11.4875 43.7281 14.225C44.9094 16.9625 45.5 19.8875 45.5 23Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="absolute bottom-2 left-2 gap-x-2 flex items-center justify-between w-full"
+                >
+                  <button
+                    class="bg-white bg-opacity-50 w-full hover:bg-opacity-75 text-gray-800 font-bold py-2 px-4 rounded-full inline-flex justify-between items-center"
+                  >
+                    <span class="text-white font-semibold text-base"
+                      >Get Offer</span
+                    >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 11V9H10.2L8.6 7.4L10 6L14 10L10 14L8.6 12.6L10.2 11H6ZM0 10C0 11.3833 0.262501 12.6833 0.7875 13.9C1.3125 15.1167 2.025 16.175 2.925 17.075C3.825 17.975 4.88333 18.6875 6.1 19.2125C7.31667 19.7375 8.61667 20 10 20C11.3833 20 12.6833 19.7375 13.9 19.2125C15.1167 18.6875 16.175 17.975 17.075 17.075C17.975 16.175 18.6875 15.1167 19.2125 13.9C19.7375 12.6833 20 11.3833 20 10C20 8.61667 19.7375 7.31667 19.2125 6.1C18.6875 4.88333 17.975 3.825 17.075 2.925C16.175 2.025 15.1167 1.3125 13.9 0.7875C12.6833 0.262501 11.3833 0 10 0C8.61667 0 7.31667 0.262501 6.1 0.7875C4.88333 1.3125 3.825 2.025 2.925 2.925C2.025 3.825 1.3125 4.88333 0.7875 6.1C0.262501 7.31667 0 8.61667 0 10Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="bg-black text-white font-bold py-2 px-4 rounded-full"
+                  >
+                    N100,000
+                  </div>
+                </div>
+              </div>
+              <div class="px-1 py-3 rounded-md m-2 bg-[#F6F6F6]">
+                <h3 class="text-base font-semibold text-[#111827]">
+                  Name of Product or Service goes here.
+                </h3>
+                <p class="text-[#4B5563] text-sm">
+                  Details about the product in question goes here. You have the
+                  option to now select and buy.
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo4/service2.svg"
+                  alt="Product 1"
+                  class="w-full h-full max-h-[432px] object-cover"
+                />
+                <div class="absolute left-4 bottom-20">
+                  <svg
+                    width="46"
+                    height="46"
+                    viewBox="0 0 46 46"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M31.325 24.6875V21.3125L21.0875 21.3125L25.25 17.15L22.8875 14.7875L14.675 23L22.8875 31.2125L25.25 28.85L21.0875 24.6875L31.325 24.6875ZM45.5 23C45.5 26.075 44.9094 28.9813 43.7281 31.7188C42.5469 34.4563 40.9344 36.8469 38.8906 38.8906C36.8469 40.9344 34.4562 42.5469 31.7188 43.7281C28.9813 44.9094 26.075 45.5 23 45.5C19.8875 45.5 16.9625 44.9094 14.225 43.7281C11.4875 42.5469 9.10625 40.9344 7.08125 38.8906C5.05625 36.8469 3.45313 34.4563 2.27188 31.7188C1.09062 28.9813 0.5 26.075 0.5 23C0.5 19.8875 1.09062 16.9625 2.27188 14.225C3.45313 11.4875 5.05625 9.10625 7.08125 7.08125C9.10625 5.05625 11.4875 3.45312 14.225 2.27188C16.9625 1.09063 19.8875 0.5 23 0.5C26.075 0.5 28.9813 1.09063 31.7188 2.27188C34.4562 3.45312 36.8469 5.05625 38.8906 7.08125C40.9344 9.10625 42.5469 11.4875 43.7281 14.225C44.9094 16.9625 45.5 19.8875 45.5 23Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="absolute bottom-2 left-2 gap-x-2 flex items-center justify-between w-full"
+                >
+                  <button
+                    class="bg-white bg-opacity-50 w-full hover:bg-opacity-75 text-gray-800 font-bold py-2 px-4 rounded-full inline-flex justify-between items-center"
+                  >
+                    <span class="text-white font-semibold text-base"
+                      >Get Offer</span
+                    >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 11V9H10.2L8.6 7.4L10 6L14 10L10 14L8.6 12.6L10.2 11H6ZM0 10C0 11.3833 0.262501 12.6833 0.7875 13.9C1.3125 15.1167 2.025 16.175 2.925 17.075C3.825 17.975 4.88333 18.6875 6.1 19.2125C7.31667 19.7375 8.61667 20 10 20C11.3833 20 12.6833 19.7375 13.9 19.2125C15.1167 18.6875 16.175 17.975 17.075 17.075C17.975 16.175 18.6875 15.1167 19.2125 13.9C19.7375 12.6833 20 11.3833 20 10C20 8.61667 19.7375 7.31667 19.2125 6.1C18.6875 4.88333 17.975 3.825 17.075 2.925C16.175 2.025 15.1167 1.3125 13.9 0.7875C12.6833 0.262501 11.3833 0 10 0C8.61667 0 7.31667 0.262501 6.1 0.7875C4.88333 1.3125 3.825 2.025 2.925 2.925C2.025 3.825 1.3125 4.88333 0.7875 6.1C0.262501 7.31667 0 8.61667 0 10Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="bg-black text-white font-bold py-2 px-4 rounded-full"
+                  >
+                    N100,000
+                  </div>
+                </div>
+              </div>
+              <div class="px-1 py-3 rounded-md m-2 bg-[#F6F6F6]">
+                <h3 class="text-base font-semibold text-[#111827]">
+                  Name of Product or Service goes here.
+                </h3>
+                <p class="text-[#4B5563] text-sm">
+                  Details about the product in question goes here. You have the
+                  option to now select and buy.
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo4/product-list3.svg"
+                  alt="Product 1"
+                  class="w-full h-full max-h-[432px] object-cover"
+                />
+                <div class="absolute left-4 bottom-20">
+                  <svg
+                    width="46"
+                    height="46"
+                    viewBox="0 0 46 46"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M31.325 24.6875V21.3125L21.0875 21.3125L25.25 17.15L22.8875 14.7875L14.675 23L22.8875 31.2125L25.25 28.85L21.0875 24.6875L31.325 24.6875ZM45.5 23C45.5 26.075 44.9094 28.9813 43.7281 31.7188C42.5469 34.4563 40.9344 36.8469 38.8906 38.8906C36.8469 40.9344 34.4562 42.5469 31.7188 43.7281C28.9813 44.9094 26.075 45.5 23 45.5C19.8875 45.5 16.9625 44.9094 14.225 43.7281C11.4875 42.5469 9.10625 40.9344 7.08125 38.8906C5.05625 36.8469 3.45313 34.4563 2.27188 31.7188C1.09062 28.9813 0.5 26.075 0.5 23C0.5 19.8875 1.09062 16.9625 2.27188 14.225C3.45313 11.4875 5.05625 9.10625 7.08125 7.08125C9.10625 5.05625 11.4875 3.45312 14.225 2.27188C16.9625 1.09063 19.8875 0.5 23 0.5C26.075 0.5 28.9813 1.09063 31.7188 2.27188C34.4562 3.45312 36.8469 5.05625 38.8906 7.08125C40.9344 9.10625 42.5469 11.4875 43.7281 14.225C44.9094 16.9625 45.5 19.8875 45.5 23Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="absolute bottom-2 left-2 gap-x-2 flex items-center justify-between w-full"
+                >
+                  <button
+                    class="bg-white bg-opacity-50 w-full hover:bg-opacity-75 text-gray-800 font-bold py-2 px-4 rounded-full inline-flex justify-between items-center"
+                  >
+                    <span class="text-white font-semibold text-base"
+                      >Get Offer</span
+                    >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 11V9H10.2L8.6 7.4L10 6L14 10L10 14L8.6 12.6L10.2 11H6ZM0 10C0 11.3833 0.262501 12.6833 0.7875 13.9C1.3125 15.1167 2.025 16.175 2.925 17.075C3.825 17.975 4.88333 18.6875 6.1 19.2125C7.31667 19.7375 8.61667 20 10 20C11.3833 20 12.6833 19.7375 13.9 19.2125C15.1167 18.6875 16.175 17.975 17.075 17.075C17.975 16.175 18.6875 15.1167 19.2125 13.9C19.7375 12.6833 20 11.3833 20 10C20 8.61667 19.7375 7.31667 19.2125 6.1C18.6875 4.88333 17.975 3.825 17.075 2.925C16.175 2.025 15.1167 1.3125 13.9 0.7875C12.6833 0.262501 11.3833 0 10 0C8.61667 0 7.31667 0.262501 6.1 0.7875C4.88333 1.3125 3.825 2.025 2.925 2.925C2.025 3.825 1.3125 4.88333 0.7875 6.1C0.262501 7.31667 0 8.61667 0 10Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="bg-black text-white font-bold py-2 px-4 rounded-full"
+                  >
+                    N100,000
+                  </div>
+                </div>
+              </div>
+              <div class="px-1 py-3 rounded-md m-2 bg-[#F6F6F6]">
+                <h3 class="text-base font-semibold text-[#111827]">
+                  Name of Product or Service goes here.
+                </h3>
+                <p class="text-[#4B5563] text-sm">
+                  Details about the product in question goes here. You have the
+                  option to now select and buy.
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo4/product-list4.svg"
+                  alt="Product 1"
+                  class="w-full h-full max-h-[432px] object-cover"
+                />
+                <div class="absolute left-4 bottom-20">
+                  <svg
+                    width="46"
+                    height="46"
+                    viewBox="0 0 46 46"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M31.325 24.6875V21.3125L21.0875 21.3125L25.25 17.15L22.8875 14.7875L14.675 23L22.8875 31.2125L25.25 28.85L21.0875 24.6875L31.325 24.6875ZM45.5 23C45.5 26.075 44.9094 28.9813 43.7281 31.7188C42.5469 34.4563 40.9344 36.8469 38.8906 38.8906C36.8469 40.9344 34.4562 42.5469 31.7188 43.7281C28.9813 44.9094 26.075 45.5 23 45.5C19.8875 45.5 16.9625 44.9094 14.225 43.7281C11.4875 42.5469 9.10625 40.9344 7.08125 38.8906C5.05625 36.8469 3.45313 34.4563 2.27188 31.7188C1.09062 28.9813 0.5 26.075 0.5 23C0.5 19.8875 1.09062 16.9625 2.27188 14.225C3.45313 11.4875 5.05625 9.10625 7.08125 7.08125C9.10625 5.05625 11.4875 3.45312 14.225 2.27188C16.9625 1.09063 19.8875 0.5 23 0.5C26.075 0.5 28.9813 1.09063 31.7188 2.27188C34.4562 3.45312 36.8469 5.05625 38.8906 7.08125C40.9344 9.10625 42.5469 11.4875 43.7281 14.225C44.9094 16.9625 45.5 19.8875 45.5 23Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="absolute bottom-2 left-2 gap-x-2 flex items-center justify-between w-full"
+                >
+                  <button
+                    class="bg-white bg-opacity-50 w-full hover:bg-opacity-75 text-gray-800 font-bold py-2 px-4 rounded-full inline-flex justify-between items-center"
+                  >
+                    <span class="text-white font-semibold text-base"
+                      >Get Offer</span
+                    >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 11V9H10.2L8.6 7.4L10 6L14 10L10 14L8.6 12.6L10.2 11H6ZM0 10C0 11.3833 0.262501 12.6833 0.7875 13.9C1.3125 15.1167 2.025 16.175 2.925 17.075C3.825 17.975 4.88333 18.6875 6.1 19.2125C7.31667 19.7375 8.61667 20 10 20C11.3833 20 12.6833 19.7375 13.9 19.2125C15.1167 18.6875 16.175 17.975 17.075 17.075C17.975 16.175 18.6875 15.1167 19.2125 13.9C19.7375 12.6833 20 11.3833 20 10C20 8.61667 19.7375 7.31667 19.2125 6.1C18.6875 4.88333 17.975 3.825 17.075 2.925C16.175 2.025 15.1167 1.3125 13.9 0.7875C12.6833 0.262501 11.3833 0 10 0C8.61667 0 7.31667 0.262501 6.1 0.7875C4.88333 1.3125 3.825 2.025 2.925 2.925C2.025 3.825 1.3125 4.88333 0.7875 6.1C0.262501 7.31667 0 8.61667 0 10Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="bg-black text-white font-bold py-2 px-4 rounded-full"
+                  >
+                    N100,000
+                  </div>
+                </div>
+              </div>
+              <div class="px-1 py-3 rounded-md m-2 bg-[#F6F6F6]">
+                <h3 class="text-base font-semibold text-[#111827]">
+                  Name of Product or Service goes here.
+                </h3>
+                <p class="text-[#4B5563] text-sm">
+                  Details about the product in question goes here. You have the
+                  option to now select and buy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#F9FAFB]">
+      <div class="container p-6 lg:p-20 mx-auto flex justify-center">
+        <div class="lg:flex lg:gap-x-12">
+          <div class="w-full -mx-6 lg:w-2/5">
+            <div class="px-6">
+              <div>
+                <div class="mb-8 flex gap-3 justify-start items-center">
+                  <div class="w-12 h-12 rounded-md">
+                    <img
+                      src="../../assets/icons/logo.svg"
+                      alt="Logo"
+                      class="w-full"
+                    />
+                  </div>
+                  <h4
+                    class="text-[#0EA5E9] font-medium text-md lg:text-[24px] leading-[29.16px]"
+                    style="font-style: italic"
+                  >
+                    Full Logo Goes Here
+                  </h4>
+                </div>
+                <p class="text-[#344054] mb-4">
+                  Be the first to receive all the recent updates, articles, and
+                  valuable materials.
+                </p>
+                <form
+                  id="subscribeForm"
+                  class="flex flex-wrap space-y-1 space-x-2"
+                >
+                  <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="Enter your email"
+                    class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                  />
+                  <button
+                    type="submit"
+                    class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 lg:mt-0 lg:flex-1">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+              <div>
+                <h3 class="text-gray-700 uppercase">Company</h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >About</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Security</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Blog</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Careers</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Service Status</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Partnerships</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Mission roadmap</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Community</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-700 uppercase">Support</h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Mass Payments</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Debit Card</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for Startups</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for Developers</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for No-code</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Assets</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-700 uppercase">Various Templates</h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Financial Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Fashion & Beauty Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Agriculture Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Manufacturing Templatess</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
+
+        <div>
+          <p class="text-center text-gray-500 dark:text-gray-400">
+            © Brand 2020 - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
