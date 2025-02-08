@@ -1,242 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-</head>
-<body>
-    <section>
-        <div class="bg-white">
-          
-            <main class="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
-              <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
-          
-              <form class="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
-                <section aria-labelledby="cart-heading" class="lg:col-span-7">
-                  <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
-          
-                  <ul role="list" class="divide-y divide-gray-200 border-b border-t border-gray-200">
-                    <li class="flex py-6 sm:py-10">
-                      <div class="shrink-0">
-                        <img src="../assets/category1.svg" alt="Front of men&#039;s Basic Tee in sienna." class="size-24 rounded-md object-cover sm:size-48">
-                      </div>
-          
-                      <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-                        <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
-                          <div>
-                            <div class="flex justify-between">
-                              <h3 class="text-sm">
-                                <a href="#" class="font-medium text-gray-700 hover:text-gray-800">Basic Tee</a>
-                              </h3>
-                            </div>
-                            <div class="mt-1 flex text-sm">
-                              <p class="text-gray-500">Sienna</p>
-                              <p class="ml-4 border-l border-gray-200 pl-4 text-gray-500">Large</p>
-                            </div>
-                            <p class="mt-1 text-sm font-medium text-gray-900">$32.00</p>
-                          </div>
-          
-                          <div class="mt-4 sm:mt-0 sm:pr-9">
-                            <div class="inline-grid w-full max-w-16 grid-cols-1">
-                              <select id="quantity-0" name="quantity-0" aria-label="Quantity, Basic Tee" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                              </select>
-                              <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                              </svg>
-                            </div>
-          
-                            <div class="absolute right-0 top-0">
-                              <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
-                                <span class="sr-only">Remove</span>
-                                <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-          
-                        <p class="mt-4 flex space-x-2 text-sm text-gray-700">
-                          <svg class="size-5 shrink-0 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
-                          </svg>
-                          <span>In stock</span>
-                        </p>
-                      </div>
-                    </li>
-                    <li class="flex py-6 sm:py-10">
-                      <div class="shrink-0">
-                        <img src="../assets/category2.svg" alt="Front of men&#039;s Basic Tee in black." class="size-24 rounded-md object-cover sm:size-48">
-                      </div>
-          
-                      <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-                        <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
-                          <div>
-                            <div class="flex justify-between">
-                              <h3 class="text-sm">
-                                <a href="#" class="font-medium text-gray-700 hover:text-gray-800">Basic Tee</a>
-                              </h3>
-                            </div>
-                            <div class="mt-1 flex text-sm">
-                              <p class="text-gray-500">Black</p>
-                              <p class="ml-4 border-l border-gray-200 pl-4 text-gray-500">Large</p>
-                            </div>
-                            <p class="mt-1 text-sm font-medium text-gray-900">$32.00</p>
-                          </div>
-          
-                          <div class="mt-4 sm:mt-0 sm:pr-9">
-                            <div class="inline-grid w-full max-w-16 grid-cols-1">
-                              <select id="quantity-1" name="quantity-1" aria-label="Quantity, Basic Tee" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                              </select>
-                              <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                              </svg>
-                            </div>
-          
-                            <div class="absolute right-0 top-0">
-                              <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
-                                <span class="sr-only">Remove</span>
-                                <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-          
-                        <p class="mt-4 flex space-x-2 text-sm text-gray-700">
-                          <svg class="size-5 shrink-0 text-gray-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd" />
-                          </svg>
-                          <span>Ships in 3–4 weeks</span>
-                        </p>
-                      </div>
-                    </li>
-                    <li class="flex py-6 sm:py-10">
-                      <div class="shrink-0">
-                        <img src="../assets/category3.svg" alt="Insulated bottle with white base and black snap lid." class="size-24 rounded-md object-cover sm:size-48">
-                      </div>
-          
-                      <div class="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-                        <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
-                          <div>
-                            <div class="flex justify-between">
-                              <h3 class="text-sm">
-                                <a href="#" class="font-medium text-gray-700 hover:text-gray-800">Nomad Tumbler</a>
-                              </h3>
-                            </div>
-                            <div class="mt-1 flex text-sm">
-                              <p class="text-gray-500">White</p>
-                            </div>
-                            <p class="mt-1 text-sm font-medium text-gray-900">$35.00</p>
-                          </div>
-          
-                          <div class="mt-4 sm:mt-0 sm:pr-9">
-                            <div class="inline-grid w-full max-w-16 grid-cols-1">
-                              <select id="quantity-2" name="quantity-2" aria-label="Quantity, Nomad Tumbler" class="col-start-1 row-start-1 appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                              </select>
-                              <svg class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                              </svg>
-                            </div>
-          
-                            <div class="absolute right-0 top-0">
-                              <button type="button" class="-m-2 inline-flex p-2 text-gray-400 hover:text-gray-500">
-                                <span class="sr-only">Remove</span>
-                                <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-          
-                        <p class="mt-4 flex space-x-2 text-sm text-gray-700">
-                          <svg class="size-5 shrink-0 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
-                          </svg>
-                          <span>In stock</span>
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-          
-                <!-- Order summary -->
-                <section aria-labelledby="summary-heading" class="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
-                  <h2 id="summary-heading" class="text-lg font-medium text-gray-900">Order summary</h2>
-          
-                  <dl class="mt-6 space-y-4">
-                    <div class="flex items-center justify-between">
-                      <dt class="text-sm text-gray-600">Subtotal</dt>
-                      <dd class="text-sm font-medium text-gray-900">$99.00</dd>
-                    </div>
-                    <div class="flex items-center justify-between border-t border-gray-200 pt-4">
-                      <dt class="flex items-center text-sm text-gray-600">
-                        <span>Shipping estimate</span>
-                        <a href="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
-                          <span class="sr-only">Learn more about how shipping is calculated</span>
-                          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
-                          </svg>
-                        </a>
-                      </dt>
-                      <dd class="text-sm font-medium text-gray-900">$5.00</dd>
-                    </div>
-                    <div class="flex items-center justify-between border-t border-gray-200 pt-4">
-                      <dt class="flex text-sm text-gray-600">
-                        <span>Tax estimate</span>
-                        <a href="#" class="ml-2 shrink-0 text-gray-400 hover:text-gray-500">
-                          <span class="sr-only">Learn more about how tax is calculated</span>
-                          <svg class="size-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
-                          </svg>
-                        </a>
-                      </dt>
-                      <dd class="text-sm font-medium text-gray-900">$8.32</dd>
-                    </div>
-                    <div class="flex items-center justify-between border-t border-gray-200 pt-4">
-                      <dt class="text-base font-medium text-gray-900">Order total</dt>
-                      <dd class="text-base font-medium text-gray-900">$112.32</dd>
-                    </div>
-                  </dl>
-          
-                  <div class="mt-6">
-                    <button type="submit" class="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50">Checkout</button>
-                  </div>
-                </section>
-              </form>
-          
-            </main>
+  </head>
+  <body>
+    <header class="mb-4">
+      <!-- Top Banner -->
+      <div class="bg-sky-500 text-white py-3 px-4 text-center">
+        <p class="text-base">
+          Get the best deals we have to offer, click here to get a coupon code.
+        </p>
+      </div>
 
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] py-4 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="../../assets/icons/logo.svg"
+              class="w-10 h-10 bg-sky-500 rounded-lg"
+              alt="Logo"
+            />
+            <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
           </div>
-          
-    </section>
-</body>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]"
+              >Contact us</a
+            >
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+          </div>
+
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input
+                type="text"
+                placeholder="Search"
+                class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none"
+              />
+              <svg
+                class="absolute left-3 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a
+              href="/onboarding/login/login.html"
+              class="flex items-center text-gray-600 hover:text-sky-500"
+            >
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button class="flex items-center text-gray-600 hover:text-sky-500">
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg
+              id="menuIcon"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+              />
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-sky-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="">
+      <div class="container mx-auto px-4 py-8">
+        <div class="mb-6 space-y-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_73_16513" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                <rect width="24" height="24" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_73_16513)">
+                <path d="M10 18L4 12L10 6L11.4 7.45L7.85 11H20V13H7.85L11.4 16.55L10 18Z" fill="#1C1B1F"/>
+                </g>
+                </svg>
+                
+          <span class="text-[#0EA5E9] block text-sm font-medium">Shopping Cart</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-6">
+            <!-- Cart Item 1 -->
+            <div class="bg-[#FCFCFC] rounded-lg p-3 flex">
+              <div class="w-1/3 mr-6">
+                <img
+                  src="./assets/category1.svg"
+                  alt="Product"
+                  class="w-full h-auto object-cover rounded-md"
+                />
+              </div>
+              <div class="flex-grow pt-6">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h2 class="text-lg text-[#4B5563] font-medium">
+                      Construction Boots Emil 4.
+                    </h2>
+                    <!-- <div class="text-sm text-gray-500 mt-1">
+                      <span class="mr-2 text-[#4B5563] text-lg">N14,000.00</span>
+                      <span class="text-green-600 text-lg">In stock</span>
+                    </div> -->
+                  </div>
+                  <div class="text-lg text-[#4B5563] font-medium">N11,400,000.00</div>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500 mt-1">
+                        <span class="mr-2 text-[#4B5563] font-medium text-lg">N14,000.00</span>
+                        <span class="text-[#1CA671] font-medium text-lg">In stock</span>
+                      </div>
+                    <div class="flex space-x-4">
+                      <button class="text-[#4B5563] font-medium hover:text-blue-600 text-sm  flex items-center gap-x-1">
+                        Save 
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_73_16566" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                            <rect width="16" height="16" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_73_16566)">
+                            <path d="M7.99967 14.0009L7.03301 13.1342C5.91079 12.1231 4.98301 11.2509 4.24967 10.5176C3.51634 9.78425 2.93301 9.12591 2.49967 8.54258C2.06634 7.95925 1.76356 7.42313 1.59134 6.93425C1.41912 6.44536 1.33301 5.94536 1.33301 5.43424C1.33301 4.3898 1.68301 3.51758 2.38301 2.81758C3.08301 2.11758 3.95523 1.76758 4.99967 1.76758C5.57745 1.76758 6.12745 1.8898 6.64967 2.13424C7.1719 2.37869 7.6219 2.72313 7.99967 3.16758C8.37745 2.72313 8.82745 2.37869 9.34967 2.13424C9.8719 1.8898 10.4219 1.76758 10.9997 1.76758C12.0441 1.76758 12.9163 2.11758 13.6163 2.81758C14.3163 3.51758 14.6663 4.3898 14.6663 5.43424C14.6663 5.94536 14.5802 6.44536 14.408 6.93425C14.2358 7.42313 13.933 7.95925 13.4997 8.54258C13.0663 9.12591 12.483 9.78425 11.7497 10.5176C11.0163 11.2509 10.0886 12.1231 8.96634 13.1342L7.99967 14.0009Z" fill="#4B5563"/>
+                            </g>
+                            </svg>
+                            
+                      </button>
+                      <button class="text-[#4B5563] font-medium hover:text-red-600 text-sm  flex items-center gap-x-1">
+                        Delete 
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_73_16571" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                            <rect width="20" height="20" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_73_16571)">
+                            <path d="M5.83252 17.5C5.37419 17.5 4.98183 17.3368 4.65544 17.0104C4.32905 16.684 4.16585 16.2917 4.16585 15.8333V5H3.33252V3.33333H7.49919V2.5H12.4992V3.33333H16.6659V5H15.8325V15.8333C15.8325 16.2917 15.6693 16.684 15.3429 17.0104C15.0165 17.3368 14.6242 17.5 14.1659 17.5H5.83252ZM7.49919 14.1667H9.16585V6.66667H7.49919V14.1667ZM10.8325 14.1667H12.4992V6.66667H10.8325V14.1667Z" fill="#4B5563"/>
+                            </g>
+                            </svg>
+                            
+                      </button>
+                    </div>
+                </div>
+
+                <div class="flex space-x-2 my-3">
+                  <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                    <option>XL</option>
+                  </select>
+                  <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                    <option>Blue</option>
+                  </select>
+                  <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                    <option>10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cart Item 2 -->
+            <div class="bg-[#FCFCFC] rounded-lg p-3 flex">
+                <div class="w-1/3 mr-6">font-medium
+                  <img
+                    src="./assets/category4.svg"
+                    alt="Product"
+                    class="w-full h-auto object-cover rounded-md"
+                  />
+                </div>
+                <div class="flex-grow pt-6">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h2 class="text-lg text-[#4B5563] font-medium">
+                        Construction Boots Emil 4.
+                      </h2>
+                      <!-- <div class="text-sm text-gray-500 mt-1">
+                        <span class="mr-2 text-[#4B5563] text-lg">N14,000.00</span>
+                        <span class="text-green-600 text-lg">In stock</span>
+                      </div> -->
+                    </div>
+                    <div class="text-lg text-[#4B5563] font-medium">N11,400,000.00</div>
+                  </div>
+  
+                  <div class="flex justify-between items-center">
+                      <div class="text-sm text-gray-500 mt-1">
+                          <span class="mr-2 text-[#4B5563] font-medium text-lg">N14,000.00</span>
+                          <span class="text-[#1CA671] font-medium text-lg">In stock</span>
+                        </div>
+                      <div class="flex space-x-4">
+                        <button class="text-[#4B5563] font-medium hover:text-blue-600 text-sm  flex items-center gap-x-1">
+                          Save 
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <mask id="mask0_73_16566" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                              <rect width="16" height="16" fill="#D9D9D9"/>
+                              </mask>
+                              <g mask="url(#mask0_73_16566)">
+                              <path d="M7.99967 14.0009L7.03301 13.1342C5.91079 12.1231 4.98301 11.2509 4.24967 10.5176C3.51634 9.78425 2.93301 9.12591 2.49967 8.54258C2.06634 7.95925 1.76356 7.42313 1.59134 6.93425C1.41912 6.44536 1.33301 5.94536 1.33301 5.43424C1.33301 4.3898 1.68301 3.51758 2.38301 2.81758C3.08301 2.11758 3.95523 1.76758 4.99967 1.76758C5.57745 1.76758 6.12745 1.8898 6.64967 2.13424C7.1719 2.37869 7.6219 2.72313 7.99967 3.16758C8.37745 2.72313 8.82745 2.37869 9.34967 2.13424C9.8719 1.8898 10.4219 1.76758 10.9997 1.76758C12.0441 1.76758 12.9163 2.11758 13.6163 2.81758C14.3163 3.51758 14.6663 4.3898 14.6663 5.43424C14.6663 5.94536 14.5802 6.44536 14.408 6.93425C14.2358 7.42313 13.933 7.95925 13.4997 8.54258C13.0663 9.12591 12.483 9.78425 11.7497 10.5176C11.0163 11.2509 10.0886 12.1231 8.96634 13.1342L7.99967 14.0009Z" fill="#4B5563"/>
+                              </g>
+                              </svg>
+                              
+                        </button>
+                        <button class="text-[#4B5563] font-medium hover:text-red-600 text-sm  flex items-center gap-x-1">
+                          Delete 
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <mask id="mask0_73_16571" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                              <rect width="20" height="20" fill="#D9D9D9"/>
+                              </mask>
+                              <g mask="url(#mask0_73_16571)">
+                              <path d="M5.83252 17.5C5.37419 17.5 4.98183 17.3368 4.65544 17.0104C4.32905 16.684 4.16585 16.2917 4.16585 15.8333V5H3.33252V3.33333H7.49919V2.5H12.4992V3.33333H16.6659V5H15.8325V15.8333C15.8325 16.2917 15.6693 16.684 15.3429 17.0104C15.0165 17.3368 14.6242 17.5 14.1659 17.5H5.83252ZM7.49919 14.1667H9.16585V6.66667H7.49919V14.1667ZM10.8325 14.1667H12.4992V6.66667H10.8325V14.1667Z" fill="#4B5563"/>
+                              </g>
+                              </svg>
+                              
+                        </button>
+                      </div>
+                  </div>
+  
+                  <div class="flex space-x-2 my-3">
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>XL</option>
+                    </select>
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>Blue</option>
+                    </select>
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>10</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+              <div class="bg-[#FCFCFC] rounded-lg p-3 flex">
+                <div class="w-1/3 mr-6">
+                  <img
+                    src="./assets/category2.svg"
+                    alt="Product"
+                    class="w-full h-auto object-cover rounded-md"
+                  />
+                </div>
+                <div class="flex-grow pt-6">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h2 class="text-lg text-[#4B5563] font-medium">
+                        Construction Boots Emil 4.
+                      </h2>
+                      <!-- <div class="text-sm text-gray-500 mt-1">
+                        <span class="mr-2 text-[#4B5563] text-lg">N14,000.00</span>
+                        <span class="text-green-600 text-lg">In stock</span>
+                      </div> -->
+                    </div>
+                    <div class="text-lg text-[#4B5563] font-medium">N11,400,000.00</div>
+                  </div>
+  
+                  <div class="flex justify-between items-center">
+                      <div class="text-sm text-gray-500 mt-1">
+                          <span class="mr-2 text-[#4B5563] font-medium text-lg">N14,000.00</span>
+                          <span class="text-[#1CA671] font-medium text-lg">In stock</span>
+                        </div>
+                      <div class="flex space-x-4">
+                        <button class="text-[#4B5563] font-medium hover:text-blue-600 text-sm  flex items-center gap-x-1">
+                          Save 
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <mask id="mask0_73_16566" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                              <rect width="16" height="16" fill="#D9D9D9"/>
+                              </mask>
+                              <g mask="url(#mask0_73_16566)">
+                              <path d="M7.99967 14.0009L7.03301 13.1342C5.91079 12.1231 4.98301 11.2509 4.24967 10.5176C3.51634 9.78425 2.93301 9.12591 2.49967 8.54258C2.06634 7.95925 1.76356 7.42313 1.59134 6.93425C1.41912 6.44536 1.33301 5.94536 1.33301 5.43424C1.33301 4.3898 1.68301 3.51758 2.38301 2.81758C3.08301 2.11758 3.95523 1.76758 4.99967 1.76758C5.57745 1.76758 6.12745 1.8898 6.64967 2.13424C7.1719 2.37869 7.6219 2.72313 7.99967 3.16758C8.37745 2.72313 8.82745 2.37869 9.34967 2.13424C9.8719 1.8898 10.4219 1.76758 10.9997 1.76758C12.0441 1.76758 12.9163 2.11758 13.6163 2.81758C14.3163 3.51758 14.6663 4.3898 14.6663 5.43424C14.6663 5.94536 14.5802 6.44536 14.408 6.93425C14.2358 7.42313 13.933 7.95925 13.4997 8.54258C13.0663 9.12591 12.483 9.78425 11.7497 10.5176C11.0163 11.2509 10.0886 12.1231 8.96634 13.1342L7.99967 14.0009Z" fill="#4B5563"/>
+                              </g>
+                              </svg>
+                              
+                        </button>
+                        <button class="text-[#4B5563] font-medium hover:text-red-600 text-sm  flex items-center gap-x-1">
+                          Delete 
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <mask id="mask0_73_16571" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                              <rect width="20" height="20" fill="#D9D9D9"/>
+                              </mask>
+                              <g mask="url(#mask0_73_16571)">
+                              <path d="M5.83252 17.5C5.37419 17.5 4.98183 17.3368 4.65544 17.0104C4.32905 16.684 4.16585 16.2917 4.16585 15.8333V5H3.33252V3.33333H7.49919V2.5H12.4992V3.33333H16.6659V5H15.8325V15.8333C15.8325 16.2917 15.6693 16.684 15.3429 17.0104C15.0165 17.3368 14.6242 17.5 14.1659 17.5H5.83252ZM7.49919 14.1667H9.16585V6.66667H7.49919V14.1667ZM10.8325 14.1667H12.4992V6.66667H10.8325V14.1667Z" fill="#4B5563"/>
+                              </g>
+                              </svg>
+                              
+                        </button>
+                      </div>
+                  </div>
+  
+                  <div class="flex space-x-2 my-3">
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>XL</option>
+                    </select>
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>Blue</option>
+                    </select>
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>10</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-[#FCFCFC] rounded-lg p-3 flex">
+                <div class="w-1/3 mr-6">
+                  <img
+                    src="./assets/category3.svg"
+                    alt="Product"
+                    class="w-full h-auto object-cover rounded-md"
+                  />
+                </div>
+                <div class="flex-grow pt-6">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h2 class="text-lg text-[#4B5563] font-medium">
+                        Construction Boots Emil 4.
+                      </h2>
+                      <!-- <div class="text-sm text-gray-500 mt-1">
+                        <span class="mr-2 text-[#4B5563] text-lg">N14,000.00</span>
+                        <span class="text-green-600 text-lg">In stock</span>
+                      </div> -->
+                    </div>
+                    <div class="text-lg text-[#4B5563] font-medium">N11,400,000.00</div>
+                  </div>
+  
+                  <div class="flex justify-between items-center">
+                      <div class="text-sm text-gray-500 mt-1">
+                          <span class="mr-2 text-[#4B5563] font-medium text-lg">N14,000.00</span>
+                          <span class="text-[#1CA671] font-medium text-lg">In stock</span>
+                        </div>
+                      <div class="flex space-x-4">
+                        <button class="text-[#4B5563] font-medium hover:text-blue-600 text-sm  flex items-center gap-x-1">
+                          Save 
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <mask id="mask0_73_16566" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                              <rect width="16" height="16" fill="#D9D9D9"/>
+                              </mask>
+                              <g mask="url(#mask0_73_16566)">
+                              <path d="M7.99967 14.0009L7.03301 13.1342C5.91079 12.1231 4.98301 11.2509 4.24967 10.5176C3.51634 9.78425 2.93301 9.12591 2.49967 8.54258C2.06634 7.95925 1.76356 7.42313 1.59134 6.93425C1.41912 6.44536 1.33301 5.94536 1.33301 5.43424C1.33301 4.3898 1.68301 3.51758 2.38301 2.81758C3.08301 2.11758 3.95523 1.76758 4.99967 1.76758C5.57745 1.76758 6.12745 1.8898 6.64967 2.13424C7.1719 2.37869 7.6219 2.72313 7.99967 3.16758C8.37745 2.72313 8.82745 2.37869 9.34967 2.13424C9.8719 1.8898 10.4219 1.76758 10.9997 1.76758C12.0441 1.76758 12.9163 2.11758 13.6163 2.81758C14.3163 3.51758 14.6663 4.3898 14.6663 5.43424C14.6663 5.94536 14.5802 6.44536 14.408 6.93425C14.2358 7.42313 13.933 7.95925 13.4997 8.54258C13.0663 9.12591 12.483 9.78425 11.7497 10.5176C11.0163 11.2509 10.0886 12.1231 8.96634 13.1342L7.99967 14.0009Z" fill="#4B5563"/>
+                              </g>
+                              </svg>
+                              
+                        </button>
+                        <button class="text-[#4B5563] font-medium hover:text-red-600 text-sm  flex items-center gap-x-1">
+                          Delete 
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <mask id="mask0_73_16571" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                              <rect width="20" height="20" fill="#D9D9D9"/>
+                              </mask>
+                              <g mask="url(#mask0_73_16571)">
+                              <path d="M5.83252 17.5C5.37419 17.5 4.98183 17.3368 4.65544 17.0104C4.32905 16.684 4.16585 16.2917 4.16585 15.8333V5H3.33252V3.33333H7.49919V2.5H12.4992V3.33333H16.6659V5H15.8325V15.8333C15.8325 16.2917 15.6693 16.684 15.3429 17.0104C15.0165 17.3368 14.6242 17.5 14.1659 17.5H5.83252ZM7.49919 14.1667H9.16585V6.66667H7.49919V14.1667ZM10.8325 14.1667H12.4992V6.66667H10.8325V14.1667Z" fill="#4B5563"/>
+                              </g>
+                              </svg>
+                              
+                        </button>
+                      </div>
+                  </div>
+  
+                  <div class="flex space-x-2 my-3">
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>XL</option>
+                    </select>
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>Blue</option>
+                    </select>
+                    <select class="border-none text-xs outline-none rounded px-3 py-1.5">
+                      <option>10</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="bg-white rounded-lg border-[0.5px] border-gray-100 p-6 h-fit">
+            <h2 class="text-sm font-medium text-[#4B5563] mb-6 border-b-[0.5px] border-gray-50 pb-3">Payment Summary</h2>
+            <div class="space-y-4">
+              <div class="flex justify-between">
+                <span class="text-[#4B5563] font-medium">Subtotal</span>
+                <span>N11,000,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#4B5563]">Discount</span>
+                <span class="text-[#4B5563]">-N10,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#4B5563]">Delivery</span>
+                <span class="text-[#4B5563]">+N100,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#4B5563]">Tax</span>
+                <span class="text-[#4B5563]">+N120,000</span>
+              </div>
+              <div class="border-t pt-4 flex justify-between font-medium">
+                <span class="text-[#4B5563]">Total</span>
+                <span class="text-[#4B5563]">N11,140,000</span>
+              </div>
+            </div>
+            <button
+              class="w-full bg-[#0EA5E9] text-white py-3 text-sm rounded-lg mt-6 hover:bg-[#0EA5E9]"
+            >
+              Proceed to Checkout
+            </button>
+            <div
+              class="text-center mt-4 py-3 rounded-lg text-[#111827] text-sm border-[0.5px] border-gray-100 cursor-pointer"
+            >
+              Continue Shopping
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-[#F9FAFB]">
+      <div class="container p-6 lg:p-20 mx-auto">
+        <div class="lg:flex gap-x-12">
+          <div class="w-full -mx-6 lg:w-2/5">
+            <div class="px-6">
+              <div>
+                <div class="mb-8 flex gap-3 justify-start items-center">
+                  <div class="w-12 h-12 rounded-md">
+                    <img
+                      src="../../assets/icons/logo.svg"
+                      alt="Logo"
+                      class="w-full"
+                    />
+                  </div>
+                  <h4
+                    class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]"
+                    style="font-style: italic"
+                  >
+                    Full Logo Goes Here
+                  </h4>
+                </div>
+                <p class="text-[#344054] mb-4">
+                  Be the first to receive all the recent updates, articles, and
+                  valuable materials.
+                </p>
+                <form id="subscribeForm" class="flex space-x-2">
+                  <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="Enter your email"
+                    class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                  />
+                  <button
+                    type="submit"
+                    class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 lg:mt-0 lg:flex-1">
+            <div
+              class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            >
+              <div>
+                <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >About</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Security</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Blog</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Careers</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Service Status</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Partnerships</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Mission roadmap</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Community</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Mass Payments</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Debit Card</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for Startups</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for Developers</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for No-code</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Assets</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-700 uppercase dark:text-white">
+                  Various Templates
+                </h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Financial Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Fashion & Beauty Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Agriculture Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Manufacturing Templatess</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
+
+        <div>
+          <p class="text-center text-gray-500 dark:text-gray-400">
+            © Brand 2020 - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
