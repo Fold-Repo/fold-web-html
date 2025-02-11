@@ -1,170 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Listing</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .img-hover:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease-in-out;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Boots Emil 4.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <section class="bg-gray-100 font-sans">
-
-        <div class="max-w-6xl mx-auto py-10 px-4 md:px-8">
-          <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-      
-            <!-- Product Image Section -->
-            <div class="flex space-x-4">
-              <div class="flex flex-col space-y-4">
-                <!-- Thumbnail Images -->
-                <img class="w-20 h-20 object-cover rounded-lg cursor-pointer hover:border-2 hover:border-blue-500 transition duration-200" src="./assets/detail.svg" alt="thumbnail">
-                <img class="w-20 h-20 object-cover rounded-lg cursor-pointer hover:border-2 hover:border-blue-500 transition duration-200" src="./assets/detail.svg" alt="thumbnail">
-                <img class="w-20 h-20 object-cover rounded-lg cursor-pointer hover:border-2 hover:border-blue-500 transition duration-200" src="./assets/detail.svg" alt="thumbnail">
-              </div>
-              
-              <!-- Main Image -->
-              <div class="w-80 h-80 bg-white p-4 rounded-lg shadow-lg flex justify-center items-center">
-                <img class="w-full h-full object-cover rounded-lg img-hover" src="./assets/detail.svg" alt="main product image">
-              </div>
+<body class="">
+    <header class="">
+        <!-- Top Banner -->
+        <div class="bg-sky-500 text-white py-3 px-4 text-center">
+          <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
+        </div>
+    
+        <!-- Navigation -->
+        <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
+          <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
+              <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
             </div>
-      
-            <!-- Product Details Section -->
-            <div class="flex-1 space-y-4">
-              <h2 class="text-3xl font-bold text-gray-800">Construction Boots Emil 4</h2>
-              <p class="text-2xl text-gray-800">₦114,000.00</p>
-      
-              <div class="flex items-center space-x-2">
-                <span class="text-yellow-400">★★★★☆</span>
-                <span class="text-gray-600">(43 Reviews)</span>
+    
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+              <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+              <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+            </div>
+    
+            <!-- Desktop Search & Icons -->
+            <div class="hidden lg:flex items-center space-x-6">
+              <div class="relative flex items-center">
+                <input type="text" placeholder="Search"
+                  class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
+                <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 21l-4.35-4.35"></path>
+                </svg>
               </div>
-      
-              <p class="text-gray-600 text-sm">
-                Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.
-              </p>
-      
-              <div class="space-y-4">
-                <!-- Available Colors -->
-                <div>
-                  <p class="font-semibold">Available Colours</p>
-                  <div class="flex space-x-2">
-                    <span class="w-8 h-8 rounded-full bg-black cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
-                    <span class="w-8 h-8 rounded-full bg-red-600 cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
-                    <span class="w-8 h-8 rounded-full bg-blue-500 cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
-                    <span class="w-8 h-8 rounded-full bg-green-500 cursor-pointer hover:ring-2 hover:ring-blue-500 transition"></span>
-                  </div>
-                </div>
-      
-                <!-- Available Sizes -->
-                <div>
-                  <p class="font-semibold">Available Sizes</p>
-                  <div class="flex space-x-4">
-                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">S</button>
-                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">M</button>
-                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">L</button>
-                    <button class="px-4 py-2 border rounded-lg text-sm font-semibold text-gray-800 border-gray-300 hover:bg-gray-200 transition">XL</button>
-                  </div>
-                </div>
-              </div>
-      
-              <button class="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition">
-                Proceed to Checkout
+              <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
+                <img src="../../assets/icons/user.svg" alt="User" />
+                <span class="ml-2">Login</span>
+              </a>
+              <button class="flex items-center text-gray-600 hover:text-sky-500">
+                <img src="../../assets/icons/cart.svg" alt="Cart" />
+                <span class="ml-1">0</span>
               </button>
             </div>
+    
+            <!-- Mobile Menu Button -->
+            <button id="menuButton" class="lg:hidden text-gray-600">
+              <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+    
+          <!-- Mobile Menu -->
+          <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+            <div class="flex flex-col space-y-4">
+              <!-- Mobile Search -->
+              <div class="relative">
+                <input type="text" placeholder="Search"
+                  class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor"
+                  viewBox="0 0 24 24">
+                  <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+              </div>
+              <a href="index.html" class="text-sky-500">Home</a>
+              <a href="#" class="text-gray-600">About us</a>
+              <a href="#" class="text-gray-600">Contact us</a>
+              <a href="#" class="text-gray-600">Wishlist</a>
+              <a href="#" class="text-gray-600">Chat</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="lg:flex">
+            <!-- Vertical Thumbnails -->
+            <div class="lg:w-44  lg:mr-4 flex space-y-4 flex-col justify-between">
+                <div class="flex-1 rounded-lg cursor-pointer">
+                    <img src="../assets/mini-detail1.svg" alt="Thumbnail 1" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 rounded-lg cursor-pointer">
+                    <img src="../assets/mini-detail2.svg" alt="Thumbnail 2" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 rounded-lg cursor-pointer">
+                    <img src="../assets/mini-detail2.svg" alt="Thumbnail 3" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 rounded-lg cursor-pointer">
+                    <img src="../assets/mini-detail2.svg" alt="Thumbnail 4" class="w-full h-full object-cover">
+                </div>
+            </div>
+        
+            <!-- Main Product Image -->
+            <div class="lg:w-1/2 lg:mr-8 rounded-lg mt-5 lg:my-0">
+                <div class="bg-white rounded-lg h-full flex items-center">
+                    <img src="../assets/details-main.svg" alt="Main Product" class="w-full rounded-lg h-full object-cover">
+                </div>
+            </div>
+        
+            <!-- Product Details -->
+            <div class="lg:w-1/3 self-end">
+                <h1 class="text-2xl text-[#111827] font-medium mb-2">Construction Boots Emil 4.</h1>
+                
+                <p class="text-3xl font-medium text-[#111827] mb-4">N114,000.00</p>
+                <div class="flex items-center mb-4">
+                    <!-- <div class="flex text-yellow-400 mr-2">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                        <svg class="w-5 h-5 fill-current text-gray-300" viewBox="0 0 24 24">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                    </div> -->
+                    <div class="flex space-x-1 my-1">
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-gray-300">
+                            <img src="../assets/gray-star.svg" alt="User">
+                        </span>
+                    </div>
+                    <span class="text-[#111827]">(43 Reviews)</span>
+                </div>
+                <p class="text-[#111827] mb-3 font-bold">Description</p>
+                <p class="mb-4 max-w-2xl text-[#4B5563] leading-relaxed">
+                    Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+        
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold mb-2">Available Colours</h3>
+                    <div class="flex space-x-2">
+                        <div class="border-2 p-1 border-black rounded-md">
+                            <div class="w-10 h-10 rounded-md bg-black cursor-pointer"></div>
+                        </div>
+                        <div class="border-2 p-1 border-blue-500 rounded-md">
+                            <div class="w-10 h-10 rounded-md bg-blue-500 cursor-pointer"></div>
+                        </div>
+                        <div class="border-2 p-1 border-green-600 rounded-md">
+                            <div class="w-10 h-10 rounded-md bg-green-600 cursor-pointer"></div>
+                        </div>
+                        <div class="border-2 p-1 border-red-500 rounded-md">
+                            <div class="w-10 h-10 rounded-md bg-red-500 cursor-pointer"></div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold mb-2">Available Sizes</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-5 py-3.5 border bg-[#111827] border font-medium text-white rounded hover:bg-gray-100">S</button>
+                        <button class="px-5 py-3.5 border text-[#111827] bg-[#F6F6F6] border font-medium rounded hover:bg-gray-100">M</button>
+                        <button class="px-5 py-3.5 border text-[#111827] bg-[#F6F6F6] border font-medium rounded hover:bg-gray-100">L</button>
+                        <button class="px-5 py-3.5 border text-[#111827] bg-[#F6F6F6] border font-medium rounded hover:bg-gray-100">XL</button>
+                    </div>
+                </div>
+        
+              <div class="flex justify-between space-x-4 items-center">
+               <div class="w-full">
+                <button class="w-full bg-[#0EA5E9] text-white py-4 rounded-lg transition duration-300">
+                    Proceed to Checkout
+                </button>
+               </div>
+                <div>
+                    <button class="bg-gray-200 py-3 px-4 rounded-lg">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_73_15222" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="25">
+                            <rect x="0.5" y="0.611328" width="24" height="24" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_73_15222)">
+                            <path d="M12.5 21.6117L11.05 20.3117C9.36667 18.7951 7.975 17.4867 6.875 16.3867C5.775 15.2867 4.9 14.2992 4.25 13.4242C3.6 12.5492 3.14583 11.7451 2.8875 11.0117C2.62917 10.2784 2.5 9.52839 2.5 8.76172C2.5 7.19505 3.025 5.88672 4.075 4.83672C5.125 3.78672 6.43333 3.26172 8 3.26172C8.86667 3.26172 9.69167 3.44505 10.475 3.81172C11.2583 4.17839 11.9333 4.69505 12.5 5.36172C13.0667 4.69505 13.7417 4.17839 14.525 3.81172C15.3083 3.44505 16.1333 3.26172 17 3.26172C18.5667 3.26172 19.875 3.78672 20.925 4.83672C21.975 5.88672 22.5 7.19505 22.5 8.76172C22.5 9.52839 22.3708 10.2784 22.1125 11.0117C21.8542 11.7451 21.4 12.5492 20.75 13.4242C20.1 14.2992 19.225 15.2867 18.125 16.3867C17.025 17.4867 15.6333 18.7951 13.95 20.3117L12.5 21.6117ZM12.5 18.9117C14.1 17.4784 15.4167 16.2492 16.45 15.2242C17.4833 14.1992 18.3 13.3076 18.9 12.5492C19.5 11.7909 19.9167 11.1159 20.15 10.5242C20.3833 9.93255 20.5 9.34505 20.5 8.76172C20.5 7.76172 20.1667 6.92839 19.5 6.26172C18.8333 5.59505 18 5.26172 17 5.26172C16.2167 5.26172 15.4917 5.48255 14.825 5.92422C14.1583 6.36589 13.7 6.92839 13.45 7.61172H11.55C11.3 6.92839 10.8417 6.36589 10.175 5.92422C9.50833 5.48255 8.78333 5.26172 8 5.26172C7 5.26172 6.16667 5.59505 5.5 6.26172C4.83333 6.92839 4.5 7.76172 4.5 8.76172C4.5 9.34505 4.61667 9.93255 4.85 10.5242C5.08333 11.1159 5.5 11.7909 6.1 12.5492C6.7 13.3076 7.51667 14.1992 8.55 15.2242C9.58333 16.2492 10.9 17.4784 12.5 18.9117Z" fill="#1C1B1F"/>
+                            </g>
+                            </svg>
+                            
+                    </button>
+                </div>
+              </div>
+                    
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="container mx-auto bg-[#F8F8F8] px-6 m-3 lg:m-0 py-8 max-w-6xl rounded-lg">
+        <!-- Filters and Buttons -->
+        <div class="flex items-center space-x-4 mb-6">
+            <button class="bg-[#0EA5E9] text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+                <span>Filters</span>
+                <span class="bg-white text-[#0EA5E9] px-2 py-1 rounded-full text-sm font-semibold">3</span>
+            </button>
+            <button class="border px-4 py-2 text-[#111827] border-[#111827] rounded-lg">Description</button>
+            <button class="border px-4 py-2 text-[#111827] border-[#111827] rounded-lg">Description</button>
+        </div>
+
+        <!-- Reviews Section -->
+        <h2 class="text-xl font-bold mb-4">Reviews</h2>
+        
+        <div class="space-y-6">
+            <!-- Review Item -->
+            <div class="flex space-x-4">
+                <img src="../assets/review-avatar.svg" alt="User" class="w-12 h-12 rounded-full">
+                <div class="flex-1">
+                    <p class="font-medium text-[#111827]">The Xtras, <span class="text-[#6C6C6C]">Yesterday</span></p>
+                    <div class="flex space-x-1 my-1">
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-gray-300">
+                            <img src="../assets/gray-star.svg" alt="User">
+                        </span>
+                    </div>
+                    <p class="text-[#111827] leading-snug  mb-2">Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. Details about the product in question goes here.</p>
+                    <div class="flex items-center space-x-4 text-gray-500">
+                        <button class="text-[#0EA5E9]">Reply</button>
+                        <span class="flex items-center space-x-1"><span>
+                            <img src="../assets/thumb-up.svg" alt="thumb up">
+                        </span> <span>123</span></span>
+                        <span class="flex items-center space-x-1"><span>
+                            <img src="../assets/thumb-down.svg" alt="User">
+                        </span> <span>0</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Item Duplicate -->
+            <div class="flex space-x-4">
+                <img src="../assets/review-avatar.svg" alt="User" class="w-12 h-12 rounded-full">
+                <div class="flex-1">
+                    <p class="font-semibold">The Xtras, <span class="text-gray-500">Yesterday</span></p>
+                    <div class="flex space-x-1 my-1">
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-gray-300">
+                            <img src="../assets/gray-star.svg" alt="User">
+                        </span>
+                    </div>
+                    <p class="text-[#111827] leading-snug mb-2">Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. Details about the product in question goes here.</p>
+                    <div class="flex items-center space-x-4 text-gray-500">
+                        <button class="text-[#0EA5E9]">Reply</button>
+                        <span class="flex items-center space-x-1"><span>
+                            <img src="../assets/thumb-up.svg" alt="thumb up">
+                        </span> <span>123</span></span>
+                        <span class="flex items-center space-x-1"><span>
+                            <img src="../assets/thumb-down.svg" alt="User">
+                        </span> <span>0</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review Item Duplicate -->
+            <div class="flex space-x-4">
+                <img src="../assets/review-avatar.svg" alt="User" class="w-12 h-12 rounded-full">
+                <div class="flex-1">
+                    <p class="font-medium text-[#111827]">The Xtras, <span class="text-[#6C6C6C]">Yesterday</span></p>
+                    <div class="flex space-x-1 my-1">
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-yellow-400">
+                            <img src="../assets/star.svg" alt="User">
+                        </span>
+                        <span class="text-gray-300">
+                            <img src="../assets/gray-star.svg" alt="User">
+                        </span>
+                    </div>
+                    <p class="text-[#111827] leading-snug  mb-2">Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. Details about the product in question goes here.</p>
+                    <div class="flex items-center space-x-4 text-gray-500">
+                        <button class="text-[#0EA5E9]">Reply</button>
+                        <span class="flex items-center space-x-1"><span>
+                            <img src="../assets/thumb-up.svg" alt="thumb up">
+                        </span> <span>123</span></span>
+                        <span class="flex items-center space-x-1"><span>
+                            <img src="../assets/thumb-down.svg" alt="User">
+                        </span> <span>0</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#F9FAFB] mt-10">
+        <div class="container p-6 lg:p-20 mx-auto">
+          <div class="lg:flex gap-x-12">
+            <div class="w-full -mx-6 lg:w-2/5">
+              <div class="px-6">
+                <div>
+                  <div class="mb-8 flex gap-3 justify-start items-center">
+                    <div class="w-12 h-12 rounded-md">
+                      <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
+                    </div>
+                    <h4 class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]" style="font-style: italic">
+                      Full Logo Goes Here
+                    </h4>
+                  </div>
+                  <p class="text-[#344054] mb-4">Be the first to receive all the recent updates, articles, and valuable
+                    materials.</p>
+                  <form id="subscribeForm" class="flex space-x-2">
+                    <input type="email" id="emailInput" placeholder="Enter your email"
+                      class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
+                    <button type="submit" class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600">
+                      Subscribe
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+    
+            <div class="mt-6 lg:mt-0 lg:flex-1">
+              <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div>
+                  <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
+                  <div class="space-y-6">
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service
+                      Status</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission
+                      roadmap</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
+                  </div>
+                </div>
+    
+                <div>
+                  <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
+                  <div class="space-y-6">
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass
+                      Payments</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
+                      Startups</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
+                      Developers</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
+                      No-code</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
+                  </div>
+                </div>
+    
+                <div>
+                  <h3 class="text-gray-700 uppercase dark:text-white">Various Templates</h3>
+                  <div class="space-y-6">
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial
+                      Templates</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty
+                      Templates</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture
+                      Templates</a>
+                    <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing
+                      Templatess</a>
+                  </div>
+                </div>
+    
+    
+              </div>
+            </div>
+          </div>
+    
+          <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
+    
+          <div>
+            <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
           </div>
         </div>
-      
-      </section>
-      
-      <section class="bg-gray-100 py-10">
-      
-          <!-- Container -->
-          <div class="max-w-7xl mx-auto px-4">
-              <!-- Filters Section -->
-              <div class="flex justify-between items-center mb-8">
-                  <div class="flex space-x-4">
-                      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Filters</button>
-                      <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300">Description</button>
-                  </div>
-                  <div class="text-lg font-semibold">Reviews</div>
-              </div>
-      
-              <!-- Reviews Section -->
-              <div class="space-y-6">
-                  <!-- Review 1 -->
-                  <div class="flex space-x-4 hover-effect bg-white shadow-md rounded-lg p-6">
-                      <img src="https://i.pravatar.cc/150?img=3" alt="Reviewer" class="h-12 w-12 rounded-full">
-                      <div class="flex flex-col space-y-2">
-                          <div class="flex items-center space-x-2">
-                              <span class="text-lg font-semibold">The Xtras</span>
-                              <span class="text-gray-500">Yesterday</span>
-                          </div>
-                          <div class="flex space-x-1 text-yellow-500">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                          </div>
-                          <p class="text-gray-700 text-sm">
-                              Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.
-                          </p>
-                          <div class="flex space-x-2 text-sm text-gray-500">
-                              <button class="flex items-center space-x-1">
-                                  <span>Reply</span>
-                              </button>
-                              <div class="flex items-center space-x-1">
-                                  <span>123</span>
-                                  <span>👍</span>
-                              </div>
-                              <div class="flex items-center space-x-1">
-                                  <span>0</span>
-                                  <span>👎</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-      
-                  <!-- Repeat Review (add more reviews here as needed) -->
-                  <div class="flex space-x-4 hover-effect bg-white shadow-md rounded-lg p-6">
-                      <img src="https://i.pravatar.cc/150?img=3" alt="Reviewer" class="h-12 w-12 rounded-full">
-                      <div class="flex flex-col space-y-2">
-                          <div class="flex items-center space-x-2">
-                              <span class="text-lg font-semibold">The Xtras</span>
-                              <span class="text-gray-500">Yesterday</span>
-                          </div>
-                          <div class="flex space-x-1 text-yellow-500">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-5 w-5"><path d="M12 18.3l6.8 4.1-1.8-7.2L22 9.2h-7.3L12 2 9.3 9.2H2l4.9 5.1-1.8 7.2L12 18.3z"></path></svg>
-                          </div>
-                          <p class="text-gray-700 text-sm">
-                              Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here.
-                          </p>
-                          <div class="flex space-x-2 text-sm text-gray-500">
-                              <button class="flex items-center space-x-1">
-                                  <span>Reply</span>
-                              </button>
-                              <div class="flex items-center space-x-1">
-                                  <span>123</span>
-                                  <span>👍</span>
-                              </div>
-                              <div class="flex items-center space-x-1">
-                                  <span>0</span>
-                                  <span>👎</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      
-      </section>
+      </footer>
 </body>
 </html>
