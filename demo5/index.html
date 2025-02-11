@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing page demo 4</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  
+   <header class="mb-4 container-fluid">
+      <!-- Top Banner -->
+      <div class="bg-sky-500 text-white py-3 px-4 text-center">
+        <p class="text-base">
+          Get the best deals we have to offer, click here to get a coupon code.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] container-fluid shadow-sm py-4 px-6">
+        <div class=" mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="../../assets/icons/logo.svg"
+              class="w-10 h-10 bg-sky-500 rounded-lg"
+              alt="Logo"
+            />
+            <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
+          </div>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]"
+              >Contact us</a
+            >
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+          </div>
+
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input
+                type="text"
+                placeholder="Search"
+                class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none"
+              />
+              <svg
+                class="absolute left-3 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a
+              href="/onboarding/login/login.html"
+              class="flex items-center text-gray-600 hover:text-sky-500"
+            >
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button
+              id="cart-btn"
+              class="flex items-center text-gray-600 hover:text-sky-500"
+            >
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg
+              id="menuIcon"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+              />
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-sky-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+ 
+<main class="overflow-hidden container-fluid">
+ <section class="relative w-full   h-screen mx-auto flex items-center justify-center">
+    <!-- Grid Container for Images -->
+    <div class="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:grid-rows-2 w-full h-full">
+     
+      <img src="../assets/images/demo4/hero1.svg" alt="Image 1" class="  w-full h-full object-cover">
+      <img src="../assets/images/demo4/hero2.svg" alt="Image 2" class=" w-full h-full object-cover">
+      
+      <img src="../assets/images/demo4/hero3.svg" alt="Image 3" class="w-full h-full object-cover">
+      
+        <img src="../assets/images/demo4/hero4.svg" alt="Image 4" class="hidden lg:inline-block w-full h-full object-cover">
+
+    </div>
+
+    <!-- Text Content in the Center -->
+    <div class="relative z-10 text-center text-white p-8 rounded-lg">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold">
+            Best Products, Best Deals you will find <br> anywhere Globally.
+        </h1>
+        <p class="mt-4 text-lg sm:text-xl">
+            Customize the layout, colors, and styles within only a few minutes. Start creating an amazing website right now!
+        </p>
+        <button class="mt-6 bg-[#0EA5E9] hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition text-sm sm:text-base">
+            Book a session
+        </button>
+    </div>
+</section>
+
+
+ 
+  <section id="done" class='bg-[#EFFAFF] px-12 mt-10 container-fluid'>
+    <div class="">
+      <div class="container-fluid mx-auto px-0 py-10 ">
+        <div class="mb-8">
+          <h2 class="text-lg font-semibold text-[#111827]">
+            Some of our Services.
+          </h2>
+          <p class="max-w-5xl text-[#4B5563] text-base">
+            Details about the product in question goes here. You have the
+            option to now select and buy. Details about the product in
+            question goes here. You have the option to now select and
+            buy.Details about the product in question goes here. You have the
+            option to now select and buy.
+          </p>
+        </div>
+         <!-- Grid Container -->
+    <section class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-14  mx-auto">
+        <!-- Item 1 -->
+        <div class="relative group lg:col-span-4 overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/service1.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Hefty Massage</h3>
+                <p class="text-sm max-w-xs">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative group lg:col-span-3 overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/service2.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Hefty Massage</h3>
+                <p class="text-sm max-w-xs">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative group lg:col-span-3 overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/service3.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Hefty Massage</h3>
+                <p class="text-sm max-w-xs">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="relative group lg:col-span-4 overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/service4.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Hefty Massage</h3>
+                <p class="text-sm max-w-xs">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+    </section>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- done -->
+  <section id="done" class="container-fluid mx-auto my-10">
+    <div class=" flex items-center bg-cover bg-center bg-no-repeat" style="background-image: url('../assets/images/demo4/banner.png');">
+      <div class=" text-white max-w-4xl flex-1 px-10 py-10">
+        <h1 class="text-4xl font-bold mb-4">MASSIVE HOLIDAY SALE!</h1>
+        <p class="mb-8">
+          Details about the product in question goes here. You have the option
+          to now select and buy. Details about the product in question goes
+          here. You have the option to now select and buy. Details about the
+          product in question goes here. You have the option to now select and
+          buy.
+        </p>
+        <button
+          class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1.5 rounded-full transition-colors duration-200">Start
+          Shopping Now
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+              height="34">
+              <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9" />
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+              <path
+                d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                fill="white" />
+            </g>
+          </svg>
+        </button>
+       
+      </div>
+      
+    </div>
+  </section>
+
+
+    <section class="px-6 lg:px-12 mx-auto">
+        <!-- Section Heading -->
+         <div class="flex justify-between">
+           <div class="">
+               <h2 class="text-lg font-medium text-[#111827]">What People are Saying.</h2>
+               <p class="text-[#4B5563] max-w-2xl  mt-2">
+                   Details about the product in question goes here. You have the option to now select and buy. 
+                   Details about the product in question goes here.
+               </p>
+           </div>
+           <div class="flex gap-x-3">
+             <!-- Navigation Arrows -->
+            <button id="prevBtn" class=" bg-none p-2  ">
+               <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 14.5L11.4 13.1L9.8 11.5H14V9.5H9.8L11.4 7.9L10 6.5L6 10.5L10 14.5ZM10 20.5C8.61667 20.5 7.31667 20.2375 6.1 19.7125C4.88333 19.1875 3.825 18.475 2.925 17.575C2.025 16.675 1.3125 15.6167 0.7875 14.4C0.2625 13.1833 0 11.8833 0 10.5C0 9.11667 0.2625 7.81667 0.7875 6.6C1.3125 5.38333 2.025 4.325 2.925 3.425C3.825 2.525 4.88333 1.8125 6.1 1.2875C7.31667 0.7625 8.61667 0.5 10 0.5C11.3833 0.5 12.6833 0.7625 13.9 1.2875C15.1167 1.8125 16.175 2.525 17.075 3.425C17.975 4.325 18.6875 5.38333 19.2125 6.6C19.7375 7.81667 20 9.11667 20 10.5C20 11.8833 19.7375 13.1833 19.2125 14.4C18.6875 15.6167 17.975 16.675 17.075 17.575C16.175 18.475 15.1167 19.1875 13.9 19.7125C12.6833 20.2375 11.3833 20.5 10 20.5Z" fill="#1C1B1F"/>
+</svg>
+
+            </button>
+            <button id="nextBtn" class=" bg-none p-2">
+                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 14.5L14 10.5L10 6.5L8.6 7.9L10.2 9.5H6V11.5H10.2L8.6 13.1L10 14.5ZM10 20.5C8.61667 20.5 7.31667 20.2375 6.1 19.7125C4.88333 19.1875 3.825 18.475 2.925 17.575C2.025 16.675 1.3125 15.6167 0.7875 14.4C0.2625 13.1833 0 11.8833 0 10.5C0 9.11667 0.2625 7.81667 0.7875 6.6C1.3125 5.38333 2.025 4.325 2.925 3.425C3.825 2.525 4.88333 1.8125 6.1 1.2875C7.31667 0.7625 8.61667 0.5 10 0.5C11.3833 0.5 12.6833 0.7625 13.9 1.2875C15.1167 1.8125 16.175 2.525 17.075 3.425C17.975 4.325 18.6875 5.38333 19.2125 6.6C19.7375 7.81667 20 9.11667 20 10.5C20 11.8833 19.7375 13.1833 19.2125 14.4C18.6875 15.6167 17.975 16.675 17.075 17.575C16.175 18.475 15.1167 19.1875 13.9 19.7125C12.6833 20.2375 11.3833 20.5 10 20.5Z" fill="#1C1B1F"/>
+</svg>
+
+            </button>
+           </div>
+
+         </div>
+
+        <!-- Carousel Wrapper -->
+        <div class="relative mt-10">
+            <!-- Testimonial Items (Carousel) -->
+            <div class="overflow-hidden">
+                <div class="flex transition-transform duration-500" id="testimonial-slider">
+                    <!-- Testimonial Card -->
+                    <div class="w-full md:w-1/3 px-4 flex-shrink-0">
+                        <div class="bg-[#F9FAFB] p-6 shadow-md flex rounded-lg">
+                            <p class="text-4xl font-bold text-black">“</p>
+                            <div class="mt-2">
+
+                              <p class="text-gray-700">
+                                  Details about the product in question goes here. You have the option to now select and buy. 
+                                  Details about the product in question goes here.
+                              </p>
+                              <p class="text-black font-semibold mt-1">The Xtras</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card -->
+                    <div class="w-full md:w-1/3 px-4 flex-shrink-0">
+                        <div class="bg-[#F9FAFB] p-6 shadow-md flex rounded-lg">
+                            <p class="text-4xl font-bold text-black">“</p>
+                            <div class="mt-2">
+
+                              <p class="text-gray-700">
+                                  Details about the product in question goes here. You have the option to now select and buy. 
+                                  Details about the product in question goes here.
+                              </p>
+                              <p class="text-black font-semibold mt-1">The Xtras</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card -->
+                    <div class="w-full md:w-1/3 px-4 flex-shrink-0">
+                        <div class="bg-[#F9FAFB] p-6 shadow-md flex rounded-lg">
+                            <p class="text-4xl font-bold text-black">“</p>
+                            <div class="mt-2">
+
+                              <p class="text-gray-700">
+                                  Details about the product in question goes here. You have the option to now select and buy. 
+                                  Details about the product in question goes here.
+                              </p>
+                              <p class="text-black font-semibold mt-1">The Xtras</p>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+
+  
+
+  <!-- done -->
+  <section id="done">
+    <div class="container-fluid mx-auto px-6 lg:px-12 py-8">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-semibold text-[#111827]">
+          Latest News - Blog Update
+        </h1>
+        <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1 rounded-lg transition-colors duration-200">View
+          Blog
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
+              height="34">
+              <rect y="16.9707" width="24" height="24" transform="rotate(-45 0 16.9707)" fill="#D9D9D9" />
+            </mask>
+            <g mask="url(#mask0_67_10470)">
+              <path
+                d="M19.7989 19.7991V14.1423H14.1421L14.1421 16.1222L16.4048 16.1222L13.435 19.092L14.8492 20.5062L17.819 17.5364L17.819 19.7991H19.7989ZM24.0416 24.0418C23.0634 25.0199 21.9586 25.7536 20.727 26.2426C19.4955 26.7317 18.2433 26.9763 16.9705 26.9763C15.6977 26.9763 14.4455 26.7317 13.214 26.2426C11.9825 25.7536 10.8776 25.0199 9.89944 24.0418C8.92127 23.0636 8.18765 21.9588 7.69857 20.7272C7.20948 19.4957 6.96494 18.2435 6.96494 16.9707C6.96494 15.6979 7.20948 14.4457 7.69857 13.2142C8.18765 11.9827 8.92127 10.8778 9.89944 9.89964C10.8776 8.92147 11.9825 8.18785 13.214 7.69877C14.4455 7.20968 15.6977 6.96514 16.9705 6.96514C18.2433 6.96514 19.4955 7.20968 20.727 7.69877C21.9586 8.18785 23.0634 8.92147 24.0416 9.89964C25.0197 10.8778 25.7534 11.9827 26.2424 13.2142C26.7315 14.4457 26.9761 15.6979 26.9761 16.9707C26.9761 18.2435 26.7315 19.4957 26.2424 20.7272C25.7534 21.9588 25.0197 23.0636 24.0416 24.0418Z"
+                fill="white" />
+            </g>
+          </svg>
+        </button>
+      </div>
+      <p class="text-[#4B5563] mt-2 max-w-3xl mb-4">
+        Details about the product in question goes here. You have the option
+        to now select and buy. Details about the product in question goes
+        here. You have the option to now select and buy.
+      </p>
+        <section class="grid grid-cols-1  md:grid-cols-2  gap-12  mx-auto">
+        <!-- Item 1 -->
+        <div class="relative group  overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/blog1.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Name of Deal goes here.</h3>
+                <p class="text-sm max-w-md">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative group overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/blog2.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Name of Deal goes here.</h3>
+                <p class="text-sm max-w-md">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative group overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/blog3.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Name of Deal goes here.</h3>
+                <p class="text-sm max-w-md">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="relative group  overflow-hidden rounded-lg">
+            <img src="/assets/images/demo4/blog4.svg" alt="Service Image" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute bottom-4 left-4 text-white">
+                <h3 class="text-lg font-semibold">Name of Deal goes here.</h3>
+                <p class="text-sm max-w-md">
+                    Details about the product in question goes here. You have the option to now select and buy.
+                </p>
+            </div>
+        </div>
+    </section>
+      
+    </div>
+  </section>
+
+</main>
+
+ 
+ <footer class="bg-[#F9FAFB]  ">
+    <div class="container p-6 lg:p-20 mx-auto flex justify-center">
+        <div class="lg:flex lg:gap-x-12">
+            <div class="w-full -mx-6 lg:w-2/5">
+                <div class="px-6">
+                  <div>
+                    <div class="mb-8 flex gap-3 justify-start items-center">
+              <div class="w-12 h-12 rounded-md">
+                <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
+              </div>
+              <h4
+                class="text-[#0EA5E9] font-medium text-md lg:text-[24px] leading-[29.16px]"
+                style="font-style: italic"
+              >
+                Full Logo Goes Here
+              </h4>
+            </div>
+                    <p class="text-[#344054] mb-4">Be the first to  receive all the recent updates, articles, and valuable materials.</p>
+                    <form id="subscribeForm" class="flex flex-wrap space-y-1 space-x-2">
+                      <input
+                        type="email"
+                        id="emailInput"
+                        placeholder="Enter your email"
+                        class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                      />
+                      <button
+                        type="submit"
+                        class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
+                      >
+                        Subscribe
+                      </button>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+            <div class="mt-6 lg:mt-0 lg:flex-1">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+                    <div>
+                        <h3 class="text-gray-700 uppercase ">Company</h3>
+                        <div class="space-y-6">
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service Status</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission roadmap</a>
+                          <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-gray-700 uppercase ">Support</h3>
+                      <div class="space-y-6">
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass Payments</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Startups</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for Developers</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for No-code</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
+                      </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-gray-700 uppercase ">Various Templates</h3>
+                      <div class="space-y-6">
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture Templates</a>
+                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing Templatess</a>
+                      </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
+
+        <div>
+            <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
+        </div>
+    </div>
+</footer>
+
+
+
+  <script src="/assets/js/demo4.js"></script>
+  <script src="/assets/script.js"></script>
+</body>
+
+</html>
