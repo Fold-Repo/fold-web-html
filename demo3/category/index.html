@@ -1,603 +1,994 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Category</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom Hover Animation */
-    .product-card:hover img {
-      transform: scale(1.05);
-    }
-    .product-card {
-      transition: all 0.3s ease-in-out;
-    }
-  </style>
-</head>
-<body class="bg-gray-100 font-sans">
-  <header class="">
-    <!-- Top Banner -->
-    <div class="bg-sky-500 text-white py-3 px-4 text-center">
-      <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Category</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"
+      defer
+    ></script>
+    <style>
+      /* Custom Hover Animation */
+      .product-card:hover img {
+        transform: scale(1.05);
+      }
+      .product-card {
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <header class="">
+      <!-- Top Banner -->
+      <div class="bg-sky-500 text-white py-3 px-4 text-center">
+        <p class="text-base">
+          Get the best deals we have to offer, click here to get a coupon code.
+        </p>
+      </div>
 
-    <!-- Navigation -->
-    <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <!-- Logo -->
-        <div class="flex items-center">
-          <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
-          <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
-        </div>
-
-        <!-- Desktop Navigation Links -->
-        <div class="hidden lg:flex items-center space-x-8">
-          <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
-          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
-          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
-          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
-          <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
-        </div>
-
-        <!-- Desktop Search & Icons -->
-        <div class="hidden lg:flex items-center space-x-6">
-          <div class="relative flex items-center">
-            <input type="text" placeholder="Search"
-              class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
-            <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 21l-4.35-4.35"></path>
-            </svg>
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="../../assets/icons/logo.svg"
+              class="w-10 h-10 bg-sky-500 rounded-lg"
+              alt="Logo"
+            />
+            <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
           </div>
-          <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
-            <img src="../../assets/icons/user.svg" alt="User" />
-            <span class="ml-2">Login</span>
-          </a>
-          <button class="flex items-center text-gray-600 hover:text-sky-500">
-            <img src="../../assets/icons/cart.svg" alt="Cart" />
-            <span class="ml-1">0</span>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]"
+              >Contact us</a
+            >
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
+            <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Chat</a>
+          </div>
+
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input
+                type="text"
+                placeholder="Search"
+                class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none"
+              />
+              <svg
+                class="absolute left-3 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a
+              href="/onboarding/login/login.html"
+              class="flex items-center text-gray-600 hover:text-sky-500"
+            >
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button class="flex items-center text-gray-600 hover:text-sky-500">
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg
+              id="menuIcon"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
           </button>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="menuButton" class="lg:hidden text-gray-600">
-          <svg id="menuIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
-        <div class="flex flex-col space-y-4">
-          <!-- Mobile Search -->
-          <div class="relative">
-            <input type="text" placeholder="Search"
-              class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
-            <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" fill="currentColor"
-              viewBox="0 0 24 24">
-              <path d="M21 21l-4.35-4.35"></path>
-            </svg>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+              />
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-sky-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
           </div>
-          <a href="index.html" class="text-sky-500">Home</a>
-          <a href="#" class="text-gray-600">About us</a>
-          <a href="#" class="text-gray-600">Contact us</a>
-          <a href="#" class="text-gray-600">Wishlist</a>
-          <a href="#" class="text-gray-600">Chat</a>
         </div>
-      </div>
-    </nav>
-  </header>
-  <!-- Product Category Section -->
-  <div class="container mx-auto px-4 py-8">
-    <section class="pb-16">
-      <div class="container mx-auto">
-          <h1 class="text-4xl font-medium mb-4">Product Category</h1>
-          
-          <p class="text-[#4B5563] mb-8 max-w-6xl">
-              Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.
-          </p>
-          
-          <div class="flex flex-wrap items-center justify-between gap-4">
+      </nav>
+    </header>
+    <section>
+      <div
+        class="container mx-auto px-4 py-8"
+        x-data="{
+          filters: {
+            chairs: false,
+            antics: false,
+            cheap: false,
+          },
+          get filterCount() {
+            return Object.values(this.filters).filter(v => v).length;
+          },
+          toggleFilter(filter) {
+            this.filters[filter] = !this.filters[filter];
+          },
+          toggleLayout() {
+            this.isGrid = !this.isGrid;
+          },
+          isGrid: true,
+          showAllProducts: true, // This flag ensures all products are displayed initially
+        }"
+      >
+        <section class="pb-16">
+          <div class="container mx-auto">
+            <h1 class="text-4xl font-medium mb-4">Product Category</h1>
+
+            <p class="text-[#4B5563] mb-8 max-w-6xl">
+              Details about the product in question goes here. You have the
+              option to now select and buy. Details about the product in
+              question goes here. You have the option to now select and
+              buy.Details about the product in question goes here. You have the
+              option to now select and buy.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-between gap-4">
               <div class="flex items-center gap-4 flex-wrap">
-                  <button class="bg-[#0EA5E9] text-white px-4 py-2.5 rounded-md flex items-center gap-2">
-                      Filters
-                      <span class="bg-white text-blue-400 rounded-full w-6 h-6 flex items-center justify-center">3</span>
-                  </button>
-                  
-                  <div class="flex gap-3 flex-wrap">
-                      <button class="border border-[#111827] px-4 py-2.5 rounded-md flex items-center gap-2">
-                          Chairs
-                          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_73_14482" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="17" height="16">
-<rect x="0.5" width="16" height="16" fill="#D9D9D9"/>
-</mask>
-<g mask="url(#mask0_73_14482)">
-<path d="M6.09992 11.334L8.49992 8.93398L10.8999 11.334L11.8333 10.4007L9.43325 8.00065L11.8333 5.60065L10.8999 4.66732L8.49992 7.06732L6.09992 4.66732L5.16659 5.60065L7.56659 8.00065L5.16659 10.4007L6.09992 11.334ZM8.49992 14.6673C7.5777 14.6673 6.71103 14.4923 5.89992 14.1423C5.08881 13.7923 4.38325 13.3173 3.78325 12.7173C3.18325 12.1173 2.70825 11.4118 2.35825 10.6007C2.00825 9.78954 1.83325 8.92287 1.83325 8.00065C1.83325 7.07843 2.00825 6.21176 2.35825 5.40065C2.70825 4.58954 3.18325 3.88398 3.78325 3.28398C4.38325 2.68398 5.08881 2.20898 5.89992 1.85898C6.71103 1.50898 7.5777 1.33398 8.49992 1.33398C9.42214 1.33398 10.2888 1.50898 11.0999 1.85898C11.911 2.20898 12.6166 2.68398 13.2166 3.28398C13.8166 3.88398 14.2916 4.58954 14.6416 5.40065C14.9916 6.21176 15.1666 7.07843 15.1666 8.00065C15.1666 8.92287 14.9916 9.78954 14.6416 10.6007C14.2916 11.4118 13.8166 12.1173 13.2166 12.7173C12.6166 13.3173 11.911 13.7923 11.0999 14.1423C10.2888 14.4923 9.42214 14.6673 8.49992 14.6673Z" fill="#1C1B1F"/>
-</g>
-</svg>
-
-                      </button>
-                      
-                      <button class="border border-[#111827] px-4 py-2.5 rounded-md flex items-center gap-2">
-                          Antics
-                          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_73_14482" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="17" height="16">
-<rect x="0.5" width="16" height="16" fill="#D9D9D9"/>
-</mask>
-<g mask="url(#mask0_73_14482)">
-<path d="M6.09992 11.334L8.49992 8.93398L10.8999 11.334L11.8333 10.4007L9.43325 8.00065L11.8333 5.60065L10.8999 4.66732L8.49992 7.06732L6.09992 4.66732L5.16659 5.60065L7.56659 8.00065L5.16659 10.4007L6.09992 11.334ZM8.49992 14.6673C7.5777 14.6673 6.71103 14.4923 5.89992 14.1423C5.08881 13.7923 4.38325 13.3173 3.78325 12.7173C3.18325 12.1173 2.70825 11.4118 2.35825 10.6007C2.00825 9.78954 1.83325 8.92287 1.83325 8.00065C1.83325 7.07843 2.00825 6.21176 2.35825 5.40065C2.70825 4.58954 3.18325 3.88398 3.78325 3.28398C4.38325 2.68398 5.08881 2.20898 5.89992 1.85898C6.71103 1.50898 7.5777 1.33398 8.49992 1.33398C9.42214 1.33398 10.2888 1.50898 11.0999 1.85898C11.911 2.20898 12.6166 2.68398 13.2166 3.28398C13.8166 3.88398 14.2916 4.58954 14.6416 5.40065C14.9916 6.21176 15.1666 7.07843 15.1666 8.00065C15.1666 8.92287 14.9916 9.78954 14.6416 10.6007C14.2916 11.4118 13.8166 12.1173 13.2166 12.7173C12.6166 13.3173 11.911 13.7923 11.0999 14.1423C10.2888 14.4923 9.42214 14.6673 8.49992 14.6673Z" fill="#1C1B1F"/>
-</g>
-</svg>
-
-                      </button>
-                      
-                      <button class="border border-[#111827] px-4 py-2.5 rounded-md flex items-center gap-2">
-                          Cheap
-                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_73_14482" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="17" height="16">
-<rect x="0.5" width="16" height="16" fill="#D9D9D9"/>
-</mask>
-<g mask="url(#mask0_73_14482)">
-<path d="M6.09992 11.334L8.49992 8.93398L10.8999 11.334L11.8333 10.4007L9.43325 8.00065L11.8333 5.60065L10.8999 4.66732L8.49992 7.06732L6.09992 4.66732L5.16659 5.60065L7.56659 8.00065L5.16659 10.4007L6.09992 11.334ZM8.49992 14.6673C7.5777 14.6673 6.71103 14.4923 5.89992 14.1423C5.08881 13.7923 4.38325 13.3173 3.78325 12.7173C3.18325 12.1173 2.70825 11.4118 2.35825 10.6007C2.00825 9.78954 1.83325 8.92287 1.83325 8.00065C1.83325 7.07843 2.00825 6.21176 2.35825 5.40065C2.70825 4.58954 3.18325 3.88398 3.78325 3.28398C4.38325 2.68398 5.08881 2.20898 5.89992 1.85898C6.71103 1.50898 7.5777 1.33398 8.49992 1.33398C9.42214 1.33398 10.2888 1.50898 11.0999 1.85898C11.911 2.20898 12.6166 2.68398 13.2166 3.28398C13.8166 3.88398 14.2916 4.58954 14.6416 5.40065C14.9916 6.21176 15.1666 7.07843 15.1666 8.00065C15.1666 8.92287 14.9916 9.78954 14.6416 10.6007C14.2916 11.4118 13.8166 12.1173 13.2166 12.7173C12.6166 13.3173 11.911 13.7923 11.0999 14.1423C10.2888 14.4923 9.42214 14.6673 8.49992 14.6673Z" fill="#1C1B1F"/>
-</g>
-</svg>
-
-                      </button>
-                  </div>
-              </div>
-              
-              <button class="bg-[#0EA5E9] text-white px-4 py-3 rounded-md flex items-center gap-2">
-                  Columns
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <mask id="mask0_116_2647" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
-                    <rect width="20" height="20" fill="#D9D9D9"/>
-                    </mask>
-                    <g mask="url(#mask0_116_2647)">
-                    <path d="M3.33317 16.6673C2.87484 16.6673 2.48248 16.5041 2.15609 16.1777C1.8297 15.8513 1.6665 15.459 1.6665 15.0007V5.00065C1.6665 4.54232 1.8297 4.14996 2.15609 3.82357C2.48248 3.49718 2.87484 3.33398 3.33317 3.33398H4.43734C4.89567 3.33398 5.28803 3.49718 5.61442 3.82357C5.94081 4.14996 6.104 4.54232 6.104 5.00065V15.0007C6.104 15.459 5.94081 15.8513 5.61442 16.1777C5.28803 16.5041 4.89567 16.6673 4.43734 16.6673H3.33317ZM9.45817 16.6673C8.99984 16.6673 8.60748 16.5041 8.28109 16.1777C7.9547 15.8513 7.7915 15.459 7.7915 15.0007V5.00065C7.7915 4.54232 7.9547 4.14996 8.28109 3.82357C8.60748 3.49718 8.99984 3.33398 9.45817 3.33398H10.5623C11.0207 3.33398 11.413 3.49718 11.7394 3.82357C12.0658 4.14996 12.229 4.54232 12.229 5.00065V15.0007C12.229 15.459 12.0658 15.8513 11.7394 16.1777C11.413 16.5041 11.0207 16.6673 10.5623 16.6673H9.45817ZM15.5623 16.6673C15.104 16.6673 14.7116 16.5041 14.3853 16.1777C14.0589 15.8513 13.8957 15.459 13.8957 15.0007V5.00065C13.8957 4.54232 14.0589 4.14996 14.3853 3.82357C14.7116 3.49718 15.104 3.33398 15.5623 3.33398H16.6665C17.1248 3.33398 17.5172 3.49718 17.8436 3.82357C18.17 4.14996 18.3332 4.54232 18.3332 5.00065V15.0007C18.3332 15.459 18.17 15.8513 17.8436 16.1777C17.5172 16.5041 17.1248 16.6673 16.6665 16.6673H15.5623Z" fill="white"/>
-                    </g>
-                    </svg>
-                    
-              </button>
-          </div>
-      </div>
-  </section>
-    <!-- <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-semibold text-gray-800">Product Category</h1>
-      <div class="flex space-x-4">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">Filters</button>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">Chairs</button>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">Antics</button>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded">Cheap</button>
-      </div>
-    </div>
-
-    <p class="text-gray-600 mb-6">Details about the product in question goes here. You have the option to now select and buy.</p> -->
-
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <a href="#" class="group relative block  rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
-          <img
-            src="./assets/trending1.svg"
-            alt=""
-            class="w-full transition rounded-lg duration-500 group-hover:scale-105"
-          />
-        
-          <div class="bg-[#F5F6F8] mt-6">
-          <div class="flex justify-between items-center">
-            <h3 class="mt-1.5 text-lg font-medium text-gray-900">Wireless Headphones</h3>
-            <p class="text-gray-700">
-              N100,000.00
-            </p>
-          </div>
-        
-        
-            <div class="mt-4 flex justify-between items-center gap-4">
-              <button
-              type="button"
-              class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white rounded-xl transition rounded-xl hover:scale-105"
-            >
-              Buy Now
-            </button>
-            <div class="flex justify-between items-center">
-              <button
-              class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0_72_13926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-              <rect width="24" height="24" fill="#D9D9D9"/>
-              </mask>
-              <g mask="url(#mask0_72_13926)">
-              <path d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z" fill="#1C1B1F"/>
-              </g>
-              </svg>
-              
-            </button>
-  
-            <button
-            class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_72_13929" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-            <rect width="24" height="24" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_72_13929)">
-            <path d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z" fill="#1C1B1F"/>
-            </g>
-            </svg>
-  
-            </button>
-            </div>
-            </div>
-          </div>
-        </a>
-  
-        <a href="#" class="group relative block  rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
-          <img
-            src="./assets/trending2.svg"
-            alt=""
-            class="w-full transition rounded-lg duration-500 group-hover:scale-105"
-          />
-        
-          <div class="relative bg-[#F5F6F8] mt-6">
-          <div class="flex justify-between items-center">
-            <h3 class="mt-1.5 text-lg font-medium text-gray-900">Wireless Headphones</h3>
-            <p class="text-gray-700  font-semibold">
-              N100,000.00
-            </p>
-          </div>
-        
-        
-            <div class="mt-4 flex justify-between items-center gap-4">
-              <button
-              type="button"
-              class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition hover:scale-105 rounded-xl"
-            >
-              Buy Now
-            </button>
-            <div class="flex justify-between items-center">
-              <button
-              class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0_72_13926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-              <rect width="24" height="24" fill="#D9D9D9"/>
-              </mask>
-              <g mask="url(#mask0_72_13926)">
-              <path d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z" fill="#1C1B1F"/>
-              </g>
-              </svg>
-              
-            </button>
-  
-            <button
-            class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_72_13929" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-            <rect width="24" height="24" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_72_13929)">
-            <path d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z" fill="#1C1B1F"/>
-            </g>
-            </svg>
-  
-            </button>
-            </div>
-            </div>
-          </div>
-        </a>
-  
-        <a href="#" class="group relative block  rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
-          <img
-            src="./assets/trending3.svg"
-            alt=""
-            class="w-full transition rounded-lg duration-500 group-hover:scale-105"
-          />
-        
-          <div class="relative bg-[#F5F6F8] mt-6">
-          <div class="flex justify-between items-center">
-            <h3 class="mt-1.5 text-lg font-medium text-gray-900">Wireless Headphones</h3>
-            <p class="text-gray-700  font-semibold">
-              N100,000.00
-            </p>
-          </div>
-        
-        
-            <div class="mt-4 flex justify-between items-center gap-4">
-              <button
-              type="button"
-              class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition hover:scale-105 rounded-xl"
-            >
-              Buy Now
-            </button>
-            <div class="flex justify-between items-center">
-              <button
-              class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0_72_13926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-              <rect width="24" height="24" fill="#D9D9D9"/>
-              </mask>
-              <g mask="url(#mask0_72_13926)">
-              <path d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z" fill="#1C1B1F"/>
-              </g>
-              </svg>
-              
-            </button>
-  
-            <button
-            class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_72_13929" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-            <rect width="24" height="24" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_72_13929)">
-            <path d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z" fill="#1C1B1F"/>
-            </g>
-            </svg>
-  
-            </button>
-            </div>
-            </div>
-          </div>
-        </a>
-  
-        <a href="#" class="group relative block  rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
-          <img
-            src="./assets/trending4.svg"
-            alt=""
-            class="w-full transition rounded-lg duration-500 group-hover:scale-105"
-          />
-        
-          <div class="relative bg-[#F5F6F8] mt-6">
-          <div class="flex justify-between items-center">
-            <h3 class="mt-1.5 text-lg font-medium text-gray-900">Wireless Headphones</h3>
-            <p class="text-gray-700  font-semibold">
-              N100,000.00
-            </p>
-          </div>
-        
-        
-            <div class="mt-4 flex justify-between items-center gap-4">
-              <button
-              type="button"
-              class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition hover:scale-105 rounded-xl"
-            >
-              Buy Now
-            </button>
-            <div class="flex justify-between items-center">
-              <button
-              class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0_72_13926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-              <rect width="24" height="24" fill="#D9D9D9"/>
-              </mask>
-              <g mask="url(#mask0_72_13926)">
-              <path d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z" fill="#1C1B1F"/>
-              </g>
-              </svg>
-              
-            </button>
-  
-            <button
-            class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_72_13929" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-            <rect width="24" height="24" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_72_13929)">
-            <path d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z" fill="#1C1B1F"/>
-            </g>
-            </svg>
-  
-            </button>
-            </div>
-            </div>
-          </div>
-        </a>
-  
-        <a href="#" class="group relative block  rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
-          <img
-            src="./assets/trending5.svg"
-            alt=""
-            class="w-full transition rounded-lg duration-500 group-hover:scale-105"
-          />
-        
-          <div class="relative bg-[#F5F6F8] mt-6">
-          <div class="flex justify-between items-center">
-            <h3 class="mt-1.5 text-lg font-medium text-gray-900">Wireless Headphones</h3>
-            <p class="text-gray-700  font-semibold">
-              N100,000.00
-            </p>
-          </div>
-        
-        
-            <div class="mt-4 flex justify-between items-center gap-4">
-              <button
-              type="button"
-              class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition hover:scale-105 rounded-xl"
-            >
-              Buy Now
-            </button>
-            <div class="flex justify-between items-center">
-              <button
-              class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0_72_13926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-              <rect width="24" height="24" fill="#D9D9D9"/>
-              </mask>
-              <g mask="url(#mask0_72_13926)">
-              <path d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z" fill="#1C1B1F"/>
-              </g>
-              </svg>
-              
-            </button>
-  
-            <button
-            class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_72_13929" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-            <rect width="24" height="24" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_72_13929)">
-            <path d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z" fill="#1C1B1F"/>
-            </g>
-            </svg>
-  
-            </button>
-            </div>
-            </div>
-          </div>
-        </a>
-  
-        <a href="#" class="group relative block  rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
-          <img
-            src="./assets/trending6.svg"
-            alt=""
-            class="w-full transition rounded-lg duration-500 group-hover:scale-105"
-          />
-        
-          <div class="relative bg-[#F5F6F8] mt-6">
-          <div class="flex justify-between items-center">
-            <h3 class="mt-1.5 text-lg font-medium text-gray-900">Wireless Headphones</h3>
-            <p class="text-gray-700  font-semibold">
-              N100,000.00
-            </p>
-          </div>
-        
-        
-            <div class="mt-4 flex justify-between items-center gap-4">
-              <button
-              type="button"
-              class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition hover:scale-105 rounded-xl"
-            >
-              Buy Now
-            </button>
-            <div class="flex justify-between items-center">
-              <button
-              class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <mask id="mask0_72_13926" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-              <rect width="24" height="24" fill="#D9D9D9"/>
-              </mask>
-              <g mask="url(#mask0_72_13926)">
-              <path d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z" fill="#1C1B1F"/>
-              </g>
-              </svg>
-              
-            </button>
-  
-            <button
-            class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
-            >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0_72_13929" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-            <rect width="24" height="24" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_72_13929)">
-            <path d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z" fill="#1C1B1F"/>
-            </g>
-            </svg>
-  
-            </button>
-            </div>
-            </div>
-          </div>
-        </a>
-    </div>
-  </div>
-  <footer class="bg-[#F9FAFB] mt-10">
-    <div class="container p-6 lg:p-20 mx-auto">
-      <div class="lg:flex gap-x-12">
-        <div class="w-full -mx-6 lg:w-2/5">
-          <div class="px-6">
-            <div>
-              <div class="mb-8 flex gap-3 justify-start items-center">
-                <div class="w-12 h-12 rounded-md">
-                  <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
-                </div>
-                <h4 class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]" style="font-style: italic">
-                  Full Logo Goes Here
-                </h4>
-              </div>
-              <p class="text-[#344054] mb-4">Be the first to receive all the recent updates, articles, and valuable
-                materials.</p>
-              <form id="subscribeForm" class="flex space-x-2">
-                <input type="email" id="emailInput" placeholder="Enter your email"
-                  class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500" />
-                <button type="submit" class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600">
-                  Subscribe
+                <button
+                  @click="toggleFilter('chairs')"
+                  class="bg-[#0EA5E9] text-white px-4 py-2.5 rounded-md flex items-center gap-2"
+                >
+                  Filters
+                  <span
+                    class="bg-white text-blue-400 rounded-full w-6 h-6 flex items-center justify-center"
+                    x-text="filterCount"
+                    >0</span
+                  >
                 </button>
-              </form>
+
+                <div class="flex gap-3 flex-wrap">
+                  <button
+                    @click="toggleFilter('chairs')"
+                    :class="{'bg-[#0EA5E9] text-white': filters.chairs}"
+                    class="border border-[#111827] px-4 py-2.5 rounded-md flex items-center gap-2"
+                  >
+                    Chairs
+                    <svg
+                      width="17"
+                      height="16"
+                      viewBox="0 0 17 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        id="mask0_73_14482"
+                        style="mask-type: alpha"
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="17"
+                        height="16"
+                      >
+                        <rect x="0.5" width="16" height="16" fill="#D9D9D9" />
+                      </mask>
+                      <g mask="url(#mask0_73_14482)">
+                        <path
+                          d="M6.09992 11.334L8.49992 8.93398L10.8999 11.334L11.8333 10.4007L9.43325 8.00065L11.8333 5.60065L10.8999 4.66732L8.49992 7.06732L6.09992 4.66732L5.16659 5.60065L7.56659 8.00065L5.16659 10.4007L6.09992 11.334ZM8.49992 14.6673C7.5777 14.6673 6.71103 14.4923 5.89992 14.1423C5.08881 13.7923 4.38325 13.3173 3.78325 12.7173C3.18325 12.1173 2.70825 11.4118 2.35825 10.6007C2.00825 9.78954 1.83325 8.92287 1.83325 8.00065C1.83325 7.07843 2.00825 6.21176 2.35825 5.40065C2.70825 4.58954 3.18325 3.88398 3.78325 3.28398C4.38325 2.68398 5.08881 2.20898 5.89992 1.85898C6.71103 1.50898 7.5777 1.33398 8.49992 1.33398C9.42214 1.33398 10.2888 1.50898 11.0999 1.85898C11.911 2.20898 12.6166 2.68398 13.2166 3.28398C13.8166 3.88398 14.2916 4.58954 14.6416 5.40065C14.9916 6.21176 15.1666 7.07843 15.1666 8.00065C15.1666 8.92287 14.9916 9.78954 14.6416 10.6007C14.2916 11.4118 13.8166 12.1173 13.2166 12.7173C12.6166 13.3173 11.911 13.7923 11.0999 14.1423C10.2888 14.4923 9.42214 14.6673 8.49992 14.6673Z"
+                          fill="#1C1B1F"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                  <button
+                    @click="toggleFilter('antics')"
+                    :class="{'bg-[#0EA5E9] text-white': filters.antics}"
+                    class="border border-[#111827] px-4 py-2.5 rounded-md flex items-center gap-2"
+                  >
+                    Antics
+                    <svg
+                      width="17"
+                      height="16"
+                      viewBox="0 0 17 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        id="mask0_73_14482"
+                        style="mask-type: alpha"
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="17"
+                        height="16"
+                      >
+                        <rect x="0.5" width="16" height="16" fill="#D9D9D9" />
+                      </mask>
+                      <g mask="url(#mask0_73_14482)">
+                        <path
+                          d="M6.09992 11.334L8.49992 8.93398L10.8999 11.334L11.8333 10.4007L9.43325 8.00065L11.8333 5.60065L10.8999 4.66732L8.49992 7.06732L6.09992 4.66732L5.16659 5.60065L7.56659 8.00065L5.16659 10.4007L6.09992 11.334ZM8.49992 14.6673C7.5777 14.6673 6.71103 14.4923 5.89992 14.1423C5.08881 13.7923 4.38325 13.3173 3.78325 12.7173C3.18325 12.1173 2.70825 11.4118 2.35825 10.6007C2.00825 9.78954 1.83325 8.92287 1.83325 8.00065C1.83325 7.07843 2.00825 6.21176 2.35825 5.40065C2.70825 4.58954 3.18325 3.88398 3.78325 3.28398C4.38325 2.68398 5.08881 2.20898 5.89992 1.85898C6.71103 1.50898 7.5777 1.33398 8.49992 1.33398C9.42214 1.33398 10.2888 1.50898 11.0999 1.85898C11.911 2.20898 12.6166 2.68398 13.2166 3.28398C13.8166 3.88398 14.2916 4.58954 14.6416 5.40065C14.9916 6.21176 15.1666 7.07843 15.1666 8.00065C15.1666 8.92287 14.9916 9.78954 14.6416 10.6007C14.2916 11.4118 13.8166 12.1173 13.2166 12.7173C12.6166 13.3173 11.911 13.7923 11.0999 14.1423C10.2888 14.4923 9.42214 14.6673 8.49992 14.6673Z"
+                          fill="#1C1B1F"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                  <button
+                    @click="toggleFilter('cheap')"
+                    :class="{'bg-[#0EA5E9] text-white': filters.cheap}"
+                    class="border border-[#111827] px-4 py-2.5 rounded-md flex items-center gap-2"
+                  >
+                    Cheap
+                    <svg
+                      width="17"
+                      height="16"
+                      viewBox="0 0 17 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        id="mask0_73_14482"
+                        style="mask-type: alpha"
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="17"
+                        height="16"
+                      >
+                        <rect x="0.5" width="16" height="16" fill="#D9D9D9" />
+                      </mask>
+                      <g mask="url(#mask0_73_14482)">
+                        <path
+                          d="M6.09992 11.334L8.49992 8.93398L10.8999 11.334L11.8333 10.4007L9.43325 8.00065L11.8333 5.60065L10.8999 4.66732L8.49992 7.06732L6.09992 4.66732L5.16659 5.60065L7.56659 8.00065L5.16659 10.4007L6.09992 11.334ZM8.49992 14.6673C7.5777 14.6673 6.71103 14.4923 5.89992 14.1423C5.08881 13.7923 4.38325 13.3173 3.78325 12.7173C3.18325 12.1173 2.70825 11.4118 2.35825 10.6007C2.00825 9.78954 1.83325 8.92287 1.83325 8.00065C1.83325 7.07843 2.00825 6.21176 2.35825 5.40065C2.70825 4.58954 3.18325 3.88398 3.78325 3.28398C4.38325 2.68398 5.08881 2.20898 5.89992 1.85898C6.71103 1.50898 7.5777 1.33398 8.49992 1.33398C9.42214 1.33398 10.2888 1.50898 11.0999 1.85898C11.911 2.20898 12.6166 2.68398 13.2166 3.28398C13.8166 3.88398 14.2916 4.58954 14.6416 5.40065C14.9916 6.21176 15.1666 7.07843 15.1666 8.00065C15.1666 8.92287 14.9916 9.78954 14.6416 10.6007C14.2916 11.4118 13.8166 12.1173 13.2166 12.7173C12.6166 13.3173 11.911 13.7923 11.0999 14.1423C10.2888 14.4923 9.42214 14.6673 8.49992 14.6673Z"
+                          fill="#1C1B1F"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <button
+                @click="toggleLayout"
+                class="bg-[#0EA5E9] text-white px-4 py-3 rounded-md flex items-center gap-2"
+              >
+                <span x-text="isGrid ? 'Grid' : 'Block'"></span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask
+                    id="mask0_116_2647"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="20"
+                    height="20"
+                  >
+                    <rect width="20" height="20" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_116_2647)">
+                    <path
+                      d="M3.33317 16.6673C2.87484 16.6673 2.48248 16.5041 2.15609 16.1777C1.8297 15.8513 1.6665 15.459 1.6665 15.0007V5.00065C1.6665 4.54232 1.8297 4.14996 2.15609 3.82357C2.48248 3.49718 2.87484 3.33398 3.33317 3.33398H4.43734C4.89567 3.33398 5.28803 3.49718 5.61442 3.82357C5.94081 4.14996 6.104 4.54232 6.104 5.00065V15.0007C6.104 15.459 5.94081 15.8513 5.61442 16.1777C5.28803 16.5041 4.89567 16.6673 4.43734 16.6673H3.33317ZM9.45817 16.6673C8.99984 16.6673 8.60748 16.5041 8.28109 16.1777C7.9547 15.8513 7.7915 15.459 7.7915 15.0007V5.00065C7.7915 4.54232 7.9547 4.14996 8.28109 3.82357C8.60748 3.49718 8.99984 3.33398 9.45817 3.33398H10.5623C11.0207 3.33398 11.413 3.49718 11.7394 3.82357C12.0658 4.14996 12.229 4.54232 12.229 5.00065V15.0007C12.229 15.459 12.0658 15.8513 11.7394 16.1777C11.413 16.5041 11.0207 16.6673 10.5623 16.6673H9.45817ZM15.5623 16.6673C15.104 16.6673 14.7116 16.5041 14.3853 16.1777C14.0589 15.8513 13.8957 15.459 13.8957 15.0007V5.00065C13.8957 4.54232 14.0589 4.14996 14.3853 3.82357C14.7116 3.49718 15.104 3.33398 15.5623 3.33398H16.6665C17.1248 3.33398 17.5172 3.49718 17.8436 3.82357C18.17 4.14996 18.3332 4.54232 18.3332 5.00065V15.0007C18.3332 15.459 18.17 15.8513 17.8436 16.1777C17.5172 16.5041 17.1248 16.6673 16.6665 16.6673H15.5623Z"
+                      fill="white"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div
+          :class="isGrid ? 'grid sm:grid-cols-2 md:grid-cols-3 gap-6' : 'block'"
+          class="products"
+        >
+          <div x-show="filters.chairs" class="product-item chair">
+            <a
+              href="#"
+              class="group relative block rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5"
+            >
+              <img
+                src="../assets/trending1.svg"
+                alt=""
+                class="w-full transition rounded-lg duration-500 group-hover:scale-105"
+              />
+              <div class="bg-[#F5F6F8] mt-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="mt-1.5 text-lg font-medium text-gray-900">
+                    Wireless Headphones
+                  </h3>
+                  <p class="text-gray-700">N100,000.00</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center gap-4">
+                  <button
+                    class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition rounded-xl hover:scale-105"
+                  >
+                    Buy Now
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13926"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13926)">
+                          <path
+                            d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13929"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13929)">
+                          <path
+                            d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div x-show="filters.antics" class="product-item antics">
+            <a
+              href="#"
+              class="group relative block rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5"
+            >
+              <img
+                src="../assets/trending2.svg"
+                alt=""
+                class="w-full transition rounded-lg duration-500 group-hover:scale-105"
+              />
+
+              <div class="relative bg-[#F5F6F8] mt-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="mt-1.5 text-lg font-medium text-gray-900">
+                    Wireless Headphones
+                  </h3>
+                  <p class="text-gray-700 font-semibold">N100,000.00</p>
+                </div>
+
+                <div class="mt-4 flex justify-between items-center gap-4">
+                  <button
+                    type="button"
+                    class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition hover:scale-105 rounded-xl"
+                  >
+                    Buy Now
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13926"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13926)">
+                          <path
+                            d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13929"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13929)">
+                          <path
+                            d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div x-show="filters.cheap" class="product-item cheap">
+            <a
+              href="#"
+              class="group relative block rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5"
+            >
+              <img
+                src="../assets/trending4.svg"
+                alt=""
+                class="w-full transition rounded-lg duration-500 group-hover:scale-105"
+              />
+
+              <div class="relative bg-[#F5F6F8] mt-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="mt-1.5 text-lg font-medium text-gray-900">
+                    Wireless Headphones
+                  </h3>
+                  <p class="text-gray-700 font-semibold">N100,000.00</p>
+                </div>
+
+                <div class="mt-4 flex justify-between items-center gap-4">
+                  <button
+                    type="button"
+                    class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition hover:scale-105 rounded-xl"
+                  >
+                    Buy Now
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13926"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13926)">
+                          <path
+                            d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13929"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13929)">
+                          <path
+                            d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div :class="isGrid ? 'grid sm:grid-cols-2 md:grid-cols-3 gap-6' : 'block'" class="products">
+          <!-- Product Card: All products will appear initially -->
+          <div x-show="!filters.chairs || filters.chairs" class="product-item chair">
+            <a href="#" class="group relative block rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
+              <img src="../assets/trending1.svg" alt="" class="w-full transition rounded-lg duration-500 group-hover:scale-105"/>
+              <div class="bg-[#F5F6F8] mt-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="mt-1.5 text-lg font-medium text-gray-900">Chairs Product</h3>
+                  <p class="text-gray-700">N100,000.00</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center gap-4">
+                  <button class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition rounded-xl hover:scale-105">
+                    Buy Now
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13926"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13926)">
+                          <path
+                            d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13929"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13929)">
+                          <path
+                            d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+    
+          <div x-show="!filters.antics || filters.antics" class="product-item antics">
+            <a href="#" class="group relative block rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
+              <img src="../assets/trending2.svg" alt="" class="w-full transition rounded-lg duration-500 group-hover:scale-105"/>
+              <div class="bg-[#F5F6F8] mt-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="mt-1.5 text-lg font-medium text-gray-900">Antics Product</h3>
+                  <p class="text-gray-700">N100,000.00</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center gap-4">
+                  <button class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition rounded-xl hover:scale-105">
+                    Buy Now
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13926"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13926)">
+                          <path
+                            d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13929"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13929)">
+                          <path
+                            d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+    
+          <div x-show="!filters.cheap || filters.cheap" class="product-item cheap">
+            <a href="#" class="group relative block rounded-lg overflow-hidden bg-[#F5F6F8] border-[0.5px] border-gray-25 p-5">
+              <img src="../assets/trending3.svg" alt="" class="w-full transition rounded-lg duration-500 group-hover:scale-105"/>
+              <div class="bg-[#F5F6F8] mt-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="mt-1.5 text-lg font-medium text-gray-900">Cheap Product</h3>
+                  <p class="text-gray-700">N50,000.00</p>
+                </div>
+                <div class="mt-4 flex justify-between items-center gap-4">
+                  <button class="block rounded-sm bg-[#0EA5E9] px-4 py-2.5 text-sm font-medium text-white transition rounded-xl hover:scale-105">
+                    Buy Now
+                  </button>
+                  <div class="flex justify-between items-center">
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13926"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13926)">
+                          <path
+                            d="M12 21.0004L10.55 19.7004C8.86667 18.1837 7.475 16.8754 6.375 15.7754C5.275 14.6754 4.4 13.6879 3.75 12.8129C3.1 11.9379 2.64583 11.1337 2.3875 10.4004C2.12917 9.66706 2 8.91706 2 8.15039C2 6.58372 2.525 5.27539 3.575 4.22539C4.625 3.17539 5.93333 2.65039 7.5 2.65039C8.36667 2.65039 9.19167 2.83372 9.975 3.20039C10.7583 3.56706 11.4333 4.08372 12 4.75039C12.5667 4.08372 13.2417 3.56706 14.025 3.20039C14.8083 2.83372 15.6333 2.65039 16.5 2.65039C18.0667 2.65039 19.375 3.17539 20.425 4.22539C21.475 5.27539 22 6.58372 22 8.15039C22 8.91706 21.8708 9.66706 21.6125 10.4004C21.3542 11.1337 20.9 11.9379 20.25 12.8129C19.6 13.6879 18.725 14.6754 17.625 15.7754C16.525 16.8754 15.1333 18.1837 13.45 19.7004L12 21.0004ZM12 18.3004C13.6 16.8671 14.9167 15.6379 15.95 14.6129C16.9833 13.5879 17.8 12.6962 18.4 11.9379C19 11.1796 19.4167 10.5046 19.65 9.91289C19.8833 9.32122 20 8.73372 20 8.15039C20 7.15039 19.6667 6.31706 19 5.65039C18.3333 4.98372 17.5 4.65039 16.5 4.65039C15.7167 4.65039 14.9917 4.87122 14.325 5.31289C13.6583 5.75456 13.2 6.31706 12.95 7.00039H11.05C10.8 6.31706 10.3417 5.75456 9.675 5.31289C9.00833 4.87122 8.28333 4.65039 7.5 4.65039C6.5 4.65039 5.66667 4.98372 5 5.65039C4.33333 6.31706 4 7.15039 4 8.15039C4 8.73372 4.11667 9.32122 4.35 9.91289C4.58333 10.5046 5 11.1796 5.6 11.9379C6.2 12.6962 7.01667 13.5879 8.05 14.6129C9.08333 15.6379 10.4 16.8671 12 18.3004Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+
+                    <button
+                      class="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <mask
+                          id="mask0_72_13929"
+                          style="mask-type: alpha"
+                          maskUnits="userSpaceOnUse"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        >
+                          <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_72_13929)">
+                          <path
+                            d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z"
+                            fill="#1C1B1F"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <footer class="bg-[#F9FAFB] mt-10">
+      <div class="container p-6 lg:p-20 mx-auto">
+        <div class="lg:flex gap-x-12">
+          <div class="w-full -mx-6 lg:w-2/5">
+            <div class="px-6">
+              <div>
+                <div class="mb-8 flex gap-3 justify-start items-center">
+                  <div class="w-12 h-12 rounded-md">
+                    <img
+                      src="../../assets/icons/logo.svg"
+                      alt="Logo"
+                      class="w-full"
+                    />
+                  </div>
+                  <h4
+                    class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]"
+                    style="font-style: italic"
+                  >
+                    Full Logo Goes Here
+                  </h4>
+                </div>
+                <p class="text-[#344054] mb-4">
+                  Be the first to receive all the recent updates, articles, and
+                  valuable materials.
+                </p>
+                <form id="subscribeForm" class="flex space-x-2">
+                  <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="Enter your email"
+                    class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+                  />
+                  <button
+                    type="submit"
+                    class="px-4 py-2 bg-sky-500 text-white rounded-md hover:bg-sky-600"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 lg:mt-0 lg:flex-1">
+            <div
+              class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            >
+              <div>
+                <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >About</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Security</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Blog</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Careers</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Service Status</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Partnerships</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Mission roadmap</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Community</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Mass Payments</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Debit Card</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for Startups</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for Developers</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Rayna for No-code</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Assets</a
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-700 uppercase dark:text-white">
+                  Various Templates
+                </h3>
+                <div class="space-y-6">
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Financial Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Fashion & Beauty Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Agriculture Templates</a
+                  >
+                  <a
+                    href="#"
+                    class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                    >Manufacturing Templatess</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-6 lg:mt-0 lg:flex-1">
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <div>
-              <h3 class="text-gray-700 uppercase dark:text-white">Company</h3>
-              <div class="space-y-6">
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">About</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Security</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Blog</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Careers</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Service
-                  Status</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Partnerships</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mission
-                  roadmap</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Community</a>
-              </div>
-            </div>
+        <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
 
-            <div>
-              <h3 class="text-gray-700 uppercase dark:text-white">Support</h3>
-              <div class="space-y-6">
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Mass
-                  Payments</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Debit Card</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
-                  Startups</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
-                  Developers</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Rayna for
-                  No-code</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Assets</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-gray-700 uppercase dark:text-white">Various Templates</h3>
-              <div class="space-y-6">
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Financial
-                  Templates</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Fashion & Beauty
-                  Templates</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Agriculture
-                  Templates</a>
-                <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Manufacturing
-                  Templatess</a>
-              </div>
-            </div>
-
-
-          </div>
+        <div>
+          <p class="text-center text-gray-500 dark:text-gray-400">
+            © Brand 2020 - All rights reserved
+          </p>
         </div>
       </div>
-
-      <hr class="h-px my-6 bg-gray-200 border-none dark:bg-gray-700">
-
-      <div>
-        <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
