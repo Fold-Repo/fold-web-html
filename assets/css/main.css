@@ -4,8 +4,10 @@
 /* @tailwind utilities;
 @tailwind utilities;  */
 /* @import "tailwindcss/preflight"; */
-/* @import "tailwindcss/components";
-@import "tailwindcss/utilities"; */ */
+ /* @import "tailwindcss/components";  */
+/* @import "tailwindcss/utilities";  */
+
+@plugin "flowbite/plugin";
 
 *{
     font-family: 'Cabin', sans-serif;
@@ -13,4 +15,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
