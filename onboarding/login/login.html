@@ -4,85 +4,156 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../../assets/css/main.css" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../../assets/css/main.css" /> -->
+            <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+            <link rel="stylesheet" href="/assets/css/app.css">
+
 
   </head>
   <body>
-    <div class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <div class="w-full max-w-6xl flex flex-col lg:flex-row gap-8">
-        <!-- Login Form Section -->
-        <div class="w-full lg:w-1/2 bg-white rounded-lg shadow-sm p-8">
-          <div class="mb-8">
-            <div class="w-12 h-12  rounded-lg flex items-center justify-center">
-              <img src="../../assets/icons/logo.svg" alt="Logo"  />
+    <main class="conteiner-fluid">
+
+      <div class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+        <div class="w-full container flex flex-col lg:flex-row gap-8">
+          <!-- Login Form Section -->
+          <div class="w-full lg:w-1/2 container  bg-white rounded-lg border-2 border-gray-200 shadow-sm p-8">
+            <div class="mb-8 mt-10">
+              <div class="w-12 h-12  rounded-lg flex items-center justify-center">
+                <img src="../../assets/images/fold..svg" alt="Logo"  />
+              </div>
+              <h1 class="text-2xl font-semibold mb-2">Get Started Here!</h1>
+              <p class="text-gray-600">
+                Be a part of the community of shoppers starting now.
+              </p>
             </div>
-            <h1 class="text-2xl font-semibold mb-2">Get Started Here!</h1>
-            <p class="text-gray-600">
-              Be a part of the community of shoppers starting now.
-            </p>
-          </div>
-           <form class="space-y-4">
-              <div class="">
-                <label class="text-dark2 text-sm font-semibold" for="email"
-                  >Email Address</label
-                >
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  class="w-full px-4 py-3 text-sm rounded border border-gray-2 focus:border-pribg-primary focus:ring-2 focus:ring-blue-100 outline-none transition"
-                />
-              </div>
-
-              <div class="">
-                <label class="text-dark2 text-sm font-semibold" for="password"
-                  >Password</label
-                >
-                <input
-                  type="password"
-                  placeholder="Password"
-                  class="w-full px-4 py-3 text-sm rounded border border-gray-2 focus:border-pribg-primary focus:ring-2 focus:ring-blue-100 outline-none transition"
-                />
-              </div>
-
-              <div class="flex justify-between">
-                <div class="flex items-start">
-                  <input
-                    type="checkbox"
-                    id="remember"
-                    class="mt-1 rounded border-gray-2 text-pribg-primary focus:ring-pribg-primary"
-                  />
-                  <label
-                    for="remember"
-                    class="ml-2 text-gray text-sm peer-checked:bg-pribg-primary peer-checked:border-pribg-primary peer-checked:text-white inline-block"
+             <form class="space-y-4 py-4 mb-20">
+                <div class="">
+                  <label class="text-gray-950 text-sm font-semibold" for="email"
+                    >Email Address</label
                   >
-                    Keep me signed in
-                  </label>
+  
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    class="w-full px-4 py-3 text-sm rounded border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition"
+                  />
                 </div>
-                 
-              <a href="/onboarding/forgot-password.html" class="text-black hover:underline"
-                >Forget Password</a
-              >
-              </div>
-              <button
-                class="w-full bg-primary text-white py-3 rounded bg-blue-500 transition"
-              >
-                Sign in
-              </button>
-              
-              <p class="text-center text-primary">
-                Don't have an account?
-                <a href="/onboarding/signup/signup2.html" class="text-primary hover:underline"
-                  >Sign Up</a
+  
+                <div class="">
+                  <label class="text-gray-950 text-sm font-semibold" for="password"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="w-full px-4 py-3 text-sm rounded border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition"
+                  />
+                </div>
+  
+                <div class="flex justify-between">
+                  <div class="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="remember"
+                      class="mt-1 rounded border-gray-200 text-blue-500 focus:ring-blue-500"
+                    />
+                    <label
+                      for="remember"
+                      class="ml-2 text-gray text-sm peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white inline-block"
+                    >
+                      Keep me signed in
+                    </label>
+                  </div>
+                   
+                <a href="/onboarding/forgot-password.html" class="text-black hover:underline"
+                  >Forget Password</a
                 >
-              </p>    
-            </form>
-        </div>
-        <div class="w-full hidden lg:block lg:w-1/2 space-y-4">
-          <img src="../../assets/images/onboarding/signin.png" />
+                </div>
+                <button
+                  class="w-full bg-blue-500 text-white py-3 rounded  transition"
+                >
+                  Sign in
+                </button>
+                
+                <p class="text-center text-blue-500">
+                  Don't have an account?
+                  <a href="/onboarding/signup/signup2.html" class="text-blue-500 hover:underline"
+                    >Sign Up</a
+                  >
+                </p>    
+              </form>
+          </div>
+
+          <div class="hidden lg:grid grid-cols-1 gap-4">
+  <!-- Testimonial 1 -->
+  <div
+    class="bg-purple-600 rounded-xl p-6 text-white flex items-start relative"
+    style="margin-left: 80px;"
+  >
+    <!-- Use style as they seem to be not working -->
+    <div class="w-16 h-16 rounded-full mr-4 overflow-hidden">
+      <img
+        src="/assets/images/onboarding/user.svg"
+        alt="Eugene ADAVORE"
+        class="w-full  object-cover"
+      />
+    </div>
+    <div>
+      <p class="text-sm italic mb-2">
+        " Be a part of the community of shoppers starting now. Resume shopping
+        at the best place to get everything you need. Here! "
+      </p>
+      <p class="font-semibold">Eugene ADAVORE.</p>
+    </div>
+  </div>
+
+  <!-- Testimonial 2 -->
+  <div
+    class="bg-gray-800 rounded-xl p-6 text-white flex items-start relative"
+    style="margin-left: 40px;"
+  >
+    <!-- Use style as they seem to be not working -->
+    <div class="w-16 h-16 rounded-full mr-4 overflow-hidden">
+      <img
+        src="/assets/images/onboarding/user.svg"
+        alt="Eugene ADAVORE"
+        class="w-full  object-cover"
+      />
+    </div>
+    <div>
+      <p class="text-sm italic mb-2">
+        " Be a part of the community of shoppers starting now. Resume shopping
+        at the best place to get everything you need. Here! "
+      </p>
+      <p class="font-semibold">Eugene ADAVORE.</p>
+    </div>
+  </div>
+
+  <!-- Testimonial 3 -->
+  <div
+    class="bg-purple-800 rounded-xl p-6 text-white flex items-start relative"
+    style="margin-left: 0px;"
+  >
+    <!-- Use style as they seem to be not working -->
+    <div class="w-16 h-16 rounded-full mr-4 overflow-hidden">
+      <img
+        src="/assets/images/onboarding/user.svg"
+        alt="Eugene ADAVORE"
+        class=" object-cover"
+      />
+    </div>
+    <div>
+      <p class="text-sm italic mb-2">
+        " Be a part of the community of shoppers starting now. Resume shopping
+        at the best place to get everything you need. Here! "
+      </p>
+      <p class="font-semibold">Eugene ADAVORE.</p>
+    </div>
+  </div>
+</div>
+         
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
