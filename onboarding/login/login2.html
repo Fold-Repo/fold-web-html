@@ -4,92 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../../assets/css/main.css" />
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
+ <link rel="stylesheet" href="/assets/css/app.css">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="min-h-screen mt-12 lg:mt-2 bg-white p-4 md:p-8">
-      <div class="max-w-xl  py-6 mx-auto">
-        <div class="px-12 border-primary border shadow-md py-6 mx-auto gap-8">
-          <div class="w-full max-w-lg">
-            <div class="mb-8 flex gap-3 justify-center items-center">
-              <div class="w-12 h-12 rounded-md">
-                <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
+    <main class="container-fluid min-h-screen  overflow-x-hidden">
+
+      <div class="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+        <div class="w-full container flex flex-col items-center lg:flex-row gap-8">
+          <!-- Login Form Section -->
+          <div class="w-full  container lg:max-w-xl mx-auto  bg-white rounded-lg border-2 border-blue-500 shadow-md p-8">
+            <div class="mb-8 flex flex-col justify-center items-center mt-10">
+              <div class="w-12 h-12  rounded-lg flex items-center justify-center">
+                <img src="../../assets/images/fold..svg" alt="Logo"  />
               </div>
-              <h4
-                class="text-dark font-medium text-[24px] leading-[29.16px]"
-                style="font-style: italic"
-              >
-                Full Logo Goes Here
-              </h4>
-            </div>
-            <div class="text-center">
-              <h2 class="text-xl font-semibold text-dark mb-2">
-                Get Started Here!
-              </h2>
-              <p class="text-[#4B5563] text-[20px] mb-6">
+              <h1 class="text-2xl font-semibold mb-2">Get Started Here!</h1>
+              <p class="text-gray-600">
                 Be a part of the community of shoppers starting now.
               </p>
             </div>
-            <form class="space-y-4">
-              <div class="">
-                <label class="text-dark2 text-sm font-semibold" for="email"
-                  >Email Address</label
-                >
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  class="w-full px-4 py-3 text-sm rounded border border-gray-2 focus:border-pribg-primary focus:ring-2 focus:ring-blue-100 outline-none transition"
-                />
-              </div>
-
-              <div class="">
-                <label class="text-dark2 text-sm font-semibold" for="password"
-                  >Password</label
-                >
-                <input
-                  type="password"
-                  placeholder="Password"
-                  class="w-full px-4 py-3 text-sm rounded border border-gray-2 focus:border-pribg-primary focus:ring-2 focus:ring-blue-100 outline-none transition"
-                />
-              </div>
-
-              <div class="flex justify-between">
-                <div class="flex items-start">
-                  <input
-                    type="checkbox"
-                    id="remember"
-                    class="mt-1 rounded border-gray-2 text-pribg-primary focus:ring-pribg-primary"
-                  />
-                  <label
-                    for="remember"
-                    class="ml-2 text-gray text-sm peer-checked:bg-pribg-primary peer-checked:border-pribg-primary peer-checked:text-white inline-block"
+             <form class="space-y-4 py-4 mb-20">
+                <div class="">
+                  <label class="text-slate-500 text-sm font-semibold" for="email"
+                    >Email Address</label
                   >
-                    Keep me signed in
-                  </label>
+  
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    class="w-full px-4 py-3 text-sm rounded border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition"
+                  />
                 </div>
-                 
-              <a href="forgot-password.html" class="text-black hover:underline"
-                >Forget Password</a
-              >
-              </div>
-              <button
-                class="w-full bg-primary text-white py-3 rounded hover:bg-blue-500 transition"
-              >
-                Sign in
-              </button>
-              <p class="text-center text-primary">
-                Don't have an account?
-                <a href="/onboarding/signup/signup2.html" class="text-primary hover:underline"
-                  >Sign Up</a
+  
+                <div class="">
+                  <label class="text-slate-500 text-sm font-semibold" for="password"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    class="w-full px-4 py-3 text-sm rounded border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition"
+                  />
+                </div>
+  
+                <div class="flex justify-between">
+                  <div class="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="remember"
+                      class="mt-1 rounded border-gray-200 text-blue-500 focus:ring-blue-500"
+                    />
+                    <label
+                      for="remember"
+                      class="ml-2 text-gray text-sm peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white inline-block"
+                    >
+                      Keep me signed in
+                    </label>
+                  </div>
+                   
+               
+                </div>
+                <button
+                  class="w-full bg-blue-500 text-white py-3 rounded  transition"
                 >
-              </p>
-            </form>
+                  Sign in
+                </button>
+                
+                <p class="text-center text-blue-500">
+                  Don't have an account?
+                  <a href="/onboarding/signup/signup2.html" class="text-blue-500 hover:underline"
+                    >Sign Up</a
+                  >
+                </p>    
+              </form>
           </div>
+
+         
         </div>
-       
       </div>
+     
+    </main>
   </body>
 </html>
