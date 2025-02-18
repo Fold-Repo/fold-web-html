@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-<script src="https://cdn.tailwindcss.com"></script>
 
-       <script src="/assets/script.js"></script>
-       <script src="/assets/js/demo1.js"></script>
-      <!-- Google Fonts links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="/assets/script.js"></script>
+    <script src="/assets/js/demo1.js"></script>
+    <!-- Google Fonts links -->
+    <link rel="stylesheet" href="/assets/css/app.css" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
-</head>
-<body >
+  </head>
+  <body>
     <!-- header -->
-      <header class="mb-4 mx-auto container-fluid">
+    <header class="mb-4 mx-auto container-fluid">
       <!-- Top Banner -->
       <div class="bg-blue-500 text-white py-3 px-4 text-center">
         <p class="text-lg">
@@ -28,13 +27,13 @@
       </div>
 
       <!-- Navigation -->
-      <nav class="bg-[#F5F6F8] container-fluid shadow-sm py-4 px-6">
+      <nav class="bg-gray-50 container-fluid shadow-sm py-4 px-6">
         <div class="mx-auto flex items-center justify-between">
           <!-- Logo -->
           <div class="flex items-center">
             <img
               src="../../assets/icons/logo.svg"
-              class="w-10 h-10  rounded-lg"
+              class="w-10 h-10 rounded-lg"
               alt="Logo"
             />
           </div>
@@ -42,12 +41,10 @@
           <!-- Desktop Navigation Links -->
           <div class="hidden lg:flex items-center space-x-8">
             <a href="#" class="text-blue-500 hover:text-blue-600">Home</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">About us</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500"
-              >Contact us</a
-            >
-            <a href="#" class="text-[#111827] hover:text-blue-500">Wishlist</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">Chat</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">About us</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Contact us</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Wishlist</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Chat</a>
           </div>
 
           <!-- Desktop Search & Icons -->
@@ -124,56 +121,133 @@
     </header>
 
     <main>
-    <!-- Hero Section -->
-    <section class="grid lg:grid-cols-2 gap-6 mx-auto py-10 px-4 lg:px-12">
+      <!-- Hero Section -->
+      <section class="grid lg:grid-cols-2 gap-6 mx-auto py-10 px-4 lg:px-12">
         <div>
-            <h2 class="text-[#0EA5E9] underline font-medium">About Us</h2>
-            <h1 class="text-3xl text-[#111827] font-medium mt-2">Best Products, Best Deals you will find anywhere Globally.</h1>
-
+          <h2 class="text-blue-500 underline font-medium">About Us</h2>
+          <h1 class="text-3xl text-gray-950 font-medium mt-2">
+            Best Products, Best Deals you will find anywhere Globally.
+          </h1>
         </div>
         <div>
-            <p class="text-gray-600 mt-3">
-                Customize the layout, colors and styles within only a few minutes. Start creating an amazing website right now! Customize the layout, colors and styles within only a few minutes. Start creating an amazing website right now!Customize the layout, colors and styles within only a few minutes. Start creating an amazing website right now!
-            </p>
-
+          <p class="text-gray-600 mt-3">
+            Customize the layout, colors and styles within only a few minutes.
+            Start creating an amazing website right now! Customize the layout,
+            colors and styles within only a few minutes. Start creating an
+            amazing website right now!Customize the layout, colors and styles
+            within only a few minutes. Start creating an amazing website right
+            now!
+          </p>
         </div>
-    </section>
+      </section>
 
-    <!-- Hero Image -->
-    <div class="px-2 md:px-0 w-full">
-        <img src="/assets/images/aboutus.svg" alt="About Us Image" class="w-full h-auto">
-    </div>
+      <!-- Hero Image -->
+      <div class="px-2 md:px-0 w-full">
+        <img
+          src="/assets/images/aboutus.svg"
+          alt="About Us Image"
+          class="w-full h-auto"
+        />
+      </div>
 
-    <!-- Company Info Section -->
-    <section class=" px-4 lg:px-12 mx-auto py-10  flex flex-col lg:flex-row gap-4">
-        <div class=""><h2 class="text-xl text-[#111827] underline underline-gray-500 font-bold">Something about the company.</h2></div>
+      <!-- Company Info Section -->
+      <section
+        class="px-4 lg:px-12 mx-auto py-10 flex flex-col lg:flex-row gap-4"
+      >
         <div class="">
-
-            <p class="text-[#111827] mb-4">
-                Lorem ipsum dolor sit amet consectetur. Mauris eu ma nec facil. Join nulla sociis eget ipsum dolor. In nulla morbi a fusce et diam morbi.
-            </p>
-            <p class="text-[#111827] ">
-                Consectetur imperdiet etiam quam placerat gravida orci. Suscipit non habitant interdum habitant risus.
-            </p>
+          <h2
+            class="text-xl text-gray-950 underline underline-gray-500 font-bold"
+          >
+            Something about the company.
+          </h2>
         </div>
-    
-        
-    </section>
+        <div class="">
+          <p class="text-gray-950 mb-4">
+            Lorem ipsum dolor sit amet consectetur. Mauris eu ma nec facil. Join
+            nulla sociis eget ipsum dolor. In nulla morbi a fusce et diam morbi.
+          </p>
+          <p class="text-gray-950">
+            Consectetur imperdiet etiam quam placerat gravida orci. Suscipit non
+            habitant interdum habitant risus.
+          </p>
+        </div>
+      </section>
 
-    <!-- Team Section -->
-    <section class=" px-4 lg:px-12 mx-auto py-10">
-        <h2 class="text-2xl text-[#111827] font-medium">Meet the Team</h2>
-        <p class="text-[#111827] w-full lg:w-3/4 mt-2">
-            Lorem ipsum dolor sit amet consectetur. Maecenas mus id nunc facilisi. Justo nulla suscipit quis dictum dui massa at consectetur. Augue Lorem ipsum dolor sit amet consectetur. Maecenas mus id nunc facilisi. Justo nulla suscipit quis dictum dui massa at consectetur. Augue
+      <!-- Team Section -->
+      <section class="px-4 lg:px-12 mx-auto py-10">
+        <h2 class="text-2xl text-gray-950 font-medium">Meet the Team</h2>
+        <p class="text-gray-950 w-full lg:w-3/4 mt-2">
+          Lorem ipsum dolor sit amet consectetur. Maecenas mus id nunc facilisi.
+          Justo nulla suscipit quis dictum dui massa at consectetur. Augue Lorem
+          ipsum dolor sit amet consectetur. Maecenas mus id nunc facilisi. Justo
+          nulla suscipit quis dictum dui massa at consectetur. Augue
         </p>
-        <div id="team-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mt-6"><div class="rounded-lg overflow-hidden text-start py-4"><img src="/assets/images/demo2/teams/team-member1.svg" alt="Patrick Omokhigo" class="w-full rounded-lg"><h3 class="font-bold mt-2">Patrick Omokhigo</h3><p class="text-gray-600 text-sm">Head of Marketing and Sales</p></div><div class="rounded-lg overflow-hidden text-start py-4"><img src="/assets/images/demo2/teams/team-member2.svg" alt="Patrick Omokhigo" class="w-full rounded-lg"><h3 class="font-bold mt-2">Patrick Omokhigo</h3><p class="text-gray-600 text-sm">Head of Marketing and Sales</p></div><div class="rounded-lg overflow-hidden text-start py-4"><img src="/assets/images/demo2/teams/team-member3.svg" alt="Patrick Omokhigo" class="w-full rounded-lg"><h3 class="font-bold mt-2">Patrick Omokhigo</h3><p class="text-gray-600 text-sm">Head of Marketing and Sales</p></div><div class="rounded-lg overflow-hidden text-start py-4"><img src="/assets/images/demo2/teams/team-member4.svg" alt="Patrick Omokhigo" class="w-full rounded-lg"><h3 class="font-bold mt-2">Patrick Omokhigo</h3><p class="text-gray-600 text-sm">Head of Marketing and Sales</p></div><div class="rounded-lg overflow-hidden text-start py-4"><img src="/assets/images/demo2/teams/team-member2.svg" alt="Patrick Omokhigo" class="w-full rounded-lg"><h3 class="font-bold mt-2">Patrick Omokhigo</h3><p class="text-gray-600 text-sm">Head of Marketing and Sales</p></div><div class="rounded-lg overflow-hidden text-start py-4"><img src="/assets/images/demo2/teams/team-member1.svg" alt="Patrick Omokhigo" class="w-full rounded-lg"><h3 class="font-bold mt-2">Patrick Omokhigo</h3><p class="text-gray-600 text-sm">Head of Marketing and Sales</p></div></div>
-    </section>
+        <div
+          id="team-container"
+          class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mt-6"
+        >
+          <div class="rounded-lg overflow-hidden text-start py-4">
+            <img
+              src="/assets/images/demo2/teams/team-member1.svg"
+              alt="Patrick Omokhigo"
+              class="w-full rounded-lg"
+            />
+            <h3 class="font-bold mt-2">Patrick Omokhigo</h3>
+            <p class="text-gray-600 text-sm">Head of Marketing and Sales</p>
+          </div>
+          <div class="rounded-lg overflow-hidden text-start py-4">
+            <img
+              src="/assets/images/demo2/teams/team-member2.svg"
+              alt="Patrick Omokhigo"
+              class="w-full rounded-lg"
+            />
+            <h3 class="font-bold mt-2">Patrick Omokhigo</h3>
+            <p class="text-gray-600 text-sm">Head of Marketing and Sales</p>
+          </div>
+          <div class="rounded-lg overflow-hidden text-start py-4">
+            <img
+              src="/assets/images/demo2/teams/team-member3.svg"
+              alt="Patrick Omokhigo"
+              class="w-full rounded-lg"
+            />
+            <h3 class="font-bold mt-2">Patrick Omokhigo</h3>
+            <p class="text-gray-600 text-sm">Head of Marketing and Sales</p>
+          </div>
+          <div class="rounded-lg overflow-hidden text-start py-4">
+            <img
+              src="/assets/images/demo2/teams/team-member4.svg"
+              alt="Patrick Omokhigo"
+              class="w-full rounded-lg"
+            />
+            <h3 class="font-bold mt-2">Patrick Omokhigo</h3>
+            <p class="text-gray-600 text-sm">Head of Marketing and Sales</p>
+          </div>
+          <div class="rounded-lg overflow-hidden text-start py-4">
+            <img
+              src="/assets/images/demo2/teams/team-member2.svg"
+              alt="Patrick Omokhigo"
+              class="w-full rounded-lg"
+            />
+            <h3 class="font-bold mt-2">Patrick Omokhigo</h3>
+            <p class="text-gray-600 text-sm">Head of Marketing and Sales</p>
+          </div>
+          <div class="rounded-lg overflow-hidden text-start py-4">
+            <img
+              src="/assets/images/demo2/teams/team-member1.svg"
+              alt="Patrick Omokhigo"
+              class="w-full rounded-lg"
+            />
+            <h3 class="font-bold mt-2">Patrick Omokhigo</h3>
+            <p class="text-gray-600 text-sm">Head of Marketing and Sales</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-</main>
-
-
-<footer class="bg-[#F9FAFB] container-fluid mx-auto">
-      <div class="container-fluid p-6 lg:p-20 mx-auto flex justify-between flex-col lg:flex-row gap-5">
+    <footer class="bg-[#F9FAFB] container-fluid mx-auto">
+      <div
+        class="container-fluid p-6 lg:p-20 mx-auto flex justify-between flex-col lg:flex-row gap-5"
+      >
         <div class="w-full lg:w-1/5">
           <div class="px-6">
             <div>
@@ -185,16 +259,12 @@
                     class="w-full"
                   />
                 </div>
-                
               </div>
               <p class="text-[#344054] mb-4">
                 Be the first to receive all the recent updates, articles, and
                 valuable materials.
               </p>
-              <form
-                id="subscribeForm"
-                class="flex space-x-2"
-              >
+              <form id="subscribeForm" class="flex space-x-2">
                 <input
                   type="email"
                   id="emailInput"
@@ -318,13 +388,10 @@
             >
           </div>
         </div>
-      
-
       </div>
-      <div class="container-fluid p-6 lg:px-20 mx-auto ">
+      <div class="container-fluid p-6 lg:px-20 mx-auto">
+        <hr class="h-px my-6 bg-gray-200 border-none" />
 
-        <hr class="h-px my-6 bg-gray-200 border-none " />
-  
         <div>
           <p class="text-center text-gray-500 dark:text-gray-400">
             © Brand 2020 - All rights reserved
@@ -332,5 +399,5 @@
         </div>
       </div>
     </footer>
-</body>
+  </body>
 </html>
