@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100+ Prebuilt Websites</title>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      [x-cloak] { display: none !important; }
+      .writing-vertical {
+          writing-mode: vertical-lr;
+          transform: rotate(180deg);
+      }
+  </style>
+</head>
+<body class="bg-white" x-data="{ isFilterOpen: false }">
+    <header class="bg-[#111111] sticky top-0 z-50">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-20 items-center justify-between">
+            <div class="flex-1 md:flex md:items-center md:gap-12">
+              <a class="block text-teal-600" href="#">
+                <span class="sr-only">Home</span>
+                <svg
+                  width="83"
+                  height="33"
+                  viewBox="0 0 83 33"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.179559 32V2.19164H16.0774V7.1597H5.94251V11.929H15.0837V16.8971H5.94251V32H0.179559ZM41.3099 32V0.204413H47.0729V32H41.3099ZM60.4659 32.5299C58.6112 32.5299 56.9331 32.0552 55.4316 31.1057C53.9302 30.1563 52.7268 28.8977 51.8215 27.33C50.9383 25.7402 50.4967 23.9849 50.4967 22.0639C50.4967 20.1429 50.9383 18.3875 51.8215 16.7977C52.7268 15.208 53.9302 13.9494 55.4316 13.022C56.9331 12.0726 58.6112 11.5978 60.4659 11.5978C61.5258 11.5978 62.5084 11.7524 63.4137 12.0615C64.3189 12.3706 65.1359 12.8122 65.8646 13.3863V0.204413H71.6275V32H66.6594V30.0459C65.9087 30.8187 65.0034 31.4259 63.9436 31.8675C62.8837 32.3091 61.7245 32.5299 60.4659 32.5299ZM61.1283 27.4625C62.0999 27.4625 62.9831 27.2196 63.778 26.7339C64.5729 26.2481 65.2022 25.5967 65.6658 24.7798C66.1516 23.9628 66.3945 23.0575 66.3945 22.0639C66.3945 21.0703 66.1516 20.165 65.6658 19.348C65.2022 18.531 64.5729 17.8797 63.778 17.3939C62.9831 16.9081 62.0999 16.6653 61.1283 16.6653C60.1568 16.6653 59.2736 16.9081 58.4787 17.3939C57.6838 17.8797 57.0435 18.531 56.5577 19.348C56.094 20.165 55.8622 21.0703 55.8622 22.0639C55.8622 23.0575 56.094 23.9628 56.5577 24.7798C57.0435 25.5967 57.6838 26.2481 58.4787 26.7339C59.2736 27.2196 60.1568 27.4625 61.1283 27.4625Z"
+                    fill="#333333"
+                  />
+                  <path
+                    d="M27.1344 32.6624C25.1692 32.6624 23.3697 32.1877 21.7358 31.2382C20.1018 30.2888 18.7991 29.0081 17.8276 27.3963C16.8781 25.7844 16.4034 24.0069 16.4034 22.0639C16.4034 20.0987 16.8781 18.3213 17.8276 16.7315C18.7991 15.1196 20.1018 13.839 21.7358 12.8895C23.3697 11.9401 25.1692 11.4654 27.1344 11.4654C29.1216 11.4654 30.9212 11.9401 32.533 12.8895C34.167 13.839 35.4587 15.1196 36.4081 16.7315C37.3796 18.3213 37.8654 20.0987 37.8654 22.0639C37.8654 24.0069 37.3796 25.7844 36.4081 27.3963C35.4587 29.0081 34.167 30.2888 32.533 31.2382C30.9212 32.1877 29.1216 32.6624 27.1344 32.6624ZM27.1344 27.4956C28.128 27.4956 29.0223 27.2527 29.8171 26.767C30.6341 26.2812 31.2744 25.6298 31.7381 24.8129C32.2239 23.9738 32.4668 23.0575 32.4668 22.0639C32.4668 21.0482 32.2239 20.1319 31.7381 19.3149C31.2744 18.4979 30.6341 17.8465 29.8171 17.3608C29.0223 16.875 28.128 16.6321 27.1344 16.6321C26.1408 16.6321 25.2355 16.875 24.4185 17.3608C23.6236 17.8465 22.9833 18.4979 22.4975 19.3149C22.0338 20.1319 21.802 21.0482 21.802 22.0639C21.802 23.0575 22.0338 23.9738 22.4975 24.8129C22.9833 25.6298 23.6236 26.2812 24.4185 26.767C25.2355 27.2527 26.1408 27.4956 27.1344 27.4956Z"
+                    fill="#254D0E"
+                  />
+                  <path
+                    d="M78.7712 32.6624C77.7555 32.6624 76.9054 32.3202 76.2209 31.6357C75.5364 30.9512 75.1942 30.1011 75.1942 29.0854C75.1942 28.0697 75.5364 27.2196 76.2209 26.5351C76.9054 25.8506 77.7555 25.5084 78.7712 25.5084C79.8089 25.5084 80.659 25.8506 81.3214 26.5351C82.0059 27.2196 82.3482 28.0697 82.3482 29.0854C82.3482 30.1011 82.0059 30.9512 81.3214 31.6357C80.659 32.3202 79.8089 32.6624 78.7712 32.6624Z"
+                    fill="#F7970D"
+                  />
+                </svg>
+              </a>
+            </div>
+  
+            <div class="md:flex md:items-center md:gap-12">
+              <nav aria-label="Global" class="hidden md:block">
+                <ul class="flex items-center gap-6 text-sm">
+                  <a href="#" class="text-white font-semibold underline"
+                    >Home</a
+                  >
+                  <a href="#" class="text-white font-semibold">About us</a>
+                  <a href="#" class="text-white font-semibold">Contact us</a>
+                  <a href="#" class="text-white font-semibold">Wishlist</a>
+                  <a href="#" class="text-white font-semibold">Chat</a>
+                  <a href="#" class="text-white font-semibold">Support</a>
+                </ul>
+              </nav>
+  
+              <div class="flex items-center gap-4">
+                <div class="sm:flex sm:gap-4">
+                  <a
+                    class="rounded-md bg-[#0EA5E9] px-6 font-semibold py-3 text-sm font-medium text-white shadow-sm"
+                    href="#"
+                  >
+                    Contact Us
+                  </a>
+  
+                  <!-- <div class="hidden sm:flex">
+                      <a
+                        class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                        href="#"
+                      >
+                        Register
+                      </a>
+                    </div> -->
+                </div>
+  
+                <div class="block md:hidden">
+                  <button
+                    class="rounded-sm bg-gray-100 p-2 text-[#667185] transition hover:text-[#667185]/75"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="size-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="relative isolate overflow-hidden h-screen pt-14">
+        <img
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+          alt=""
+          class="absolute inset-0 -z-10 size-full object-cover"
+        />
+        <div
+          class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-black opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8"
+          >
+            <div>
+              <div class="max-w-lg md:max-w-none">
+                <h2 class="text-2xl font-semibold text-white sm:text-5xl">
+                  Design Your Perfect E- <br />
+                  commerce Store in Minutes!
+                </h2>
+  
+                <p class="mt-4 text-white text-base">
+                  Empower your business with stunning, customizable website
+                  templates tailored for e-commerce success.
+                </p>
+                <div class="flex gap-4 mt-10">
+                  <!-- Live Preview Button -->
+                  <button
+                    class="flex items-center bg-[#0EA5E9] text-sm text-white gap-x-3 py-3 px-4 rounded-lg hover:bg-[#0EA5E9]"
+                  >
+                    Live Preview
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.5 8V16C19.5 16.2652 19.3946 16.5196 19.2071 16.7071C19.0196 16.8946 18.7652 17 18.5 17H6.5C6.23478 17 5.98043 16.8946 5.79289 16.7071C5.60536 16.5196 5.5 16.2652 5.5 16V8C5.5 7.73478 5.60536 7.48043 5.79289 7.29289C5.98043 7.10536 6.23478 7 6.5 7H18.5C18.7652 7 19.0196 7.10536 19.2071 7.29289C19.3946 7.48043 19.5 7.73478 19.5 8Z"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M7.5 22V21C7.5 20.7348 7.60536 20.4804 7.79289 20.2929C7.98043 20.1054 8.23478 20 8.5 20H16.5C16.7652 20 17.0196 20.1054 17.2071 20.2929C17.3946 20.4804 17.5 20.7348 17.5 21V22"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M17.5 2V3C17.5 3.26522 17.3946 3.51957 17.2071 3.70711C17.0196 3.89464 16.7652 4 16.5 4H8.5C8.23478 4 7.98043 3.89464 7.79289 3.70711C7.60536 3.51957 7.5 3.26522 7.5 3V2"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+  
+                  <!-- View More Teams Button -->
+                  <button
+                    class="flex items-center border-2 text-sm border-[#0EA5E9] gap-x-3 text-[#0EA5E9] py-3 px-4 rounded-lg hover:bg-[#0EA5E9] hover:text-[#0EA5E9]"
+                  >
+                    View More Teams
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19.5 8V16C19.5 16.2652 19.3946 16.5196 19.2071 16.7071C19.0196 16.8946 18.7652 17 18.5 17H6.5C6.23478 17 5.98043 16.8946 5.79289 16.7071C5.60536 16.5196 5.5 16.2652 5.5 16V8C5.5 7.73478 5.60536 7.48043 5.79289 7.29289C5.98043 7.10536 6.23478 7 6.5 7H18.5C18.7652 7 19.0196 7.10536 19.2071 7.29289C19.3946 7.48043 19.5 7.73478 19.5 8Z"
+                        stroke="#0EA5E9"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M7.5 22V21C7.5 20.7348 7.60536 20.4804 7.79289 20.2929C7.98043 20.1054 8.23478 20 8.5 20H16.5C16.7652 20 17.0196 20.1054 17.2071 20.2929C17.3946 20.4804 17.5 20.7348 17.5 21V22"
+                        stroke="#0EA5E9"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M17.5 2V3C17.5 3.26522 17.3946 3.51957 17.2071 3.70711C17.0196 3.89464 16.7652 4 16.5 4H8.5C8.23478 4 7.98043 3.89464 7.79289 3.70711C7.60536 3.51957 7.5 3.26522 7.5 3V2"
+                        stroke="#0EA5E9"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+  
+            <div>
+              <img src="./assets/hero-image.svg" class="rounded" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- Filter Sidebar -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="flex gap-8 relative" x-data="{ isFilterOpen: false }">
+          <!-- Fixed Filter Button -->
+          <button @click="isFilterOpen = !isFilterOpen"
+                  class="fixed left-0 top-1/2 -translate-y-1/2 h-32 bg-white border border-gray-200 rounded-r-lg shadow-sm flex items-center justify-center px-2 z-20 transition-all duration-300"
+                  :class="{ 'left-64': isFilterOpen }">
+              <span class="writing-vertical text-[#667185] font-medium">
+                  Filters
+              </span>
+          </button>
+  
+          <!-- Filter Panel -->
+          <div x-cloak
+               x-show="isFilterOpen"
+               x-transition:enter="transition ease-out duration-300"
+               x-transition:enter-start="opacity-0 transform -translate-x-full"
+               x-transition:enter-end="opacity-100 transform translate-x-0"
+               x-transition:leave="transition ease-in duration-300"
+               x-transition:leave-start="opacity-100 transform translate-x-0"
+               x-transition:leave-end="opacity-0 transform -translate-x-full"
+               class="fixed left-0 top-1/2 -translate-y-1/2 w-64 bg-white rounded-lg border border-gray-200 shadow-lg">
+              <div class="p-6">
+                  <!-- Header -->
+                  <div class="flex justify-between items-center mb-6">
+                      <h2 class="text-xl font-semibold">Filter</h2>
+                      <button @click="isFilterOpen = false" 
+                              class="text-gray-400 hover:text-[#667185]">
+                          «
+                      </button>
+                  </div>
+  
+                  <!-- Search Box -->
+                  <div class="relative mb-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                      <input type="text" 
+                             placeholder="Search Demo" 
+                             class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-blue-500">
+                  </div>
+  
+                  <!-- Filter By Section -->
+                  <div class="mb-6">
+                      <h3 class="text-[#0EA5E9] flex justify-end items-end text-sm font-medium mb-3">Filter By</h3>
+                      <div class="space-y-3">
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">Show All</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">New</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">Corporate</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">Shop</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">One Page</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">Blog</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">Portfolio</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div class="flex items-center justify-end space-x-3 font-medium">
+                            <span class="text-sm text-[#111111]">Corporate</span>
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                        </div>
+                        <div class="flex items-center justify-end space-x-3 font-medium">
+                            <span class="text-sm text-[#111111]">Shop</span>
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                        </div>
+                        <div class="flex items-center justify-end space-x-3 font-medium">
+                            <span class="text-sm text-[#111111]">One Page</span>
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                        </div>
+                        <div class="flex items-center justify-end space-x-3 font-medium">
+                            <span class="text-sm text-[#111111]">Blog</span>
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                        </div>
+                        <div  class="flex items-center justify-end space-x-3 font-medium">
+                            <span class="text-sm text-[#111111]">Portfolio</span>
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                        </div>
+                      </div>
+                  </div>
+  
+                  <!-- Compatible With Section -->
+                  <div>
+                      <h3 class="text-[#0EA5E9] flex justify-end items-end text-sm font-medium mb-3">Compatible With</h3>
+                      <div class="space-y-3">
+                          <div  class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">WPbaker</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div  class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">Elementor</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                          <div  class="flex items-center justify-end space-x-3 font-medium">
+                              <span class="text-sm text-[#111111]">ACF</span>
+                              <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Main Content Area -->
+          <div class="flex-1 ml-12">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- Demo items would go here -->
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <style>
+      .writing-vertical {
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+      }
+  
+      [x-cloak] {
+          display: none !important;
+      }
+  </style>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-[#111111] mb-8"><span class="italic">100+</span> Prebuilt Websites</h1>
+            <div class="flex justify-center items-center space-x-6 text-lg">
+                <div class="flex items-center">
+                    <span class="text-[#0EA5E9] mr-2">1.</span>
+                    <span class="text-[#0EA5E9]">Get Fold Templates</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-[#0EA5E9] mr-2">2.</span>
+                    <span class="text-[#0EA5E9]">Select Demo</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-[#0EA5E9] mr-2">3.</span>
+                    <span class="text-[#0EA5E9]">Customise</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-[#0EA5E9] mr-2">4.</span>
+                    <span class="text-[#0EA5E9]">You are Good to Go!</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filter Button (Mobile) -->
+        <button @click="isFilterOpen = true" 
+                class="lg:hidden mb-4 px-4 py-2 border rounded-lg">
+            Filter
+        </button>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Template Cards -->
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%202.17.04%E2%80%AFPM-6tCc7PI5gSqFrbjH4Fbl9oXWkMUF1n.png" alt="Main Shop Demo" class="w-full">
+                <div class="p-4 text-center">
+                    <h3 class="text-lg font-medium">Main Shop Demo</h3>
+                </div>
+            </div>
+            <!-- Repeat template cards as needed -->
+        </div>
+    </div>
+
+
+    <section class="bg-[#FAFAFA]">
+        <div class="container mx-auto px-4 py-16 max-w-7xl">
+            <!-- Header Section -->
+            <div class="text-center mb-20">
+                <h1 class="text-2xl font-bold mb-6">
+                    The new generation of themes is available for you.
+                </h1>
+                <p class="text-[#667185] text-xs md:text-xl max-w-xl mx-auto">
+                  A complete suite of tools designed to make life easier for beginners and advanced developers.
+                </p>
+            </div>
+    
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <!-- Super High Performance -->
+                <div class="text-center">
+                    <div class="mb-6 flex justify-center">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%203.35.09%E2%80%AFPM-DNXdwSObtO4P9FPjKIL0yCrTWgAy5F.png" 
+                             alt="High Performance Illustration" 
+                             class="">
+                    </div>
+                    <h3 class="font-semibold">
+                        Super High Performance
+                    </h3>
+                </div>
+    
+                <!-- Multipurpose themes -->
+                <div class="text-center">
+                    <div class="mb-6 flex justify-center">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%203.35.09%E2%80%AFPM-DNXdwSObtO4P9FPjKIL0yCrTWgAy5F.png" 
+                             alt="Multipurpose Themes Illustration" 
+                             class="">
+                    </div>
+                    <h3 class="font-semibold">
+                        Multipurpose themes
+                    </h3>
+                </div>
+    
+                <!-- Powerful Theme Options -->
+                <div class="text-center">
+                    <div class="mb-6 flex justify-center">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-17%20at%203.35.09%E2%80%AFPM-DNXdwSObtO4P9FPjKIL0yCrTWgAy5F.png" 
+                             alt="Theme Options Illustration" 
+                             class="">
+                    </div>
+                    <h3 class=" font-semibold">
+                        Powerful Theme Options
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50">
+      <div x-data="{
+          testimonials: [
+              {
+                  name: 'Eugene ADAVORE',
+                  role: 'UX Designer',
+                  content: 'We understand the challenges of starting and scaling an online business. so you can focus on what you do best—running your business.',
+                  avatar: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-18%20at%204.36.33%E2%80%AFPM-JCzCs5gYGRrXw8Ojb9yMt0SNg6IbYF.png'
+              },
+              {
+                  name: 'Eugene ADAVORE',
+                  role: 'UX Designer',
+                  content: 'We understand the challenges of starting and scaling an online business. so you can focus on what you do best—running your business.',
+                  avatar: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-18%20at%204.36.33%E2%80%AFPM-JCzCs5gYGRrXw8Ojb9yMt0SNg6IbYF.png'
+              },
+              {
+                  name: 'Eugene ADAVORE',
+                  role: 'UX Designer',
+                  content: 'We understand the challenges of starting and scaling an online business. so you can focus on what you do best—running your business.',
+                  avatar: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-18%20at%204.36.33%E2%80%AFPM-JCzCs5gYGRrXw8Ojb9yMt0SNg6IbYF.png'
+              },
+              {
+                  name: 'Eugene ADAVORE',
+                  role: 'UX Designer',
+                  content: 'We understand the challenges of starting and scaling an online business. so you can focus on what you do best—running your business.',
+                  avatar: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-18%20at%204.36.33%E2%80%AFPM-JCzCs5gYGRrXw8Ojb9yMt0SNg6IbYF.png'
+              },
+              {
+                  name: 'Eugene ADAVORE',
+                  role: 'UX Designer',
+                  content: 'We understand the challenges of starting and scaling an online business. so you can focus on what you do best—running your business.',
+                  avatar: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-18%20at%204.36.33%E2%80%AFPM-JCzCs5gYGRrXw8Ojb9yMt0SNg6IbYF.png'
+              },
+              {
+                  name: 'Eugene ADAVORE',
+                  role: 'UX Designer',
+                  content: 'We understand the challenges of starting and scaling an online business. so you can focus on what you do best—running your business.',
+                  avatar: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-18%20at%204.36.33%E2%80%AFPM-JCzCs5gYGRrXw8Ojb9yMt0SNg6IbYF.png'
+              }
+          ],
+          currentIndex: 0,
+          get maxIndex() {
+              return Math.ceil(this.testimonials.length / 3) - 1
+          },
+          next() {
+              if (this.currentIndex < this.maxIndex) {
+                  this.currentIndex++
+              }
+          },
+          prev() {
+              if (this.currentIndex > 0) {
+                  this.currentIndex--
+              }
+          }
+      }" class="max-w-7xl mx-auto px-4 py-12">
+          <div class="flex justify-between items-start mb-12">
+              <div class="text-start">
+                  <h2 class="font-bold text-[#111827] text-4xl mb-4">What People are Saying About us</h2>
+                  <p class="text-base text-[#111827] max-w-2xl">Empower your business with stunning, customizable website templates tailored for e-commerce success.</p>
+              </div>
+              <div class="flex gap-4">
+                  <button @click="prev" :disabled="currentIndex === 0" 
+                          class="bg-blue-500 text-white rounded-full p-3 hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                      </svg>
+                  </button>
+                  <button @click="next" :disabled="currentIndex === maxIndex"
+                          class="bg-blue-500 text-white rounded-full p-3 hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                  </button>
+              </div>
+          </div>
+
+          <div class="overflow-hidden">
+              <div class="flex transition-transform duration-300 ease-in-out"
+                   :style="'transform: translateX(-' + (currentIndex * 100) + '%)'">
+                  <template x-for="(testimonial, index) in testimonials" :key="index">
+                      <div class="w-1/3 flex-shrink-0 px-3">
+                          <div :class="index === 0 ? 'bg-[#0EA5E9] text-white' : 'bg-white'"
+                               class="rounded-lg border-[0.5px] border-[#DDDDDD] p-8 h-full">
+                              <div class="flex items-center mb-4">
+                                  <!-- <img :src="testimonial.avatar" :alt="testimonial.name" class="w-12 h-12 rounded-full mr-4"> -->
+                                  <img src="./assets/avatar.svg" :alt="testimonial.name" class="w-12 h-12 rounded-full mr-4">
+                                  <div>
+                                      <h3 class="font-bold text-lg" x-text="testimonial.name"></h3>
+                                      <p :class="index === 0 ? 'text-blue-100' : 'text-[#111827]'"
+                                         x-text="testimonial.role"></p>
+                                  </div>
+                              </div>
+                              <p :class="index === 0 ? 'text-blue-50 text-sm' : 'text-gray-700 text-sm'"
+                                 x-text="testimonial.content"></p>
+                          </div>
+                      </div>
+                  </template>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <section>
+        <div class="relative w-full bg-sky-500 flex flex-col items-center py-20 justify-center text-center px-4">
+            <h1 class="text-5xl font-bold text-white mb-6 max-w-4xl">
+                Build your website with Our Themes
+            </h1>
+            
+            <h2 class="text-2xl md:text-3xl text-white mb-12 max-w-3xl">
+                Premium Themes for Your Website
+            </h2>
+            
+            <a href="#" class="inline-block bg-[#111111] text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-900 transition-colors duration-300">
+                View all themes
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <!-- Logo and Newsletter Section -->
+              <div class="space-y-6">
+                  <!-- Logo -->
+                  <div class="flex items-center">
+                      <img src="./assets/fold-logo.svg" alt="" class="h-8 w-8 text-blue-500" />
+                      <span class="ml-2 text-gray-500">Full Logo Goes Here</span>
+                  </div>
+  
+                  <!-- Newsletter -->
+                  <div class="space-y-4">
+                      <p class="text-[#344054] text-sm leading-relaxed">
+                          Be the first to receive all the recent updates, articles, and valuable materials.
+                      </p>
+                      <div class="flex flex-col sm:flex-row gap-3">
+                          <input
+                              type="email"
+                              placeholder="Email address"
+                              class="flex-1 px-4 py-4 text-sm border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          />
+                          <button class="bg-[#0EA5E9] text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                              Subscribe
+                          </button>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Company Links -->
+              <div class="space-y- pl-32">
+                  <h3 class="text-[#98A2B3] font-medium">Company</h3>
+                  <ul class="space-y-3">
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">About</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Security</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Blog</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Careers</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Service Status</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Partnerships</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Mission roadmap</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Community</a></li>
+                  </ul>
+              </div>
+  
+              <!-- More from E-commerce -->
+              <div class="space-y-4 pl-20">
+                  <h3 class="text-[#98A2B3] font-medium">{More from E-commerce}</h3>
+                  <ul class="space-y-3">
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Mass Payments</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Debit Card</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Rayna for Startups</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Rayna for Developers</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Rayna for No-code</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Assets</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Various Templates -->
+              <div class="space-y-4 pl-20">
+                  <h3 class="text-[#98A2B3] font-medium">Various Templates</h3>
+                  <ul class="space-y-3">
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Financial Templates</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Fashion & Beauty Templates</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Agriculture Templates</a></li>
+                      <li><a href="#" class="text-[#667185] hover:text-gray-900">Manufacturing Templates</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
+</body>
+</html>
