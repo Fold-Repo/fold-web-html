@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Detail</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/app.css">
+<script src="/assets/script.js"></script>
+    <script src="../assets/js/demo4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
   </head>
 
   <body class="bg-[#F6F6F6]">
@@ -35,12 +38,12 @@
           <!-- Desktop Navigation Links -->
           <div class="hidden lg:flex items-center space-x-8">
             <a href="#" class="text-blue-500 hover:text-blue-600">Home</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">About us</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500"
+            <a href="#" class="text-gray-900 hover:text-blue-500">About us</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500"
               >Contact us</a
             >
-            <a href="#" class="text-[#111827] hover:text-blue-500">Wishlist</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">Chat</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Wishlist</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Chat</a>
           </div>
 
           <!-- Desktop Search & Icons -->
@@ -132,18 +135,18 @@
              />   
            </div>
  <div class="mt-4">
-        <h1 id="product-name" class="text-lg lg:text-2xl font-medium text-[#111827]">
+        <h1 id="product-name" class="text-lg lg:text-2xl font-medium text-gray-900">
              Name of Deal goes here.
              </h1>
-             <p class="text-[#0EA5E9] font-bold lg:text-[20px]">N100,000.00</p>
+             <p class="text-blue-500 font-bold lg:text-[20px]">N100,000.00</p>
              
-             <p class="text-[#111827] lg:text-[20px]">Lorem ipsum dolor sit amet consectetur. Faucibus metus diam lobortis eu ultricies dui in. Mattis convallis</p>
+             <p class="text-gray-900 lg:text-[20px]">Lorem ipsum dolor sit amet consectetur. Faucibus metus diam lobortis eu ultricies dui in. Mattis convallis</p>
       </div>
          </div>
 
         <!-- Product Details -->
         <div class="mx-4">
-          <h4 class="text-base font-bold text-[#111827]">
+          <h4 class="text-base font-bold text-gray-900">
            Description
           </h4>
           <p id="product-description" class="text-gray-600 mt-2">
@@ -152,31 +155,31 @@
          
 
           
-          <p id="product-price" class="text-xl text-[#111827] font-bold mt-2">N114,000.00</p>
+          <p id="product-price" class="text-xl text-gray-900 font-bold mt-2">N114,000.00</p>
 
          
           <div class="mt-4">
             <h3 class="font-medium text-sm mb-1">Available Size</h3>
             <div class="flex  gap-2" id="size-options">
-              <div class="p-2 border w-full border-[#F0EEEE]">
+              <div class="p-2 border w-full border-gray-50">
 
                 <button
-                  class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-base font-medium text-[#111827]"
+                  class="px-3 h-10 w-full rounded-md bg-gray-200 text-base font-medium text-gray-900"
                 >
                   24/32</button
                 >
               </div>
-              <div class="p-2 border w-full border-[#F0EEEE]">
+              <div class="p-2 border w-full border-gray-50">
  <button
-                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-base font-medium text-[#111827]"
+                class="px-3 h-10 w-full rounded-md bg-gray-200 text-base font-medium text-gray-900"
               >
                 24/32</button
               >
               </div>
-              <div class="p-2 border w-full border-[#F0EEEE]">
+              <div class="p-2 border w-full border-gray-50">
 
                 <button
-                  class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-base font-medium text-[#111827]"
+                  class="px-3 h-10 w-full rounded-md bg-gray-200 text-base font-medium text-gray-900"
                 >
                   24/32</button
                 >
@@ -190,12 +193,12 @@
             
             <div class="flex mt-2 gap-2">
               <button
-                class="bg-[#0EA5E9] rounded-full text-white font-semibold px-4 py-3 w-full hover:bg-[#0873AA] transition"
+                class="bg-blue-500 rounded-full text-white font-semibold px-4 py-3 w-full hover:bg-[#0873AA] transition"
               >
                 <a href="#">Buy Product </a>
               </button>
               <button
-                class="bg-white border border-[#0EA5E9] text-[#0EA5E9] font-semibold px-4 py-3 rounded-full hover:bg-gray-100 transition"
+                class="bg-white border border-blue-500 text-blue-500 font-semibold px-4 py-3 rounded-full hover:bg-gray-100 transition"
               >
                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0_79_1780" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -214,27 +217,26 @@
       </div>
       <div class="mt-12 mb-4 mx-4">
         <!-- Tab Navigation -->
-        <div class="flex items-center space-x-4 mb-2">
-          <button
-            class="tab-button text-sm  focus:outline-none bg-[#0EA5E9] rounded-full p-3 text-white border"
-            data-tab="review"
-          >
-            Review <span class="bg-white text-[#0EA5E9] text-sm py-1 px-3 rounded-full">3</span>
-          </button>
-          <button
-            class="tab-button text-sm hover:text-gray-700 border focus:outline-none   rounded-full p-3"
-            data-tab="product-details"
-          >
-            Product Details
-          </button>
-          <button
-            class="tab-button text-sm hover:text-gray-700 border focus:outline-none   rounded-full p-3"
-            data-tab="lifestyle"
-          >
-            Lifestyle
-          </button>
-        </div>
-        <div id="review" class="mx-4 space-y-4 tab-content">
+       <ul class=" flex  space-x space-x-1 text-sm font-medium md:me-4 mb-4 py-4 px-4" id="default-tab" data-tabs-toggle="#default-tab-content"
+    data-tabs-active-classes="focus:outline-none bg-blue-500 rounded-full p-3 text-white border" data-tabs-inactive-classes="text-gray-900 hover:text-gray-600"
+    role="tablist">
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="review-tab" data-tabs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">Review <span class="bg-white text-blue-500 text-sm py-1 px-3 rounded-full">3</span></button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="addresses-tab" data-tabs-target="#addresses" type="button" role="tab" aria-controls="addresses" aria-selected="false">Product Details</button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="shopping-tab" data-tabs-target="#shopping" type="button" role="tab" aria-controls="shopping" aria-selected="false">Lifestyle</button>
+    </li>
+    
+  </ul>
+  <!-- tab content -->
+        <div id="default-tab-content" class="text-medium text-gray-500 rounded-lg w-full">
+    <div class="hidden p-4 rounded-lg " id="review" role="tabpanel" aria-labelledby="review-tab">
+
+        <div class="container mx-auto">
+             <div id="review" class="mx-4 space-y-4 tab-content">
           <div class="review-card">
             <div class="p-4 bg-[#FCFCFC] flex gap-x-2 rounded-md border border-[#F0F2F5]">
               <div class="">
@@ -264,7 +266,7 @@
                   <p class="text-[#4B5563] text-xs">Online Shopper</p>
                 </div>
                 <div class="mt-2 flex items-center space-x-4">
-                  <button class="text-base text-[#0EA5E9]">Reply</button>
+                  <button class="text-base text-blue-500">Reply</button>
                   <div class="flex items-center space-x-1">
                     <svg
                       width="24"
@@ -368,111 +370,7 @@
                   <p class="text-[#4B5563] text-xs">Online Shopper</p>
                 </div>
                 <div class="mt-2 flex items-center space-x-4">
-                  <button class="text-base text-[#0EA5E9]">Reply</button>
-                  <div class="flex items-center space-x-1">
-                    <svg
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <mask
-                        id="mask0_111_2063"
-                        style="mask-type: alpha"
-                        maskUnits="userSpaceOnUse"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="25"
-                      >
-                        <rect
-                          y="0.5"
-                          width="24"
-                          height="24"
-                          fill="#D9D9D9"
-                        ></rect>
-                      </mask>
-                      <g mask="url(#mask0_111_2063)">
-                        <path
-                          d="M18 21.5H7V8.5L14 1.5L15.25 2.75C15.3667 2.86667 15.4625 3.025 15.5375 3.225C15.6125 3.425 15.65 3.61667 15.65 3.8V4.15L14.55 8.5H21C21.5333 8.5 22 8.7 22.4 9.1C22.8 9.5 23 9.96667 23 10.5V12.5C23 12.6167 22.9833 12.7417 22.95 12.875C22.9167 13.0083 22.8833 13.1333 22.85 13.25L19.85 20.3C19.7 20.6333 19.45 20.9167 19.1 21.15C18.75 21.3833 18.3833 21.5 18 21.5ZM9 19.5H18L21 12.5V10.5H12L13.35 5L9 9.35V19.5ZM7 8.5V10.5H4V19.5H7V21.5H2V8.5H7Z"
-                          fill="#4B5563"
-                        ></path>
-                      </g>
-                    </svg>
-  
-                    <span class="text-gray-700 font-medium">123</span>
-                  </div>
-                  <div class="flex items-center space-x-1">
-                    <svg
-                      width="24"
-                      height="25"
-                      viewBox="0 0 24 25"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <mask
-                        id="mask0_111_2103"
-                        style="mask-type: alpha"
-                        maskUnits="userSpaceOnUse"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="25"
-                      >
-                        <rect
-                          x="24"
-                          y="24.5"
-                          width="24"
-                          height="24"
-                          transform="rotate(180 24 24.5)"
-                          fill="#D9D9D9"
-                        ></rect>
-                      </mask>
-                      <g mask="url(#mask0_111_2103)">
-                        <path
-                          d="M6 3.5H17V16.5L10 23.5L8.75 22.25C8.63333 22.1333 8.5375 21.975 8.4625 21.775C8.3875 21.575 8.35 21.3833 8.35 21.2V20.85L9.45 16.5H3C2.46667 16.5 2 16.3 1.6 15.9C1.2 15.5 1 15.0333 1 14.5V12.5C1 12.3833 1.01667 12.2583 1.05 12.125C1.08333 11.9917 1.11667 11.8667 1.15 11.75L4.15 4.7C4.3 4.36666 4.55 4.08333 4.9 3.85C5.25 3.61667 5.61667 3.5 6 3.5ZM15 5.5H6L3 12.5V14.5H12L10.65 20L15 15.65V5.5ZM17 16.5V14.5H20V5.5H17V3.5H22V16.5H17Z"
-                          fill="#4B5563"
-                        ></path>
-                      </g>
-                    </svg>
-  
-                    <span class="text-gray-700 font-medium">0</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="review-card">
-             <div class="p-4 bg-[#FCFCFC] flex gap-x-2 rounded-md border border-[#F0F2F5]">
-              <div class="">
-                 <img src="/assets/images/demo4/profile-pic.svg" class="rounded-full" />
-              </div>
-              <div class="">
-                <div class="flex items-center space-x-2">
-                  <img src="/assets/images/demo4/star.svg" />
-                  <img src="/assets/images/demo4/star.svg" />
-                  <img src="/assets/images/demo4/star.svg" />
-                  <img src="/assets/images/demo4/star.svg" />
-                  <img src="/assets/images/demo4/star2.svg" />
-                 
-                </div>
-                <p class="text-gray-600 mt-2 text-sm">
-                  Details about the product in question goes here. You have the
-                  option to now select and buy. Details about the product in
-                  question goes here. You have the option to now select and
-                  buy.Details about the product in question goes here. You have
-                  the option to now select and buy.
-                </p>
-
-                <div class="mt-2 flex items-center space-x-4">
-                  <p class="text-[#4B5563] font-semibold text-base">
-                    Eugene ADAVORE
-                  </p>
-                  <p class="text-[#4B5563] text-xs">Online Shopper</p>
-                </div>
-                <div class="mt-2 flex items-center space-x-4">
-                  <button class="text-base text-[#0EA5E9]">Reply</button>
+                  <button class="text-base text-blue-500">Reply</button>
                   <div class="flex items-center space-x-1">
                     <svg
                       width="24"
@@ -548,41 +446,12 @@
             </div>
           </div>
         </div>
-        <div id="product-details" class="tab-content bg-white p-4 rounded-md container-fluid hidden">
-          <div class="w-full sm:w-2/3 space-y-2">
-                <div class="flex items-center space-x-2">
-                    <span>5 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full">
-                        <div class="h-2 bg-black rounded-full" style="width: 85%"></div>
-                    </div>
-                    <span>59</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>4 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full">
-                        <div class="h-2 bg-black rounded-full" style="width: 65%"></div>
-                    </div>
-                    <span>46</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>3 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full"></div>
-                    <span>0</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>2 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full"></div>
-                    <span>0</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>1 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full"></div>
-                    <span>0</span>
-                </div>
-            </div>
         </div>
-        </div>
-        <div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white hidden">
+      
+    </div>
+    <!-- address section -->
+    <div class="hidden p-4 rounded-lg" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
+ <div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white">
            <div class="border-b pb-4">
             <p class="text-gray-700"><strong>SKU:</strong> 35-453-HZ</p>
             <p class="text-gray-700"><strong>Vendor:</strong> Modave</p>
@@ -598,15 +467,27 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-10">
             </div>
         </div>
-        </div>
-        
+        </div>    </div>
+    <!-- shopping section -->
+    <div class="hidden p-4 rounded-lg bg-gray-50" id="shopping" role="tabpanel" aria-labelledby="shopping-tab">
+<div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white">
+              
+          <p class="text-gray-700"><strong>SKU:</strong> 35-453-HZ</p>
+          <p class="text-gray-700"><strong>Vendor:</strong> Modave</p>
+          <p class="text-gray-700"><strong>Available:</strong> Instock</p>
+          <p class="text-gray-700"><strong>Categories:</strong> Clothes, Women, T-shirt</p>
+      </div>
+   
+    
+  </div>
         
       </div>
     </main>
 
     
-<footer class="bg-[#F9FAFB] container-fluid mx-auto">
-      <div class="container-fluid p-6 lg:p-20 mx-auto flex justify-between flex-col lg:flex-row gap-5">
+   
+ <footer class="bg-[#F9FAFB] container-fluid mx-auto">
+      <div class="container-fluid p-6 lg:p-12 mx-auto flex justify-between flex-col lg:flex-row gap-5">
         <div class="w-full lg:w-1/5">
           <div class="px-6">
             <div>
@@ -620,7 +501,7 @@
                 </div>
                 
               </div>
-              <p class="text-[#344054] mb-4">
+              <p class="text-gray-500 mb-4">
                 Be the first to receive all the recent updates, articles, and
                 valuable materials.
               </p>
@@ -767,7 +648,6 @@
     </footer>
 
 
-     <script src="/assets/js/demo4.js"></script>
-  <script src="/assets/script.js"></script>
+     
   </body>
 </html>

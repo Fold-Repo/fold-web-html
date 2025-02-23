@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Detail</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+   
+
+       <link rel="stylesheet" href="/assets/css/app.css">
+           <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
   </head>
 
   <body class="bg-[#F6F6F6]">
@@ -35,12 +39,12 @@
           <!-- Desktop Navigation Links -->
           <div class="hidden lg:flex items-center space-x-8">
             <a href="#" class="text-blue-500 hover:text-blue-600">Home</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">About us</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500"
+            <a href="#" class="text-gray-900 hover:text-blue-500">About us</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500"
               >Contact us</a
             >
-            <a href="#" class="text-[#111827] hover:text-blue-500">Wishlist</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">Chat</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Wishlist</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Chat</a>
           </div>
 
           <!-- Desktop Search & Icons -->
@@ -119,7 +123,7 @@
 
     <main class="container-fluid mx-auto py-6 lg:py-12 px-4 lg:px-8 overflow-hidden">
       <div class="mb-4">
-        <h1 id="product-name" class="text-lg lg:text-2xl font-medium text-[#111827]">
+        <h1 id="product-name" class="text-lg lg:text-2xl font-medium text-gray-900">
               Name of Product 
              </h1>
              <div class="flex gap-x-3 lg:gap-x-8">
@@ -131,7 +135,7 @@
                                 <img src="/assets/images/demo4/star2.svg" />
                                
                               </div>
-<span id="product-rating-count" class="text-base text-[#111827] ml-2"
+<span id="product-rating-count" class="text-base text-gray-900 ml-2"
               >4.6 Start</span
             >
              </div>
@@ -152,7 +156,7 @@
 
         <!-- Product Details -->
         <div class="mx-4">
-          <h4 class="text-base font-bold text-[#111827]">
+          <h4 class="text-base font-bold text-gray-900">
            Description
           </h4>
           <p id="product-description" class="text-gray-600 mt-2">
@@ -161,16 +165,16 @@
          
 
           
-          <p id="product-price" class="text-xl text-[#111827] font-bold mt-2">N114,000.00</p>
+          <p id="product-price" class="text-xl text-gray-900 font-bold mt-2">N114,000.00</p>
 
           <div class="mt-4">
-            <h3 class="font-bold text-base text-[#111827] mb-1">Available Colours</h3>
+            <h3 class="font-bold text-base text-gray-900 mb-1">Available Colours</h3>
             <div id="color-options" class="flex text-white space-x-2">
               <button
-                class="w-full h-10 bg-[#111827] rounded-md cursor-pointer "
+                class="w-full h-10 bg-gray-900 rounded-md cursor-pointer "
               >Black</button
               ><button
-                class="w-full h-10 bg-[#0EA5E9] rounded-md cursor-pointer "
+                class="w-full h-10 bg-blue-500 rounded-md cursor-pointer "
               >Blue</button
               ><button
                 class="w-full h-10 bg-[#6D7F44] rounded-md cursor-pointer "
@@ -186,15 +190,15 @@
             <h3 class="font-medium text-sm mb-1">Select Size</h3>
             <div class="flex  gap-2" id="size-options">
               <button
-                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-[#111827]"
+                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-gray-900"
               >
                 24/32</button
               ><button
-                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-[#111827]"
+                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-gray-900"
               >
                 24/32</button
               ><button
-                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-[#111827]"
+                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-gray-900"
               >
                 24/32</button
               >
@@ -206,12 +210,12 @@
             
             <div class="flex mt-2 gap-2">
               <button
-                class="bg-[#0EA5E9] rounded-full text-white font-semibold px-4 py-3 w-full hover:bg-[#0873AA] transition"
+                class="bg-blue-500 cursor-pointer rounded-full text-white font-semibold px-4 py-3 w-full hover:bg-[#0873AA] transition"
               >
                 <a href="./cart.html">Buy Product </a>
               </button>
               <button
-                class="bg-white border border-[#0EA5E9] text-[#0EA5E9] font-semibold px-4 py-3 rounded-full hover:bg-gray-100 transition"
+                class="bg-white border border-blue-500 text-blue-500 font-semibold px-4 py-3 rounded-full hover:bg-gray-100 transition"
               >
                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0_79_1780" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
@@ -229,28 +233,29 @@
         </div>
       </div>
       <div class="mt-12 mb-4 mx-4">
-        <!-- Tab Navigation -->
-        <div class="flex items-center space-x-4 mb-2">
-          <button
-            class="tab-button text-sm  focus:outline-none bg-[#0EA5E9] rounded-full p-3 text-white border"
-            data-tab="review"
-          >
-            Review <span class="bg-white text-[#0EA5E9] text-sm py-1 px-3 rounded-full">3</span>
-          </button>
-          <button
-            class="tab-button text-sm hover:text-gray-700 border focus:outline-none   rounded-full p-3"
-            data-tab="product-details"
-          >
-            Product Details
-          </button>
-          <button
-            class="tab-button text-sm hover:text-gray-700 border focus:outline-none   rounded-full p-3"
-            data-tab="lifestyle"
-          >
-            Lifestyle
-          </button>
-        </div>
-        <div id="review" class="mx-4 space-y-4 tab-content">
+
+      <!-- Tabs list -->
+  <ul class=" flex  space-x space-x-1 text-sm font-medium md:me-4 mb-4 py-4 px-4" id="default-tab" data-tabs-toggle="#default-tab-content"
+    data-tabs-active-classes="focus:outline-none bg-blue-500 rounded-full p-3 text-white border" data-tabs-inactive-classes="text-gray-900 hover:text-gray-600"
+    role="tablist">
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="review-tab" data-tabs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">Review <span class="bg-white text-blue-500 text-sm py-1 px-3 rounded-full">3</span></button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="addresses-tab" data-tabs-target="#addresses" type="button" role="tab" aria-controls="addresses" aria-selected="false">Product Details</button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="shopping-tab" data-tabs-target="#shopping" type="button" role="tab" aria-controls="shopping" aria-selected="false">Lifestyle</button>
+    </li>
+    
+  </ul>
+
+  <!-- Tab Content -->
+  <div id="default-tab-content" class="text-medium text-gray-500 rounded-lg w-full">
+    <div class="hidden p-4 rounded-lg " id="review" role="tabpanel" aria-labelledby="review-tab">
+
+        <div class="container mx-auto">
+             <div id="review" class="mx-4 space-y-4 tab-content">
           <div class="review-card">
             <div class="p-4 bg-[#FCFCFC] flex gap-x-2 rounded-md border border-[#F0F2F5]">
               <div class="">
@@ -280,7 +285,7 @@
                   <p class="text-[#4B5563] text-xs">Online Shopper</p>
                 </div>
                 <div class="mt-2 flex items-center space-x-4">
-                  <button class="text-base text-[#0EA5E9]">Reply</button>
+                  <button class="text-base text-blue-500">Reply</button>
                   <div class="flex items-center space-x-1">
                     <svg
                       width="24"
@@ -384,7 +389,7 @@
                   <p class="text-[#4B5563] text-xs">Online Shopper</p>
                 </div>
                 <div class="mt-2 flex items-center space-x-4">
-                  <button class="text-base text-[#0EA5E9]">Reply</button>
+                  <button class="text-base text-blue-500">Reply</button>
                   <div class="flex items-center space-x-1">
                     <svg
                       width="24"
@@ -460,41 +465,12 @@
             </div>
           </div>
         </div>
-        <div id="product-details" class="tab-content bg-white p-4 rounded-md container-fluid hidden">
-          <div class="w-full sm:w-2/3 space-y-2">
-                <div class="flex items-center space-x-2">
-                    <span>5 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full">
-                        <div class="h-2 bg-black rounded-full" style="width: 85%"></div>
-                    </div>
-                    <span>59</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>4 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full">
-                        <div class="h-2 bg-black rounded-full" style="width: 65%"></div>
-                    </div>
-                    <span>46</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>3 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full"></div>
-                    <span>0</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>2 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full"></div>
-                    <span>0</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <span>1 ★</span>
-                    <div class="w-full h-2 bg-gray-200 rounded-full"></div>
-                    <span>0</span>
-                </div>
-            </div>
         </div>
-        </div>
-        <div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white hidden">
+      
+    </div>
+    <!-- address section -->
+    <div class="hidden p-4 rounded-lg" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
+ <div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white">
            <div class="border-b pb-4">
             <p class="text-gray-700"><strong>SKU:</strong> 35-453-HZ</p>
             <p class="text-gray-700"><strong>Vendor:</strong> Modave</p>
@@ -510,15 +486,27 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-10">
             </div>
         </div>
-        </div>
-        
-        
+        </div>    </div>
+    <!-- shopping section -->
+    <div class="hidden p-4 rounded-lg bg-gray-50" id="shopping" role="tabpanel" aria-labelledby="shopping-tab">
+<div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white">
+              
+          <p class="text-gray-700"><strong>SKU:</strong> 35-453-HZ</p>
+          <p class="text-gray-700"><strong>Vendor:</strong> Modave</p>
+          <p class="text-gray-700"><strong>Available:</strong> Instock</p>
+          <p class="text-gray-700"><strong>Categories:</strong> Clothes, Women, T-shirt</p>
       </div>
+   
+    
+  </div>
+
+
+        
     </main>
 
     
 <footer class="bg-[#F9FAFB] container-fluid mx-auto">
-      <div class="container-fluid p-6 lg:p-20 mx-auto flex justify-between flex-col lg:flex-row gap-5">
+      <div class="container-fluid p-6 lg:p-12 mx-auto flex justify-between flex-col lg:flex-row gap-5">
         <div class="w-full lg:w-1/5">
           <div class="px-6">
             <div>
