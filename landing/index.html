@@ -70,7 +70,7 @@
               <div class="flex items-center gap-4">
                 <div class="sm:flex sm:gap-4">
                   <a
-                    class="rounded-md bg-[#0EA5E9] px-6 font-semibold py-3 text-sm font-medium text-white shadow-sm"
+                    class="rounded-md bg-[#0EA5E9] hidden lg:block px-6 font-semibold py-3 text-sm font-medium text-white shadow-sm"
                     href="#"
                   >
                     Contact Us
@@ -149,6 +149,7 @@
         </div>
         
         <!-- Main content container -->
+        <!-- container mx-auto -->
         <div class="h-screen lg:flex">
           <!-- Left column with text content -->
           <div class="lg:w-1/2 flex items-center px-8">
@@ -199,7 +200,7 @@
           </div>
           
           <!-- Right column with full-height image -->
-          <div class="lg:w-1/2 h-screen pr-6 pb-6">
+          <div class="lg:w-1/2 h-screen pr-6 -mt-14 pb-6">
             <img 
               src="./assets/hero-image.svg" 
               class="h-full w-full object-cover" 
@@ -495,9 +496,6 @@
 
         </div>
     </div>
-
-
-
 
     <div class="max-w-7xl mx-auto px-4 py-8 z-50">
       <div class="flex gap-8 relative" x-data="{ isFilterOpen: false }">
