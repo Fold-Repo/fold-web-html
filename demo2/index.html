@@ -6,27 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing page demo 2</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+</style>
 </head>
 
 <body>
-  <header class="mb-4">
+  <header class="mb-10">
     <!-- Top Banner -->
-    <div class="bg-sky-500 text-white py-3 px-4 text-center">
+    <div class="bg-sky-500 text-white py-6 px-4 text-center">
       <p class="text-base">Get the best deals we have to offer, click here to get a coupon code.</p>
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-[#F5F6F8] shadow-sm py-4 px-6">
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <nav class="bg-[#F4F4F4] border-b-[0.5px] border-[#F4F4F4] py-4 px-6">
+      <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
-          <img src="../../assets/icons/logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
-          <span class="ml-2 text-sky-500">Full Logo Goes Here</span>
+          <img src="./assets/fold-logo.svg" class="w-10 h-10 bg-sky-500 rounded-lg" alt="Logo" />
         </div>
 
         <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex items-center space-x-8">
-          <a href="#" class="text-[#0EA5E9] hover:text-sky-600">Home</a>
+          <a href="#" class="text-[#0EA5E9] underline hover:text-sky-600">Home</a>
           <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">About us</a>
           <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Contact us</a>
           <a href="#" class="text-[#111827] hover:text-[#0EA5E9]">Wishlist</a>
@@ -35,13 +41,6 @@
 
         <!-- Desktop Search & Icons -->
         <div class="hidden lg:flex items-center space-x-6">
-          <div class="relative flex items-center">
-            <input type="text" placeholder="Search"
-              class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none" />
-            <svg class="absolute left-3 text-gray-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 21l-4.35-4.35"></path>
-            </svg>
-          </div>
           <a href="/onboarding/login/login.html" class="flex items-center text-gray-600 hover:text-sky-500">
             <img src="../../assets/icons/user.svg" alt="User" />
             <span class="ml-2">Login</span>
@@ -81,11 +80,11 @@
       </div>
     </nav>
   </header>
-  <div class="relative h-[758px] containers mx-auto lg:rounded-xl">
-    <div class="absolute inset-0 lg:rounded-xl">
+  <div class="relative h-[758px] container mx-auto rounded-xl">
+    <div class="absolute inset-0  rounded-xl">
       <img src="../assets/images/demo2/hero-image.svg" alt="Hero Background"
-        class="h-full w-full object-cover lg:rounded-xl" />
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        class="h-full w-full object-cover rounded-xl" />
+      <div class="absolute rounded-xl inset-0 bg-black bg-opacity-50"></div>
     </div>
 
     <div class="relative lg:-ml-20 flex h-full pl-8 w-full items-center justify-center">
@@ -100,14 +99,14 @@
       </div>
     </div>
   </div>
-  <section id="done">
+  <section class="mt-10" id="done">
     <div class="bg-white">
       <div class="container mx-auto px-0 py-10 ">
         <div class="">
-          <h2 class="text-lg font-semibold text-gray-900">
+          <h2 class="text-xl font-semibold text-gray-900">
             Trending Products.
           </h2>
-          <p class="max-w-5xl text-sm">
+          <p class="max-w-4xl text-sm">
             Details about the product in question goes here. You have the
             option to now select and buy. Details about the product in
             question goes here. You have the option to now select and
@@ -209,21 +208,31 @@
     </div>
   </section>
 
-  <section id="done">
+  <section class="mt-10" id="done">
     <div class="container mx-auto px-0">
       <div class="flex justify-between items-center">
         <h1 class="text-2xl font-semibold">Product Listing</h1>
-        <input type="text" id="search-input" placeholder="Search" class="border rounded px-4 py-2" />
+    <div class="relative">
+      <input type="text" id="search-input" placeholder="Search" class="border pl-10 outline-none rounded-lg border-[#F2F2F2] px-4 py-3" />
+      <svg class="absolute left-3 top-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_115_2536" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <rect width="24" height="24" fill="#D9D9D9"/>
+        </mask>
+        <g mask="url(#mask0_115_2536)">
+        <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="#1C1B1F"/>
+        </g>
+        </svg>
+    </div>
+          
       </div>
-      <p class="text-sm text-gray-500 mt-2">
-        Details about the product in question goes here. You have the option
-        to now select and buy.
+      <p class="text-sm max-w-5xl mt-2">
+        Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy.
       </p>
-      <div id="product-list" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div id="product-list" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         <div class="group block">
           <a href="#" class="group block">
             <img src="../assets/images/demo2/products/product-listing1.svg" alt="Name Of Product Goes Here."
-              class="h-[350px] w-full object-cover sm:h-[450px]">
+              class="h-[350px] w-full object-cover sm:h-[450px] rounded-xl">
             <div class="mt-1.5">
               <div class="mt-3 flex justify-between text-sm">
                 <h3 class="text-gray-900 text-lg font-semibold">
@@ -265,7 +274,7 @@
         <div class="group block">
           <a href="#" class="group block">
             <img src="../assets/images/demo2/products/product-listing2.svg" alt="Name Of Product Goes Here."
-              class="h-[350px] w-full object-cover sm:h-[450px]">
+              class="h-[350px] w-full object-cover sm:h-[450px] rounded-xl">
             <div class="mt-1.5">
               <div class="mt-3 flex justify-between text-sm">
                 <h3 class="text-gray-900 text-lg font-semibold">
@@ -307,7 +316,7 @@
         <div class="group block">
           <a href="#" class="group block">
             <img src="../assets/images/demo2/products/product-listing4.svg" alt="Name Of Product Goes Here."
-              class="h-[350px] w-full object-cover sm:h-[450px]">
+              class="h-[350px] w-full object-cover sm:h-[450px] rounded-xl">
             <div class="mt-1.5">
               <div class="mt-3 flex justify-between text-sm">
                 <h3 class="text-gray-900 text-lg font-semibold">
@@ -349,7 +358,7 @@
         <div class="group block">
           <a href="#" class="group block">
             <img src="../assets/images/demo2/products/product-listing5.svg" alt="Name Of Product Goes Here."
-              class="h-[350px] w-full object-cover sm:h-[450px]">
+              class="h-[350px] w-full object-cover sm:h-[450px] rounded-xl">
             <div class="mt-1.5">
               <div class="mt-3 flex justify-between text-sm">
                 <h3 class="text-gray-900 text-lg font-semibold">
@@ -391,7 +400,7 @@
         <div class="group block">
           <a href="#" class="group block">
             <img src="../assets/images/demo2/products/product-listing6.svg" alt="Name Of Product Goes Here."
-              class="h-[350px] w-full object-cover sm:h-[450px]">
+              class="h-[350px] w-full object-cover sm:h-[450px] rounded-xl">
             <div class="mt-1.5">
               <div class="mt-3 flex justify-between text-sm">
                 <h3 class="text-gray-900 text-lg font-semibold">
@@ -433,7 +442,7 @@
         <div class="group block">
           <a href="#" class="group block">
             <img src="../assets/images/demo2/products/product-listing7.svg" alt="Name Of Product Goes Here."
-              class="h-[350px] w-full object-cover sm:h-[450px]">
+              class="h-[350px] w-full object-cover sm:h-[450px] rounded-xl">
             <div class="mt-1.5">
               <div class="mt-3 flex justify-between text-sm">
                 <h3 class="text-gray-900 text-lg font-semibold">
@@ -476,10 +485,10 @@
     </div>
   </section>
 
-  <section id="done" class="container mx-auto my-10">
-    <div class="lg:flex">
+  <section class="mt-10 container mx-auto"id="done">
+    <div class="lg:flex pt-10">
       <div class="bg-black text-white flex-1 px-10 py-10">
-        <h1 class="text-4xl font-bold mb-4">MASSIVE HOLIDAY SALE!</h1>
+        <h1 class="text-4xl font-bold mb-4 pt-6">MASSIVE HOLIDAY SALE!</h1>
         <p class="mb-8">
           Details about the product in question goes here. You have the option
           to now select and buy. Details about the product in question goes
@@ -513,17 +522,16 @@
     </div>
   </section>
 
-  <section class="container mx-auto px-0 py-8">
-    <h1 class="text-2xl font-semibold mb-6">Product Categories</h1>
+  <section id="done" class="mt-20 container mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <div class="mb-8">
-        <div class="border-[0.5px] border-gray-100 rounded-lg">
+        <div class="border-[0.5px] border-gray-100 rounded-lg p-6">
           <h2 class="text-lg font-semibold text-gray-900">Featured Products</h2>
           <p class="text-gray-500 mb-4">
             Details about the product in question goes here. You have the option to now select and buy.
           </p>
           <div class="mt-4 grid grid-cols-1 gap-8">
-            <div class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 shadow-[0_10px_16px_0_rgba(0,0,0,0.19)]">
+            <div class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 ">
               <div class="p-4 rounded-lg">
                 <img src="../assets/images/demo2/products/best-products.svg" alt="DName of Deal goes here."
                   class="w-full h-60 object-cover rounded-lg">
@@ -554,7 +562,7 @@
               </div>
             </div>
             <div
-              class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 shadow-[0_10px_16px_0_rgba(0,0,0,0.19)]">
+              class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 ">
               <div class="p-4 rounded-lg">
                 <img src="../assets/images/demo2/products/best-products.svg" alt="Name of Deal goes here."
                   class="w-full h-60 object-cover rounded-lg">
@@ -589,14 +597,14 @@
         </div>
       </div>
       <div class="mb-8">
-        <div class="border-[0.5px] border-gray-100 rounded-lg">
+        <div class="border-[0.5px] border-gray-100 rounded-lg p-6">
           <h2 class="text-lg font-semibold text-gray-900">Best Bought Products</h2>
           <p class="text-gray-500 mb-4">
             Details about the product in question goes here. You have the option to now select and buy.
           </p>
           <div class="mt-4 grid grid-cols-1 gap-8">
             <div
-              class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 shadow-[0_10px_16px_0_rgba(0,0,0,0.19)]">
+              class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 ">
               <div class="p-4 rounded-lg">
                 <img src="../assets/images/demo2/products/best-products.svg" alt="Name of Deal goes here."
                   class="w-full h-60 object-cover rounded-lg">
@@ -628,7 +636,7 @@
               </div>
             </div>
             <div
-              class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 shadow-[0_10px_16px_0_rgba(0,0,0,0.19)]">
+              class="rounded-lg overflow-hidden border-[0.5px] border-gray-100 bg-[#FAFAFA] p-2 ">
               <div class="p-4 rounded-lg">
                 <img src="../assets/images/demo2/products/best-products.svg" alt="Name of Deal goes here."
                   class="w-full h-60 object-cover rounded-lg">
@@ -665,7 +673,7 @@
     </div>
   </section>
 
-  <section id="done">
+  <section id="done" class="mt-10" id="done">
     <div class="container mx-auto px-0 py-8">
       <div class="flex justify-between items-center">
         <h1 class="text-2xl font-semibold text-[#111827]">
@@ -693,7 +701,7 @@
       </p>
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="blog-card">
-          <div class="rounded-lg overflow-hidden rounded-xl border-[0.5px] border-gray-200 shadow-[0_10px_16px_0_rgba(0,0,0,0.19)]">
+          <div class="rounded-lg overflow-hidden rounded-xl border-[0.5px] border-gray-200 ">
             <div class="p-3">
               <img src="../assets/images/demo2/blog/blog.svg" alt="Latest Blog Post 1"
                 class="w-full h-64 object-cover rounded-lg">
@@ -714,7 +722,7 @@
         </div>
         <div class="blog-card">
           <div
-            class="rounded-lg overflow-hidden rounded-xl border-[0.5px] border-gray-200 shadow-[0_10px_16px_0_rgba(0,0,0,0.19)]">
+            class="rounded-lg overflow-hidden rounded-xl border-[0.5px] border-gray-200 ">
             <div class="p-3">
               <img src="../assets/images/demo2/blog/blog.svg" alt="Latest Blog Post 2"
                 class="w-full h-64 object-cover rounded-lg">
@@ -735,7 +743,7 @@
         </div>
         <div class="blog-card">
           <div
-            class="rounded-lg overflow-hidden rounded-xl border-[0.5px] border-gray-200 shadow-[0_10px_16px_0_rgba(0,0,0,0.19)]">
+            class="rounded-lg overflow-hidden rounded-xl border-[0.5px] border-gray-200 ">
             <div class="p-3">
               <img src="../assets/images/demo2/blog/blog.svg" alt="Latest Blog Post 3"
                 class="w-full h-64 object-cover rounded-lg">
@@ -758,8 +766,88 @@
     </div>
   </section>
 
+  <!-- <footer class="bg-gray-100 min-h-screen flex flex-col">
+    <div class="flex-grow">
+    </div> -->
 
-  <footer class="bg-[#F9FAFB] ">
+    <footer class="bg-[#F9FAFB] mt-20 py-12 px-4 md:px-8 lg:px-16">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- First Column - Logo and Subscribe -->
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center">
+                          <img src="./assets/fold-logo.svg" alt="Logo" class="w-full" />
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" fill="white" stroke="none" />
+                            </svg> -->
+                        </div>
+                    </div>
+                    
+                    <p class="text-[#344054] text-sm">
+                        Be the first to receive all the recent updates, articles, and valuable materials.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Email address" 
+                            class="border border-[#D0D5DD] rounded-lg px-4 py-3 text-sm flex-grow focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        >
+                        <button class="bg-[#0EA5E9] hover:bg-blue-500 text-white rounded px-6 py-2 text-sm transition-colors">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Second Column - Company -->
+                <div class="pl-32">
+                    <h3 class="text-[#98A2B3] font-medium mb-4">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">About</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Security</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Blog</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Careers</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Service Status</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Partnerships</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Mission roadmap</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Community</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Third Column - More from E-commerce -->
+                <div>
+                    <h3 class="text-[#98A2B3] font-medium mb-4">{More from E-commerce}</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Mass Payments</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Debit Card</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Rayna for Startups</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Rayna for Developers</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Rayna for No-code</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Assets</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Fourth Column - Various Templates -->
+                <div>
+                    <h3 class="text-[#98A2B3] font-medium mb-4">Various Templates</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Financial Templates</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Fashion & Beauty Templates</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Agriculture Templates</a></li>
+                        <li><a href="#" class="text-[#667185] hover:text-gray-800 text-sm">Manufacturing Templates</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Divider Line -->
+            <div class="border-t border-gray-200 mt-12"></div>
+        </div>
+    </footer>
+ <!-- </footer> -->
+
+
+  <!-- <footer class="bg-[#F9FAFB] ">
     <div class="container p-6 lg:p-20 mx-auto">
       <div class="lg:flex gap-x-12">
         <div class="w-full -mx-6 lg:w-2/5">
@@ -767,11 +855,8 @@
             <div>
               <div class="mb-8 flex gap-3 justify-start items-center">
                 <div class="w-12 h-12 rounded-md">
-                  <img src="../../assets/icons/logo.svg" alt="Logo" class="w-full" />
+                  <img src="./assets/fold-logo.svg" alt="Logo" class="w-full" />
                 </div>
-                <h4 class="text-[#0EA5E9] font-medium text-[24px] leading-[29.16px]" style="font-style: italic">
-                  Full Logo Goes Here
-                </h4>
               </div>
               <p class="text-[#344054] mb-4">Be the first to receive all the recent updates, articles, and valuable
                 materials.</p>
@@ -845,7 +930,7 @@
         <p class="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
   <script src="../assets/js/script.js"></script>
 </body>
