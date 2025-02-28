@@ -5,11 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing page demo 4</title>
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"> -->
+
+     <link rel="stylesheet" href="/assets/css/app.css">
 </head>
 
 <body>
@@ -39,12 +40,12 @@
           <!-- Desktop Navigation Links -->
           <div class="hidden lg:flex items-center space-x-8">
             <a href="#" class="text-blue-500 hover:text-blue-600">Home</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">About us</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500"
+            <a href="#" class="text-gray-900 hover:text-blue-500">About us</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500"
               >Contact us</a
             >
-            <a href="#" class="text-[#111827] hover:text-blue-500">Wishlist</a>
-            <a href="#" class="text-[#111827] hover:text-blue-500">Chat</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Wishlist</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Chat</a>
           </div>
 
           <!-- Desktop Search & Icons -->
@@ -142,7 +143,7 @@
         <p class="mt-4 text-lg sm:text-xl">
             Customize the layout, colors, and styles within only a few minutes. Start creating an amazing website right now!
         </p>
-        <button class="mt-6 bg-[#0EA5E9] hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition text-sm sm:text-base">
+        <button class="mt-6 bg-blue-500 cursor-pointer hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition text-sm sm:text-base">
             Book a session
         </button>
     </div>
@@ -154,7 +155,7 @@
     <div class="">
       <div class="container-fluid mx-auto px-0 py-10 ">
         <div class="mb-8">
-          <h2 class="text-lg font-semibold text-[#111827]">
+          <h2 class="text-lg font-semibold text-gray-900">
             Some of our Services.
           </h2>
           <p class="max-w-5xl text-[#4B5563] text-base">
@@ -230,7 +231,7 @@
           buy.
         </p>
         <button
-          class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1.5 rounded-full transition-colors duration-200">Start
+          class="flex items-center cursor-pointer justify-center font-semibold text-sm text-white bg-blue-500 px-3 py-1.5 rounded-full transition-colors duration-200">Start
           Shopping Now
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
@@ -255,7 +256,7 @@
         <!-- Section Heading -->
          <div class="flex justify-between">
            <div class="">
-               <h2 class="text-lg font-medium text-[#111827]">What People are Saying.</h2>
+               <h2 class="text-lg font-medium text-gray-900">What People are Saying.</h2>
                <p class="text-[#4B5563] max-w-2xl  mt-2">
                    Details about the product in question goes here. You have the option to now select and buy. 
                    Details about the product in question goes here.
@@ -263,13 +264,13 @@
            </div>
            <div class="flex gap-x-3">
              <!-- Navigation Arrows -->
-            <button id="prevBtn" class=" bg-none p-2  ">
+            <button id="prevBtn" class="cursor-pointer bg-none p-2  ">
                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 14.5L11.4 13.1L9.8 11.5H14V9.5H9.8L11.4 7.9L10 6.5L6 10.5L10 14.5ZM10 20.5C8.61667 20.5 7.31667 20.2375 6.1 19.7125C4.88333 19.1875 3.825 18.475 2.925 17.575C2.025 16.675 1.3125 15.6167 0.7875 14.4C0.2625 13.1833 0 11.8833 0 10.5C0 9.11667 0.2625 7.81667 0.7875 6.6C1.3125 5.38333 2.025 4.325 2.925 3.425C3.825 2.525 4.88333 1.8125 6.1 1.2875C7.31667 0.7625 8.61667 0.5 10 0.5C11.3833 0.5 12.6833 0.7625 13.9 1.2875C15.1167 1.8125 16.175 2.525 17.075 3.425C17.975 4.325 18.6875 5.38333 19.2125 6.6C19.7375 7.81667 20 9.11667 20 10.5C20 11.8833 19.7375 13.1833 19.2125 14.4C18.6875 15.6167 17.975 16.675 17.075 17.575C16.175 18.475 15.1167 19.1875 13.9 19.7125C12.6833 20.2375 11.3833 20.5 10 20.5Z" fill="#1C1B1F"/>
 </svg>
 
             </button>
-            <button id="nextBtn" class=" bg-none p-2">
+            <button id="nextBtn" class="cursor-pointer bg-none p-2">
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10 14.5L14 10.5L10 6.5L8.6 7.9L10.2 9.5H6V11.5H10.2L8.6 13.1L10 14.5ZM10 20.5C8.61667 20.5 7.31667 20.2375 6.1 19.7125C4.88333 19.1875 3.825 18.475 2.925 17.575C2.025 16.675 1.3125 15.6167 0.7875 14.4C0.2625 13.1833 0 11.8833 0 10.5C0 9.11667 0.2625 7.81667 0.7875 6.6C1.3125 5.38333 2.025 4.325 2.925 3.425C3.825 2.525 4.88333 1.8125 6.1 1.2875C7.31667 0.7625 8.61667 0.5 10 0.5C11.3833 0.5 12.6833 0.7625 13.9 1.2875C15.1167 1.8125 16.175 2.525 17.075 3.425C17.975 4.325 18.6875 5.38333 19.2125 6.6C19.7375 7.81667 20 9.11667 20 10.5C20 11.8833 19.7375 13.1833 19.2125 14.4C18.6875 15.6167 17.975 16.675 17.075 17.575C16.175 18.475 15.1167 19.1875 13.9 19.7125C12.6833 20.2375 11.3833 20.5 10 20.5Z" fill="#1C1B1F"/>
 </svg>
@@ -341,10 +342,10 @@
   <section id="done">
     <div class="container-fluid mx-auto px-6 lg:px-12 py-8">
       <div class="flex justify-between items-center">
-        <h1 class="text-2xl font-semibold text-[#111827]">
+        <h1 class="text-2xl font-semibold text-gray-900">
           Latest News - Blog Update
         </h1>
-        <button class="flex items-center justify-center font-semibold text-sm text-white bg-[#0EA5E9] px-3 py-1 rounded-lg transition-colors duration-200">View
+        <button class="flex items-center justify-center cursor-pointer font-semibold text-sm text-white bg-blue-500 px-3 py-1 rounded-lg transition-colors duration-200">View
           Blog
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_67_10470" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="34"
@@ -417,7 +418,7 @@
 
  
 <footer class="bg-[#F9FAFB] container-fluid mx-auto">
-      <div class="container-fluid p-6 lg:p-20 mx-auto flex justify-between flex-col lg:flex-row gap-5">
+      <div class="container-fluid p-6 lg:p-12 mx-auto flex justify-between flex-col lg:flex-row gap-5">
         <div class="w-full lg:w-1/5">
           <div class="px-6">
             <div>
