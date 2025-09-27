@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Products Categories</title>
+   <link rel="stylesheet" href="/assets/css/app.css">
+<script src="/assets/script.js"></script>
+    <script src="../assets/js/demo4.js"></script>
+    
+    <style>
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 50;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+   <!-- header -->
+      <header class="mb-4 mx-auto container-fluid">
+      <!-- Top Banner -->
+      <div class="bg-blue-500 text-white py-3 px-4 text-center">
+        <p class="text-lg">
+          Get the best deals we have to offer, click here to get a coupon code.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] container-fluid shadow-sm py-4 px-6">
+        <div class="mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="../../assets/icons/logo.svg"
+              class="w-10 h-10  rounded-lg"
+              alt="Logo"
+            />
+          </div>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-blue-500 hover:text-blue-600">Home</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">About us</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500"
+              >Contact us</a
+            >
+            <a href="#" class="text-gray-900 hover:text-blue-500">Wishlist</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Chat</a>
+          </div>
+
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input
+                type="text"
+                placeholder="Search"
+                class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none"
+              />
+              <svg
+                class="absolute left-3 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a
+              href="/onboarding/login/login.html"
+              class="flex items-center text-gray-600 hover:text-blue-500"
+            >
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button
+              id="cart-btn"
+              class="flex items-center text-gray-600 hover:text-blue-500"
+            >
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg
+              id="menuIcon"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-blue-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="@container/main mx-auto overflow-hidden">
+      <div
+        class="flex bg-[#fff] @container mx-auto flex-col justify-center overflow-hidden p-2 md:p-6"
+      >
+        <div class="mx-auto px-4 py-8 overflow-hidden">
+          <h1 class="text-3xl font-medium text-gray-900 mb-4">
+            Best Categories for you
+          </h1>
+          <p class="text-gray-900 mb-6 lg:w-2/3 leading-relaxed">
+            Details about the product in question goes here. You have the option
+            to now select and buy. Details about the product in question goes
+            here. You have the option to now select and buy.Details about the
+            product in question goes here. You have the option to now select and
+            buy.
+          </p>
+
+          <!-- Product Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-12"
+          >
+            <!-- Product Card 1 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product1.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product2.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product3.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product4.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product5.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product6.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 7 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product7.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 8 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product8.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+
+            <!-- Product Card 9 -->
+            <div class="bg-white cursor-pointer overflow-hidden">
+              <div class="relative">
+                <img
+                  src="../assets/images/demo5/product9.svg"
+                  alt="Product 1"
+                  class="w-full h-full rounded-lg max-h-[432px] object-cover"
+                />
+              </div>
+              <div class="mt-4">
+                <h1 class="text-lg lg:text-2xl font-medium text-gray-900">
+                  Name of Deal goes here.
+                </h1>
+                <p class="text-blue-500 font-bold lg:text-[20px]">
+                  N100,000.00
+                </p>
+
+                <p class="text-gray-900 lg:text-[20px]">
+                  Lorem ipsum dolor sit amet consectetur. Faucibus metus diam
+                  lobortis eu ultricies dui in. Mattis convallis
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#F9FAFB] container-fluid mx-auto">
+      <div class="container-fluid p-6 lg:p-12 mx-auto flex justify-between flex-col lg:flex-row gap-5">
+        <div class="w-full lg:w-1/5">
+          <div class="px-6">
+            <div>
+              <div class="mb-8 flex gap-3 justify-start items-center">
+                <div class="w-12 h-12 rounded-md">
+                  <img
+                    src="../../assets/icons/logo.svg"
+                    alt="Logo"
+                    class="w-full"
+                  />
+                </div>
+                
+              </div>
+              <p class="text-gray-500 mb-4">
+                Be the first to receive all the recent updates, articles, and
+                valuable materials.
+              </p>
+              <form
+                id="subscribeForm"
+                class="flex space-x-2"
+              >
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="Enter your email"
+                  class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                  type="submit"
+                  class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-700 uppercase">Company</h3>
+          <div class="space-y-6">
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >About</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Security</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Blog</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Careers</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Service Status</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Partnerships</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Mission roadmap</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Community</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-gray-700 uppercase">Support</h3>
+          <div class="space-y-6">
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Mass Payments</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Debit Card</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Rayna for Startups</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Rayna for Developers</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Rayna for No-code</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Assets</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-gray-700 uppercase">Various Templates</h3>
+          <div class="space-y-6">
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Financial Templates</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Fashion & Beauty Templates</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Agriculture Templates</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Manufacturing Templatess</a
+            >
+          </div>
+        </div>
+      
+
+      </div>
+      <div class="container-fluid p-6 lg:px-20 mx-auto ">
+
+        <hr class="h-px my-6 bg-gray-200 border-none " />
+  
+        <div>
+          <p class="text-center text-gray-500 dark:text-gray-400">
+            © Brand 2020 - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+   
+
+       <link rel="stylesheet" href="/assets/css/app.css">
+           <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+
+  </head>
+
+  <body class="bg-[#F6F6F6]">
+    
+
+   <!-- header -->
+      <header class="mb-4 mx-auto container-fluid">
+      <!-- Top Banner -->
+      <div class="bg-blue-500 text-white py-3 px-4 text-center">
+        <p class="text-lg">
+          Get the best deals we have to offer, click here to get a coupon code.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="bg-[#F5F6F8] container-fluid shadow-sm py-4 px-6">
+        <div class="mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="../../assets/icons/logo.svg"
+              class="w-10 h-10  rounded-lg"
+              alt="Logo"
+            />
+          </div>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="#" class="text-blue-500 hover:text-blue-600">Home</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">About us</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500"
+              >Contact us</a
+            >
+            <a href="#" class="text-gray-900 hover:text-blue-500">Wishlist</a>
+            <a href="#" class="text-gray-900 hover:text-blue-500">Chat</a>
+          </div>
+
+          <!-- Desktop Search & Icons -->
+          <div class="hidden lg:flex items-center space-x-6">
+            <div class="relative flex items-center">
+              <input
+                type="text"
+                placeholder="Search"
+                class="pl-10 pr-4 py-3.5 border-[0.5px] border-[#F9F9F9] rounded-md w-60 outline-none"
+              />
+              <svg
+                class="absolute left-3 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a
+              href="/onboarding/login/login.html"
+              class="flex items-center text-gray-600 hover:text-blue-500"
+            >
+              <img src="../../assets/icons/user.svg" alt="User" />
+              <span class="ml-2">Login</span>
+            </a>
+            <button
+              id="cart-btn"
+              class="flex items-center text-gray-600 hover:text-blue-500"
+            >
+              <img src="../../assets/icons/cart.svg" alt="Cart" />
+              <span class="ml-1">0</span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuButton" class="lg:hidden text-gray-600">
+            <svg
+              id="menuIcon"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden mt-4 px-4">
+          <div class="flex flex-col space-y-4">
+            <!-- Mobile Search -->
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search"
+                class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <svg
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </div>
+            <a href="index.html" class="text-blue-500">Home</a>
+            <a href="#" class="text-gray-600">About us</a>
+            <a href="#" class="text-gray-600">Contact us</a>
+            <a href="#" class="text-gray-600">Wishlist</a>
+            <a href="#" class="text-gray-600">Chat</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  
+
+    <main class="container-fluid mx-auto py-6 lg:py-12 px-4 lg:px-8 overflow-hidden">
+      <div class="mb-4">
+        <h1 id="product-name" class="text-lg lg:text-2xl font-medium text-gray-900">
+              Name of Product 
+             </h1>
+             <div class="flex gap-x-3 lg:gap-x-8">
+               <div class="flex items-center space-x-2">
+                                <img src="/assets/images/demo4/star.svg" />
+                                <img src="/assets/images/demo4/star.svg" />
+                                <img src="/assets/images/demo4/star.svg" />
+                                <img src="/assets/images/demo4/star.svg" />
+                                <img src="/assets/images/demo4/star2.svg" />
+                               
+                              </div>
+<span id="product-rating-count" class="text-base text-gray-900 ml-2"
+              >4.6 Start</span
+            >
+             </div>
+      </div>
+      <!-- Product Container -->
+      <div class="grid md:grid-cols-2 lg:gap-8">
+        <!-- Product Image Gallery -->
+        <div class="w-full bg-white border-8 shadow-sm rounded-lg border-white ">
+          <img
+            id="main-product-image"
+            src="/assets/images/demo4/single-product-details.svg"
+            alt="Nike Blazer Low '77 Vintage"
+            class="w-full rounded-xl"
+          />
+
+          
+        </div>
+
+        <!-- Product Details -->
+        <div class="mx-4">
+          <h4 class="text-base font-bold text-gray-900">
+           Description
+          </h4>
+          <p id="product-description" class="text-gray-600 mt-2">
+           Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy. Details about the product in question goes here. You have the option to now select and buy.Details about the product in question goes here. You have the option to now select and buy..
+          </p>
+         
+
+          
+          <p id="product-price" class="text-xl text-gray-900 font-bold mt-2">N114,000.00</p>
+
+          <div class="mt-4">
+            <h3 class="font-bold text-base text-gray-900 mb-1">Available Colours</h3>
+            <div id="color-options" class="flex text-white space-x-2">
+              <button
+                class="w-full h-10 bg-gray-900 rounded-md cursor-pointer "
+              >Black</button
+              ><button
+                class="w-full h-10 bg-blue-500 rounded-md cursor-pointer "
+              >Blue</button
+              ><button
+                class="w-full h-10 bg-[#6D7F44] rounded-md cursor-pointer "
+              >Green</button
+              ><button
+                class="w-full h-10 bg-[#BF0000] rounded-md cursor-pointer "
+              >Red</button
+              >
+              
+            </div>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-medium text-sm mb-1">Select Size</h3>
+            <div class="flex  gap-2" id="size-options">
+              <button
+                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-gray-900"
+              >
+                24/32</button
+              ><button
+                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-gray-900"
+              >
+                24/32</button
+              ><button
+                class="px-3 h-10 w-full rounded-md bg-[#E7E7E7] text-sm text-gray-900"
+              >
+                24/32</button
+              >
+            </div>
+          </div>
+
+          <div class="mt-4 items-center">
+           
+            
+            <div class="flex mt-2 gap-2">
+              <button
+                class="bg-blue-500 cursor-pointer rounded-full text-white font-semibold px-4 py-3 w-full hover:bg-[#0873AA] transition"
+              >
+                <a href="./cart.html">Buy Product </a>
+              </button>
+              <button
+                class="bg-white border border-blue-500 text-blue-500 font-semibold px-4 py-3 rounded-full hover:bg-gray-100 transition"
+              >
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_79_1780" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+<rect width="24" height="24" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_79_1780)">
+<path d="M5 22C4.45 22 3.97917 21.8042 3.5875 21.4125C3.19583 21.0208 3 20.55 3 20V8C3 7.45 3.19583 6.97917 3.5875 6.5875C3.97917 6.19583 4.45 6 5 6H7C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6H19C19.55 6 20.0208 6.19583 20.4125 6.5875C20.8042 6.97917 21 7.45 21 8V20C21 20.55 20.8042 21.0208 20.4125 21.4125C20.0208 21.8042 19.55 22 19 22H5ZM12 14C13.3833 14 14.5625 13.5125 15.5375 12.5375C16.5125 11.5625 17 10.3833 17 9H15C15 9.83333 14.7083 10.5417 14.125 11.125C13.5417 11.7083 12.8333 12 12 12C11.1667 12 10.4583 11.7083 9.875 11.125C9.29167 10.5417 9 9.83333 9 9H7C7 10.3833 7.4875 11.5625 8.4625 12.5375C9.4375 13.5125 10.6167 14 12 14ZM9 6H15C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6Z" fill="#0EA5E9"/>
+</g>
+</svg>
+
+              </button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="mt-12 mb-4 mx-4">
+
+      <!-- Tabs list -->
+  <ul class=" flex  space-x space-x-1 text-sm font-medium md:me-4 mb-4 py-4 px-4" id="default-tab" data-tabs-toggle="#default-tab-content"
+    data-tabs-active-classes="focus:outline-none bg-blue-500 rounded-full p-3 text-white border" data-tabs-inactive-classes="text-gray-900 hover:text-gray-600"
+    role="tablist">
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="review-tab" data-tabs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true">Review <span class="bg-white text-blue-500 text-sm py-1 px-3 rounded-full">3</span></button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="addresses-tab" data-tabs-target="#addresses" type="button" role="tab" aria-controls="addresses" aria-selected="false">Product Details</button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-2 rounded-full" id="shopping-tab" data-tabs-target="#shopping" type="button" role="tab" aria-controls="shopping" aria-selected="false">Lifestyle</button>
+    </li>
+    
+  </ul>
+
+  <!-- Tab Content -->
+  <div id="default-tab-content" class="text-medium text-gray-500 rounded-lg w-full">
+    <div class="hidden p-4 rounded-lg " id="review" role="tabpanel" aria-labelledby="review-tab">
+
+        <div class="container mx-auto">
+             <div id="review" class="mx-4 space-y-4 tab-content">
+          <div class="review-card">
+            <div class="p-4 bg-[#FCFCFC] flex gap-x-2 rounded-md border border-[#F0F2F5]">
+              <div class="">
+                 <img src="/assets/images/demo4/profile-pic.svg" class="rounded-full" />
+              </div>
+              <div class="">
+                <div class="flex items-center space-x-2">
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star2.svg" />
+                 
+                </div>
+                <p class="text-gray-600 mt-2 text-sm">
+                  Details about the product in question goes here. You have the
+                  option to now select and buy. Details about the product in
+                  question goes here. You have the option to now select and
+                  buy.Details about the product in question goes here. You have
+                  the option to now select and buy.
+                </p>
+
+                <div class="mt-2 flex items-center space-x-4">
+                  <p class="text-[#4B5563] font-semibold text-base">
+                    Eugene ADAVORE
+                  </p>
+                  <p class="text-[#4B5563] text-xs">Online Shopper</p>
+                </div>
+                <div class="mt-2 flex items-center space-x-4">
+                  <button class="text-base text-blue-500">Reply</button>
+                  <div class="flex items-center space-x-1">
+                    <svg
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        id="mask0_111_2063"
+                        style="mask-type: alpha"
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="25"
+                      >
+                        <rect
+                          y="0.5"
+                          width="24"
+                          height="24"
+                          fill="#D9D9D9"
+                        ></rect>
+                      </mask>
+                      <g mask="url(#mask0_111_2063)">
+                        <path
+                          d="M18 21.5H7V8.5L14 1.5L15.25 2.75C15.3667 2.86667 15.4625 3.025 15.5375 3.225C15.6125 3.425 15.65 3.61667 15.65 3.8V4.15L14.55 8.5H21C21.5333 8.5 22 8.7 22.4 9.1C22.8 9.5 23 9.96667 23 10.5V12.5C23 12.6167 22.9833 12.7417 22.95 12.875C22.9167 13.0083 22.8833 13.1333 22.85 13.25L19.85 20.3C19.7 20.6333 19.45 20.9167 19.1 21.15C18.75 21.3833 18.3833 21.5 18 21.5ZM9 19.5H18L21 12.5V10.5H12L13.35 5L9 9.35V19.5ZM7 8.5V10.5H4V19.5H7V21.5H2V8.5H7Z"
+                          fill="#4B5563"
+                        ></path>
+                      </g>
+                    </svg>
+  
+                    <span class="text-gray-700 font-medium">123</span>
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <svg
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        id="mask0_111_2103"
+                        style="mask-type: alpha"
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="25"
+                      >
+                        <rect
+                          x="24"
+                          y="24.5"
+                          width="24"
+                          height="24"
+                          transform="rotate(180 24 24.5)"
+                          fill="#D9D9D9"
+                        ></rect>
+                      </mask>
+                      <g mask="url(#mask0_111_2103)">
+                        <path
+                          d="M6 3.5H17V16.5L10 23.5L8.75 22.25C8.63333 22.1333 8.5375 21.975 8.4625 21.775C8.3875 21.575 8.35 21.3833 8.35 21.2V20.85L9.45 16.5H3C2.46667 16.5 2 16.3 1.6 15.9C1.2 15.5 1 15.0333 1 14.5V12.5C1 12.3833 1.01667 12.2583 1.05 12.125C1.08333 11.9917 1.11667 11.8667 1.15 11.75L4.15 4.7C4.3 4.36666 4.55 4.08333 4.9 3.85C5.25 3.61667 5.61667 3.5 6 3.5ZM15 5.5H6L3 12.5V14.5H12L10.65 20L15 15.65V5.5ZM17 16.5V14.5H20V5.5H17V3.5H22V16.5H17Z"
+                          fill="#4B5563"
+                        ></path>
+                      </g>
+                    </svg>
+  
+                    <span class="text-gray-700 font-medium">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+             <div class="p-4 bg-[#FCFCFC] flex gap-x-2 rounded-md border border-[#F0F2F5]">
+              <div class="">
+                 <img src="/assets/images/demo4/profile-pic.svg" class="rounded-full" />
+              </div>
+              <div class="">
+                <div class="flex items-center space-x-2">
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star.svg" />
+                  <img src="/assets/images/demo4/star2.svg" />
+                 
+                </div>
+                <p class="text-gray-600 mt-2 text-sm">
+                  Details about the product in question goes here. You have the
+                  option to now select and buy. Details about the product in
+                  question goes here. You have the option to now select and
+                  buy.Details about the product in question goes here. You have
+                  the option to now select and buy.
+                </p>
+
+                <div class="mt-2 flex items-center space-x-4">
+                  <p class="text-[#4B5563] font-semibold text-base">
+                    Eugene ADAVORE
+                  </p>
+                  <p class="text-[#4B5563] text-xs">Online Shopper</p>
+                </div>
+                <div class="mt-2 flex items-center space-x-4">
+                  <button class="text-base text-blue-500">Reply</button>
+                  <div class="flex items-center space-x-1">
+                    <svg
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        id="mask0_111_2063"
+                        style="mask-type: alpha"
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="25"
+                      >
+                        <rect
+                          y="0.5"
+                          width="24"
+                          height="24"
+                          fill="#D9D9D9"
+                        ></rect>
+                      </mask>
+                      <g mask="url(#mask0_111_2063)">
+                        <path
+                          d="M18 21.5H7V8.5L14 1.5L15.25 2.75C15.3667 2.86667 15.4625 3.025 15.5375 3.225C15.6125 3.425 15.65 3.61667 15.65 3.8V4.15L14.55 8.5H21C21.5333 8.5 22 8.7 22.4 9.1C22.8 9.5 23 9.96667 23 10.5V12.5C23 12.6167 22.9833 12.7417 22.95 12.875C22.9167 13.0083 22.8833 13.1333 22.85 13.25L19.85 20.3C19.7 20.6333 19.45 20.9167 19.1 21.15C18.75 21.3833 18.3833 21.5 18 21.5ZM9 19.5H18L21 12.5V10.5H12L13.35 5L9 9.35V19.5ZM7 8.5V10.5H4V19.5H7V21.5H2V8.5H7Z"
+                          fill="#4B5563"
+                        ></path>
+                      </g>
+                    </svg>
+  
+                    <span class="text-gray-700 font-medium">123</span>
+                  </div>
+                  <div class="flex items-center space-x-1">
+                    <svg
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        id="mask0_111_2103"
+                        style="mask-type: alpha"
+                        maskUnits="userSpaceOnUse"
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="25"
+                      >
+                        <rect
+                          x="24"
+                          y="24.5"
+                          width="24"
+                          height="24"
+                          transform="rotate(180 24 24.5)"
+                          fill="#D9D9D9"
+                        ></rect>
+                      </mask>
+                      <g mask="url(#mask0_111_2103)">
+                        <path
+                          d="M6 3.5H17V16.5L10 23.5L8.75 22.25C8.63333 22.1333 8.5375 21.975 8.4625 21.775C8.3875 21.575 8.35 21.3833 8.35 21.2V20.85L9.45 16.5H3C2.46667 16.5 2 16.3 1.6 15.9C1.2 15.5 1 15.0333 1 14.5V12.5C1 12.3833 1.01667 12.2583 1.05 12.125C1.08333 11.9917 1.11667 11.8667 1.15 11.75L4.15 4.7C4.3 4.36666 4.55 4.08333 4.9 3.85C5.25 3.61667 5.61667 3.5 6 3.5ZM15 5.5H6L3 12.5V14.5H12L10.65 20L15 15.65V5.5ZM17 16.5V14.5H20V5.5H17V3.5H22V16.5H17Z"
+                          fill="#4B5563"
+                        ></path>
+                      </g>
+                    </svg>
+  
+                    <span class="text-gray-700 font-medium">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      
+    </div>
+    <!-- address section -->
+    <div class="hidden p-4 rounded-lg" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
+ <div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white">
+           <div class="border-b pb-4">
+            <p class="text-gray-700"><strong>SKU:</strong> 35-453-HZ</p>
+            <p class="text-gray-700"><strong>Vendor:</strong> Modave</p>
+            <p class="text-gray-700"><strong>Available:</strong> Instock</p>
+            <p class="text-gray-700"><strong>Categories:</strong> Clothes, Women, T-shirt</p>
+        </div>
+
+        <!-- Guaranteed Safe Checkout -->
+        <div class="mt-6">
+            <p class="font-semibold text-lg">Guaranteed safe checkout:</p>
+            <div class="flex items-center space-x-4 mt-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-10">
+            </div>
+        </div>
+        </div>    </div>
+    <!-- shopping section -->
+    <div class="hidden p-4 rounded-lg bg-gray-50" id="shopping" role="tabpanel" aria-labelledby="shopping-tab">
+<div id="lifestyle" class="tab-content container-fluid p-4 rounded-md bg-white">
+              
+          <p class="text-gray-700"><strong>SKU:</strong> 35-453-HZ</p>
+          <p class="text-gray-700"><strong>Vendor:</strong> Modave</p>
+          <p class="text-gray-700"><strong>Available:</strong> Instock</p>
+          <p class="text-gray-700"><strong>Categories:</strong> Clothes, Women, T-shirt</p>
+      </div>
+   
+    
+  </div>
+
+
+        
+    </main>
+
+    
+<footer class="bg-[#F9FAFB] container-fluid mx-auto">
+      <div class="container-fluid p-6 lg:p-12 mx-auto flex justify-between flex-col lg:flex-row gap-5">
+        <div class="w-full lg:w-1/5">
+          <div class="px-6">
+            <div>
+              <div class="mb-8 flex gap-3 justify-start items-center">
+                <div class="w-12 h-12 rounded-md">
+                  <img
+                    src="../../assets/icons/logo.svg"
+                    alt="Logo"
+                    class="w-full"
+                  />
+                </div>
+                
+              </div>
+              <p class="text-[#344054] mb-4">
+                Be the first to receive all the recent updates, articles, and
+                valuable materials.
+              </p>
+              <form
+                id="subscribeForm"
+                class="flex space-x-2"
+              >
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="Enter your email"
+                  class="flex-1 px-4 py-2 border border-[#D0D5DD] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                  type="submit"
+                  class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-gray-700 uppercase">Company</h3>
+          <div class="space-y-6">
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >About</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Security</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Blog</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Careers</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Service Status</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Partnerships</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Mission roadmap</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Community</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-gray-700 uppercase">Support</h3>
+          <div class="space-y-6">
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Mass Payments</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Debit Card</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Rayna for Startups</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Rayna for Developers</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Rayna for No-code</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Assets</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-gray-700 uppercase">Various Templates</h3>
+          <div class="space-y-6">
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Financial Templates</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Fashion & Beauty Templates</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Agriculture Templates</a
+            >
+            <a
+              href="#"
+              class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+              >Manufacturing Templatess</a
+            >
+          </div>
+        </div>
+      
+
+      </div>
+      <div class="container-fluid p-6 lg:px-20 mx-auto ">
+
+        <hr class="h-px my-6 bg-gray-200 border-none " />
+  
+        <div>
+          <p class="text-center text-gray-500 dark:text-gray-400">
+            © Brand 2020 - All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+     <script src="/assets/js/demo4.js"></script>
+  <script src="/assets/script.js"></script>
+  </body>
+</html>

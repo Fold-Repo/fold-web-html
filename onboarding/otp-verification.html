@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Recovery</title>
+    <!-- <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script> -->
+         <link rel="stylesheet" href="/assets/css/app.css">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <main class="container-fluid mx-auto overflow-x-hidden">
+
+        <!-- OTP Verification Page -->
+        <div class="min-h-screen flex justify-center container mx-auto items-center">
+            <div class="w-full md:w-1/2 flex items-center justify-center p-4">
+                <div class="w-full max-w-lg p-8  bg-gray-50 border-gray-100 border-2  rounded-lg">
+                    <div class="mb-8">
+                        <h2 class="text-2xl text-[#111827] font-semibold mb-2">Enter OTP</h2>
+                        <p class="text-[#111827]">An OTP was sent to your email address, enter OTP to create new password.</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-800 mb-1">Enter OTP</label>
+                            <div class="flex gap-2">
+                                <input placeholder="*" type="text" maxlength="1" class="w-full outline-none h-12 text-center border border-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                                <input placeholder="*" type="text" maxlength="1" class="w-full outline-none h-12 text-center border border-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                                <input placeholder="*" type="text" maxlength="1" class="w-full outline-none h-12 text-center border border-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                                <input placeholder="*" type="text" maxlength="1" class="w-full outline-none h-12 text-center border border-gray-200 rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 pt-6">
+                        <button class="w-full py-3.5 px-4 text-sm bg-blue-500 text-white rounded-md hover:bg-sky-600 transition-colors">
+                            Reset Password
+                        </button>
+                        
+                        <button class="w-full py-3.5 text-sm px-4 border border-blue-500 text-blue-500 rounded-md hover:bg-gray-50 transition-colors">
+                            Back
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right side - Same image section -->
+            <div class="hidden p-12 md:block md:w1/3">
+                <div class=" inset-0 overflow-hidden">
+                    <img
+                        src="../assets/images/onboarding/otp.svg"
+                        alt="Shopping"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
